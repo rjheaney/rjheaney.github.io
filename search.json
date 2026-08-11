@@ -18,13 +18,13 @@
     "href": "talks.html",
     "title": "Lecture Notes",
     "section": "",
-    "text": "Definition 1.1 (Double Category)  \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data: &gt; a category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\); &gt; a category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
   },
   {
     "objectID": "talks.html#double-categories",
     "href": "talks.html#double-categories",
     "title": "Lecture Notes",
     "section": "",
-    "text": "Definition 1.1 (Double Category)  \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data: &gt; a category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\); &gt; a category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
   }
 ]
