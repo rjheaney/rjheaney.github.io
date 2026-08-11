@@ -12,5 +12,19 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "Definition 1.1 (Double Category)  \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+  },
+  {
+    "objectID": "talks.html#double-categories",
+    "href": "talks.html#double-categories",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "Definition 1.1 (Double Category)  \\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
   }
 ]
