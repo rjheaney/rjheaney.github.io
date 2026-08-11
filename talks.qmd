@@ -2,8 +2,8 @@
 
 ## Double Categories
 
-\begin{definition}
+<b>Definition 1.1</b> (Double Category) <i>
 $$
 a_{M,N,P}: (M \circ N) \circ P \Rightarrow M \circ (N \circ P)
 $$
-\end{definition}
+</i>
