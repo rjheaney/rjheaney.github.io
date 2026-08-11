@@ -4,10 +4,26 @@
 
 <b>Definition 1.1</b> (Double category) <i>
 A <u> double category </u> $\mathbb{C}$ consists of the following data:
-> a category $\mathbb{C}_0$, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
+- a category $\mathbb{C}_0$, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
 $f: X \rightarrow X'$;
-> a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $M: X \not\rightarrow Y$, and whose
+- a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $M: X \not\rightarrow Y$, and whose
 arrows we call 2-<u>cells</u>
+
+::: {.imagify}
+$$
+% https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
+\begin{tikzcd}
+	X && Y \\
+	& {\Downarrow \phi} \\
+	V && W
+	\arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-1]
+	\arrow["g", from=1-3, to=3-3]
+	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+$$
+:::
+
 $$
 a_{M,N,P}: (M \circ N) \circ P \Rightarrow M \circ (N \circ P)
 $$
