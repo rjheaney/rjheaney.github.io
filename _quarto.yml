@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "jackswebsite"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Notes"
+        href: talks.qmd
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+# math
+html-math-method:
+  method: mathjax
+  url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
