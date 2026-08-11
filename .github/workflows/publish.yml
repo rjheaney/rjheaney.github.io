@@ -2,6 +2,8 @@ on:
   workflow_dispatch:
   push:
     branches: main
+  schedule:
+    - cron: '7 6 * * 1' # Every Monday at 6:07 AM UTC
 
 name: Quarto Publish
 
@@ -13,6 +15,12 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Setup TeX Live
+        uses: zauguin/install-texlive@v4.4.0
+        with:
+          packages: scheme-full
+          texlive_version: 2025
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
