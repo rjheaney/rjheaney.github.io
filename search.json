@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "jackswebsite",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+  },
+  {
+    "objectID": "talks.html#double-categories",
+    "href": "talks.html#double-categories",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+  }
+]
