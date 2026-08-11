@@ -1,3 +1,19 @@
+---
+title: Double Categories
+author:
+  - name: Jack Heaney
+    affiliation: University of Strathclyde, Glasgow, UK
+date: 11-08-2026
+date-modified: last-modified
+reference-location: margin
+citation-location: margin
+filters:
+  - imagify
+imagify:
+  header-includes: |
+    \usepackage{quiver}
+---
+
 # Lecture Notes
 
 ## Double Categories
@@ -10,8 +26,7 @@ $f: X \rightarrow X'$;
 arrows we call 2-<u>cells</u>
 
 ::: {.imagify}
-$$
-% https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
+[]: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
 	X && Y \\
 	& {\Downarrow \phi} \\
@@ -21,7 +36,6 @@ $$
 	\arrow["g", from=1-3, to=3-3]
 	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
-$$
 :::
 
 $$
