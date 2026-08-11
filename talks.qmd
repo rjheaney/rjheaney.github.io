@@ -4,9 +4,11 @@
 
 <b>Definition 1.1</b> (Double category) <i>
 A <u> double category </u> $\mathbb{C}$ consists of the following data:
-- a category $\mathbb{C}_0$, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
+
+1. a category $\mathbb{C}_0$, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
 $f: X \rightarrow X'$;
-- a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $M: X \not\rightarrow Y$, and whose
+
+2. a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $M: X \not\rightarrow Y$, and whose
 arrows we call 2-<u>cells</u>
 
 ::: {.imagify}
