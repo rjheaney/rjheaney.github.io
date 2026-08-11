@@ -1,6 +1,6 @@
 # Lecture Notes
 
-## Double Categories
+## Double Categories I hate vikraman
 
 $$
 a_{M,N,P}: (M \circ N) \circ P \Rightarrow M \circ (N \circ P)
