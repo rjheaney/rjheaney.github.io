@@ -14,11 +14,6 @@ imagify:
     \usepackage{quiver}
 ---
 
-<style type="text/css">
-     ol { list-style-type: lower-alpha; }
-     ol ol { list-style-type: lower-roman; }
-</style>
-
 
 # Lecture Notes
 
@@ -51,7 +46,7 @@ A <u> Double Category </u> $\mathbb{C}$ consists of the following data:
 1. a Category $\ \mathbb{C}_0 \ $, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
 $f: V \rightarrow V'$;
 
-2. a Category $ \ \mathbb{C}_1 \ $, whose objects we call <u>loose</u> 1-<u>cells</u> $N: V \not\rightarrow W$, and whose
+2. a Category $\ \mathbb{C}_1 \ $, whose objects we call <u>loose</u> 1-<u>cells</u> $N: V \not\rightarrow W$, and whose
 arrows we call 2-<u>cells</u>
 
 ::: {.imagify}
@@ -247,5 +242,6 @@ A double category $\mathbb{C}$ consists of the following data:
 1. A class of objects $\mathcal{O}$;
 
 2.
- i. For every
+    1. For every $A, B \in $
+    2.
 </i>
