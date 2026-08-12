@@ -165,7 +165,7 @@ is equal to
 	\arrow[equals, nfold, from=1-1, to=3-1]
 	\arrow[equals, nfold, from=1-3, to=3-3]
 	\arrow["P \circ M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
-\<end{tikzcd}
+\end{tikzcd}
 :::
 
 </i>
@@ -184,7 +184,7 @@ A category is the data of:
 
 1. A class $C_0$;
 
-2. For every $A, B \in C_0$ a set $C_1(A,B);
+2. For every $A, B \in C_0$ a set $C_1(A,B)$;
 
 3. For every $A \in C_0$, a distinguished element $\text{id}_A \in C_1(A,A)$;
 
@@ -195,10 +195,12 @@ satisfying the requirements that
 
 (a). For every $A, B \in C_0$, and every $f \in C_1(A, B)$ the following equations hold
 
+$$
 \begin{aligned}
 f \circ \text{id}_A &=  f\\
 \text{id}_B \circ f &=  f;
 \end{aligned}
+$$
 
 (b). For every $A, B, C, D \in C_0$, and every $f \in C_1(A, B)$ and also every $g \in C_1(B,C)$ as well as $h \in C_1(C, D)$,
 the following equation holds
