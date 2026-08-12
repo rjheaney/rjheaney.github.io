@@ -1,7 +1,7 @@
 ---
 title: Double Categories
 subtitle: Definitions
-date: 12-08-2026
+date: 08-12-2026
 ---
 
 
@@ -198,7 +198,7 @@ A category is the data of:
 
 3. For every $A \in C_0$, a distinguished element $\text{id}_A \in C_1(A,A)$;
 
-4. For every $A, B, C \in C_0$, and every $f \in C_1(A, B)$, as well as $g \in C_1(B,C)$ a
+4. For every $A, B, C \in C_0$, and every $f \in C_1(A, B)$, as well as $g \in C_1(B,C)$
 there is a $g \circ f \in C_1(A,C)$;
 
 satisfying the requirements that
@@ -226,9 +226,17 @@ data can be expressed clearly.
 
 A double category $\mathbb{C}$ consists of the following data:
 
-1. A class of objects $\mathcal{O}$;
+1. A class of objects $\mathcal{O}$ whose members are called the 0-cells of $\mathbb{C}$;
 
-2.
-    1. For every $A, B \in $
-    2.
+2. For every $V, V' \in \mathcal{O}$ a class $\text{hom}_{\tau}(V,V')$, with members $f$, written $f : V \rightarrow V'$, called the tight arrows;
+
+3. For every $V, W \in \mathcal{O}$ a class $\text{hom}_{\lambda}(V,W)$, with members $N$, written $N : V \not\rightarrow W$, called the loose arrows;
+
+4. For every $V \in \mathcal{O}$ a distinguished tight arrow $1_V : V \rightarrow V$;
+
+5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V : V \not\rightarrow V$;
+
+6. For every $V, V', V'' in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \fcmp f' \in \text{hom}_{\tau}(V,V'')$;
+
+7.
 </i>
