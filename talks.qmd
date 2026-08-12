@@ -1,23 +1,10 @@
-g---
+---
 title: Double Categories
-author:
-  - name: Jack Heaney
-    affiliation: University of Strathclyde, Glasgow, UK
-date: 08-12-2026
-date-modified: last-modified
-reference-location: margin
-citation-location: margin
-filters:
-  - imagify
-imagify:
-  header-includes: |
-    \usepackage{quiver}
+subtitle: Definitions
+date: 12-08-2026
 ---
 
 
-# Lecture Notes
-
-## Double Categories
 
 <b>Definition 1.1</b> (Category) <i>
 

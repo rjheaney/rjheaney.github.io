@@ -1,0 +1,17 @@
+title: "Untitled"
+date-modified: last-modified
+reference-location: margin
+citation-location: margin
+author:
+  - name: Jack Heaney
+    affiliation: University of Strathclyde, Glasgow, UK
+citation: true
+google-scholar: true
+filters:
+  - imagify
+imagify:
+  header-includes: |
+    \usepackage{newpxtext}
+    \usepackage{newpxmath}
+    \usepackage{amssymb}
+    \usepackage{quiver}
