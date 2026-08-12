@@ -22,21 +22,21 @@ imagify:
 A <u> double category </u> $\mathbb{C}$ consists of the following data:
 
 1. a category $\mathbb{C}_0$, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u> cells</u>
-$f: X \rightarrow X'$;
+$f: V \rightarrow V'$;
 
-2. a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $M: X \not\rightarrow Y$, and whose
+2. a category $\mathbb{C}_1$, whose objects we call <u>loose</u> 1-<u>cells</u> $N: V \not\rightarrow W$, and whose
 arrows we call 2-<u>cells</u>
 
 ::: {.imagify}
 []: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
-	X && Y \\
+	V && W \\
 	& {\Downarrow \phi} \\
-	V && W
-	\arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	V' && W'
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["f"', from=1-1, to=3-1]
 	\arrow["g", from=1-3, to=3-3]
-	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
 
@@ -50,20 +50,89 @@ and <u>target</u> respectively;
 ::: {.imagify}
 []: %
 \begin{tikzcd}
-	W && Z \\
-	& {\Downarrow a_{M,N,P}} \\
-	W && Z
-	\arrow["(M\circ N) \circ P"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
-	\arrow["="', from=1-1, to=3-1]
-	\arrow["=", from=1-3, to=3-3]
-	\arrow["M \circ (N \circ P)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	V && Y \\
+	& {\Downarrow a_{P,M,N}} \\
+	V && Y
+	\arrow["(P\circ M) \circ N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow[equals, nfold, from=1-1, to=3-1]
+	\arrow[equals, nfold, from=1-3, to=3-3]
+	\arrow["P \circ (M \circ N)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	W && X \\
+	& {\Downarrow \ell_M} \\
+	W && X
+	\arrow["\text{id}_X \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow[equals, nfold, from=1-1, to=3-1]
+	\arrow[equals, nfold, from=1-3, to=3-3]
+	\arrow["M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	W && X \\
+	& {\Downarrow r_M} \\
+	W && X
+	\arrow["M \circ \text{id}_W"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow[equals, nfold, from=1-1, to=3-1]
+	\arrow[equals, nfold, from=1-3, to=3-3]
+	\arrow["M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
 
 
+These data are required to satisfy the following coherence axioms which manifest as equations between composite 2-cells.
+
+The first of these is the following composite
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && Z \\
+	& {\Downarrow a_{Q, P, M} \star \text{id}_N} \\
+	V && Z\\
+    & {\Downarrow a_{Q, P \circ M, N} }\\
+    V && Z \\
+    & {\Downarrow id_Q \star a_{P, M, N} }\\
+    V && Z
+	\arrow["((Q \circ P)\circ N) \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow[equals, nfold, from=1-1, to=3-1]
+	\arrow[equals, nfold, from=1-3, to=3-3]
+	\arrow["(Q \circ (P \circ M)) \circ N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow[equals, nfold, from=3-1, to=5-1]
+	\arrow[equals, nfold, from=3-3, to=5-3]
+	\arrow["Q \circ ((P \circ M) \circ N)"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+	\arrow[equals, nfold, from=5-1, to=7-1]
+	\arrow[equals, nfold, from=5-3, to=7-3]
+	\arrow["Q \circ (P \circ (M \circ N))"'{inner sep=.8ex}, "\shortmid"{marking}, from=7-1, to=7-3]
+\end{tikzcd}
+:::
+
+which is required to be equal to the second composite
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && Z \\
+	& {\Downarrow a_{Q \circ P, M, N}} \\
+	V && Z\\
+    & {\Downarrow a_{Q, P, M \circ N} }\\
+    V && Z \\
+	\arrow["((Q \circ P)\circ N) \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow[equals, nfold, from=1-1, to=3-1]
+	\arrow[equals, nfold, from=1-3, to=3-3]
+	\arrow["(Q \circ P) \circ (M \circ N)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow[equals, nfold, from=3-1, to=5-1]
+	\arrow[equals, nfold, from=3-3, to=5-3]
+	\arrow["Q \circ ((P \circ M) \circ N)"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+:::
 
 
-$$
-a_{M,N,P}: (M \circ N) \circ P \Rightarrow M \circ (N \circ P)
-$$
 </i>
