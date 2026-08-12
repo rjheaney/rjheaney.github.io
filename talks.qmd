@@ -14,6 +14,12 @@ imagify:
     \usepackage{quiver}
 ---
 
+<style type="text/css">
+     ol { list-style-type: lower-alpha; }
+     ol ol { list-style-type: lower-roman; }
+</style>
+
+
 # Lecture Notes
 
 ## Double Categories
@@ -193,20 +199,20 @@ there is a $g \circ f \in C_1(A,C)$;
 
 satisfying the requirements that
 
-(a). For every $A, B \in C_0$, and every $f \in C_1(A, B)$ the following equations hold
+a. For every $A, B \in C_0$, and every $f \in C_1(A, B)$ the following equations hold
 
-$$
-\begin{aligned}
+::: {.imagify}
+\begin{align}
 f \circ \text{id}_A &=  f\\
 \text{id}_B \circ f &=  f;
-\end{aligned}
-$$
+\end{align}
+:::
 
-(b). For every $A, B, C, D \in C_0$, and every $f \in C_1(A, B)$ and also every $g \in C_1(B,C)$ as well as $h \in C_1(C, D)$,
+b. For every $A, B, C, D \in C_0$, and every $f \in C_1(A, B)$ and also every $g \in C_1(B,C)$ as well as $h \in C_1(C, D)$,
 the following equation holds
 
 $$(h \circ g) \circ f = h \circ (g \circ f);$$
 
-(c). The sets $C_1(A,B)$ are pairwise disjoint.
+c. The sets $C_1(A,B)$ are pairwise disjoint.
 
 </i>
