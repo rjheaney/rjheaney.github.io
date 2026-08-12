@@ -40,6 +40,29 @@ arrows we call 2-<u>cells</u>
 \end{tikzcd}
 :::
 
+3. two functors $\text{src}, \text{tgt} : \mathbb{C}_1 \rightarrow \mathbb{C}_0$ called <u>source</u>
+and <u>target</u> respectively;
+
+4. <u>composition</u> and <u>identity</u> functors $\text{comp} : \mathbb{C}_1 \times_{\mathbb{C}_0} \mathbb{C}_1$ and $\text{id} : \mathbb{C}_0 \rightarrow \mathbb{C}_1$;
+
+5. natural families of globular isomorphisms in $\mathbb{C}_1$:
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	W && Z \\
+	& {\Downarrow a_{M,N,P}} \\
+	W && Z
+	\arrow["(M\circ N) \circ P"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["="', from=1-1, to=3-1]
+	\arrow["=", from=1-3, to=3-3]
+	\arrow["M \circ (N \circ P)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
+
+
+
 $$
 a_{M,N,P}: (M \circ N) \circ P \Rightarrow M \circ (N \circ P)
 $$
