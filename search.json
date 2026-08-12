@@ -18,13 +18,13 @@
     "href": "talks.html",
     "title": "Double Categories",
     "section": "",
-    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data:\n\na category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\);\na category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells\n\n\n\n\n\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data:\n\na category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\);\na category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells\n\n\n\n\n\ntwo functors \\(\\text{src}, \\text{tgt} : \\mathbb{C}_1 \\rightarrow \\mathbb{C}_0\\) called source and target respectively;\ncomposition and identity functors \\(\\text{comp} : \\mathbb{C}_1 \\times_{\\mathbb{C}_0} \\mathbb{C}_1\\) and \\(\\text{id} : \\mathbb{C}_0 \\rightarrow \\mathbb{C}_1\\);\nnatural families of globular isomorphisms in \\(\\mathbb{C}_1\\):\n\n\n\n\n\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
   },
   {
     "objectID": "talks.html#double-categories",
     "href": "talks.html#double-categories",
     "title": "Double Categories",
     "section": "",
-    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data:\n\na category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\);\na category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells\n\n\n\n\n\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
+    "text": "Definition 1.1 (Double category)  A  double category  \\(\\mathbb{C}\\) consists of the following data:\n\na category \\(\\mathbb{C}_0\\), whose objects we call 0-cells, and whose arrows we call tight 1- cells \\(f: X \\rightarrow X'\\);\na category \\(\\mathbb{C}_1\\), whose objects we call loose 1-cells \\(M: X \\not\\rightarrow Y\\), and whose arrows we call 2-cells\n\n\n\n\n\ntwo functors \\(\\text{src}, \\text{tgt} : \\mathbb{C}_1 \\rightarrow \\mathbb{C}_0\\) called source and target respectively;\ncomposition and identity functors \\(\\text{comp} : \\mathbb{C}_1 \\times_{\\mathbb{C}_0} \\mathbb{C}_1\\) and \\(\\text{id} : \\mathbb{C}_0 \\rightarrow \\mathbb{C}_1\\);\nnatural families of globular isomorphisms in \\(\\mathbb{C}_1\\):\n\n\n\n\n\\[\na_{M,N,P}: (M \\circ N) \\circ P \\Rightarrow M \\circ (N \\circ P)\n\\]"
   }
 ]
