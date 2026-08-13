@@ -451,14 +451,19 @@ $$\leadsto$$
 <!---
 1. What does it mean for the $\ell_M, r_M$ and $a_{P, N, M}$ to be natural?
 
-2. What does it mean for a witness to be an isomorphism?
+2. What does it mean for a witness to be an isomorphism? *
 
 -->
 <ol start="13" type="1">
 <li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. This witness comes equipped with another witness <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile r_M = \upsilon_M\)</span> and <span class="math inline">\(r_M \smile q_M = \upsilon_{M \circ id_V}\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness comes equipped with another witness <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span>.</p></li>
+<li><p>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness comes equipped with another witness <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span> such that <span class="math inline">\(a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}\)</span> and <span class="math inline">\(b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}\)</span>.</p></li>
 </ol>
-<p>Satisfying the requirements that</p>
+<p>This data is required to satisfy the following:</p>
+<p>For every <span class="math inline">\(V, W, X, Y, Z \in \mathcal{O}\)</span> and every <span class="math inline">\(Q \in \text_{\lambda}(Y,Z), P \in \text_{\lambda}(X,Y), N \in \text_{\lambda}(W, X),
+M \in \text_{\lambda}(V, W)\)</span> we have</p>
+<p><span class="math display">\[(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};\]</span></p>
+<p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(N \in \text_{\lambda}(W, X), M \in \text_{\lambda}(V, W)\)</span> we have</p>
+<p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.\]</span></p>
 </i><p><i></i></p>
 
 
