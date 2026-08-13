@@ -346,6 +346,15 @@ $b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}$.
 
 This data is required to satisfy the following:
 
+For every $V, V' \in \mathcal{O}$ and every $f \in \text{hom}_{\tau}(V,V')$ we have
+
+$$1_V \frown f = f = f \frown 1_{V'};$$
+
+For every $V, W, V', W' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')$ and also every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ as well as every witness
+$\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ we have
+
+$$\upsilon_M \smile \phi = \phi = \phi \smile \upsilon_{M'};$$
+
 For every $V, W, X, Y, Z \in \mathcal{O}$ and every $Q \in \text{hom}_{\lambda}(Y,Z), P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W, X),
 M \in \text{hom}_{\lambda}(V, W)$ we have
 
