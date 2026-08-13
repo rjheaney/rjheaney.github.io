@@ -365,13 +365,13 @@ window.Quarto = {
 <p><b> Definition 1.4 </b> (double category, indexed version) <i></i></p><i>
 <p>A double category <span class="math inline">\(\mathbb{C}\)</span> consists of the following data:</p>
 <ol type="1">
-<li><p>A class of objects <span class="math inline">\(\mathcal{O}\)</span> whose members are called the 0-cells of <span class="math inline">\(\mathbb{C}\)</span> (using upper roman from the end of the alphabet);</p></li>
-<li><p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\tau}(V,V')\)</span>, called tight arrows (using lower roman from the beginning of the alphabet);</p></li>
-<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\lambda}(V,W)\)</span> called loose arrows (using upper roman from middle of the alphabet);</p></li>
+<li><p>A class of objects <span class="math inline">\(\mathcal{O}\)</span> whose members are called the 0-cells of <span class="math inline">\(\mathbb{C}\)</span> (generically upper roman from the end of the alphabet);</p></li>
+<li><p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\tau}(V,V')\)</span>, called tight arrows (generically lower roman from the beginning of the alphabet);</p></li>
+<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\lambda}(V,W)\)</span> called loose arrows (generically upper roman from middle of the alphabet);</p></li>
 <li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished tight arrow <span class="math inline">\(1_V \in \text{hom}_{\tau}(V,V)\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished loose arrow <span class="math inline">\(id_V \in \text{hom}_{\lambda}(V,V)\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V, V', V'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> and also every <span class="math inline">\(f' \in \text{hom}_{\tau}(V',V'')\)</span>, there is a <span class="math inline">\(f \frown f' \in \text{hom}_{\tau}(V,V'')\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')\)</span>, there is a set <span class="math inline">\(\text{wit}(V, W, V', W', f, g, M, M')\)</span> called witnesses (using lower greek)</p></li>
+<li><p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')\)</span>, there is a set <span class="math inline">\(\text{wit}(V, W, V', W', f, g, M, M')\)</span> called witnesses (generically lower greek)</p></li>
 </ol>
 <!---
 ::: {.imagify}
@@ -455,7 +455,7 @@ $$\leadsto$$
 
 -->
 <ol start="13" type="1">
-<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. This witness comes equipped with another witness <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile \r_M = \upsilon_M\)</span> and $<em>M q_M = </em>{M id_V} $;</p></li>
+<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. This witness comes equipped with another witness <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile r_M = \upsilon_M\)</span> and <span class="math inline">\(r_M \smile q_M = \upsilon_{M \circ id_V}\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness comes equipped with another witness <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span>.</p></li>
 </ol>
 <p>Satisfying the requirements that</p>
