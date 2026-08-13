@@ -4,8 +4,6 @@ subtitle: Definitions
 date: 08-12-2026
 ---
 
-
-
 <b>Definition 1.1</b> (Category) <i>
 
 A Category $C$ consists of the following data:
@@ -236,7 +234,7 @@ A double category $\mathbb{C}$ consists of the following data:
 
 5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V : V \not\rightarrow V$;
 
-6. For every $V, V', V'' in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \fcmp f' \in \text{hom}_{\tau}(V,V'')$;
+6. For every $V, V', V'' in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \frown f' \in \text{hom}_{\tau}(V,V'')$;
 
 7.
 </i>

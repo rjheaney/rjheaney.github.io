@@ -14,5 +14,5 @@ imagify:
     \usepackage{newpxtext}
     \usepackage{newpxmath}
     \usepackage{amssymb}
-    \usepackage{oz}
+    \usepackage{objectz}
     \usepackage{quiver}
