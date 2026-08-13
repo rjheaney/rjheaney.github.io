@@ -224,21 +224,22 @@ data can be expressed clearly.
 
 A double category $\mathbb{C}$ consists of the following data:
 
-1. A class of objects $\mathcal{O}$ whose members are called the 0-cells of $\mathbb{C}$;
+1. A class of objects $\mathcal{O}$ whose members are called the 0-cells of $\mathbb{C}$ (using upper roman from the end of the alphabet);
 
-2. For every $V, V' \in \mathcal{O}$ a class $\text{hom}_{\tau}(V,V')$, with members $f$, written $f : V \rightarrow V'$, called the tight arrows;
+2. For every $V, V' \in \mathcal{O}$ a class $\text{hom}_{\tau}(V,V')$, called tight arrows (using lower roman from the beginning of the alphabet);
 
-3. For every $V, W \in \mathcal{O}$ a class $\text{hom}_{\lambda}(V,W)$, with members $N$, written $N : V \not\rightarrow W$, called the loose arrows;
+3. For every $V, W \in \mathcal{O}$ a class $\text{hom}_{\lambda}(V,W)$ called loose arrows (using upper roman from middle of the alphabet);
 
-4. For every $V \in \mathcal{O}$ a distinguished tight arrow $1_V : V \rightarrow V$;
+4. For every $V \in \mathcal{O}$ a distinguished tight arrow $1_V \in \text{hom}_{\tau}(V,V)$;
 
-5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V : V \not\rightarrow V$;
+5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V \in \text{hom}_{\lambda}(V,V)$;
 
-6. For every $V, V', V'' \in \mathcal{O}$, and every $f: V \rightarrow V'$ and also every $f' V' \rightarrow V''$, there is a $f \frown f' : V \rightarrow V''$;
+6. For every $V, V', V'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \frown f' \in \text{hom}_{\tau}(V,V'')$;
 
-7. For every $V, W, V', W' \in \mathcal{O}$, and every $f : V \rightarrow V', g : W \rightarrow W'$ and also every $N : V \not\rightarrow W, N' : V' \not\rightarrow W'$, there is a set
-$\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written like below which are called the witnesses:
+7. For every $V, W, V', W' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ and also every $N \in \text{hom}_{\lambda}(V,W), N' \in \text{hom}_{\tau}(V',W')$, there is a set
+$\text{wit}(V, W, V', W', f, g, N, N')$ called witnesses (using lower greek)
 
+<!---
 ::: {.imagify}
 []: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
@@ -251,9 +252,11 @@ $\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written like below 
 	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
+-->
 
-8. For every $V, W \in \mathcal{O}$, and every $N: V \not\rightarrow W$ there is a distinguished witness:
+8. For every $V, W \in \mathcal{O}$, and every $N \in \text{hom}_{\lambda}(V,W)$ there is a distinguished witness $\upsilon_N \in \text{wit}(V, W, V, W, 1_V, 1_W, N, N)$;
 
+<!---
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -266,11 +269,12 @@ $\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written like below 
 	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
+-->
 
-9. For every $V, W, V', W', V'', W'' \in \mathcal{O}$, and every $f : V \rightarrow V', f' : V' \rightarrow V'', g : W \rightarrow W', g' : W' \rightarrow W''$
-and also every $N : V \not\rightarrow W, N' : V' \not\rightarrow W', N'' : V'' \not\rightarrow W''$
+9. For every $V, W, V', W', V'', W'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), f' \in \text{hom}_{\tau}(V',V''), g :\in \text{hom}_{\tau}(W,W'), g' \in \text{hom}_{\tau}(W',W'')$
+and also every $N \in \text{hom}_{\lambda}(V,W), N' \in \text{hom}_{\lambda}(V',W'), N''\in \text{hom}_{\lambda}(V'',W'')$
 as well as every $\phi \in \text{wit}(V, W, V', W', f, g, N, N'), \psi \in \text{wit}(V', W', V'', W'', f', g', N', N'')$ there is a
-there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$. This situation is displayed below:
+there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$.
 
 <!---
 ::: {.imagify}
@@ -290,7 +294,7 @@ there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frow
 	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
 \end{tikzcd}
 :::
--->
+
 
 $$\leadsto$$
 
@@ -307,11 +311,12 @@ $$\leadsto$$
 	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
+-->
 
-10. For every $V, W, X \in \mathcal{O}$ and every $N : V \not\rightarrow W, M : W \not\rightarrow X$
-there is a $M \circ N : V \not\rightarrow X$.
+10. For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(V,W), M \in \text{hom}_{\lambda}(W,X)$
+there is a $M \circ N \in \text{hom}_{\lambda}(V,X)$.
 
-11. For every $W, X \in \mathcal{O}$ and $M : W \not\rightarrow X$ there is
+11. For every $W, X \in \mathcal{O}$ and $M \in \text{hom}_{\lambda}(W,X)$ there is
 a witness $\ell_M \in \text{wit}(W, X, W, X, 1_W, 1_X, id_X \circ M, M)$
 and a witness $r_M \in \text{wit}(W, X, W, X, 1_W, 1_X, M \circ id_W, M)$.
 
