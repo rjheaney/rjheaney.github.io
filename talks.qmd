@@ -330,7 +330,7 @@ such that $k_M \smile \ell_M = \upsilon_M$ and $\ell_M \smile k_M = \upsilon_{id
 <!---
 1. What does it mean for the $\ell_M, r_M$ and $a_{P, N, M}$ to be natural?
 
-2. What does it mean for a witness to be an isomorphism?
+2. What does it mean for a witness to be an isomorphism? *
 
 -->
 
@@ -340,13 +340,20 @@ such that $q_M \smile r_M = \upsilon_M$ and $r_M \smile q_M = \upsilon_{M \circ 
 
 14. For every $V, W, X, Y \in \mathcal{O}$ and every $P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)$
 there is a witness $a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))$. This witness comes equipped with another witness
-$b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)$.
+$b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)$ such that $a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}$ and
+$b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}$.
 
 
-Satisfying the requirements that
+This data is required to satisfy the following:
 
+For every $V, W, X, Y, Z \in \mathcal{O}$ and every $Q \in \text_{\lambda}(Y,Z), P \in \text_{\lambda}(X,Y), N \in \text_{\lambda}(W, X),
+M \in \text_{\lambda}(V, W)$ we have
 
+$$(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};$$
 
+For every $V, W, X \in \mathcal{O}$ and every $N \in \text_{\lambda}(W, X), M \in \text_{\lambda}(V, W)$ we have
+
+$$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.$$
 
 
 </i>
