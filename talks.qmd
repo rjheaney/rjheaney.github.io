@@ -226,11 +226,11 @@ data can be expressed clearly.
 
 A double category $\mathbb{C}$ consists of the following data:
 
-1. A class of objects $\mathcal{O}$ whose members are called the 0-cells of $\mathbb{C}$ (using upper roman from the end of the alphabet);
+1. A class of objects $\mathcal{O}$ whose members are called the 0-cells of $\mathbb{C}$ (generically upper roman from the end of the alphabet);
 
-2. For every $V, V' \in \mathcal{O}$ a class $\text{hom}_{\tau}(V,V')$, called tight arrows (using lower roman from the beginning of the alphabet);
+2. For every $V, V' \in \mathcal{O}$ a class $\text{hom}_{\tau}(V,V')$, called tight arrows (generically lower roman from the beginning of the alphabet);
 
-3. For every $V, W \in \mathcal{O}$ a class $\text{hom}_{\lambda}(V,W)$ called loose arrows (using upper roman from middle of the alphabet);
+3. For every $V, W \in \mathcal{O}$ a class $\text{hom}_{\lambda}(V,W)$ called loose arrows (generically upper roman from middle of the alphabet);
 
 4. For every $V \in \mathcal{O}$ a distinguished tight arrow $1_V \in \text{hom}_{\tau}(V,V)$;
 
@@ -239,7 +239,7 @@ A double category $\mathbb{C}$ consists of the following data:
 6. For every $V, V', V'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \frown f' \in \text{hom}_{\tau}(V,V'')$;
 
 7. For every $V, W, V', W' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ and also every $M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')$, there is a set
-$\text{wit}(V, W, V', W', f, g, M, M')$ called witnesses (using lower greek)
+$\text{wit}(V, W, V', W', f, g, M, M')$ called witnesses (generically lower greek)
 
 <!---
 ::: {.imagify}
@@ -336,7 +336,7 @@ such that $k_M \smile \ell_M = \upsilon_M$ and $\ell_M \smile k_M = \upsilon_{id
 
 13. For every $V, W \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V,W)$ there is
 a witness $r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)$. This witness comes equipped with another witness $q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)$
-such that $q_M \smile \r_M = \upsilon_M$ and $\r_M \smile q_M = \upsilon_{M \circ id_V} $;
+such that $q_M \smile r_M = \upsilon_M$ and $r_M \smile q_M = \upsilon_{M \circ id_V}$;
 
 14. For every $V, W, X, Y \in \mathcal{O}$ and every $P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)$
 there is a witness $a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))$. This witness comes equipped with another witness
