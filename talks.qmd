@@ -234,17 +234,17 @@ A double category $\mathbb{C}$ consists of the following data:
 
 5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V : V \not\rightarrow V$;
 
-6. For every $V, V', V'' \in \mathcal{O}$, and every $f: V \rightarrow V' $ and also every $f' V' \rightarrow V''$, there is a $f \frown f' : V \rightarrow V''$;
+6. For every $V, V', V'' \in \mathcal{O}$, and every $f: V \rightarrow V'$ and also every $f' V' \rightarrow V''$, there is a $f \frown f' : V \rightarrow V''$;
 
 7. For every $V, W, V', W' \in \mathcal{O}$, and every $f : V \rightarrow V', g : W \rightarrow W'$ and also every $N : V \not\rightarrow W, N' : V' \not\rightarrow W'$, there is a set
-$\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written
+$\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written like below which are called the witnesses:
 
 ::: {.imagify}
 []: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
 	V && W \\
 	& {\Downarrow \phi} \\
-	V' && W'
+	V' && W'.
 	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["f"', from=1-1, to=3-1]
 	\arrow["g", from=1-3, to=3-3]
@@ -252,22 +252,61 @@ $\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written
 \end{tikzcd}
 :::
 
-called a witness.
-
-8. For every $V, W \in \mathcal{O}$, and every $N: V \not\rightarrow W$ there is a distinguished witness
+8. For every $V, W \in \mathcal{O}$, and every $N: V \not\rightarrow W$ there is a distinguished witness:
 
 ::: {.imagify}
 []: %
 \begin{tikzcd}
 	V && W \\
-	& {\Downarrow I_N} \\
-	V && W
+	& {\Downarrow {\upsilon}_N} \\
+	V && W.
 	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["1_V"', from=1-1, to=3-1]
 	\arrow["1_W", from=1-3, to=3-3]
 	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
+
+9. For every $V, W, V', W', V'', W'' \in \mathcal{O}$, and every $f : V \rightarrow V', f' : V' \rightarrow V'', g : W \rightarrow W', g' : W' \rightarrow W''$
+and also every $N : V \not\rightarrow W, N' : V' \not\rightarrow W', N'' : V'' \not\rightarrow W''$
+as well as every $\phi \in \text{wit}(V, W, V', W', f, g, N, N'), \psi \in \text{wit}(V', W', V'', W'', f', g', N', N'')$ there is a
+there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$. This situation is displayed below:
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && W \\
+	& {\Downarrow \phi} \\
+	V' && W'\\
+    & {\Downarrow \psi}\\
+    V'' && W''. \\
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f", from=1-1, to=3-1]
+	\arrow["g", from=1-3, to=3-3]
+	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow["f'", from=3-1, to=5-1]
+	\arrow["g'", from=3-3, to=5-3]
+	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+:::
+
+$$\leadsto$$
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && W \\
+	& {\Downarrow \phi \smile \psi} \\
+	V'' && W''.
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f \frown f'"', from=1-1, to=3-1]
+	\arrow["g \frown g'", from=1-3, to=3-3]
+	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
 
 
 </i>
