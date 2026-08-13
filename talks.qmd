@@ -346,12 +346,12 @@ $b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}$.
 
 This data is required to satisfy the following:
 
-For every $V, W, X, Y, Z \in \mathcal{O}$ and every $Q \in \text_{\lambda}(Y,Z), P \in \text_{\lambda}(X,Y), N \in \text_{\lambda}(W, X),
-M \in \text_{\lambda}(V, W)$ we have
+For every $V, W, X, Y, Z \in \mathcal{O}$ and every $Q \in \text{hom}_{\lambda}(Y,Z), P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W, X),
+M \in \text{hom}_{\lambda}(V, W)$ we have
 
 $$(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};$$
 
-For every $V, W, X \in \mathcal{O}$ and every $N \in \text_{\lambda}(W, X), M \in \text_{\lambda}(V, W)$ we have
+For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)$ we have
 
 $$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.$$
 
