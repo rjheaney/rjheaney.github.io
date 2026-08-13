@@ -182,7 +182,9 @@ is equal to
 Several questions come about when staring at the above definition. If arrows are objects in $\mathbb{C}_1$ what gives the
 right to state that they look like arrows with sources and targets that could just as well be source and targets of arrows in $\mathbb{C}_0$.
 The source and target functors are lacking defining equations they should be compatible with the composition and identity functors in the way
-that is implied from the mantra "double categories are category objects in the category of categories". In particular, the identity
+that is implied from the mantra "double categories are category objects in the category of categories". In particular, the identity functor must
+equalise the source and target functors meaning that enrichment is ill-defined or based on evil equality. The more significant problem is that the
+presentation of squares need to have a specific orientation which produces conflicts in the literature.
 
 A better definition starts from finding a better definition for categories.
 
@@ -271,10 +273,10 @@ $\text{wit}(V, W, V', W', f, g, N, N')$ called witnesses (using lower greek)
 :::
 -->
 
-9. For every $V, W, V', W', V'', W'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), f' \in \text{hom}_{\tau}(V',V''), g :\in \text{hom}_{\tau}(W,W'), g' \in \text{hom}_{\tau}(W',W'')$
+9. For every $V, W, V', W', V'', W'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), f' \in \text{hom}_{\tau}(V',V''), g \in \text{hom}_{\tau}(W,W'), g' \in \text{hom}_{\tau}(W',W'')$
 and also every $N \in \text{hom}_{\lambda}(V,W), N' \in \text{hom}_{\lambda}(V',W'), N''\in \text{hom}_{\lambda}(V'',W'')$
-as well as every $\phi \in \text{wit}(V, W, V', W', f, g, N, N'), \psi \in \text{wit}(V', W', V'', W'', f', g', N', N'')$ there is a
-there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$.
+as well as every $\phi \in \text{wit}(V, W, V', W', f, g, N, N'), \phi' \in \text{wit}(V', W', V'', W'', f', g', N', N'')$ there is a
+$\phi \smile \phi' \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$.
 
 <!---
 ::: {.imagify}
@@ -283,7 +285,7 @@ there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frow
 	V && W \\
 	& {\Downarrow \phi} \\
 	V' && W'\\
-    & {\Downarrow \psi}\\
+    & {\Downarrow \phi'}\\
     V'' && W''. \\
 	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["f", from=1-1, to=3-1]
@@ -303,7 +305,7 @@ $$\leadsto$$
 []: %
 \begin{tikzcd}
 	V && W \\
-	& {\Downarrow \phi \smile \psi} \\
+	& {\Downarrow \phi \smile \phi'} \\
 	V'' && W''.
 	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["f \frown f'"', from=1-1, to=3-1]
@@ -314,11 +316,21 @@ $$\leadsto$$
 -->
 
 10. For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(V,W), M \in \text{hom}_{\lambda}(W,X)$
-there is a $M \circ N \in \text{hom}_{\lambda}(V,X)$.
+there is a $M \circ N \in \text{hom}_{\lambda}(V,X)$;
 
 11. For every $W, X \in \mathcal{O}$ and $M \in \text{hom}_{\lambda}(W,X)$ there is
-a witness $\ell_M \in \text{wit}(W, X, W, X, 1_W, 1_X, id_X \circ M, M)$
-and a witness $r_M \in \text{wit}(W, X, W, X, 1_W, 1_X, M \circ id_W, M)$.
+a witness $\ell_M \in \text{wit}(W, X, W, X, 1_W, 1_X, id_X \circ M, M)$;
+
+12. For every $W, X \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(W,X)$ there is
+a witness $r_M \in \text{wit}(W, X, W, X, 1_W, 1_X, M \circ id_W, M)$;
+
+13. For every $V, W, X, Y \in \mathcal{O}$ and every $P \in \text{hom}_{\lambda}(X,Y), M \in \text{hom}_{\lambda}(W,X), N \in \text{hom}_{\lambda}(V,W)$
+there is a witness $a_{P,M,N} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ M) \circ N, P \circ (M \circ N))$;
+
+14. For every $V, W, X, V', W', X' \in \mathcal{O}$ and every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W'), h \in \text{hom}_{\tau}(X,X')$
+and also every $N \in \text{hom}_{\lambda}(V,W), M \in \text{hom}_{\lambda}(W,X), N' \in \text{hom}_{\lambda}(V',W'), M' \in \text{hom}_{\lambda}(W',X')$
+as well as every witness $\phi \in \text{wit}(V, W, V', W', f, g, N, N')$ and $\psi \in \text{wit}(W, X, W', X', g, h, M, M')$ then there is a witness
+$\psi \star \phi \in \text{wit}(V, X, V', X', f, h, M \circ N, M' \circ N')$.
 
 
 
