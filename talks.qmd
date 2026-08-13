@@ -236,5 +236,24 @@ A double category $\mathbb{C}$ consists of the following data:
 
 6. For every $V, V', V'' in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \frown f' \in \text{hom}_{\tau}(V,V'')$;
 
-7.
+7. For every $V, W, V', W' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ and also every $N \in \text{hom}_{\lambda}(V,W), N' \in \text{hom}_{\lambda}(V',W')$, there is a set
+$\text{wit}(V, W, V', W', f, g, N, N')$ with members $\phi$, written
+
+::: {.imagify}
+[]: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
+\begin{tikzcd}
+	V && W \\
+	& {\Downarrow \phi} \\
+	V' && W'
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-1]
+	\arrow["g", from=1-3, to=3-3]
+	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
+called the 2-cells.
+
+
+
 </i>
