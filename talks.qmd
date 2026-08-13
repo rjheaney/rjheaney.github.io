@@ -272,7 +272,7 @@ and also every $N : V \not\rightarrow W, N' : V' \not\rightarrow W', N'' : V'' \
 as well as every $\phi \in \text{wit}(V, W, V', W', f, g, N, N'), \psi \in \text{wit}(V', W', V'', W'', f', g', N', N'')$ there is a
 there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', N, N'')$. This situation is displayed below:
 
-
+<!---
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -290,6 +290,7 @@ there is a $\phi \smile \psi \in \text{wit}(V, W, V'', W'', f \frown f', g \frow
 	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
 \end{tikzcd}
 :::
+-->
 
 $$\leadsto$$
 
@@ -306,6 +307,17 @@ $$\leadsto$$
 	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
+
+10. For every $V, W, X \in \mathcal{O}$ and every $N : V \not\rightarrow W, M : W \not\rightarrow X$
+there is a $M \circ N : V \not\rightarrow X$.
+
+11. For every $W, X \in \mathcal{O}$ and $M : W \not\rightarrow X$ there is
+a witness $\ell_M \in \text{wit}(W, X, W, X, 1_W, 1_X, id_X \circ M, M)$
+and a witness $r_M \in \text{wit}(W, X, W, X, 1_W, 1_X, M \circ id_W, M)$.
+
+
+
+
 
 
 
