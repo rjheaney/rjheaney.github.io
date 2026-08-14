@@ -15,3 +15,4 @@ imagify:
     \usepackage{newpxmath}
     \usepackage{amssymb}
     \usepackage{quiver}
+    \usepackage{mathbbol}

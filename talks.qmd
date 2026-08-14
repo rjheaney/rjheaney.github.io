@@ -4,6 +4,17 @@ subtitle: Definitions
 date: 08-12-2026
 ---
 
+:::{.hidden}
+$$
+\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
+$$
+:::
+
+
+::: {.imagify}
+$$\fcmp$$
+:::
+
 <b>Definition 1.1</b> (Category) <i>
 
 A Category $C$ consists of the following data:
