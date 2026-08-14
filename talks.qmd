@@ -324,25 +324,37 @@ as well as every witness $\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ and $\
 $\psi \star \phi \in \text{wit}(V, X, V', X', f, h, N \circ M, N' \circ M')$.
 
 12. For every $V, W \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V,W)$ there is
-a witness $\ell_M \in \text{wit}(V, W, V, W, 1_V, 1_W, id_W \circ M, M)$. This witness comes equipped with another witness $k_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, id_W \circ M)$
+a witness $\ell_M \in \text{wit}(V, W, V, W, 1_V, 1_W, id_W \circ M, M)$. The witness is natural in $M$ in the sense that: for every $M' \in \text{hom}_{\lambda}(V,W)$ and every
+$\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')$ we have
+
+$$\ell_M \smile \phi = (\upsilon_{id_W} \star \phi) \smile \ell_{M'}.$$
+
+Each $\ell_M$ also comes equipped with a friend $k_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, id_W \circ M)$
 such that $k_M \smile \ell_M = \upsilon_M$ and $\ell_M \smile k_M = \upsilon_{id_W \circ M}$;
 
-<!---
-1. What does it mean for the $\ell_M, r_M$ and $a_{P, N, M}$ to be natural?
-
-2. What does it mean for a witness to be an isomorphism? *
-
--->
-
 13. For every $V, W \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V,W)$ there is
-a witness $r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)$. This witness comes equipped with another witness $q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)$
+a witness $r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)$. The witness is natural in $M$ in the sense that: for every $M' \in \text{hom}_{\lambda}(V,W)$ and every
+$\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')$ we have
+
+$$r_M \smile \phi = (\phi \star \upsilon_{id_V}) \smile r_{M'}$$
+
+Each $\r_M$ comes equipped with a friend $q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)$
 such that $q_M \smile r_M = \upsilon_M$ and $r_M \smile q_M = \upsilon_{M \circ id_V}$;
 
 14. For every $V, W, X, Y \in \mathcal{O}$ and every $P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)$
-there is a witness $a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))$. This witness comes equipped with another witness
+there is a witness $a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))$. This witness is natural in $P, N$ and $M$ simultaneously
+meaning that: for every $P' \in \text{hom}_{\lambda}(X, Y), N' \in \text{hom}_{\lambda}(W, X), M' \in \text{hom}_{\lambda}(V, W)$ and every
+$\psi \in \text{wit}(X, Y, X, Y, 1_X, 1_Y, P, P'), \chi \in \text{wit}(W, X, W, X, 1_W, 1_X, N, N'), \phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')$ we have
+
+$$((\psi \star \upsilon_{id_N}) \star \upsilon_{id_M})\smile a_{P', N, M} = a_{P, N, M} \smile (\psi \star (\upsilon_{id_N} \star \upsilon_{id_M})),$$
+
+$$((\upsilon_{id_P} \star \chi) \star \upsilon_{id_M}) \smile a_{P, N', M} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\chi \star \upsilon_{id_M})),$$
+
+$$((\upsilon_{id_P} \star \upsilon_{id_N}) \star \phi) \smile a_{P, N, M'} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\upsilon_{id_N} \star \phi)) $$
+
+Each $a_{P, N, M}$ comes equipped with a friend
 $b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)$ such that $a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}$ and
 $b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}$.
-
 
 This data is required to satisfy the following:
 
@@ -362,7 +374,7 @@ $$(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N
 
 For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)$ we have
 
-$$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.$$
+$$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N;$$
 
 
 </i>
