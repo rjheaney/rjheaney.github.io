@@ -16,3 +16,4 @@ imagify:
     \usepackage{amssymb}
     \usepackage{quiver}
     \usepackage{mathbbol}
+    \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}

@@ -3,11 +3,6 @@ title: Double Categories
 subtitle: Definitions
 date: 08-12-2026
 ---
-<!---
-$$
-\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
-$$
--->
 
 <b>Definition 1.1</b> (Category) <i>
 
