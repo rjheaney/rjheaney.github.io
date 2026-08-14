@@ -15,5 +15,3 @@ imagify:
     \usepackage{newpxmath}
     \usepackage{amssymb}
     \usepackage{quiver}
-    \usepackage{mathbbol}
-    \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}

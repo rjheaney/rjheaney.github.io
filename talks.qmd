@@ -236,7 +236,7 @@ A double category $\mathbb{C}$ consists of the following data:
 
 5. For every $V \in \mathcal{O}$ a distinguished loose arrow $id_V \in \text{hom}_{\lambda}(V,V)$;
 
-6. For every $V, V', V'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \fcmp f' \in \text{hom}_{\tau}(V,V'')$;
+6. For every $V, V', V'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V')$ and also every $f' \in \text{hom}_{\tau}(V',V'')$, there is a $f \frown f' \in \text{hom}_{\tau}(V,V'')$;
 
 7. For every $V, W, V', W' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ and also every $M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')$, there is a set
 $\text{wit}(V, W, V', W', f, g, M, M')$ called witnesses (generically lower greek)
