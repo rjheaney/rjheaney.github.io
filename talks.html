@@ -209,6 +209,11 @@ window.Quarto = {
 </header>
 
 
+<!---
+$$
+\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
+$$
+-->
 <p><b>Definition 1.1</b> (Category) <i></i></p><i>
 <p>A Category <span class="math inline">\(C\)</span> consists of the following data:</p>
 <ol type="1">
@@ -370,7 +375,7 @@ window.Quarto = {
 <li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\lambda}(V,W)\)</span> called loose arrows (generically upper roman from middle of the alphabet);</p></li>
 <li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished tight arrow <span class="math inline">\(1_V \in \text{hom}_{\tau}(V,V)\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished loose arrow <span class="math inline">\(id_V \in \text{hom}_{\lambda}(V,V)\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(V, V', V'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> and also every <span class="math inline">\(f' \in \text{hom}_{\tau}(V',V'')\)</span>, there is a <span class="math inline">\(f \frown f' \in \text{hom}_{\tau}(V,V'')\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V, V', V'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> and also every <span class="math inline">\(f' \in \text{hom}_{\tau}(V',V'')\)</span>, there is a <span class="math inline">\(f \fcmp f' \in \text{hom}_{\tau}(V,V'')\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')\)</span>, there is a set <span class="math inline">\(\text{wit}(V, W, V', W', f, g, M, M')\)</span> called witnesses (generically lower greek)</p></li>
 </ol>
 <!---
@@ -471,8 +476,7 @@ $$\leadsto$$
 M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 <p><span class="math display">\[(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};\]</span></p>
 <p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
-<p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N;\]</span></p>
-</i><p><i></i></p>
+</i><p><i><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.\]</span> </i></p>
 
 
 
