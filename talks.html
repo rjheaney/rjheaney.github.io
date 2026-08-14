@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2b6a17fde00b5ccb222bcc6fbf188e31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d63a2c9c8df14b07662b36303925c8cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -198,7 +198,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 13, 2026</p>
+      <p class="date-modified">August 14, 2026</p>
     </div>
   </div>
     
@@ -446,18 +446,22 @@ $$\leadsto$$
 <ol start="10" type="1">
 <li><p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), N \in \text{hom}_{\lambda}(W,X)\)</span> there is a <span class="math inline">\(N \circ M \in \text{hom}_{\lambda}(V,X)\)</span>;</p></li>
 <li><p>For every <span class="math inline">\(V, W, X, V', W', X' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W'), h \in \text{hom}_{\tau}(X,X')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), N \in \text{hom}_{\lambda}(W,X), M' \in \text{hom}_{\lambda}(V',W'), N' \in \text{hom}_{\lambda}(W',X')\)</span> as well as every witness <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M')\)</span> and <span class="math inline">\(\psi \in \text{wit}(W, X, W', X', g, h, N, N')\)</span> then there is a witness <span class="math inline">\(\psi \star \phi \in \text{wit}(V, X, V', X', f, h, N \circ M, N' \circ M')\)</span>.</p></li>
-<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(\ell_M \in \text{wit}(V, W, V, W, 1_V, 1_W, id_W \circ M, M)\)</span>. This witness comes equipped with another witness <span class="math inline">\(k_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, id_W \circ M)\)</span> such that <span class="math inline">\(k_M \smile \ell_M = \upsilon_M\)</span> and <span class="math inline">\(\ell_M \smile k_M = \upsilon_{id_W \circ M}\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(\ell_M \in \text{wit}(V, W, V, W, 1_V, 1_W, id_W \circ M, M)\)</span>. The witness is natural in <span class="math inline">\(M\)</span> in the sense that: for every <span class="math inline">\(M' \in \text{hom}_{\lambda}(V,W)\)</span> and every <span class="math inline">\(\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</p></li>
 </ol>
-<!---
-1. What does it mean for the $\ell_M, r_M$ and $a_{P, N, M}$ to be natural?
-
-2. What does it mean for a witness to be an isomorphism? *
-
--->
+<p><span class="math display">\[\ell_M \smile \phi = (\upsilon_{id_W} \star \phi) \smile \ell_{M'}.\]</span></p>
+<p>Each <span class="math inline">\(\ell_M\)</span> also comes equipped with a friend <span class="math inline">\(k_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, id_W \circ M)\)</span> such that <span class="math inline">\(k_M \smile \ell_M = \upsilon_M\)</span> and <span class="math inline">\(\ell_M \smile k_M = \upsilon_{id_W \circ M}\)</span>;</p>
 <ol start="13" type="1">
-<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. This witness comes equipped with another witness <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile r_M = \upsilon_M\)</span> and <span class="math inline">\(r_M \smile q_M = \upsilon_{M \circ id_V}\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness comes equipped with another witness <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span> such that <span class="math inline">\(a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}\)</span> and <span class="math inline">\(b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}\)</span>.</p></li>
+<li>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. The witness is natural in <span class="math inline">\(M\)</span> in the sense that: for every <span class="math inline">\(M' \in \text{hom}_{\lambda}(V,W)\)</span> and every <span class="math inline">\(\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</li>
 </ol>
+<p><span class="math display">\[r_M \smile \phi = (\phi \star \upsilon_{id_V}) \smile r_{M'}\]</span></p>
+<p>Each <span class="math inline">\(\r_M\)</span> comes equipped with a friend <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile r_M = \upsilon_M\)</span> and <span class="math inline">\(r_M \smile q_M = \upsilon_{M \circ id_V}\)</span>;</p>
+<ol start="14" type="1">
+<li>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness is natural in <span class="math inline">\(P, N\)</span> and <span class="math inline">\(M\)</span> simultaneously meaning that: for every <span class="math inline">\(P' \in \text{hom}_{\lambda}(X, Y), N' \in \text{hom}_{\lambda}(W, X), M' \in \text{hom}_{\lambda}(V, W)\)</span> and every <span class="math inline">\(\psi \in \text{wit}(X, Y, X, Y, 1_X, 1_Y, P, P'), \chi \in \text{wit}(W, X, W, X, 1_W, 1_X, N, N'), \phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</li>
+</ol>
+<p><span class="math display">\[((\psi \star \upsilon_{id_N}) \star \upsilon_{id_M})\smile a_{P', N, M} = a_{P, N, M} \smile (\psi \star (\upsilon_{id_N} \star \upsilon_{id_M})),\]</span></p>
+<p><span class="math display">\[((\upsilon_{id_P} \star \chi) \star \upsilon_{id_M}) \smile a_{P, N', M} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\chi \star \upsilon_{id_M})),\]</span></p>
+<p><span class="math display">\[((\upsilon_{id_P} \star \upsilon_{id_N}) \star \phi) \smile a_{P, N, M'} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\upsilon_{id_N} \star \phi)) \]</span></p>
+<p>Each <span class="math inline">\(a_{P, N, M}\)</span> comes equipped with a friend <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span> such that <span class="math inline">\(a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}\)</span> and <span class="math inline">\(b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}\)</span>.</p>
 <p>This data is required to satisfy the following:</p>
 <p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> we have</p>
 <p><span class="math display">\[1_V \frown f = f = f \frown 1_{V'};\]</span></p>
@@ -467,7 +471,7 @@ $$\leadsto$$
 M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 <p><span class="math display">\[(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};\]</span></p>
 <p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
-<p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.\]</span></p>
+<p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N;\]</span></p>
 </i><p><i></i></p>
 
 
