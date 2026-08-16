@@ -53,7 +53,7 @@ $f: V \rightarrow V'$;
 arrows we call 2-[cells]{.underline}
 
 ::: {.imagify}
-[]: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
+[]: %
 \begin{tikzcd}
 	V && W \\
 	& {\Downarrow \phi} \\
