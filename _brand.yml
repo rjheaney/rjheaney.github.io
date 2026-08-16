@@ -1,0 +1,8 @@
+typography:
+  fonts:
+    - family: Gentium Book Plus
+      source: google
+  base:
+    family: Gentium Book Plus
+  headings:
+    family: Gentium Book Plus
