@@ -69,7 +69,7 @@ arrows we call 2-[cells]{.underline}
 and [target]{.underline} respectively;
 
 
-4. [composition]{.underline} and [identity]{.underline} functors $\circ : \mathbb{C}_1 \times_{\mathbb{C}_0} \mathbb{C}_1$ and $\text{id} : \mathbb{C}_0 \rightarrow \mathbb{C}_1$;
+4. [composition]{.underline} and [identity]{.underline} functors $\circ : \mathbb{C}_1 \times_{\mathbb{C}_0} \mathbb{C}_1 \rightarrow \mathbb{C}_1$ and $\text{id} : \mathbb{C}_0 \rightarrow \mathbb{C}_1$;
 
 5. natural families of isomorphisms in $\mathbb{C}_1$:
 
