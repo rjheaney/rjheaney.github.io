@@ -4,16 +4,18 @@ subtitle: Definitions
 date: 08-12-2026
 ---
 
+
 :::{.hidden}
 $$
 \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
 $$
 :::
 
-
+<!---
 ::: {.imagify}
 $$\fcmp$$
 :::
+-->
 
 <b>Definition 1.1</b> (Category) <i>
 
@@ -373,8 +375,17 @@ For every $V, V' \in \mathcal{O}$ and every $f \in \text{hom}_{\tau}(V,V')$ we h
 
 $$1_V \frown f = f = f \frown 1_{V'};$$
 
-For every $V, W, V', W' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')$ and also every $f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')$ as well as every witness
-$\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ we have
+For every $V, W, V', W', V'', W'', V''', W''' \in mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V', W'),
+M'' \in \text{hom}_{\lambda}(V'', W''), M''' \in \text{hom}_{\lambda}(V''', W''')$ and also every $f \in \text{hom}_{\tau}(V, V'), g \in \text{hom}_{\tau}(W,W'),
+f' \in \text{hom}_{\tau}(V', V''), g' \in \text{hom}_{\tau}(W',W''), f'' \in \text{hom}_{\tau}(V'', V'''),  g'' \in \text{hom}_{\tau}(W'',W''')$ as well as
+$\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'', W'', f', g', M', M''), \phi'' \in \text{wit}(V'', W'', V''', W''', f'', g'', M'', M''')$ we have
+
+$$ f'' \frown (f' \frown f) = (f'' \frown f') \frown f,$$
+
+$$ \phi'' \frown (\phi' \frown \phi) = (\phi'' \frown \phi') \frown \phi;$$
+
+For every $V, W, V', W' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')$ and also every $f \in \text{hom}_{\tau}(V,V'),
+g \in \text{hom}_{\tau}(W,W')$ as well as every witness $\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ we have
 
 $$\upsilon_M \smile \phi = \phi = \phi \smile \upsilon_{M'};$$
 
