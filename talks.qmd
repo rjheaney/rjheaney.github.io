@@ -385,7 +385,7 @@ $\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'
 
 $$ f'' \frown (f' \frown f) = (f'' \frown f') \frown f,$$
 
-$$ \phi'' \frown (\phi' \frown \phi) = (\phi'' \frown \phi') \frown \phi;$$
+$$ \phi'' \smile (\phi' \smile \phi) = (\phi'' \smile \phi') \smile \phi;$$
 
 For every $V, W, V', W' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')$ and also every $f \in \text{hom}_{\tau}(V,V'),
 g \in \text{hom}_{\tau}(W,W')$ as well as every witness $\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ we have
