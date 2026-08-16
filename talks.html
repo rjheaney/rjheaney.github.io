@@ -209,7 +209,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 15, 2026</p>
+      <p class="date-modified">August 16, 2026</p>
     </div>
   </div>
     
@@ -225,9 +225,11 @@ window.Quarto = {
 \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
 \]</span></p>
 </div>
-<div class="imagify">
-<p><em>&lt;LaTeX content not imagified&gt;</em> \fcmp <em>&lt;end of LaTeX content&gt;</em></p>
-</div>
+<!---
+::: {.imagify}
+$$\fcmp$$
+:::
+-->
 <section id="definitions" class="level1">
 <h1>Definitions</h1>
 <div id="def-category" class="theorem definition">
@@ -488,7 +490,13 @@ $$\leadsto$$
 <p>This data is required to satisfy the following:</p>
 <p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> we have</p>
 <p><span class="math display">\[1_V \frown f = f = f \frown 1_{V'};\]</span></p>
-<p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')\)</span> as well as every witness <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M')\)</span> we have</p>
+<p>For every <span class="math inline">\(V, W, V', W', V'', W'', V''', W''' \in mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V', W'),
+M'' \in \text{hom}_{\lambda}(V'', W''), M''' \in \text{hom}_{\lambda}(V''', W''')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(V, V'), g \in \text{hom}_{\tau}(W,W'),
+f' \in \text{hom}_{\tau}(V', V''), g' \in \text{hom}_{\tau}(W',W''), f'' \in \text{hom}_{\tau}(V'', V'''),  g'' \in \text{hom}_{\tau}(W'',W''')\)</span> as well as <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'', W'', f', g', M', M''), \phi'' \in \text{wit}(V'', W'', V''', W''', f'', g'', M'', M''')\)</span> we have</p>
+<p><span class="math display">\[ f'' \frown (f' \frown f) = (f'' \frown f') \frown f,\]</span></p>
+<p><span class="math display">\[ \phi'' \frown (\phi' \frown \phi) = (\phi'' \frown \phi') \frown \phi;\]</span></p>
+<p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'),
+g \in \text{hom}_{\tau}(W,W')\)</span> as well as every witness <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M')\)</span> we have</p>
 <p><span class="math display">\[\upsilon_M \smile \phi = \phi = \phi \smile \upsilon_{M'};\]</span></p>
 <p>For every <span class="math inline">\(V, W, X, Y, Z \in \mathcal{O}\)</span> and every <span class="math inline">\(Q \in \text{hom}_{\lambda}(Y,Z), P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W, X),
 M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
