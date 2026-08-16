@@ -5,8 +5,8 @@ citation-location: margin
 author:
   - name: Jack Heaney
     affiliation: University of Strathclyde, Glasgow, UK
-citation: true
-google-scholar: true
+citation: false
+google-scholar: false
 filters:
   - imagify
 imagify:

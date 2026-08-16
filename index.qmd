@@ -1,7 +1,16 @@
 ---
-title: "jackswebsite"
----
+title: "Jack Heaney"
 
-This is a Quarto website.
+About me:
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I am a PhD candidate at the University of Strathclyde, under the supervision of
+[Vikraman Choudry](Vikraman.org). Before that I was a PhD candidate at the University
+of Edinburgh where I was supervised by [Francesco Tudisco](ftudisco.gitlab.io).
+
+My research interests focus on low dimensional categories and their
+applications to linear logic: this includes 2-categories, double categories and
+multicategories.
+
+I obtained my MSc from the University of Glasgow.
+
+Please get in contact with me at r.jack.heaney [at] gmail.com
