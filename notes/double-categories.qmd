@@ -24,7 +24,7 @@ $$\fcmp$$
 
 A Category $C$ consists of the following data:
 
-1. Two classes $C_0$ and $C_1$;
+1. First class $C_0$ and another set $C_1$;
 
 2. Functions $s, t: C_1 \rightarrow C_0$ (the source and target functions);
 

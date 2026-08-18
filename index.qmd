@@ -1,17 +1,30 @@
 ---
-title: "Jack Heaney"
+title: "Jack Heaney (Xe/They)"
+about:
+  template: jolla
+  image: profile.png
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+    - icon: email
+      text: email
+      href: mailto:r.jack.heaney@gmail.com
 ---
-
-About me:
 
 I am a PhD candidate at the University of Strathclyde, under the supervision of
 [Vikraman Choudry](Vikraman.org). Before that I was a PhD candidate at the University
 of Edinburgh where I was supervised by [Francesco Tudisco](ftudisco.gitlab.io).
 
+
+## Education
+
+University of Glasgow 2023 - 2025
+
+University of Strathclyde Present
+
+## Research Interests
+
 My research interests focus on low dimensional categories and their
 applications to linear logic: this includes 2-categories, double categories and
 multicategories.
-
-I obtained my MSc from the University of Glasgow.
-
-Please get in contact with me at r.jack.heaney@removethis.gmail.andthis.com
