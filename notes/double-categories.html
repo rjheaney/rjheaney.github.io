@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jack Heaney">
+<meta name="dcterms.date" content="2026-08-12">
+
+<title>Double Categories – jackswebsite</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3ef0a07fb3336d1ceda02d5817e45785.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-26327eb01cd8c84a8d726705e4c2b873.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3ef0a07fb3336d1ceda02d5817e45785.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script>MathJax = { output: { font: 'mathjax-pagella' } };</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">jackswebsite</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../talks.qmd"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Double Categories</h1>
+<p class="subtitle lead">Definitions</p>
+</div>
+
+
+<div class="quarto-title-meta-author column-page-left">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jack Heaney </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            University of Strathclyde, Glasgow, UK
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta column-page-left">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 12, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">August 18, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
+\]</span></p>
+</div>
+<!---
+::: {.imagify}
+$$\fcmp$$
+:::
+-->
+<section id="definitions" class="level1">
+<h1>Definitions</h1>
+<div id="def-category" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Category)</strong></span> A Category <span class="math inline">\(C\)</span> consists of the following data:</p>
+<ol type="1">
+<li><p>First class <span class="math inline">\(C_0\)</span> and another set <span class="math inline">\(C_1\)</span>;</p></li>
+<li><p>Functions <span class="math inline">\(s, t: C_1 \rightarrow C_0\)</span> (the source and target functions);</p></li>
+<li><p>A function <span class="math inline">\(\text{id} : C_0 \rightarrow C_1\)</span> (the function which picks out an identity) such that <span class="math inline">\(\text{id}\)</span> equalises <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(f, g \in C_1\)</span> such that <span class="math inline">\(t(f) = s(g)\)</span> there is a unique element (there composition) <span class="math inline">\(g \circ f \in C_1\)</span> where <span class="math inline">\(s(g\circ f) = s(f)\)</span> and <span class="math inline">\(t(g \circ f) = t(g)\)</span>.</p></li>
+</ol>
+<p>This data is required to satisfy:</p>
+<p>For every <span class="math inline">\(f \in C_1\)</span>, we have that <span class="math inline">\(f \circ \text{id}(s(f)) = f\)</span> and <span class="math inline">\(\text{id}(t(f)) \circ f = f\)</span>;</p>
+<p>For every <span class="math inline">\(f, g, h \in C_1\)</span>, we have that <span class="math inline">\((h\circ g) \circ f = h \circ (g \circ f)\)</span>.</p>
+</div>
+<div id="def-double-category" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Double Category)</strong></span> A <u>Double Category</u> <span class="math inline">\(\mathbb{C}\)</span> consists of the following data:</p>
+<ol type="1">
+<li><p>a Category <span class="math inline">\(\ \mathbb{C}_0 \ \)</span>, whose objects we call 0-<u>cells</u>, and whose arrows we call <u>tight</u> 1-<u>cells</u> <span class="math inline">\(f: V \rightarrow V'\)</span>;</p></li>
+<li><p>a Category <span class="math inline">\(\ \mathbb{C}_1 \ \)</span>, whose objects we call <u>loose</u> 1-<u>cells</u> <span class="math inline">\(M: V \not\rightarrow W\)</span>, and whose arrows we call 2-<u>cells</u></p></li>
+</ol>
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27173.837738pt%27%20height%3D%27143.361803pt%27%20viewBox%3D%27-72.000004%20-72.000007%20115.891826%2095.574535%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3Antxsym%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAK0AAoAAAAAAyQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEsAAABgZhdkWWNtYXAAAAFAAAAAKgAAADQADODDZ2x5ZgAAAWwAAAAYAAAAGEwBgixoZWFkAAABhAAAACcAAAA2YaFCyGhoZWEAAAGsAAAAHgAAACQEQQG%2BaG10eAAAAcwAAAAIAAAACANYAEpsb2NhAAAB1AAAAAYAAAAGAAwAAG1heHAAAAHcAAAAFwAAACAABAAFbmFtZQAAAfQAAACwAAABIC6H8Axwb3N0AAACpAAAABAAAAAgAAMAAXjaY2BmXMM4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjQAABJHZKcVk6A9uDggcFzEX%2FnjEwMBcxSgGFGREq%2Fv9nYAAAVRARLQB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BQ8K%2Fv%2BHkPITwfIMAGmyB6wAAAABAEoAAACDAcsAAwAAMyMRM4M5OQHLAHjaY2BkYGAAYsFFi9Lj%2BW2%2BMjCzMGADTN2Mp4EUBwMTiAcAnyoEyAB42mNgZGBgLvr3jIGBqZvBCwibGYAiKIAJAGqSBAIAAAKLAAAAzQBKAAAAAAAMAAB42mNgZGBgYGJgYQDRDFASCQAAAQEACgB42lWLMQuDMBCFn1SFpp07lA75BUGJdO7m0tldMYiDEYyILv3tfZoM7R05vrz7DoDABxH2ipAcc68YKX%2BeE1zYnlP2LbDAHQ%2BcEMVnJgLPwDGueAVOaL8Dp8ybwAIF7Ly6bfCzMpPrRytzlfmgNNZM9Wxa2WyyXXq3dIPUqlAaM1Y4bBhgf7iCwUTuMTKXyKGQ%2FRklDXtYNVODllbDjSQtvHOcHT0JzduCT38BKtcrjXjaY2BmQAaMDGgAAACOAAU%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3ANewPXMI_gnu%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAANEAAoAAAAAA8gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEYAAABghXd0g2NtYXAAAAE8AAAAJwAAADAAEq6IZ2x5ZgAAAWQAAACIAAAAiCcXgP5oZWFkAAAB7AAAACkAAAA2YZRCp2hoZWEAAAIYAAAAIAAAACQF0AGyaG10eAAAAjgAAAAIAAAACAUkABxsb2NhAAACQAAAAAYAAAAGAEQAAG1heHAAAAJIAAAAGAAAACAABgAnbmFtZQAAAmAAAADRAAABVjKDuXJwb3N0AAADNAAAABAAAAAgAAMAAXjaY2BmmsQ4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjwA5SisvSGdj%2BAwGz6b8bDAzMpowaQGFGhIr%2F%2FxkYAGYeEeYAAHjaY2BgYGJgYGABYhEGZgYuMM3DAAIyDBDAyMB4XRKMgWwAGocCSAAAAwAc%2FtgCfQLSABgAHwAlAAABDgEHBhcGBycTLgEnNjc2Mzc2NxcGBzYWBzQmJwM%2BAQMOARUGFwJ9A7aPDQIYHQgqZpIDBF9hhSEVFgYfFmKVUVVVRnR7xnV9A64BJJiTCX59FAkJAQ8EWm%2BMT0zYDwcGdHQCVnhSYAL%2BOgebASQGknWuDAAAeNpjYGRgYABi3sVBB%2BP5bb4yMLMwYIJ%2FN5hqmS4BGRwMTCA%2BALwoBp8AAAB42mNgZGBgNv13g4GBaRWDDIMuUy0DUAQFMAEAXdMDhwJ6AAACqgAcAAAAAABEAAB42mNgZGBgYGJQY2BmAAFGBjQAAASBAC542nWPwWrCQBRFT2gUGum2iKuB7oOS%2FIN1obgSd5KQIWbhCEmMdeMn%2BBX90N7oIO2iD%2BZx7p3LhQdEXAnoJ%2BDtvvsJGUk9eCAeex6KPzxHTIh5IQhf5Uz49BzyTu55IP7yPBTfPEekfK%2Fseb1dZu1%2BV7rTQyx63Ni6qY7OzOLpL3duna2z1hYmv5iiq5quPJgkTuOEFZYza7YsyWjZs6PEcfrzs3i6G7k1DRVHacNMd0z%2Fyc7lunu%2Bb7YUyudctAs6NTTaJQfpRC2pXvIDUe83sQAAAHjaY2BmQAaMDGgAAACOAAU%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Azplsy%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAMwAAoAAAAAA5QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAE0AAABgqq5h52NtYXAAAAFEAAAAMwAAADyenmPTZ2x5ZgAAAXgAAACAAAAAgIyMBwFoZWFkAAAB%2BAAAACkAAAA2YcRDJ2hoZWEAAAIkAAAAIAAAACQF%2BP7PaG10eAAAAkQAAAAMAAAADAZzAE9sb2NhAAACUAAAAAgAAAAIAB4AQG1heHAAAAJYAAAAFwAAACAABQASbmFtZQAAAnAAAACyAAABGlGqS45wb3N0AAADJAAAAAwAAAAgAAMAAHjaY2BmUmOcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxIIAAA4MCjJ1SXJbOwKZ4%2BYEB87I%2FQEXMy5h%2FAYUZEar%2F%2F2dgAAAb8RCUAAAAeNpjYGBgYmBgYAZiESDJCKZZGDSANBuQZmRgUrz8wOD%2FfwYGCH1PT%2F4SWBUQAAC%2BLQptAAABABn%2FMAI4AvoADQAAJQkBNxcRMxEXNxEzETcCOP7x%2FvAgZTxPTzxlNP78AQQeUgL6%2FNRDQQMu%2FQZSAAABADYAMAFBAfsAEAAAAQ4BBwMOAQcuATQ3Ez4CFgFBAhILsAYZDAkIBHcIIDktAbsVKhL%2B6QoYAQEOEAsBWRotASMAeNpjYGRgYADiyqcP0%2BP5bb4yMLMwYIL%2FBkxrmX4BGRwMTCA%2BAN8ABzMAAAB42mNgZGBgXvaHjYGBaS2DJIMEkwUDUAQFMAMATKsCywKtAAACUAAZAXYANgAAAAAAHgBAeNpjYGRgYGBmEGQA0QxQEgkAAAJhABgAeNpNi8EKgzAQREdqhNpze%2BgpXyBKPPdqv8BjQTFYQaMYEfXQb%2B9oc%2BiG3byZnQUQ4gMPe3kQx9zLJwvHAhemfhxQXR2HuPOd4PlnOiFSxz754VjghqfjgP7L8Z5%2BD4td7Ta0ds31aJveyCSKD51po8di0pUsV1nNjZ3rTqoojRQGLLBY2Ru5PTiHxkhq0MNAIkGE%2BG%2BfcW%2BOTIGJf8VMSV%2BSZl5ZzhodteJlylZfzSspsQAAeNpjYGbACwAAfQAE%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3ANewPXMI%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAWwAAoAAAAABqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEcAAABghdV04WNtYXAAAAE8AAAANwAAAEgAGfowZ2x5ZgAAAXQAAALeAAADVK20Dc1oZWFkAAAEVAAAACsAAAA2Yl1C0WhoZWEAAASAAAAAHwAAACQG4gIiaG10eAAABKAAAAAYAAAAGA8q%2F7dsb2NhAAAEuAAAAA4AAAAOAuQBym1heHAAAATIAAAAGAAAACAACgBKbmFtZQAABOAAAADBAAABMvoXc51wb3N0AAAFpAAAAAwAAAAgAAMAAHjaY2BmamOcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxYAcpxWXpDGz%2FgYB55r97DAzMMxmVgMKMCBX%2F%2FzMwAAB0phKiAHjaJYsxEgAQDMBSNTmjp3iAlZWne5C2cpfLFCAB2WwoJVpxOh9F7ghBrNNc%2BCd3m8f%2FB5yrBz4AeNotkstrE1EUxue7d5Jp0phMM5lHEidJZ9qZmLGxmSRzO1aTRluoYlHxga3iAxTB56I7QZQuBDeCIIIu3dSdbvQfEDeCK1e6UqQ7Hyuhokm8Q%2BUuzj2HA9%2FvfOcIGH4f%2FqBvyFuBCULMsaQuOmCKRCV7FHFVK0PiRRbVgnbg7ALTfFZEFzxkEOd98TLok%2Fn7C7TilDDZ%2FrVbf3JHQsOlbDWkOyZGH1GMu0VaO%2Bk9%2FdvJ8yA6U7QGhA6l1KRUVklueXDqCjk8mCzIWiyqFanpkkQqoSiU8LT%2FEi%2BvtXg3oWb%2F82RFpAKEpeEmFTl3RRAgpSHBpnXsQpuDqZIV1xUEbivKmz6jYlbTlcFtf4Xmx%2FOdu3OeZtBF1LKYLXR6jQZ5TqCZ%2FXvkdjFHIkWTZIz%2BV2yaaVOMcq53gOt9I%2B8FL9Ljg2dgOy73SLLd%2F8LNSDmuF8GaRe7illf0m2olX1SklqKubphai7hELWfDme5ep0ErG0H22eMkvGqsccnnFOL2%2Fu%2FrhZVDeDgIQ3aEZL0S3eIhUwMZH1b7r%2FHR9MgW03BlsIF18lOY4UwZOK6TQdMPutA5FWeMXhq25XZJCc2Ab7ELu0v5MnlPwAJfw7qZLEzPG6o8YcmSmJSuKrWiLBt2%2BcB4Tk6l0iljLDSzDSN5LOb4mRFNVr1YTZWrLvlyXHRB11ZpjEj58ZV3F7vVjjPpJex6bGwbTs%2F8eRrqaeOo15LVslhJjowIdPiJ8w7wQ5gWOsJixEw0DsjvSOdXpKl8i3W4ESdz2hxRsnhgAfP1EnQ%2FYLTFDzAduV%2BCHygtm%2F81vQMMEk1LBM4txXUQv9OjDy6fuAC0i70ZjRRq5dl9OLm437IUbbS6U31VsQ87U1kfWFo7pS6HC8BZ1sOruggjtXAzlyhsK1R9xnpnCObYXF2rZJWMYbjYP3uj10ZaUnJirL%2Ber2%2FfM6pmvNnpMCATN7B88BZwXhD%2BAV9UlcsAAHjaY2BkYGAA4uAcQfl4fpuvDMwsDOjgf9S%2Fp8xvmN4DmRwMTCARALhKB74AeNpjYGRgYJ757x6QPP4%2F6n8Z8xsGoAgKYAMAr0IHCAABmgAAA8f%2F7QLjAE0DxwBJAR3%2FWgIA%2F9oAAAAAAFwAlADeATYBqgAAeNpjYGRgYGBj8GRgZgABRgY0AAAIWABVeNpdjTELglAUhT9JiwwiGhpqefQDxNCxXRoKp2hoMXyUQwoqhkv007vqW%2BrCO3zncO59gMsbi24spr12YzMRN7DDjIXhseQbwy5rtoyw7K65ZG%2FYZs7JsMOKq%2BGx5KVhl5DPSb%2FiyzGpHwMczrqssiJXO883SaRzXSa1TtWtVWmTVc39qQIv9AL5QfMi5sKRhJrHT3LgLK6kIqMgR7HDw%2F%2FrROLyvtdd0KTSu9GKpjSyWYneeYoPZDuUF3wBnHss%2BwAAAHjaY2BmwAsAAH0ABA%3D%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f1%20%7Bfont-family%3Antxsym%3Bfont-size%3A10.451471px%7D%0D%0Atext.f2%20%7Bfont-family%3Azplsy%3Bfont-size%3A5.479452px%7D%0D%0Atext.f3%20%7Bfont-family%3Azplsy%3Bfont-size%3A7.27273px%7D%0D%0Atext.f4%20%7Bfont-family%3Azplsy%3Bfont-size%3A9.96264px%7D%0D%0Atext.f7%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A7.245559px%7D%0D%0Atext.f10%20%7Bfont-family%3ANewPXMI_gnu%3Bfont-size%3A9.92542px%7D%0D%0Atext.f11%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A9.92542px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%20-14.054093%20-25.040665%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-44.056414%20-63.419117%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-3.905335%20-.000001%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f11%27%20x%3D%27-4.099214%27%20y%3D%27-94.424564%27%3E%F0%9D%91%89%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-5.080936%20-.000001%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f11%27%20x%3D%2790.308735%27%20y%3D%27-94.424564%27%3E%F0%9D%91%8A%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.879292%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f4%27%20x%3D%2742.716218%27%20y%3D%27-60.89229%27%3E%E2%87%93%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f10%27%20x%3D%2751.540834%27%20y%3D%27-60.89229%27%3E%F0%9D%9C%99%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-5.481674%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f11%27%20x%3D%27-4.099214%27%20y%3D%27-25.040665%27%3E%F0%9D%91%89%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f3%27%20x%3D%273.910744%27%20y%3D%27-28.657093%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-6.657274%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f11%27%20x%3D%2790.308735%27%20y%3D%27-25.040665%27%3E%F0%9D%91%8A%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f3%27%20x%3D%27100.669872%27%20y%3D%27-28.657093%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%3E%0D%0A%3Cpath%20d%3D%27M-39.16103%2034.06953H36.21101%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2836.50601%2034.06953%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.06798%203.53996C-2.50748%201.41595-1.25844%20.413%200%200C-1.25844-.413-2.50748-1.41595-3.06798-3.53996%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%209.116196%2013.124303%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f7%27%20x%3D%27-13.763184%27%20y%3D%27-25.040665%27%3E%F0%9D%91%80%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2011.871796%206.224973%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27-14.054093%27%20y%3D%27-25.040665%27%3E%EE%81%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%3E%0D%0A%3Cpath%20d%3D%27M-47.971%2027.07806V-26.38501%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-47.971%20-26.68001%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.06798%203.53996C-2.50748%201.41595-1.25844%20.413%200%200C-1.25844-.413-2.50748-1.41595-3.06798-3.53996%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-41.490054%20-26.699977%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f7%27%20x%3D%27-12.599549%27%20y%3D%27-25.040665%27%3E%F0%9D%91%93%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%3E%0D%0A%3Cpath%20d%3D%27M46.79099%2027.07806V-26.38501%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2046.79099%20-26.68001%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.06798%203.53996C-2.50748%201.41595-1.25844%20.413%200%200C-1.25844-.413-2.50748-1.41595-3.06798-3.53996%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2063.537766%20-25.798427%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f7%27%20x%3D%27-13.545005%27%20y%3D%27-25.040665%27%3E%F0%9D%91%94%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%3E%0D%0A%3Cpath%20d%3D%27M-37.57878-35.57455H34.62877%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2834.92377%20-35.57455%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.06798%203.53996C-2.50748%201.41595-1.25844%20.413%200%200C-1.25844-.413-2.50748-1.41595-3.06798-3.53996%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%207.862456%20-70.037737%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f7%27%20x%3D%27-13.763184%27%20y%3D%27-25.040665%27%3E%F0%9D%91%80%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%27-6.46137%27%20y%3D%27-27.680652%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2011.871796%20-63.419117%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27-14.054093%27%20y%3D%27-25.040665%27%3E%EE%81%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}
+    V &amp;&amp; W \\
+    &amp; {\Downarrow \phi} \\
+    V' &amp;&amp; W'
+    \arrow[&quot;M&quot;{inner sep=.8ex}, &quot;\shortmid&quot;{marking}, from=1-1, to=1-3]
+    \arrow[&quot;f&quot;', from=1-1, to=3-1]
+    \arrow[&quot;g&quot;, from=1-3, to=3-3]
+    \arrow[&quot;M'&quot;'{inner sep=.8ex}, &quot;\shortmid&quot;{marking}, from=3-1, to=3-3]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<ol start="3" type="1">
+<li><p>two functors <span class="math inline">\(\text{src}, \text{tgt} : \mathbb{C}_1 \rightarrow \mathbb{C}_0\)</span> called <u>source</u> and <u>target</u> respectively;</p></li>
+<li><p><u>composition</u> and <u>identity</u> functors <span class="math inline">\(\circ : \mathbb{C}_1 \times_{\mathbb{C}_0} \mathbb{C}_1 \rightarrow \mathbb{C}_1\)</span> and <span class="math inline">\(\text{id} : \mathbb{C}_0 \rightarrow \mathbb{C}_1\)</span>;</p></li>
+<li><p>natural families of isomorphisms in <span class="math inline">\(\mathbb{C}_1\)</span>:</p></li>
+</ol>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; Y \\
+    &amp; {\Downarrow a_{P,N,M}} \\
+    V &amp;&amp; Y
+    \arrow["(P\circ N) \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["P \circ (N \circ M)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; W \\
+    &amp; {\Downarrow \ell_M} \\
+    V &amp;&amp; W
+    \arrow["\text{id}_W \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; W \\
+    &amp; {\Downarrow r_M} \\
+    V &amp;&amp; W
+    \arrow["M \circ \text{id}_V"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<p>These data are required to satisfy the following coherence axioms which manifest as equations between composite 2-cells.</p>
+<p>The first of these is the following composite,</p>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; Z \\
+    &amp; {\Downarrow a_{Q, P, N} \star \text{id}_M} \\
+    V &amp;&amp; Z\\
+    &amp; {\Downarrow a_{Q, P \circ N, M} }\\
+    V &amp;&amp; Z \\
+    &amp; {\Downarrow id_Q \star a_{P, N, M} }\\
+    V &amp;&amp; Z
+    \arrow["((Q \circ P)\circ N) \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["(Q \circ (P \circ N)) \circ M"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+    \arrow[equals, nfold, from=3-1, to=5-1]
+    \arrow[equals, nfold, from=3-3, to=5-3]
+    \arrow["Q \circ ((P \circ N) \circ M)"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+    \arrow[equals, nfold, from=5-1, to=7-1]
+    \arrow[equals, nfold, from=5-3, to=7-3]
+    \arrow["Q \circ (P \circ (N \circ M))"'{inner sep=.8ex}, "\shortmid"{marking}, from=7-1, to=7-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<p>is required to be equal to this composite,</p>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; Z \\
+    &amp; {\Downarrow a_{Q \circ P, N, M}} \\
+    V &amp;&amp; Z\\
+    &amp; {\Downarrow a_{Q, P, N \circ M} }\\
+    V &amp;&amp; Z. \\
+    \arrow["((Q \circ P)\circ N) \circ M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["(Q \circ P) \circ (N \circ M)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+    \arrow[equals, nfold, from=3-1, to=5-1]
+    \arrow[equals, nfold, from=3-3, to=5-3]
+    \arrow["Q \circ ((P \circ N) \circ M)"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<p>A further equation is required, which declares that the next composite</p>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; X \\
+    &amp; {\Downarrow a_{M, \text{id}_W, N}} \\
+    V &amp;&amp; X\\
+    &amp; {\Downarrow \text{id}_M \star \ell_N}\\
+    V &amp;&amp; X.
+    \arrow["(M \circ \text{id}_W)\circ N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow[" M \circ (\text{id}_W \circ N)"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+    \arrow[equals, nfold, from=3-1, to=5-1]
+    \arrow[equals, nfold, from=3-3, to=5-3]
+    \arrow["M \circ N"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+<p>is equal to</p>
+<div class="imagify">
+<em>&lt;LaTeX content not imagified&gt;</em>
+
+\begin{tikzcd}
+    V &amp;&amp; X \\
+    &amp; {\Downarrow r_M \star \text{id}_N} \\
+    V &amp;&amp; X.
+    \arrow["(M\circ id_W) \circ N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow[equals, nfold, from=1-1, to=3-1]
+    \arrow[equals, nfold, from=1-3, to=3-3]
+    \arrow["M \circ N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+
+<em>&lt;end of LaTeX content&gt;</em>
+</div>
+</div>
+<p>Several questions come about when staring at the above definition. If arrows are objects in <span class="math inline">\(\mathbb{C}_1\)</span> what gives the right to state that they look like arrows with sources and targets that could just as well be source and targets of arrows in <span class="math inline">\(\mathbb{C}_0\)</span>. The source and target functors are lacking defining equations they should be compatible with the composition and identity functors in the way that is implied from the mantra “double categories are category objects in the category of categories”. In particular, the identity functor must equalise the source and target functors meaning that enrichment is ill-defined or based on evil equality. The more significant problem is that the presentation of squares need to have a specific orientation which produces conflicts in the literature.</p>
+<p>A better definition starts from finding a better definition for categories.</p>
+<div id="def-category-indexed" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3 (Category, indexed version)</strong></span> A category is the data of:</p>
+<ol type="1">
+<li><p>A class <span class="math inline">\(C_0\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A, B \in C_0\)</span> a set <span class="math inline">\(C_1(A,B)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A \in C_0\)</span>, a distinguished element <span class="math inline">\(\text{id}_A \in C_1(A,A)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A, B, C \in C_0\)</span>, and every <span class="math inline">\(f \in C_1(A, B)\)</span>, as well as <span class="math inline">\(g \in C_1(B,C)\)</span> there is a <span class="math inline">\(g \circ f \in C_1(A,C)\)</span>;</p></li>
+</ol>
+<p>satisfying the requirements that</p>
+<p>For every <span class="math inline">\(A, B \in C_0\)</span>, and every <span class="math inline">\(f \in C_1(A, B)\)</span> the following equations hold</p>
+<p><span class="math display">\[f \circ \text{id}_A = f = \text{id}_B \circ f.\]</span></p>
+<p>For every <span class="math inline">\(A, B, C, D \in C_0\)</span>, and every <span class="math inline">\(f \in C_1(A, B)\)</span> and also every <span class="math inline">\(g \in C_1(B,C)\)</span> as well as <span class="math inline">\(h \in C_1(C, D)\)</span>, the following equation holds</p>
+<p><span class="math display">\[(h \circ g) \circ f = h \circ (g \circ f).\]</span></p>
+<p>The sets <span class="math inline">\(C_1(A,B)\)</span> are pairwise disjoint.</p>
+</div>
+<p>It can be shown through a laborious formal argument that the two definitions, the version with source and target and the indexed version are equivalent and thus we can use the capitalised or uncapitalised interchangeably. We would like to have a similar definition for double categories as for the definition of category. The reason to do this is so that there is no confusion in the definition and data can be expressed clearly.</p>
+<div id="def-double-category-indexed" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4 (Double category, indexed version)</strong></span> A double category <span class="math inline">\(\mathbb{C}\)</span> consists of the following data:</p>
+<ol type="1">
+<li><p>A class of objects <span class="math inline">\(\mathcal{O}\)</span> whose members are called the 0-cells of <span class="math inline">\(\mathbb{C}\)</span> (generically upper roman from the end of the alphabet);</p></li>
+<li><p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\tau}(V,V')\)</span>, called tight arrows (generically lower roman from the beginning of the alphabet);</p></li>
+<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> a class <span class="math inline">\(\text{hom}_{\lambda}(V,W)\)</span> called loose arrows (generically upper roman from middle of the alphabet);</p></li>
+<li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished tight arrow <span class="math inline">\(1_V \in \text{hom}_{\tau}(V,V)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V \in \mathcal{O}\)</span> a distinguished loose arrow <span class="math inline">\(id_V \in \text{hom}_{\lambda}(V,V)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V, V', V'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> and also every <span class="math inline">\(f' \in \text{hom}_{\tau}(V',V'')\)</span>, there is a <span class="math inline">\(f \frown f' \in \text{hom}_{\tau}(V,V'')\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\tau}(V',W')\)</span>, there is a set <span class="math inline">\(\text{wit}(V, W, V', W', f, g, M, M')\)</span> called witnesses (generically lower greek)</p></li>
+</ol>
+<!---
+::: {.imagify}
+[]: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
+\begin{tikzcd}
+    V && W \\
+    & {\Downarrow \phi} \\
+    V' && W'.
+    \arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow["f"', from=1-1, to=3-1]
+    \arrow["g", from=1-3, to=3-3]
+    \arrow["M'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+-->
+<ol start="8" type="1">
+<li>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span>, and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a distinguished witness <span class="math inline">\(\upsilon_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M)\)</span>;</li>
+</ol>
+<!---
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+    V && W \\
+    & {\Downarrow {\upsilon}_N} \\
+    V && W.
+    \arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow["1_V"', from=1-1, to=3-1]
+    \arrow["1_W", from=1-3, to=3-3]
+    \arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+-->
+<ol start="9" type="1">
+<li>For every <span class="math inline">\(V, W, V', W', V'', W'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), f' \in \text{hom}_{\tau}(V',V''), g \in \text{hom}_{\tau}(W,W'), g' \in \text{hom}_{\tau}(W',W'')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), M' \in \text{hom}_{\lambda}(V',W'), M''\in \text{hom}_{\lambda}(V'',W'')\)</span> as well as every <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'', W'', f', g', M', M'')\)</span> there is a <span class="math inline">\(\phi \smile \phi' \in \text{wit}(V, W, V'', W'', f \frown f', g \frown g', M, M'')\)</span>.</li>
+</ol>
+<!---
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+    V && W \\
+    & {\Downarrow \phi} \\
+    V' && W'\\
+    & {\Downarrow \phi'}\\
+    V'' && W''. \\
+    \arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow["f", from=1-1, to=3-1]
+    \arrow["g", from=1-3, to=3-3]
+    \arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+    \arrow["f'", from=3-1, to=5-1]
+    \arrow["g'", from=3-3, to=5-3]
+    \arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+:::
+
+
+$$\leadsto$$
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+    V && W \\
+    & {\Downarrow \phi \smile \phi'} \\
+    V'' && W''.
+    \arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+    \arrow["f \frown f'"', from=1-1, to=3-1]
+    \arrow["g \frown g'", from=1-3, to=3-3]
+    \arrow["M''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+\end{tikzcd}
+:::
+-->
+<ol start="10" type="1">
+<li><p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), N \in \text{hom}_{\lambda}(W,X)\)</span> there is a <span class="math inline">\(N \circ M \in \text{hom}_{\lambda}(V,X)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(V, W, X, V', W', X' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'), g \in \text{hom}_{\tau}(W,W'), h \in \text{hom}_{\tau}(X,X')\)</span> and also every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W), N \in \text{hom}_{\lambda}(W,X), M' \in \text{hom}_{\lambda}(V',W'), N' \in \text{hom}_{\lambda}(W',X')\)</span> as well as every witness <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M')\)</span> and <span class="math inline">\(\psi \in \text{wit}(W, X, W', X', g, h, N, N')\)</span> then there is a witness <span class="math inline">\(\psi \star \phi \in \text{wit}(V, X, V', X', f, h, N \circ M, N' \circ M')\)</span>.</p></li>
+<li><p>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(\ell_M \in \text{wit}(V, W, V, W, 1_V, 1_W, id_W \circ M, M)\)</span>. The witness is natural in <span class="math inline">\(M\)</span> in the sense that: for every <span class="math inline">\(M' \in \text{hom}_{\lambda}(V,W)\)</span> and every <span class="math inline">\(\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</p></li>
+</ol>
+<p><span class="math display">\[\ell_M \smile \phi = (\upsilon_{id_W} \star \phi) \smile \ell_{M'}.\]</span></p>
+<p>Each <span class="math inline">\(\ell_M\)</span> also comes equipped with a friend <span class="math inline">\(k_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, id_W \circ M)\)</span> such that <span class="math inline">\(k_M \smile \ell_M = \upsilon_M\)</span> and <span class="math inline">\(\ell_M \smile k_M = \upsilon_{id_W \circ M}\)</span>;</p>
+<ol start="13" type="1">
+<li>For every <span class="math inline">\(V, W \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(r_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M \circ id_V, M)\)</span>. The witness is natural in <span class="math inline">\(M\)</span> in the sense that: for every <span class="math inline">\(M' \in \text{hom}_{\lambda}(V,W)\)</span> and every <span class="math inline">\(\phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</li>
+</ol>
+<p><span class="math display">\[r_M \smile \phi = (\phi \star \upsilon_{id_V}) \smile r_{M'}\]</span></p>
+<p>Each <span class="math inline">\(r_M\)</span> comes equipped with a friend <span class="math inline">\(q_M \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M \circ id_V)\)</span> such that <span class="math inline">\(q_M \smile r_M = \upsilon_M\)</span> and <span class="math inline">\(r_M \smile q_M = \upsilon_{M \circ id_V}\)</span>;</p>
+<ol start="14" type="1">
+<li>For every <span class="math inline">\(V, W, X, Y \in \mathcal{O}\)</span> and every <span class="math inline">\(P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W,X), M \in \text{hom}_{\lambda}(V,W)\)</span> there is a witness <span class="math inline">\(a_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, (P \circ N) \circ M, P \circ (N \circ M))\)</span>. This witness is natural in <span class="math inline">\(P, N\)</span> and <span class="math inline">\(M\)</span> simultaneously meaning that: for every <span class="math inline">\(P' \in \text{hom}_{\lambda}(X, Y), N' \in \text{hom}_{\lambda}(W, X), M' \in \text{hom}_{\lambda}(V, W)\)</span> and every <span class="math inline">\(\psi \in \text{wit}(X, Y, X, Y, 1_X, 1_Y, P, P'), \chi \in \text{wit}(W, X, W, X, 1_W, 1_X, N, N'), \phi \in \text{wit}(V, W, V, W, 1_V, 1_W, M, M')\)</span> we have</li>
+</ol>
+<p><span class="math display">\[((\psi \star \upsilon_{id_N}) \star \upsilon_{id_M})\smile a_{P', N, M} = a_{P, N, M} \smile (\psi \star (\upsilon_{id_N} \star \upsilon_{id_M})),\]</span></p>
+<p><span class="math display">\[((\upsilon_{id_P} \star \chi) \star \upsilon_{id_M}) \smile a_{P, N', M} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\chi \star \upsilon_{id_M})),\]</span></p>
+<p><span class="math display">\[((\upsilon_{id_P} \star \upsilon_{id_N}) \star \phi) \smile a_{P, N, M'} = a_{P, N, M} \smile (\upsilon_{id_P} \star (\upsilon_{id_N} \star \phi)) \]</span></p>
+<p>Each <span class="math inline">\(a_{P, N, M}\)</span> comes equipped with a friend <span class="math inline">\(b_{P, N, M} \in \text{wit}(V, Y, V, Y, 1_V, 1_Y, P \circ (N \circ M)), (P \circ N) \circ M)\)</span> such that <span class="math inline">\(a_{P,N,M} \smile b_{P, N, M} = \upsilon_{(P \circ N) \circ M}\)</span> and <span class="math inline">\(b_{P, N, M} \smile a_{P, N, M} = \upsilon_{P \circ (N \circ M)}\)</span>.</p>
+<p>This data is required to satisfy the following:</p>
+<p>For every <span class="math inline">\(V, V' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V')\)</span> we have</p>
+<p><span class="math display">\[1_V \frown f = f = f \frown 1_{V'};\]</span></p>
+<p>For every <span class="math inline">\(V, W, V', W', V'', W'', V''', W''' \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V', W'),
+M'' \in \text{hom}_{\lambda}(V'', W''), M''' \in \text{hom}_{\lambda}(V''', W''')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(V, V'), g \in \text{hom}_{\tau}(W,W'),
+f' \in \text{hom}_{\tau}(V', V''), g' \in \text{hom}_{\tau}(W',W''), f'' \in \text{hom}_{\tau}(V'', V'''),  g'' \in \text{hom}_{\tau}(W'',W''')\)</span> as well as <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'', W'', f', g', M', M''), \phi'' \in \text{wit}(V'', W'', V''', W''', f'', g'', M'', M''')\)</span> we have</p>
+<p><span class="math display">\[ f'' \frown (f' \frown f) = (f'' \frown f') \frown f,\]</span></p>
+<p><span class="math display">\[ \phi'' \smile (\phi' \smile \phi) = (\phi'' \smile \phi') \smile \phi;\]</span></p>
+<p>For every <span class="math inline">\(V, W, V', W' \in \mathcal{O}\)</span> and every <span class="math inline">\(M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(V,V'),
+g \in \text{hom}_{\tau}(W,W')\)</span> as well as every witness <span class="math inline">\(\phi \in \text{wit}(V, W, V', W', f, g, M, M')\)</span> we have</p>
+<p><span class="math display">\[\upsilon_M \smile \phi = \phi = \phi \smile \upsilon_{M'};\]</span></p>
+<p>For every <span class="math inline">\(V, W, X, Y, Z \in \mathcal{O}\)</span> and every <span class="math inline">\(Q \in \text{hom}_{\lambda}(Y,Z), P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W, X),
+M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
+<p><span class="math display">\[(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};\]</span></p>
+<p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
+<p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.\]</span></p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rjheaney\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
