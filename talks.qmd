@@ -40,7 +40,7 @@ For every $f \in C_1$, we have that $f \circ \text{id}(s(f)) = f$ and $\text{id}
 
 For every $f, g, h \in C_1$, we have that $(h\circ g) \circ f = h \circ (g \circ f)$.
 :::
-<---!
+
 :::::: {#def-double-category}
 ## Double Category
 
@@ -72,7 +72,7 @@ and [target]{.underline} respectively;
 4. [composition]{.underline} and [identity]{.underline} functors $\circ : \mathbb{C}_1 \times_{\mathbb{C}_0} \mathbb{C}_1 \rightarrow \mathbb{C}_1$ and $\text{id} : \mathbb{C}_0 \rightarrow \mathbb{C}_1$;
 
 5. natural families of isomorphisms in $\mathbb{C}_1$:
--->
+
 ::: {.imagify}
 []: %
 \begin{tikzcd}
