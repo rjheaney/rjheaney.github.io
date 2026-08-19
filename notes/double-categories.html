@@ -197,7 +197,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 18, 2026</p>
+      <p class="date-modified">August 19, 2026</p>
     </div>
   </div>
     
@@ -491,6 +491,48 @@ M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 <p><span class="math display">\[(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};\]</span></p>
 <p>For every <span class="math inline">\(V, W, X \in \mathcal{O}\)</span> and every <span class="math inline">\(N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 <p><span class="math display">\[a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.\]</span></p>
+</div>
+<div id="def-double-category-indexed" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5 (Double category, 1-categorical version)</strong></span> A double category is the data of</p>
+<ol type="1">
+<li><p>A class <span class="math inline">\(\mathcal{O}\)</span> (generically upper roman from the beginning of the alphabet);</p></li>
+<li><p>A set <span class="math inline">\(\text{hom}_{\tau}(A,B)\)</span> for each <span class="math inline">\(A, B \in \mathcal{O}\)</span> (of tight morphisms, generically lower roman from the beginning of the alphabet);</p></li>
+<li><p>A set <span class="math inline">\(\text{hom}_{\lambda}(A,B)\)</span> for each <span class="math inline">\(A, B \in \mathcal{O}\)</span> (of loose morphisms, generically lower roman from the middle of the alphabet);</p></li>
+<li><p>A distinguished tight arrow <span class="math inline">\(1_A \in \text{hom}_{\tau}(A,A)\)</span> and a distinguished loose arrow <span class="math inline">\(\text{id}_A \in \text{hom}_{\lambda}(A,A)\)</span> for <span class="math inline">\(A \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C)\)</span> there is <span class="math inline">\(f' \circ_{\tau} f \in \text{hom}_{\tau}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(p \in \text{hom}_{\lambda}(A, B), q \in \text{hom}_{\lambda}(B,C)\)</span> there is <span class="math inline">\(q \circ_{\lambda} p \in \text{hom}_{\lambda}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
+<li><p>A set <span class="math inline">\(\text{Sq}_{A,B,C,D}(f,g,p,p')\)</span> for each <span class="math inline">\(f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D)\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(C,D)\)</span> for <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> (generically lower case greek);</p></li>
+<li><p>A distinguished square <span class="math inline">\(\upsilon_p \in \text{Sq}_{A,B,A,B}(1_A,1_B,p,p)\)</span> for each <span class="math inline">\(p \text{hom}_{\lambda}(A,B)\)</span> and for <span class="math inline">\(A, B \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p'')\)</span> there is <span class="math inline">\(\phi' \circ_{\tau}^2 \phi \in \text{Sq}_{A,B,E,F}(f'\circ_{\tau}f,g' \circ_{\tau}g,p,p'')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q')\)</span> there is <span class="math inline">\(\psi \circ_{\lambda}^2 \phi \in \text{Sq}_{A,E,C,F}(f,h,q \circ_{\lambda} p, q' \circ_{\lambda} p')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
+</ol>
+<p>Satisfying the following relations:</p>
+<ol type="1">
+<li>For <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and <span class="math inline">\(f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C), f'' \in \text{hom}_{\tau}(C,D)\)</span> we have that</li>
+</ol>
+<p><span class="math display">\[f \circ_{\tau} 1_A = f = 1_B \circ_{\tau} f\]</span></p>
+<p>and</p>
+<p><span class="math display">\[(f'' \circ_{\tau} f') \circ_{\tau} f = f'' \circ_{\tau} (f' \circ_{\tau} f);\]</span></p>
+<ol start="2" type="1">
+<li>For <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B, C), r \in \text{hom}_{\lambda}(C,D)\)</span> we have that</li>
+</ol>
+<p><span class="math display">\[p \circ_{\lambda} \text{id}_{A} = p = \text{id}_{B} \circ_{\lambda} p\]</span></p>
+<p>and</p>
+<p><span class="math display">\[(r \circ_{\tau} q) \circ_{\tau} p = r \circ_{\tau} (q \circ_{\tau} p);\]</span></p>
+<ol start="3" type="1">
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \phi'' \in \text{Sq}_{E, F, G, H}(f'',g'',p'', p''')\)</span> we have that</li>
+</ol>
+<p><span class="math display">\[\upsilon_p \circ_{\tau}^2 \phi = \phi = \phi \circ_{\tau}^2 \upsilon_q\]</span></p>
+<p>and</p>
+<p><span class="math display">\[(\phi'' \circ_{\tau}^2 \phi') \circ_{\tau}^2 \phi = \phi'' \circ_{\tau}^2 (\phi' \circ_{\tau}^2 \phi);\]</span></p>
+<ol start="4" type="1">
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q'), \chi \in \text{Sq}_{E, G, F, H}(h,k,r,r')\)</span> we have that</li>
+</ol>
+<p><span class="math display">\[(\chi  \circ_{\lambda}^2 \psi) \circ_{\lambda}^2 \phi = \chi \circ_{\lambda}^2 (\psi \circ_{\lambda}^2 \phi);\]</span></p>
+<ol start="5" type="1">
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H, K \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \psi \in \text{Sq}_{B, G, D, H}(g, h, q, q'), \psi' \in \text{Sq}_{D, H, F, K}(g', h', q', q'')\)</span> we have that</li>
+</ol>
+<p><span class="math display">\[(\phi' \circ_{\tau}^2 \phi) \circ_{\lambda}^2 (\psi' \circ_{\tau}^2 \psi) = (\phi' \circ_{\lambda}^2 \psi') \circ_{\tau}^2 (\phi \circ_{\lambda}^2 \psi).\]</span></p>
 </div>
 
 
