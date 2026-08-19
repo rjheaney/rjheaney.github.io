@@ -401,3 +401,65 @@ For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(W, X),
 
 $$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.$$
 :::
+
+
+::: {#def-double-category-indexed}
+## Double category, 1-categorical version
+
+A double category is the data of
+
+1. A class $\mathcal{O}$ (generically upper roman from the beginning of the alphabet);
+
+2. A set $\text{hom}_{\tau}(A,B)$ for each $A, B \in \mathcal{O}$ (of tight morphisms, generically lower roman from the beginning of the alphabet);
+
+3. A set $\text{hom}_{\lambda}(A,B)$ for each $A, B \in \mathcal{O}$ (of loose morphisms, generically lower roman from the middle of the alphabet);
+
+4. A distinguished tight arrow $1_A \in \text{hom}_{\tau}(A,A)$ and a distinguished loose arrow $\text{id}_A \in \text{hom}_{\lambda}(A,A)$ for $A \in \mathcal{O}$;
+
+5. For $f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C)$ there is $f' \circ_{\tau} f \in \text{hom}_{\tau}(A,C)$ for $A, B, C \in \mathcal{O}$;
+
+6. For $p \in \text{hom}_{\lambda}(A, B), q \in \text{hom}_{\lambda}(B,C)$ there is $q \circ_{\lambda} p \in \text{hom}_{\lambda}(A,C)$ for $A, B, C \in \mathcal{O}$;
+
+7. A set $\text{Sq}_{A,B,C,D}(f,g,p,p')$ for each $f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D)$ and $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(C,D)$ for $A, B, C, D \in \mathcal{O}$ (generically lower case greek);
+
+8. A distinguished square $\upsilon_p \in \text{Sq}_{A,B,A,B}(1_A,1_B,p,p)$ for each $p \text{hom}_{\lambda}(A,B)$ and for $A, B \in \mathcal{O}$;
+
+9. For $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p'')$ there is $\phi' \circ_{\tau}^2 \phi \in \text{Sq}_{A,B,E,F}(f'\circ_{\tau}f,g' \circ_{\tau}g,p,p'')$ for $A, B, C, D, E, F \in \mathcal{O}$;
+
+10. For $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q')$ there is $\psi \circ_{\lambda}^2 \phi \in \text{Sq}_{A,E,C,F}(f,h,q \circ_{\lambda} p, q' \circ_{\lambda} p')$ for $A, B, C, D, E, F \in \mathcal{O}$;
+
+Satisfying the following relations:
+
+1. For $A, B, C, D \in \mathcal{O}$ and $f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C), f'' \in \text{hom}_{\tau}(C,D)$ we have that
+
+$$f \circ_{\tau} 1_A = f = 1_B \circ_{\tau} f$$
+
+and
+
+$$(f'' \circ_{\tau} f') \circ_{\tau} f = f'' \circ_{\tau} (f' \circ_{\tau} f);$$
+
+2. For $A, B, C, D \in \mathcal{O}$ and $p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B, C), r \in \text{hom}_{\lambda}(C,D)$ we have that
+
+$$p \circ_{\lambda} \text{id}_{A} = p = \text{id}_{B} \circ_{\lambda} p$$
+
+and
+
+$$(r \circ_{\tau} q) \circ_{\tau} p = r \circ_{\tau} (q \circ_{\tau} p);$$
+
+3. For $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \phi'' \in \text{Sq}_{E, F, G, H}(f'',g'',p'', p''')$ we have that
+
+$$\upsilon_p \circ_{\tau}^2 \phi = \phi = \phi \circ_{\tau}^2 \upsilon_q$$
+
+and
+
+$$(\phi'' \circ_{\tau}^2 \phi') \circ_{\tau}^2 \phi = \phi'' \circ_{\tau}^2 (\phi' \circ_{\tau}^2 \phi);$$
+
+4. For $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q'), \chi \in \text{Sq}_{E, G, F, H}(h,k,r,r')$ we have that
+
+$$(\chi  \circ_{\lambda}^2 \psi) \circ_{\lambda}^2 \phi = \chi \circ_{\lambda}^2 (\psi \circ_{\lambda}^2 \phi);$$
+
+5. For $A, B, C, D, E, F, G, H, K \in \mathcal{O}$ and $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \psi \in \text{Sq}_{B, G, D, H}(g, h, q, q'), \psi' \in \text{Sq}_{D, H, F, K}(g', h', q', q'')$ we have that
+
+$$(\phi' \circ_{\tau}^2 \phi) \circ_{\lambda}^2 (\psi' \circ_{\tau}^2 \psi) = (\phi' \circ_{\lambda}^2 \psi') \circ_{\tau}^2 (\phi \circ_{\lambda}^2 \psi).$$
+
+:::
