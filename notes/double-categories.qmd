@@ -541,4 +541,27 @@ Satisfying the following additional axioms, expressed as commuting diagrams in $
 \end{tikzcd}
 :::
 
+::: {.imagify}
+[]:% https://q.uiver.app/#q=WzAsNCxbMCwwLCJDXzEgXFx0aW1lc197Q18wfSBDXzEgXFx0aW1lc197Q18wfSBDXzEiXSxbMCwxLCJDXzFcXHRpbWVzX3tDXzB9Q18xIl0sWzIsMSwiQ18xIl0sWzIsMCwiQ18xXFx0aW1lc197Q18wfUNfMSJdLFswLDMsIkNfMVxcdGltZXNfe0NfMH1cXHRleHR7Y29tcH0iXSxbMCwxLCJcXHRleHR7Y29tcH0gXFx0aW1lc197Q18wfUNfMSIsMl0sWzEsMiwiXFx0ZXh0e2NvbXB9IiwyXSxbMywyLCJcXHRleHR7Y29tcH0iXV0=
+\begin{tikzcd}
+	{C_1 \times_{C_0} C_1 \times_{C_0} C_1} && {C_1\times_{C_0}C_1} \\
+	{C_1\times_{C_0}C_1} && {C_1}
+	\arrow["{C_1\times_{C_0}\text{comp}}", from=1-1, to=1-3]
+	\arrow["{\text{comp} \ \times_{C_0}C_1}"', from=1-1, to=2-1]
+	\arrow["{\text{comp}}", from=1-3, to=2-3]
+	\arrow["{\text{comp}}"', from=2-1, to=2-3]
+\end{tikzcd}
 :::
+
+:::
+
+
+::: {theorem-double-category-equivalent}
+## The two 1-categorical definitions are essentially the same
+
+
+
+:::
+
+
+#
