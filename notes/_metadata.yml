@@ -16,3 +16,6 @@ imagify:
     \usepackage{amssymb}
     \usepackage{quiver}
     \usepackage{mathbbol}
+    \newcommand{\sq}{\text{Sq}}
+    \newcommand{\homt}{\text{hom}_{\tau}}
+    \newcommand{\homl}{\text{hom}_{\lambda}}

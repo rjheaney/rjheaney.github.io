@@ -4,18 +4,18 @@ subtitle: Definitions
 date: 08-12-2026
 ---
 
+::: {.hidden}
 
-:::{.hidden}
-$$
-\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
-$$
+\newcommand{\homl}{\text{hom}_{\lambda}}
+\newcommand{\homt}{\text{hom}_{\tau}}
+\newcommand{\sq}{\text{Sq}}
+\newcommand{\compt}{\circ_{\tau}}
+\newcommand{\compl}{\circ_{\lambda}}
+\newcommand{\comptt}{\circ_{\tau}^2}
+\newcommand{\compll}{\circ_{\lambda}^2}
+
 :::
 
-<!---
-::: {.imagify}
-$$\fcmp$$
-:::
--->
 
 # Definitions
 
@@ -556,12 +556,46 @@ Satisfying the following additional axioms, expressed as commuting diagrams in $
 :::
 
 
-::: {theorem-double-category-equivalent}
+::: {#thm-double-category-equivalent}
 ## The two 1-categorical definitions are essentially the same
 
+A category object in $\mathcal{C}\text{at}$ is equivalently a double category.
 
+A double category is equivalently a category object in $\mathcal{C}\text{at}$.
+
+:::
+
+::: {#prf-double-category-equivalent}
+
+$(``\Rightarrow")$
+
+This is a series of definition re-writing.
+
+$$\mathcal{O} \triangleq \text{ob}(C_0)$$
+
+$$\forall A,B \in \mathcal{O}, \ \text{hom}_{\tau}(A,B) \triangleq C_0(A,B)$$
+
+$$\forall A,B \in \mathcal{O}, \ \text{hom}_{\lambda}(A,B) \triangleq \{p \in \text{ob}(C_1) \ :|: \ s^o(p) = A, t^o(p) = B \}$$
+
+$$\forall A \in \mathcal{O}, 1_A \triangleq \text{id}^{C_0}_A$$
+
+$$\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^m(A)$$
+
+$$\forall A, B, C, D \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D), p \in \text{hom}_{\lambda}(A,B),
+ p' \in \text{hom}_{\lambda}(C,D)$$
+$$ \text{Sq}_{A,B,C,D}(f,g,p,p') \triangleq
+ \{\varphi \in C_1(p,q) \ :|: \ s^o(p) = A, t^o(p) = B, s^m(\varphi) = f, s^o(q) = C, t^o(q) = D, t^m(\varphi) = g\}$$
+
+$$\forall A, B \in \mathcal{O}, \forall p \in \homl (A,B), \upsilon_p \triangleq \text{id}^{C_1}_p$$
+
+$$\forall A, B, C \in \mathcal{O}, \forall f \in \homt(A,B), f' \in \homt(B,C), f'\compt f \triangleq \circ^{C^0}(f',f)$$
+
+$$\forall A, B, C \in \mathcal{O}, \forall p \in \homl(A,B), q \in \homl(B,C), q\compl p \triangleq \ \text{comp}^o((q,p))$$
+
+$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \varphi' \in \sq_{C,D,E,F}(f',g',q,r), \varphi' \comptt \varphi \triangleq \circ^{C^1}(\varphi',\varphi)$$
+
+$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \psi \in \sq_{B,E,D,F}(g,h,p',q'), \psi \compll \varphi \triangleq \ \text{comp}^m((\psi, \varphi))$$
 
 :::
 
 
-#
