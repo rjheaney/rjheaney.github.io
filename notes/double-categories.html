@@ -156,11 +156,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a>
-  <ul class="collapse">
-  <li><a href="#the-two-1-categorical-definitions-are-essentially-the-same" id="toc-the-two-1-categorical-definitions-are-essentially-the-same" class="nav-link" data-scroll-target="#the-two-1-categorical-definitions-are-essentially-the-same">The two 1-categorical definitions are essentially the same</a></li>
-  </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +197,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 20, 2026</p>
+      <p class="date-modified">August 21, 2026</p>
     </div>
   </div>
     
@@ -213,15 +209,8 @@ window.Quarto = {
 
 
 <div class="hidden">
-<p><span class="math display">\[
-\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
-\]</span></p>
+
 </div>
-<!---
-::: {.imagify}
-$$\fcmp$$
-:::
--->
 <section id="definitions" class="level1">
 <h1>Definitions</h1>
 <div id="def-category" class="theorem definition">
@@ -610,12 +599,27 @@ M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 \end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
 </div>
 </div>
-<section id="the-two-1-categorical-definitions-are-essentially-the-same" class="level2 {theorem-double-category-equivalent}">
-<h2 class="anchored" data-anchor-id="the-two-1-categorical-definitions-are-essentially-the-same">The two 1-categorical definitions are essentially the same</h2>
-</section>
-</section>
-<section id="section" class="level1">
-<h1></h1>
+<div id="thm-double-category-equivalent" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (The two 1-categorical definitions are essentially the same)</strong></span> A category object in <span class="math inline">\(\mathcal{C}\text{at}\)</span> is equivalently a double category.</p>
+<p>A double category is equivalently a category object in <span class="math inline">\(\mathcal{C}\text{at}\)</span>.</p>
+</div>
+<div id="prf-double-category-equivalent" class="proof">
+<p><span class="proof-title"><em>Proof 1</em>. </span><span class="math inline">\((``\Rightarrow")\)</span></p>
+<p>This is a series of definition re-writing.</p>
+<p><span class="math display">\[\mathcal{O} \triangleq \text{ob}(C_0)\]</span></p>
+<p><span class="math display">\[\forall A,B \in \mathcal{O}, \ \text{hom}_{\tau}(A,B) \triangleq C_0(A,B)\]</span></p>
+<p><span class="math display">\[\forall A,B \in \mathcal{O}, \ \text{hom}_{\lambda}(A,B) \triangleq \{p \in \text{ob}(C_1) \ :|: \ s^o(p) = A, t^o(p) = B \}\]</span></p>
+<p><span class="math display">\[\forall A \in \mathcal{O}, 1_A \triangleq \text{id}^{C_0}_A\]</span></p>
+<p><span class="math display">\[\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^m(A)\]</span></p>
+<p><span class="math display">\[\forall A, B, C, D \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D), p \in \text{hom}_{\lambda}(A,B),
+p' \in \text{hom}_{\lambda}(C,D)\]</span> <span class="math display">\[ \text{Sq}_{A,B,C,D}(f,g,p,p') \triangleq
+\{\varphi \in C_1(p,q) \ :|: \ s^o(p) = A, t^o(p) = B, s^m(\varphi) = f, s^o(q) = C, t^o(q) = D, t^m(\varphi) = g\}\]</span></p>
+<p><span class="math display">\[\forall A, B \in \mathcal{O}, \forall p \in \text{hom}_{\lambda}(A,B), \upsilon_p \triangleq \text{id}^{C_1}_p\]</span></p>
+<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B,C), f'\circ_{\tau}f \triangleq \circ^{C^0}(f',f)\]</span></p>
+<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C), q\circ_{\lambda}p \triangleq \ \text{comp}^o((q,p))\]</span></p>
+<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \varphi' \in \text{Sq}_{C,D,E,F}(f',g',q,r), \varphi' \circ_{\tau}^2\varphi \triangleq \circ^{C^1}(\varphi',\varphi)\]</span></p>
+<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \psi \in \text{Sq}_{B,E,D,F}(g,h,p',q'), \psi \circ_{\lambda}^2\varphi \triangleq \ \text{comp}^m((\psi, \varphi))\]</span></p>
+</div>
 
 
 </section>
