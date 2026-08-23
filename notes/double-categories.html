@@ -197,7 +197,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 21, 2026</p>
+      <p class="date-modified">August 23, 2026</p>
     </div>
   </div>
     
@@ -610,15 +610,40 @@ M \in \text{hom}_{\lambda}(V, W)\)</span> we have</p>
 <p><span class="math display">\[\forall A,B \in \mathcal{O}, \ \text{hom}_{\tau}(A,B) \triangleq C_0(A,B)\]</span></p>
 <p><span class="math display">\[\forall A,B \in \mathcal{O}, \ \text{hom}_{\lambda}(A,B) \triangleq \{p \in \text{ob}(C_1) \ :|: \ s^o(p) = A, t^o(p) = B \}\]</span></p>
 <p><span class="math display">\[\forall A \in \mathcal{O}, 1_A \triangleq \text{id}^{C_0}_A\]</span></p>
-<p><span class="math display">\[\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^m(A)\]</span></p>
+<p><span class="math display">\[\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^o(A)\]</span></p>
 <p><span class="math display">\[\forall A, B, C, D \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D), p \in \text{hom}_{\lambda}(A,B),
 p' \in \text{hom}_{\lambda}(C,D)\]</span> <span class="math display">\[ \text{Sq}_{A,B,C,D}(f,g,p,p') \triangleq
 \{\varphi \in C_1(p,q) \ :|: \ s^o(p) = A, t^o(p) = B, s^m(\varphi) = f, s^o(q) = C, t^o(q) = D, t^m(\varphi) = g\}\]</span></p>
 <p><span class="math display">\[\forall A, B \in \mathcal{O}, \forall p \in \text{hom}_{\lambda}(A,B), \upsilon_p \triangleq \text{id}^{C_1}_p\]</span></p>
-<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B,C), f'\circ_{\tau}f \triangleq \circ^{C^0}(f',f)\]</span></p>
-<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C), q\circ_{\lambda}p \triangleq \ \text{comp}^o((q,p))\]</span></p>
-<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \varphi' \in \text{Sq}_{C,D,E,F}(f',g',q,r), \varphi' \circ_{\tau}^2\varphi \triangleq \circ^{C^1}(\varphi',\varphi)\]</span></p>
-<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \psi \in \text{Sq}_{B,E,D,F}(g,h,p',q'), \psi \circ_{\lambda}^2\varphi \triangleq \ \text{comp}^m((\psi, \varphi))\]</span></p>
+<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B,C),\]</span> <span class="math display">\[ f'\circ_{\tau}f \triangleq \circ^{C_0}(f',f)\]</span></p>
+<p><span class="math display">\[\forall A, B, C \in \mathcal{O}, \forall p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C),\]</span> <span class="math display">\[ q\circ_{\lambda}p \triangleq \ \text{comp}^o((q,p))\]</span></p>
+<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \varphi' \in \text{Sq}_{C,D,E,F}(f',g',q,r),\]</span> <span class="math display">\[ \varphi' \circ_{\tau}^2\varphi \triangleq \circ^{C^1}(\varphi',\varphi)\]</span></p>
+<p><span class="math display">\[\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q), \psi \in \text{Sq}_{B,E,D,F}(g,h,p',q'),\]</span> <span class="math display">\[ \psi \circ_{\lambda}^2\varphi \triangleq \ \text{comp}^m((\psi, \varphi))\]</span></p>
+<p><span class="math inline">\((``\Leftarrow")\)</span></p>
+<p>In the other direction.</p>
+<p><span class="math display">\[\text{ob}(C_0) \triangleq \mathcal{O}\]</span></p>
+<p><span class="math display">\[\text{Mor}(C_0) \triangleq \{(A,B, f) \ :|: \ f \in \text{hom}_{\tau}(A,B)\}\]</span></p>
+<p><span class="math display">\[\text{id}^{C_0}_A \triangleq (A, A, 1_A)\]</span></p>
+<p><span class="math display">\[\circ^{C_0}((B,C,f'),(A,B,f)) \triangleq (A,C, f' \circ_{\tau}f)\]</span></p>
+<p><span class="math display">\[\text{ob}(C_1) \triangleq \{(A,B, p) \ :|: \ p \in \text{hom}_{\lambda}(A,B)\}\]</span></p>
+<p><span class="math display">\[\text{Mor}(C_1) \triangleq \{(A,B,p,C,D,q,f,g,\varphi) \ :|: \ \varphi \in \text{Sq}_{A,B,C,D}(f,g,p,q)\}\]</span></p>
+<p><span class="math display">\[\text{id}^{C_1}_{(A,B,p)} \triangleq (A,B,p,A,B,p,1_A,1_B, \upsilon_p)\]</span></p>
+<p><span class="math display">\[\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq\]</span> <span class="math display">\[ (A,B,p,E,F,r,f'\circ_{\tau}f, g'\circ_{\tau}g, \varphi'\circ_{\tau}^2\varphi)\]</span></p>
+<p>Define functors</p>
+<p><span class="math display">\[s,t : C_1 \rightarrow C_0\]</span></p>
+<p>by <span class="math inline">\(s^o((A,B,p)) \triangleq A\)</span> and <span class="math inline">\(s^m((A,B,p,C,D,q,f,g,\varphi)) \triangleq (A,C,f)\)</span>.</p>
+<p>Similarly, <span class="math inline">\(t^o((A,B,p)) \triangleq B\)</span> and <span class="math inline">\(t^m((A,B,p,C,D,q,f,g,\varphi)) = (B,D,g)\)</span>.</p>
+<p>Also define</p>
+<p><span class="math display">\[\text{id} : C_0 \rightarrow C_1\]</span></p>
+<p>by <span class="math inline">\(\text{id}^o(A) \triangleq (A,A,\text{id}_A)\)</span> and <span class="math inline">\(\text{id}^m((A,B,f)) \triangleq (A,A,\text{id}_A,B,B,\text{id}_B,f,f,=).\)</span></p>
+<p>Finally define</p>
+<p><span class="math display">\[\text{comp} : C_1 \times_{C_0} C_1 \rightarrow C_1\]</span></p>
+<p>by <span class="math inline">\(\text{comp}^o((B,C,q),(A,B,p)) \triangleq (A,C, q \circ_{\lambda}p)\)</span> and <span class="math inline">\(\text{comp}^m((B,E,q, D, F, q', g,h,\psi),(A,B,p,C,D,p',f,g,\varphi)) \triangleq\)</span></p>
+<p><span class="math display">\[(A,E, q \circ_{\lambda}p, C, F, q' \circ_{\lambda}p', f, h, \psi \circ_{\lambda}^2\varphi).\]</span></p>
+</div>
+<p>Whenever, we talk of a double category we will mean in the sense of a class of objects with two hom-sets as above.</p>
+<div id="def-double-functors-1-categorically" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Double functors, 1-categorical version)</strong></span> &nbsp;</p>
 </div>
 
 
