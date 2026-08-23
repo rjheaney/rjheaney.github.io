@@ -13,7 +13,8 @@ date: 08-12-2026
 \newcommand{\compl}{\circ_{\lambda}}
 \newcommand{\comptt}{\circ_{\tau}^2}
 \newcommand{\compll}{\circ_{\lambda}^2}
-
+\newcommand{\ob}{\text{ob}}
+\newcommand{\mor}{\text{Mor}}
 :::
 
 
@@ -579,7 +580,7 @@ $$\forall A,B \in \mathcal{O}, \ \text{hom}_{\lambda}(A,B) \triangleq \{p \in \t
 
 $$\forall A \in \mathcal{O}, 1_A \triangleq \text{id}^{C_0}_A$$
 
-$$\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^m(A)$$
+$$\forall A \in \mathcal{O}, \text{id}_A \triangleq \text{id}^o(A)$$
 
 $$\forall A, B, C, D \in \mathcal{O}, \forall f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D), p \in \text{hom}_{\lambda}(A,B),
  p' \in \text{hom}_{\lambda}(C,D)$$
@@ -588,14 +589,70 @@ $$ \text{Sq}_{A,B,C,D}(f,g,p,p') \triangleq
 
 $$\forall A, B \in \mathcal{O}, \forall p \in \homl (A,B), \upsilon_p \triangleq \text{id}^{C_1}_p$$
 
-$$\forall A, B, C \in \mathcal{O}, \forall f \in \homt(A,B), f' \in \homt(B,C), f'\compt f \triangleq \circ^{C^0}(f',f)$$
+$$\forall A, B, C \in \mathcal{O}, \forall f \in \homt(A,B), f' \in \homt(B,C),$$
+$$ f'\compt f \triangleq \circ^{C_0}(f',f)$$
 
-$$\forall A, B, C \in \mathcal{O}, \forall p \in \homl(A,B), q \in \homl(B,C), q\compl p \triangleq \ \text{comp}^o((q,p))$$
+$$\forall A, B, C \in \mathcal{O}, \forall p \in \homl(A,B), q \in \homl(B,C),$$
+$$ q\compl p \triangleq \ \text{comp}^o((q,p))$$
 
-$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \varphi' \in \sq_{C,D,E,F}(f',g',q,r), \varphi' \comptt \varphi \triangleq \circ^{C^1}(\varphi',\varphi)$$
+$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \varphi' \in \sq_{C,D,E,F}(f',g',q,r),$$
+ $$ \varphi' \comptt \varphi \triangleq \circ^{C^1}(\varphi',\varphi)$$
 
-$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \psi \in \sq_{B,E,D,F}(g,h,p',q'), \psi \compll \varphi \triangleq \ \text{comp}^m((\psi, \varphi))$$
+$$\forall A, B, C, D, E, F \in \mathcal{O}, \forall \varphi \in \sq_{A,B,C,D}(f,g,p,q), \psi \in \sq_{B,E,D,F}(g,h,p',q'),$$
+$$ \psi \compll \varphi \triangleq \ \text{comp}^m((\psi, \varphi))$$
+
+$(``\Leftarrow")$
+
+In the other direction.
+
+$$\text{ob}(C_0) \triangleq \mathcal{O}$$
+
+$$\text{Mor}(C_0) \triangleq \{(A,B, f) \ :|: \ f \in \homt(A,B)\}$$
+
+$$\text{id}^{C_0}_A \triangleq (A, A, 1_A)$$
+
+$$\circ^{C_0}((B,C,f'),(A,B,f)) \triangleq (A,C, f' \compt f)$$
+
+$$\ob(C_1) \triangleq \{(A,B, p) \ :|: \ p \in \homl(A,B)\}$$
+
+$$\mor(C_1) \triangleq \{(A,B,p,C,D,q,f,g,\varphi) \ :|: \ \varphi \in \sq_{A,B,C,D}(f,g,p,q)\}$$
+
+$$\text{id}^{C_1}_{(A,B,p)} \triangleq (A,B,p,A,B,p,1_A,1_B, \upsilon_p)$$
+
+$$\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq$$ 
+$$ (A,B,p,E,F,r,f'\compt f, g'\compt g, \varphi'\comptt \varphi)$$
+
+Define functors
+
+$$s,t : C_1 \rightarrow C_0$$
+
+by $s^o((A,B,p)) \triangleq A$ and $s^m((A,B,p,C,D,q,f,g,\varphi)) \triangleq (A,C,f)$.
+
+Similarly, $t^o((A,B,p)) \triangleq B$ and $t^m((A,B,p,C,D,q,f,g,\varphi)) = (B,D,g)$.
+
+Also define
+
+$$\text{id} : C_0 \rightarrow C_1$$
+
+by $\text{id}^o(A) \triangleq (A,A,\text{id}_A)$ and $\text{id}^m((A,B,f)) \triangleq (A,A,\text{id}_A,B,B,\text{id}_B,f,f,=).$
+
+Finally define
+
+$$\text{comp} : C_1 \times_{C_0} C_1 \rightarrow C_1$$
+
+by $\text{comp}^o((B,C,q),(A,B,p)) \triangleq (A,C, q \compl p)$ and $\text{comp}^m((B,E,q, D, F, q', g,h,\psi),(A,B,p,C,D,p',f,g,\varphi)) \triangleq$
+
+$$(A,E, q \compl p, C, F, q' \compl p', f, h, \psi \compll \varphi).$$
 
 :::
 
+Whenever, we talk of a double category we will mean in the sense of a class of objects with two hom-sets as above.
+
+
+::: {#def-double-functors-1-categorically}
+## Double functors, 1-categorical version
+
+
+
+:::
 
