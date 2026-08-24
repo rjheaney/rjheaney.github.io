@@ -351,12 +351,12 @@ Each $\ell_p$ also comes equipped with a friend $k_p \in \sq_{A, B, A, B}(1_A, 1
 such that $k_p \comptt \ell_p = \upsilon_{\text{id}_B\compl p}$ and $\ell_p \comptt k_p = \upsilon_{p}$;
 
 13. For every $A, B \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A,B)$ there is
-a witness $\rho_p \in \sq_{A, B, A, B}(1_A, 1_B, p \circ \id_A, p)$. The witness is natural in $M$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
+a witness $\rho_p \in \sq_{A, B, A, B}(1_A, 1_B, p \circ \id_A, p)$. The witness is natural in $p$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
 $\varphi \in \sq_{A, B, A, B}(1_A, 1_B, p, p')$ we have
 
 $$\varphi \comptt r_p = r_{p'} \comptt (\phi \compll \upsilon_{\id_A})$$
 
-Each $\rho_p$ comes equipped with a friend $sigma_p \in \sq_{A, B, A, B}(1_A, 1_B, p, p \compl \id_A)$
+Each $\rho_p$ comes equipped with a friend $\sigma_p \in \sq_{A, B, A, B}(1_A, 1_B, p, p \compl \id_A)$
 such that $\rho_p \comptt \sigma_p = \upsilon_p$ and $\sigma_p \comptt \rho_p = \upsilon_{M \compl \id_A}$;
 
 14. For every $A, B, C, D \in \mathcal{O}$ and every $r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B,C), p \in \text{hom}_{\lambda}(A,B)$
@@ -370,9 +370,8 @@ $$a_{r, q', p} \comptt ((\upsilon_{\id_r} \compll \chi) \compll \upsilon_{\id_p}
 
 $$ a_{P, N, M'} \comptt  ((\upsilon_{\id_r} \compll \upsilon_{\id_q}) \compll \varphi) = (\upsilon_{\id_r} \compll (\upsilon_{\id_q} \compll \varphi)) \comptt a_{r, q, p} $$
 
-Each $a_{r, q, p}$ comes equipped with a friend
-$b_{r, q, p} \in \sq_{A, D, A, D}(1_A, 1_D, r \compl (q \compl p)), (r \compl q) \compl p)$ such that $a_{r,q,p} \comptt b_{r, q, p} = \upsilon_{r \compl (q \compl p)}$ and
-$b_{r, q, p} \comptt a_{r, q, p} = \upsilon_{(r \compl q) \compl p}$.
+Each $a_{r, q, p}$ comes equipped with a friend $b_{r, q, p} \in \sq_{A, D, A, D}(1_A, 1_D, r \compl (q \compl p)), (r \compl q) \compl p)$
+such that $a_{r,q,p} \comptt b_{r, q, p} = \upsilon_{r \compl (q \compl p)}$ and $b_{r, q, p} \comptt a_{r, q, p} = \upsilon_{(r \compl q) \compl p}$.
 
 This data is required to satisfy the following:
 
@@ -380,28 +379,28 @@ For every $A, A' \in \mathcal{O}$ and every $f \in \text{hom}_{\tau}(A,A')$ we h
 
 $$1_{A'} \compt f = f = f \compt 1_{A};$$
 
-For every $A, B, A', B', A'', B'', A''', B''' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V', W'),
-M'' \in \text{hom}_{\lambda}(V'', W''), M''' \in \text{hom}_{\lambda}(V''', W''')$ and also every $f \in \text{hom}_{\tau}(V, V'), g \in \text{hom}_{\tau}(W,W'),
-f' \in \text{hom}_{\tau}(V', V''), g' \in \text{hom}_{\tau}(W',W''), f'' \in \text{hom}_{\tau}(V'', V'''),  g'' \in \text{hom}_{\tau}(W'',W''')$ as well as
-$\phi \in \text{wit}(V, W, V', W', f, g, M, M'), \phi' \in \text{wit}(V', W', V'', W'', f', g', M', M''), \phi'' \in \text{wit}(V'', W'', V''', W''', f'', g'', M'', M''')$ we have
+For every $A, B, A', B', A'', B'', A''', B''' \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A', B'),
+p'' \in \text{hom}_{\lambda}(A'', B''), p''' \in \text{hom}_{\lambda}(A''', B''')$ and also every $f \in \text{hom}_{\tau}(A, A'), g \in \text{hom}_{\tau}(B,B'),
+f' \in \text{hom}_{\tau}(A', A''), g' \in \text{hom}_{\tau}(B',B''), f'' \in \text{hom}_{\tau}(A'', A'''),  g'' \in \text{hom}_{\tau}(B'',B''')$ as well as
+$\varphi \in \sq_{A, B, A', B'}(f, g, p, p'), \varphi' \in \sq_{A', B', A'', B''}(f', g', p', p''), \varphi'' \in \sq_{A'', B'', A''', B'''}(f'', g'', p'', p''')$ we have
 
-$$ f'' \frown (f' \frown f) = (f'' \frown f') \frown f,$$
+$$ f'' \compt (f' \compt f) = (f'' \compt f') \compt f,$$
 
-$$ \phi'' \smile (\phi' \smile \phi) = (\phi'' \smile \phi') \smile \phi;$$
+$$ \varphi'' \comptt (\varphi' \comptt \varphi) = (\varphi'' \comptt \varphi') \comptt \varphi;$$
 
-For every $V, W, V', W' \in \mathcal{O}$ and every $M \in \text{hom}_{\lambda}(V, W), M' \in \text{hom}_{\lambda}(V',W')$ and also every $f \in \text{hom}_{\tau}(V,V'),
-g \in \text{hom}_{\tau}(W,W')$ as well as every witness $\phi \in \text{wit}(V, W, V', W', f, g, M, M')$ we have
+For every $A, B, A', B' \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A',B')$ and also every $f \in \text{hom}_{\tau}(A,A'),
+g \in \text{hom}_{\tau}(B,B')$ as well as every witness $\varphi \in \sq_{A, B, A', B'}(f, g, p, p')$ we have
 
-$$\upsilon_M \smile \phi = \phi = \phi \smile \upsilon_{M'};$$
+$$\varphi \comptt \upsilon_p = \phi = \upsilon_{p'} \comptt \varphi;$$
 
-For every $V, W, X, Y, Z \in \mathcal{O}$ and every $Q \in \text{hom}_{\lambda}(Y,Z), P \in \text{hom}_{\lambda}(X,Y), N \in \text{hom}_{\lambda}(W, X),
-M \in \text{hom}_{\lambda}(V, W)$ we have
+For every $A, B, C, D, E \in \mathcal{O}$ and every $s \in \text{hom}_{\lambda}(D,E), r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B, C),
+p \in \text{hom}_{\lambda}(A, B)$ we have
 
-$$(a_{Q, P, N} \star id_M) \smile a_{Q, P \circ N, M} \smile (id_Q \star a_{P, N, M}) = a_{Q \circ P, N, M} \smile a_{Q, P, N \circ M};$$
+$$ ( (id_Q \compll a_{r, q, p}) \comptt a_{s, r \circ q, p} ) \comptt (a_{s, r, q} \compll \id_M) = a_{s, r, q \circ p} \comptt  a_{s \circ r, q, p};$$
 
-For every $V, W, X \in \mathcal{O}$ and every $N \in \text{hom}_{\lambda}(W, X), M \in \text{hom}_{\lambda}(V, W)$ we have
+For every $A, B, C \in \mathcal{O}$ and every $q \in \text{hom}_{\lambda}(B, C), p \in \text{hom}_{\lambda}(A, B)$ we have
 
-$$a_{N, id_W, M} \smile (id_M \star \ell_N) = r_M \star id_N.$$
+$$ (\upsilon_{id_p} \compll \ell_q) \comptt a_{q, \id_B, p} = \rho_p \compll \upsilon_{\id_B}.$$
 :::
 
 
@@ -424,7 +423,7 @@ A double category is the data of
 
 7. A set $\text{Sq}_{A,B,C,D}(f,g,p,p')$ for each $f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D)$ and $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(C,D)$ for $A, B, C, D \in \mathcal{O}$ (generically lower case greek);
 
-8. A distinguished square $\upsilon_p \in \text{Sq}_{A,B,A,B}(1_A,1_B,p,p)$ for each $p \text{hom}_{\lambda}(A,B)$ and for $A, B \in \mathcal{O}$;
+8. A distinguished square $\upsilon_p \in \text{Sq}_{A,B,A,B}(1_A,1_B,p,p)$ for each $p \in\text{hom}_{\lambda}(A,B)$ and for $A, B \in \mathcal{O}$;
 
 9. For $\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p'')$ there is $\phi' \circ_{\tau}^2 \phi \in \text{Sq}_{A,B,E,F}(f'\circ_{\tau}f,g' \circ_{\tau}g,p,p'')$ for $A, B, C, D, E, F \in \mathcal{O}$;
 
