@@ -43,6 +43,9 @@ For every $f \in C_1$, we have that $f \circ \text{id}(s(f)) = f$ and $\text{id}
 For every $f, g, h \in C_1$, we have that $(h\circ g) \circ f = h \circ (g \circ f)$.
 :::
 
+::: {.hidden}
+
+
 :::::: {#def-double-category}
 ## Double Category
 
@@ -239,6 +242,7 @@ use the capitalised or uncapitalised interchangeably.
 We would like to have a similar definition for double categories as for the definition of category. The reason to do this is so that there is no confusion in the definition and
 data can be expressed clearly.
 
+
 ::: {#def-double-category-indexed}
 ## Double category, indexed version
 
@@ -252,14 +256,14 @@ A double category $\mathbb{C}$ consists of the following data:
 
 4. For every $A \in \mathcal{O}$ a distinguished tight arrow $1_A \in \text{hom}_{\tau}(A,A)$;
 
-5. For every $A \in \mathcal{O}$ a distinguished loose arrow $\id_A \in \text{hom}_{\lambda}(A,A)$;
+5. For every $A \in \mathcal{O}$ a distinguished loose arrow $\id_A \in \text{hom}_{\lambda}(A,A)$, also written as just $A$ if convenient;
 
 6. For every $A, A', A'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(A,A')$ and also every $f' \in \text{hom}_{\tau}(A',A'')$, there is a $f' \compt f \in \text{hom}_{\tau}(A,A'')$;
 
 7. For every $A, B, A', B' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B')$ and also every $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\tau}(A',B')$, there is a set
-$\sq_{A,A',B,B'}(f, g, p, p')$ called witnesses (generically lower greek);
+$\sq^{A,B}_{A',B'}(f, g, p, p')$ called witnesses (generically lower greek). For simplicity, we will drop identities as redundant information;
 
-<!---
+
 ::: {.imagify}
 []: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
@@ -272,11 +276,12 @@ $\sq_{A,A',B,B'}(f, g, p, p')$ called witnesses (generically lower greek);
 	\arrow["M'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
 
-8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B, A, B}(1_A, 1_B, p, p)$;
 
-<!---
+8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$. 
+For simplicity, if $p = \id_A$ for $A \in \mathcal{O}$ then we will write $\upsilon_{id_A}$ as $\upsilon_A$;
+
+
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -289,14 +294,14 @@ $\sq_{A,A',B,B'}(f, g, p, p')$ called witnesses (generically lower greek);
 	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
+
 
 9. For every $A, B, A', B', A'', B'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(A,A'), f' \in \text{hom}_{\tau}(A',A''), g \in \text{hom}_{\tau}(B,B'), g' \in \text{hom}_{\tau}(B',B'')$
 and also every $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(A',B'), p''\in \text{hom}_{\lambda}(A'',B'')$
-as well as every $\varphi \in \sq_{A, B, A', B'}(f, g, p, p'), \varphi' \in \sq_{A', B', A'', B''}(f', g', p', p'')$ there is a
-$\varphi' \comptt \varphi \in \sq_{A, B, A'', B''}(f' \compt f, g' \compt g, p, p'')$.
+as well as every $\varphi \in \sq^{A, B}_{A', B'}(f, g, p, p'), \varphi' \in \sq^{A', B'}_{ A'', B''}(f', g', p', p'')$ there is a
+$\varphi' \comptt \varphi \in \sq^{A, B}_{ A'', B''}(f' \compt f, g' \compt g, p, p'')$.
 
-<!---
+
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -331,46 +336,46 @@ $$\leadsto$$
 	\arrow["M''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
+
 
 10. For every $A, B, C \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C)$
-there is a $q \compl p \in \text{hom}_{\lambda}(A,C)$;
+there is a $q \compl p \in \text{hom}_{\lambda}(A,C)$. For simplicity we will write $id_B \compl p$ as $B \compl p$.;
 
 11. For every $A, B, C, A', B', C' \in \mathcal{O}$ and every $f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B'), h \in \text{hom}_{\tau}(C,C')$
 and also every $p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C), p' \in \text{hom}_{\lambda}(A',B'), q' \in \text{hom}_{\lambda}(B',C')$
-as well as every witness $\varphi \in \sq_{A, B, A', B'}(f, g, p, p')$ and $\psi \in \sq_{B, C, B', C'}(g, h, q, q')$ then there is a witness
-$\psi \compll \varphi \in \sq_{B,C,B',C'}(f, h, q \compl p, q' \compl p')$.
+as well as every witness $\varphi \in \sq^{A, B}_{A', B'}(f, g, p, p')$ and $\psi \in \sq^{B, C}_{B', C'}(g, h, q, q')$ then there is a witness
+$\psi \compll \varphi \in \sq^{B,C}_{B',C'}(f, h, q \compl p, q' \compl p')$.
 
 12. For every $A, B \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A,B)$ there is
-a witness $\ell_p \in \sq_{A, B, A, B}(1_A, 1_B, \id_B \circ p, p)$. The witness is natural in $p$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
-$\varphi \in \sq_{A, B, A, B}(1_A, 1_B, p, p')$ we have
+a witness $\ell_p \in \sq^{A, B}_{A, B}(B \compl p, p)$. The witness is natural in $p$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
+$\varphi \in \sq^{A, B}_{A, B}(p, p')$ we have
 
 $$ \varphi \comptt \ell_p =  \ell_{p'} \comptt (\upsilon_{id_p} \compll \varphi) .$$
 
-Each $\ell_p$ also comes equipped with a friend $k_p \in \sq_{A, B, A, B}(1_A, 1_B, p, \id_B \compl p)$
-such that $k_p \comptt \ell_p = \upsilon_{\text{id}_B\compl p}$ and $\ell_p \comptt k_p = \upsilon_{p}$;
+Each $\ell_p$ also comes equipped with a friend $k_p \in \sq^{A, B}_{A, B}(p, B \compl p)$
+such that $k_p \comptt \ell_p = \upsilon_{B \compl p}$ and $\ell_p \comptt k_p = \upsilon_{p}$;
 
 13. For every $A, B \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A,B)$ there is
-a witness $\rho_p \in \sq_{A, B, A, B}(1_A, 1_B, p \circ \id_A, p)$. The witness is natural in $p$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
-$\varphi \in \sq_{A, B, A, B}(1_A, 1_B, p, p')$ we have
+a witness $\rho_p \in \sq^{A, B}_{A, B}(p \compl A, p)$. The witness is natural in $p$ in the sense that: for every $p' \in \text{hom}_{\lambda}(A,B)$ and every
+$\varphi \in \sq^{A, B}_{A, B}(p, p')$ we have
 
-$$\varphi \comptt r_p = r_{p'} \comptt (\phi \compll \upsilon_{\id_A})$$
+$$\varphi \comptt r_p = r_{p'} \comptt (\varphi \compll \upsilon_A)$$
 
-Each $\rho_p$ comes equipped with a friend $\sigma_p \in \sq_{A, B, A, B}(1_A, 1_B, p, p \compl \id_A)$
-such that $\rho_p \comptt \sigma_p = \upsilon_p$ and $\sigma_p \comptt \rho_p = \upsilon_{M \compl \id_A}$;
+Each $\rho_p$ comes equipped with a friend $\sigma_p \in \sq^{A, B}_{A, B}(p, p \compl A)$
+such that $\rho_p \comptt \sigma_p = \upsilon_p$ and $\sigma_p \comptt \rho_p = \upsilon_{p \compl A}$;
 
 14. For every $A, B, C, D \in \mathcal{O}$ and every $r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B,C), p \in \text{hom}_{\lambda}(A,B)$
-there is a witness $a_{r, q, p} \in \sq_{A, D, A, D}(1_A, 1_D, (r \compl q) \compl p, r \compl (q \compl p))$. This witness is natural in $r, q$ and $p$ simultaneously
+there is a witness $a_{r, q, p} \in \sq^{A, D}_{A, D}((r \compl q) \compl p, r \compl (q \compl p))$. This witness is natural in $r, q$ and $p$ simultaneously
 meaning that: for every $r' \in \text{hom}_{\lambda}(C, D), q' \in \text{hom}_{\lambda}(B, C), p' \in \text{hom}_{\lambda}(A, B)$ and every
-$\psi \in \sq_{C, D, C, D}(1_C, 1_D, r, r'), \chi \in \sq_{C, B, C, B}(1_C, 1_B, q, q'), \varphi \in \sq_{A, B, A, B}(1_A, 1_B, p, p')$ we have
+$\psi \in \sq^{C, D}_{C, D}(r, r'), \chi \in \sq^{C, B}_{C, B}(q, q'), \varphi \in \sq^{A, B}_{A, B}(p, p')$ we have
 
-$$a_{r', q, p}\comptt ((\psi \compll \upsilon_{\id_q}) \compll \upsilon_{\id_p})  = (\psi \compll (\upsilon_{id_q} \compll \upsilon_{\id_p})) \comptt a_{r, q, p}$$
+$$a_{r', q, p}\comptt ((\psi \compll \upsilon_{q}) \compll \upsilon_{p})  = (\psi \compll (\upsilon_{q} \compll \upsilon_{p})) \comptt a_{r, q, p}$$
 
-$$a_{r, q', p} \comptt ((\upsilon_{\id_r} \compll \chi) \compll \upsilon_{\id_p}) =  (\upsilon_{\id_r} \compll (\chi \compll \upsilon_{id_q})) \comptt  a_{r, q, p},$$
+$$a_{r, q', p} \comptt ((\upsilon_{r} \compll \chi) \compll \upsilon_{p}) =  (\upsilon_{r} \compll (\chi \compll \upsilon_{q})) \comptt  a_{r, q, p},$$
 
-$$ a_{P, N, M'} \comptt  ((\upsilon_{\id_r} \compll \upsilon_{\id_q}) \compll \varphi) = (\upsilon_{\id_r} \compll (\upsilon_{\id_q} \compll \varphi)) \comptt a_{r, q, p} $$
+$$ a_{r, q, p'} \comptt  ((\upsilon_{r} \compll \upsilon_{q}) \compll \varphi) = (\upsilon_{r} \compll (\upsilon_{q} \compll \varphi)) \comptt a_{r, q, p} $$
 
-Each $a_{r, q, p}$ comes equipped with a friend $b_{r, q, p} \in \sq_{A, D, A, D}(1_A, 1_D, r \compl (q \compl p)), (r \compl q) \compl p)$
+Each $a_{r, q, p}$ comes equipped with a friend $b_{r, q, p} \in \sq^{A, D}_{A, D}(r \compl (q \compl p)), (r \compl q) \compl p)$
 such that $a_{r,q,p} \comptt b_{r, q, p} = \upsilon_{r \compl (q \compl p)}$ and $b_{r, q, p} \comptt a_{r, q, p} = \upsilon_{(r \compl q) \compl p}$.
 
 This data is required to satisfy the following:
@@ -382,32 +387,33 @@ $$1_{A'} \compt f = f = f \compt 1_{A};$$
 For every $A, B, A', B', A'', B'', A''', B''' \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A', B'),
 p'' \in \text{hom}_{\lambda}(A'', B''), p''' \in \text{hom}_{\lambda}(A''', B''')$ and also every $f \in \text{hom}_{\tau}(A, A'), g \in \text{hom}_{\tau}(B,B'),
 f' \in \text{hom}_{\tau}(A', A''), g' \in \text{hom}_{\tau}(B',B''), f'' \in \text{hom}_{\tau}(A'', A'''),  g'' \in \text{hom}_{\tau}(B'',B''')$ as well as
-$\varphi \in \sq_{A, B, A', B'}(f, g, p, p'), \varphi' \in \sq_{A', B', A'', B''}(f', g', p', p''), \varphi'' \in \sq_{A'', B'', A''', B'''}(f'', g'', p'', p''')$ we have
+$\varphi \in \sq^{A, B}_{A', B'}(f, g, p, p'), \varphi' \in \sq^{A', B'}_{A'', B''}(f', g', p', p''), \varphi'' \in \sq^{A'', B''}_{A''', B'''}(f'', g'', p'', p''')$ we have
 
 $$ f'' \compt (f' \compt f) = (f'' \compt f') \compt f,$$
 
 $$ \varphi'' \comptt (\varphi' \comptt \varphi) = (\varphi'' \comptt \varphi') \comptt \varphi;$$
 
 For every $A, B, A', B' \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A',B')$ and also every $f \in \text{hom}_{\tau}(A,A'),
-g \in \text{hom}_{\tau}(B,B')$ as well as every witness $\varphi \in \sq_{A, B, A', B'}(f, g, p, p')$ we have
+g \in \text{hom}_{\tau}(B,B')$ as well as every witness $\varphi \in \sq^{A, B}_{A', B'}(f, g, p, p')$ we have
 
 $$\varphi \comptt \upsilon_p = \phi = \upsilon_{p'} \comptt \varphi;$$
 
 For every $A, B, C, D, E \in \mathcal{O}$ and every $s \in \text{hom}_{\lambda}(D,E), r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B, C),
 p \in \text{hom}_{\lambda}(A, B)$ we have
 
-$$ ( (id_Q \compll a_{r, q, p}) \comptt a_{s, r \circ q, p} ) \comptt (a_{s, r, q} \compll \id_M) = a_{s, r, q \circ p} \comptt  a_{s \circ r, q, p};$$
+$$ ( (id_Q \compll a_{r, q, p}) \comptt a_{s, r \compl q, p} ) \comptt (a_{s, r, q} \compll \id_M) = a_{s, r, q \compl p} \comptt  a_{s \compl r, q, p};$$
 
 For every $A, B, C \in \mathcal{O}$ and every $q \in \text{hom}_{\lambda}(B, C), p \in \text{hom}_{\lambda}(A, B)$ we have
 
-$$ (\upsilon_{id_p} \compll \ell_q) \comptt a_{q, \id_B, p} = \rho_p \compll \upsilon_{\id_B}.$$
+$$ (\upsilon_{p} \compll \ell_q) \comptt a_{q, B, p} = \rho_p \compll \upsilon_{B}.$$
 :::
 
+:::
 
 ::: {#def-double-category-1-categorically}
 ## Double category, 1-categorical version
 
-A double category is the data of
+A double category $\mathbb{C}$ is the data of
 
 1. A class $\mathcal{O}$ (generically upper roman from the beginning of the alphabet);
 
@@ -652,7 +658,36 @@ Whenever, we talk of a double category we will mean in the sense of a class of o
 ::: {#def-double-functors-1-categorically}
 ## Double functors, 1-categorical version
 
+Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F:\mathbb{C} \rightarrow \mathbb{D}$ is the data of:
+
+1. For every $A \in \mathcal{O}^C$, then $F^o(A) \in \mathcal{O}^D$;
+
+2. For every $A, A' \in \mathcal{O}^C$ and $f \in \homt^C(A,A')$, then $F^{\tau}(f) \in \homt^D(F^o(A),F^o(A'))$;
+
+3. For every $A, B \in \mathcal{O}^D$ and $p \in \homl^C(A,B)$, then $F^{\lambda}(p) \in \homl^C(F^o(A), F^o(B))$;
+
+4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$ 
+as well as $\varphi \in \sq_{A,B,A',B'}(f,g,p,p')$ then $F^{\sq}(\varphi) \in \sq_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).$
+
+Satisfying the following relations
+
+1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$; 
+
+2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;  
+
+3. $F^{\sq}(\psi {\compll}^C \varphi) = F^{\sq}(\psi) {\compll}^D F^{\sq}(\varphi)$;
+
+4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$. 
+
+:::
+
+::: {#def-double-functors}
+## Double functor
+
+Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ 
 
 
 :::
+
+
 
