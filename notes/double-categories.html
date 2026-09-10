@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3ef0a07fb3336d1ceda02d5817e45785.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-26327eb01cd8c84a8d726705e4c2b873.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-3ef0a07fb3336d1ceda02d5817e45785.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-448af114855558a4c2c21bf82c708148.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e7b8a20dde2390cac51289c68560c018.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-448af114855558a4c2c21bf82c708148.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -197,7 +197,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 24, 2026</p>
+      <p class="date-modified">September 10, 2026</p>
     </div>
   </div>
     
@@ -375,9 +375,9 @@ window.Quarto = {
 <li><p>For every <span class="math inline">\(A, A' \in \mathcal{O}\)</span> a set <span class="math inline">\(\text{hom}_{\tau}(A,A')\)</span>, called tight arrows (generically lower roman from the beginning of the alphabet);</p></li>
 <li><p>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span> a set <span class="math inline">\(\text{hom}_{\lambda}(A,B)\)</span> called loose arrows (generically lower roman from middle of the alphabet);</p></li>
 <li><p>For every <span class="math inline">\(A \in \mathcal{O}\)</span> a distinguished tight arrow <span class="math inline">\(1_A \in \text{hom}_{\tau}(A,A)\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A \in \mathcal{O}\)</span> a distinguished loose arrow <span class="math inline">\(\text{id}_A \in \text{hom}_{\lambda}(A,A)\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A \in \mathcal{O}\)</span> a distinguished loose arrow <span class="math inline">\(\text{id}_A \in \text{hom}_{\lambda}(A,A)\)</span>, also written as just <span class="math inline">\(A\)</span> if convenient;</p></li>
 <li><p>For every <span class="math inline">\(A, A', A'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A')\)</span> and also every <span class="math inline">\(f' \in \text{hom}_{\tau}(A',A'')\)</span>, there is a <span class="math inline">\(f' \circ_{\tau}f \in \text{hom}_{\tau}(A,A'')\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A, B, A', B' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\tau}(A',B')\)</span>, there is a set <span class="math inline">\(\text{Sq}_{A,A',B,B'}(f, g, p, p')\)</span> called witnesses (generically lower greek);</p></li>
+<li><p>For every <span class="math inline">\(A, B, A', B' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\tau}(A',B')\)</span>, there is a set <span class="math inline">\(\text{Sq}^{A,B}_{A',B'}(f, g, p, p')\)</span> called witnesses (generically lower greek). For simplicity, we will drop identities as redundant information;</p></li>
 </ol>
 <!---
 ::: {.imagify}
@@ -394,7 +394,7 @@ window.Quarto = {
 :::
 -->
 <ol start="8" type="1">
-<li>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span>, and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a distinguished witness <span class="math inline">\(\upsilon_p \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, p)\)</span>;</li>
+<li>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span>, and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a distinguished witness <span class="math inline">\(\upsilon_p \in \text{Sq}_{A, B}^{A,B}(p, p)\)</span>. For simplicity, if <span class="math inline">\(p = \text{id}_A\)</span> for <span class="math inline">\(A \in \mathcal{O}\)</span> then we will write <span class="math inline">\(\upsilon_{id_A}\)</span> as <span class="math inline">\(\upsilon_A\)</span>;</li>
 </ol>
 <!---
 ::: {.imagify}
@@ -411,7 +411,7 @@ window.Quarto = {
 :::
 -->
 <ol start="9" type="1">
-<li>For every <span class="math inline">\(A, B, A', B', A'', B'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), f' \in \text{hom}_{\tau}(A',A''), g \in \text{hom}_{\tau}(B,B'), g' \in \text{hom}_{\tau}(B',B'')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(A',B'), p''\in \text{hom}_{\lambda}(A'',B'')\)</span> as well as every <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A', B'}(f, g, p, p'), \varphi' \in \text{Sq}_{A', B', A'', B''}(f', g', p', p'')\)</span> there is a <span class="math inline">\(\varphi' \circ_{\tau}^2\varphi \in \text{Sq}_{A, B, A'', B''}(f' \circ_{\tau}f, g' \circ_{\tau}g, p, p'')\)</span>.</li>
+<li>For every <span class="math inline">\(A, B, A', B', A'', B'' \in \mathcal{O}\)</span>, and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), f' \in \text{hom}_{\tau}(A',A''), g \in \text{hom}_{\tau}(B,B'), g' \in \text{hom}_{\tau}(B',B'')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(A',B'), p''\in \text{hom}_{\lambda}(A'',B'')\)</span> as well as every <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A', B'}(f, g, p, p'), \varphi' \in \text{Sq}^{A', B'}_{ A'', B''}(f', g', p', p'')\)</span> there is a <span class="math inline">\(\varphi' \circ_{\tau}^2\varphi \in \text{Sq}^{A, B}_{ A'', B''}(f' \circ_{\tau}f, g' \circ_{\tau}g, p, p'')\)</span>.</li>
 </ol>
 <!---
 ::: {.imagify}
@@ -450,82 +450,84 @@ $$\leadsto$$
 :::
 -->
 <ol start="10" type="1">
-<li><p>For every <span class="math inline">\(A, B, C \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C)\)</span> there is a <span class="math inline">\(q \circ_{\lambda}p \in \text{hom}_{\lambda}(A,C)\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A, B, C, A', B', C' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B'), h \in \text{hom}_{\tau}(C,C')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C), p' \in \text{hom}_{\lambda}(A',B'), q' \in \text{hom}_{\lambda}(B',C')\)</span> as well as every witness <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A', B'}(f, g, p, p')\)</span> and <span class="math inline">\(\psi \in \text{Sq}_{B, C, B', C'}(g, h, q, q')\)</span> then there is a witness <span class="math inline">\(\psi \circ_{\lambda}^2\varphi \in \text{Sq}_{B,C,B',C'}(f, h, q \circ_{\lambda}p, q' \circ_{\lambda}p')\)</span>.</p></li>
-<li><p>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(\ell_p \in \text{Sq}_{A, B, A, B}(1_A, 1_B, \text{id}_B \circ p, p)\)</span>. The witness is natural in <span class="math inline">\(p\)</span> in the sense that: for every <span class="math inline">\(p' \in \text{hom}_{\lambda}(A,B)\)</span> and every <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, p')\)</span> we have</p></li>
+<li><p>For every <span class="math inline">\(A, B, C \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C)\)</span> there is a <span class="math inline">\(q \circ_{\lambda}p \in \text{hom}_{\lambda}(A,C)\)</span>. For simplicity we will write <span class="math inline">\(id_B \circ_{\lambda}p\)</span> as <span class="math inline">\(B \circ_{\lambda}p\)</span>.;</p></li>
+<li><p>For every <span class="math inline">\(A, B, C, A', B', C' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B'), h \in \text{hom}_{\tau}(C,C')\)</span> and also every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C), p' \in \text{hom}_{\lambda}(A',B'), q' \in \text{hom}_{\lambda}(B',C')\)</span> as well as every witness <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A', B'}(f, g, p, p')\)</span> and <span class="math inline">\(\psi \in \text{Sq}^{B, C}_{B', C'}(g, h, q, q')\)</span> then there is a witness <span class="math inline">\(\psi \circ_{\lambda}^2\varphi \in \text{Sq}^{B,C}_{B',C'}(f, h, q \circ_{\lambda}p, q' \circ_{\lambda}p')\)</span>.</p></li>
+<li><p>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(\ell_p \in \text{Sq}^{A, B}_{A, B}(B \circ_{\lambda}p, p)\)</span>. The witness is natural in <span class="math inline">\(p\)</span> in the sense that: for every <span class="math inline">\(p' \in \text{hom}_{\lambda}(A,B)\)</span> and every <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A, B}(p, p')\)</span> we have</p></li>
 </ol>
-<p><span class="math display">\[ \varphi \circ_{\tau}^2\ell_p =  \ell_{p'} \circ_{\tau}^2(\upsilon_{id_p} \circ_{\lambda}^2\varphi) .\]</span></p>
-<p>Each <span class="math inline">\(\ell_p\)</span> also comes equipped with a friend <span class="math inline">\(k_p \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, \text{id}_B \circ_{\lambda}p)\)</span> such that <span class="math inline">\(k_p \circ_{\tau}^2\ell_p = \upsilon_{\text{id}_B\circ_{\lambda}p}\)</span> and <span class="math inline">\(\ell_p \circ_{\tau}^2k_p = \upsilon_{p}\)</span>;</p>
+<p><span class="math display">\[ \varphi \circ_{\tau}^2\ell_p =  \ell_{p'} \circ_{\tau}^2(\upsilon_{B} \circ_{\lambda}^2\varphi) .\]</span></p>
+<p>Each <span class="math inline">\(\ell_p\)</span> also comes equipped with a friend <span class="math inline">\(k_p \in \text{Sq}^{A, B}_{A, B}(p, B \circ_{\lambda}p)\)</span> such that <span class="math inline">\(k_p \circ_{\tau}^2\ell_p = \upsilon_{B \circ_{\lambda}p}\)</span> and <span class="math inline">\(\ell_p \circ_{\tau}^2k_p = \upsilon_{p}\)</span>;</p>
 <ol start="13" type="1">
-<li>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(\rho_p \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p \circ \text{id}_A, p)\)</span>. The witness is natural in <span class="math inline">\(p\)</span> in the sense that: for every <span class="math inline">\(p' \in \text{hom}_{\lambda}(A,B)\)</span> and every <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, p')\)</span> we have</li>
+<li>For every <span class="math inline">\(A, B \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(\rho_p \in \text{Sq}^{A, B}_{A, B}(p \circ_{\lambda}A, p)\)</span>. The witness is natural in <span class="math inline">\(p\)</span> in the sense that: for every <span class="math inline">\(p' \in \text{hom}_{\lambda}(A,B)\)</span> and every <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A, B}(p, p')\)</span> we have</li>
 </ol>
-<p><span class="math display">\[\varphi \circ_{\tau}^2r_p = r_{p'} \circ_{\tau}^2(\phi \circ_{\lambda}^2\upsilon_{\text{id}_A})\]</span></p>
-<p>Each <span class="math inline">\(\rho_p\)</span> comes equipped with a friend <span class="math inline">\(\sigma_p \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, p \circ_{\lambda}\text{id}_A)\)</span> such that <span class="math inline">\(\rho_p \circ_{\tau}^2\sigma_p = \upsilon_p\)</span> and <span class="math inline">\(\sigma_p \circ_{\tau}^2\rho_p = \upsilon_{M \circ_{\lambda}\text{id}_A}\)</span>;</p>
+<p><span class="math display">\[\varphi \circ_{\tau}^2r_p = r_{p'} \circ_{\tau}^2(\varphi \circ_{\lambda}^2\upsilon_A)\]</span></p>
+<p>Each <span class="math inline">\(\rho_p\)</span> comes equipped with a friend <span class="math inline">\(\sigma_p \in \text{Sq}^{A, B}_{A, B}(p, p \circ_{\lambda}A)\)</span> such that <span class="math inline">\(\rho_p \circ_{\tau}^2\sigma_p = \upsilon_p\)</span> and <span class="math inline">\(\sigma_p \circ_{\tau}^2\rho_p = \upsilon_{p \circ_{\lambda}A}\)</span>;</p>
 <ol start="14" type="1">
-<li>For every <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and every <span class="math inline">\(r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B,C), p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(a_{r, q, p} \in \text{Sq}_{A, D, A, D}(1_A, 1_D, (r \circ_{\lambda}q) \circ_{\lambda}p, r \circ_{\lambda}(q \circ_{\lambda}p))\)</span>. This witness is natural in <span class="math inline">\(r, q\)</span> and <span class="math inline">\(p\)</span> simultaneously meaning that: for every <span class="math inline">\(r' \in \text{hom}_{\lambda}(C, D), q' \in \text{hom}_{\lambda}(B, C), p' \in \text{hom}_{\lambda}(A, B)\)</span> and every <span class="math inline">\(\psi \in \text{Sq}_{C, D, C, D}(1_C, 1_D, r, r'), \chi \in \text{Sq}_{C, B, C, B}(1_C, 1_B, q, q'), \varphi \in \text{Sq}_{A, B, A, B}(1_A, 1_B, p, p')\)</span> we have</li>
+<li>For every <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and every <span class="math inline">\(r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B,C), p \in \text{hom}_{\lambda}(A,B)\)</span> there is a witness <span class="math inline">\(a_{r, q, p} \in \text{Sq}^{A, D}_{A, D}((r \circ_{\lambda}q) \circ_{\lambda}p, r \circ_{\lambda}(q \circ_{\lambda}p))\)</span>. This witness is natural in <span class="math inline">\(r, q\)</span> and <span class="math inline">\(p\)</span> simultaneously meaning that: for every <span class="math inline">\(r' \in \text{hom}_{\lambda}(C, D), q' \in \text{hom}_{\lambda}(B, C), p' \in \text{hom}_{\lambda}(A, B)\)</span> and every <span class="math inline">\(\psi \in \text{Sq}^{C, D}_{C, D}(r, r'), \chi \in \text{Sq}^{B, C}_{B, C}(q, q'), \varphi \in \text{Sq}^{A, B}_{A, B}(p, p')\)</span> we have</li>
 </ol>
-<p><span class="math display">\[a_{r', q, p}\circ_{\tau}^2((\psi \circ_{\lambda}^2\upsilon_{\text{id}_q}) \circ_{\lambda}^2\upsilon_{\text{id}_p})  = (\psi \circ_{\lambda}^2(\upsilon_{id_q} \circ_{\lambda}^2\upsilon_{\text{id}_p})) \circ_{\tau}^2a_{r, q, p}\]</span></p>
-<p><span class="math display">\[a_{r, q', p} \circ_{\tau}^2((\upsilon_{\text{id}_r} \circ_{\lambda}^2\chi) \circ_{\lambda}^2\upsilon_{\text{id}_p}) =  (\upsilon_{\text{id}_r} \circ_{\lambda}^2(\chi \circ_{\lambda}^2\upsilon_{id_q})) \circ_{\tau}^2a_{r, q, p},\]</span></p>
-<p><span class="math display">\[ a_{P, N, M'} \circ_{\tau}^2((\upsilon_{\text{id}_r} \circ_{\lambda}^2\upsilon_{\text{id}_q}) \circ_{\lambda}^2\varphi) = (\upsilon_{\text{id}_r} \circ_{\lambda}^2(\upsilon_{\text{id}_q} \circ_{\lambda}^2\varphi)) \circ_{\tau}^2a_{r, q, p} \]</span></p>
-<p>Each <span class="math inline">\(a_{r, q, p}\)</span> comes equipped with a friend <span class="math inline">\(b_{r, q, p} \in \text{Sq}_{A, D, A, D}(1_A, 1_D, r \circ_{\lambda}(q \circ_{\lambda}p)), (r \circ_{\lambda}q) \circ_{\lambda}p)\)</span> such that <span class="math inline">\(a_{r,q,p} \circ_{\tau}^2b_{r, q, p} = \upsilon_{r \circ_{\lambda}(q \circ_{\lambda}p)}\)</span> and <span class="math inline">\(b_{r, q, p} \circ_{\tau}^2a_{r, q, p} = \upsilon_{(r \circ_{\lambda}q) \circ_{\lambda}p}\)</span>.</p>
+<p><span class="math display">\[a_{r', q, p}\circ_{\tau}^2((\psi \circ_{\lambda}^2\upsilon_{q}) \circ_{\lambda}^2\upsilon_{p})  = (\psi \circ_{\lambda}^2(\upsilon_{q} \circ_{\lambda}^2\upsilon_{p})) \circ_{\tau}^2a_{r, q, p}\]</span></p>
+<p><span class="math display">\[a_{r, q', p} \circ_{\tau}^2((\upsilon_{r} \circ_{\lambda}^2\chi) \circ_{\lambda}^2\upsilon_{p}) =  (\upsilon_{r} \circ_{\lambda}^2(\chi \circ_{\lambda}^2\upsilon_{q})) \circ_{\tau}^2a_{r, q, p},\]</span></p>
+<p><span class="math display">\[ a_{r, q, p'} \circ_{\tau}^2((\upsilon_{r} \circ_{\lambda}^2\upsilon_{q}) \circ_{\lambda}^2\varphi) = (\upsilon_{r} \circ_{\lambda}^2(\upsilon_{q} \circ_{\lambda}^2\varphi)) \circ_{\tau}^2a_{r, q, p} \]</span></p>
+<p>Each <span class="math inline">\(a_{r, q, p}\)</span> comes equipped with a friend <span class="math inline">\(b_{r, q, p} \in \text{Sq}^{A, D}_{A, D}(r \circ_{\lambda}(q \circ_{\lambda}p)), (r \circ_{\lambda}q) \circ_{\lambda}p)\)</span> such that <span class="math inline">\(a_{r,q,p} \circ_{\tau}^2b_{r, q, p} = \upsilon_{r \circ_{\lambda}(q \circ_{\lambda}p)}\)</span> and <span class="math inline">\(b_{r, q, p} \circ_{\tau}^2a_{r, q, p} = \upsilon_{(r \circ_{\lambda}q) \circ_{\lambda}p}\)</span>.</p>
 <p>This data is required to satisfy the following:</p>
 <p>For every <span class="math inline">\(A, A' \in \mathcal{O}\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A')\)</span> we have</p>
 <p><span class="math display">\[1_{A'} \circ_{\tau}f = f = f \circ_{\tau}1_{A};\]</span></p>
 <p>For every <span class="math inline">\(A, B, A', B', A'', B'', A''', B''' \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A', B'),
 p'' \in \text{hom}_{\lambda}(A'', B''), p''' \in \text{hom}_{\lambda}(A''', B''')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(A, A'), g \in \text{hom}_{\tau}(B,B'),
-f' \in \text{hom}_{\tau}(A', A''), g' \in \text{hom}_{\tau}(B',B''), f'' \in \text{hom}_{\tau}(A'', A'''),  g'' \in \text{hom}_{\tau}(B'',B''')\)</span> as well as <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A', B'}(f, g, p, p'), \varphi' \in \text{Sq}_{A', B', A'', B''}(f', g', p', p''), \varphi'' \in \text{Sq}_{A'', B'', A''', B'''}(f'', g'', p'', p''')\)</span> we have</p>
+f' \in \text{hom}_{\tau}(A', A''), g' \in \text{hom}_{\tau}(B',B''), f'' \in \text{hom}_{\tau}(A'', A'''),  g'' \in \text{hom}_{\tau}(B'',B''')\)</span> as well as <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A', B'}(f, g, p, p'), \varphi' \in \text{Sq}^{A', B'}_{A'', B''}(f', g', p', p''), \varphi'' \in \text{Sq}^{A'', B''}_{A''', B'''}(f'', g'', p'', p''')\)</span> we have</p>
 <p><span class="math display">\[ f'' \circ_{\tau}(f' \circ_{\tau}f) = (f'' \circ_{\tau}f') \circ_{\tau}f,\]</span></p>
 <p><span class="math display">\[ \varphi'' \circ_{\tau}^2(\varphi' \circ_{\tau}^2\varphi) = (\varphi'' \circ_{\tau}^2\varphi') \circ_{\tau}^2\varphi;\]</span></p>
 <p>For every <span class="math inline">\(A, B, A', B' \in \mathcal{O}\)</span> and every <span class="math inline">\(p \in \text{hom}_{\lambda}(A, B), p' \in \text{hom}_{\lambda}(A',B')\)</span> and also every <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'),
-g \in \text{hom}_{\tau}(B,B')\)</span> as well as every witness <span class="math inline">\(\varphi \in \text{Sq}_{A, B, A', B'}(f, g, p, p')\)</span> we have</p>
-<p><span class="math display">\[\varphi \circ_{\tau}^2\upsilon_p = \phi = \upsilon_{p'} \circ_{\tau}^2\varphi;\]</span></p>
+g \in \text{hom}_{\tau}(B,B')\)</span> as well as every witness <span class="math inline">\(\varphi \in \text{Sq}^{A, B}_{A', B'}(f, g, p, p')\)</span> we have</p>
+<p><span class="math display">\[\varphi \circ_{\tau}^2\upsilon_p = \varphi = \upsilon_{p'} \circ_{\tau}^2\varphi;\]</span></p>
 <p>For every <span class="math inline">\(A, B, C, D, E \in \mathcal{O}\)</span> and every <span class="math inline">\(s \in \text{hom}_{\lambda}(D,E), r \in \text{hom}_{\lambda}(C,D), q \in \text{hom}_{\lambda}(B, C),
 p \in \text{hom}_{\lambda}(A, B)\)</span> we have</p>
-<p><span class="math display">\[ ( (id_Q \circ_{\lambda}^2a_{r, q, p}) \circ_{\tau}^2a_{s, r \circ q, p} ) \circ_{\tau}^2(a_{s, r, q} \circ_{\lambda}^2\text{id}_M) = a_{s, r, q \circ p} \circ_{\tau}^2a_{s \circ r, q, p};\]</span></p>
+<p><span class="math display">\[ ( (\upsilon_s \circ_{\lambda}^2a_{r, q, p}) \circ_{\tau}^2a_{s, r \circ_{\lambda}q, p} ) \circ_{\tau}^2(a_{s, r, q} \circ_{\lambda}^2\upsilon_p) = a_{s, r, q \circ_{\lambda}p} \circ_{\tau}^2a_{s \circ_{\lambda}r, q, p};\]</span></p>
 <p>For every <span class="math inline">\(A, B, C \in \mathcal{O}\)</span> and every <span class="math inline">\(q \in \text{hom}_{\lambda}(B, C), p \in \text{hom}_{\lambda}(A, B)\)</span> we have</p>
-<p><span class="math display">\[ (\upsilon_{id_p} \circ_{\lambda}^2\ell_q) \circ_{\tau}^2a_{q, \text{id}_B, p} = \rho_p \circ_{\lambda}^2\upsilon_{\text{id}_B}.\]</span></p>
+<p><span class="math display">\[ (\upsilon_{p} \circ_{\lambda}^2\ell_q) \circ_{\tau}^2a_{q, B, p} = \rho_p \circ_{\lambda}^2\upsilon_{B};\]</span></p>
+<p>For every <span class="math inline">\(A, B, C, A', B', C', A'', B'', C'' \in \mathcal{O}\)</span> and <span class="math inline">\(f \in \text{hom}_{\tau}(A,A'), f' \in \text{hom}_{\tau}(A',A''), g \in \text{hom}_{\tau}(B, B'), g' \in \text{hom}_{\tau}(B',B''), h \in \text{hom}_{\tau}(C,C'), h' \in \text{hom}_{\tau}(C',C'')\)</span> and every <span class="math inline">\(q \in \text{hom}_{\lambda}(B,C), p \in \text{hom}_{\lambda}(A,B), q' \in \text{hom}_{\lambda}(B',C'), p' \in \text{hom}_{\lambda}(A',B'), q'' \in \text{hom}_{\lambda}(B'',C''), p'' \in \text{hom}_{\lambda}(A'', B'')\)</span> and also every <span class="math inline">\(\varphi \in \text{Sq}_{A',B'}^{A,B}(f,g,p,p'), \psi \in \text{Sq}_{B',C'}^{B,C}(g,h,q,q'), \varphi' \in \text{Sq}_{A'',B''}^{A',B'}(f',g',p', p''), \psi' \in \text{Sq}_{B'',C''}^{B',C'}(g',h',q',q'')\)</span> we have</p>
+<p><span class="math display">\[(\psi \circ_{\lambda}^2\varphi) \circ_{\tau}^2(\psi' \circ_{\lambda}^2\varphi') = (\varphi' \circ_{\tau}^2\varphi) \circ_{\lambda}^2(\psi' \circ_{\tau}^2\psi).\]</span></p>
 </div>
 <div id="def-double-category-1-categorically" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Double category, 1-categorical version)</strong></span> A double category is the data of</p>
+<p><span class="theorem-title"><strong>Definition 5 (Double category, 1-categorical version)</strong></span> A double category <span class="math inline">\(\mathbb{C}\)</span> is the data of</p>
 <ol type="1">
 <li><p>A class <span class="math inline">\(\mathcal{O}\)</span> (generically upper roman from the beginning of the alphabet);</p></li>
 <li><p>A set <span class="math inline">\(\text{hom}_{\tau}(A,B)\)</span> for each <span class="math inline">\(A, B \in \mathcal{O}\)</span> (of tight morphisms, generically lower roman from the beginning of the alphabet);</p></li>
 <li><p>A set <span class="math inline">\(\text{hom}_{\lambda}(A,B)\)</span> for each <span class="math inline">\(A, B \in \mathcal{O}\)</span> (of loose morphisms, generically lower roman from the middle of the alphabet);</p></li>
 <li><p>A distinguished tight arrow <span class="math inline">\(1_A \in \text{hom}_{\tau}(A,A)\)</span> and a distinguished loose arrow <span class="math inline">\(\text{id}_A \in \text{hom}_{\lambda}(A,A)\)</span> for <span class="math inline">\(A \in \mathcal{O}\)</span>;</p></li>
-<li><p>For <span class="math inline">\(f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C)\)</span> there is <span class="math inline">\(f' \circ_{\tau} f \in \text{hom}_{\tau}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
-<li><p>For <span class="math inline">\(p \in \text{hom}_{\lambda}(A, B), q \in \text{hom}_{\lambda}(B,C)\)</span> there is <span class="math inline">\(q \circ_{\lambda} p \in \text{hom}_{\lambda}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
-<li><p>A set <span class="math inline">\(\text{Sq}_{A,B,C,D}(f,g,p,p')\)</span> for each <span class="math inline">\(f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D)\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(C,D)\)</span> for <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> (generically lower case greek);</p></li>
-<li><p>A distinguished square <span class="math inline">\(\upsilon_p \in \text{Sq}_{A,B,A,B}(1_A,1_B,p,p)\)</span> for each <span class="math inline">\(p \in\text{hom}_{\lambda}(A,B)\)</span> and for <span class="math inline">\(A, B \in \mathcal{O}\)</span>;</p></li>
-<li><p>For <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p'')\)</span> there is <span class="math inline">\(\phi' \circ_{\tau}^2 \phi \in \text{Sq}_{A,B,E,F}(f'\circ_{\tau}f,g' \circ_{\tau}g,p,p'')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
-<li><p>For <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q')\)</span> there is <span class="math inline">\(\psi \circ_{\lambda}^2 \phi \in \text{Sq}_{A,E,C,F}(f,h,q \circ_{\lambda} p, q' \circ_{\lambda} p')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C)\)</span> there is <span class="math inline">\(f' \circ_{\tau}f \in \text{hom}_{\tau}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(p \in \text{hom}_{\lambda}(A, B), q \in \text{hom}_{\lambda}(B,C)\)</span> there is <span class="math inline">\(q \circ_{\lambda}p \in \text{hom}_{\lambda}(A,C)\)</span> for <span class="math inline">\(A, B, C \in \mathcal{O}\)</span>;</p></li>
+<li><p>A set <span class="math inline">\(\text{Sq}^{A,B}_{C,D}(f,g,p,p')\)</span> for each <span class="math inline">\(f \in \text{hom}_{\tau}(A,C), g \in \text{hom}_{\tau}(B,D)\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(C,D)\)</span> for <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> (generically lower case greek). For simplicity, we will drop any identities as redundant information;</p></li>
+<li><p>A distinguished square <span class="math inline">\(\upsilon_p \in \text{Sq}_{A,B}^{A,B}(p,p)\)</span> for each <span class="math inline">\(p \in\text{hom}_{\lambda}(A,B)\)</span> and for <span class="math inline">\(A, B \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p'')\)</span> there is <span class="math inline">\(\phi' \circ_{\tau}^2\phi \in \text{Sq}^{A,B}_{E,F}(f'\circ_{\tau}f,g' \circ_{\tau}g,p,p'')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
+<li><p>For <span class="math inline">\(\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \psi \in \text{Sq}^{B,E}_{D,F}(g,h,q,q')\)</span> there is <span class="math inline">\(\psi \circ_{\lambda}^2\phi \in \text{Sq}^{A,E}_{C,F}(f,h,q \circ_{\lambda}p, q' \circ_{\lambda}p')\)</span> for <span class="math inline">\(A, B, C, D, E, F \in \mathcal{O}\)</span>;</p></li>
 </ol>
 <p>Satisfying the following relations:</p>
 <ol type="1">
 <li>For <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and <span class="math inline">\(f \in \text{hom}_{\tau}(A,B), f' \in \text{hom}_{\tau}(B, C), f'' \in \text{hom}_{\tau}(C,D)\)</span> we have that</li>
 </ol>
-<p><span class="math display">\[f \circ_{\tau} 1_A = f = 1_B \circ_{\tau} f\]</span></p>
+<p><span class="math display">\[f \circ_{\tau}1_A = f = 1_B \circ_{\tau}f\]</span></p>
 <p>and</p>
-<p><span class="math display">\[(f'' \circ_{\tau} f') \circ_{\tau} f = f'' \circ_{\tau} (f' \circ_{\tau} f);\]</span></p>
+<p><span class="math display">\[(f'' \circ_{\tau}f') \circ_{\tau}f = f'' \circ_{\tau}(f' \circ_{\tau}f);\]</span></p>
 <ol start="2" type="1">
 <li>For <span class="math inline">\(A, B, C, D \in \mathcal{O}\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B, C), r \in \text{hom}_{\lambda}(C,D)\)</span> we have that</li>
 </ol>
-<p><span class="math display">\[p \circ_{\lambda} \text{id}_{A} = p = \text{id}_{B} \circ_{\lambda} p\]</span></p>
+<p><span class="math display">\[p \circ_{\lambda}\text{id}_{A} = p = \text{id}_{B} \circ_{\lambda}p\]</span></p>
 <p>and</p>
-<p><span class="math display">\[(r \circ_{\tau} q) \circ_{\tau} p = r \circ_{\tau} (q \circ_{\tau} p);\]</span></p>
+<p><span class="math display">\[(r \circ_{\lambda}q) \circ_{\lambda}p = r \circ_{\lambda}(q \circ_{\lambda}p);\]</span></p>
 <ol start="3" type="1">
-<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \phi'' \in \text{Sq}_{E, F, G, H}(f'',g'',p'', p''')\)</span> we have that</li>
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \phi'' \in \text{Sq}^{E, F}_{G, H}(f'',g'',p'', p''')\)</span> we have that</li>
 </ol>
-<p><span class="math display">\[\upsilon_{p'} \circ_{\tau}^2 \phi = \phi = \phi \circ_{\tau}^2 \upsilon_{p}\]</span></p>
+<p><span class="math display">\[\upsilon_{p'} \circ_{\tau}^2\phi = \phi = \phi \circ_{\tau}^2\upsilon_{p}\]</span></p>
 <p>and</p>
-<p><span class="math display">\[(\phi'' \circ_{\tau}^2 \phi') \circ_{\tau}^2 \phi = \phi'' \circ_{\tau}^2 (\phi' \circ_{\tau}^2 \phi);\]</span></p>
+<p><span class="math display">\[(\phi'' \circ_{\tau}^2\phi') \circ_{\tau}^2\phi = \phi'' \circ_{\tau}^2(\phi' \circ_{\tau}^2\phi);\]</span></p>
 <ol start="4" type="1">
-<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \psi \in \text{Sq}_{B,E,D,F}(g,h,q,q'), \chi \in \text{Sq}_{E, G, F, H}(h,k,r,r')\)</span> we have that</li>
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \psi \in \text{Sq}^{B,E}_{D,F}(g,h,q,q'), \chi \in \text{Sq}^{E, G}_{F, H}(h,k,r,r')\)</span> we have that</li>
 </ol>
-<p><span class="math display">\[(\chi  \circ_{\lambda}^2 \psi) \circ_{\lambda}^2 \phi = \chi \circ_{\lambda}^2 (\psi \circ_{\lambda}^2 \phi);\]</span></p>
+<p><span class="math display">\[(\chi  \circ_{\lambda}^2\psi) \circ_{\lambda}^2\phi = \chi \circ_{\lambda}^2(\psi \circ_{\lambda}^2\phi);\]</span></p>
 <ol start="5" type="1">
-<li>For <span class="math inline">\(A, B, C, D, E, F, G, H, K \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}_{A,B,C,D}(f,g,p,p'), \phi' \in \text{Sq}_{C,D,E,F}(f',g',p',p''), \psi \in \text{Sq}_{B, G, D, H}(g, h, q, q'), \psi' \in \text{Sq}_{D, H, F, K}(g', h', q', q'')\)</span> we have that</li>
+<li>For <span class="math inline">\(A, B, C, D, E, F, G, H, K \in \mathcal{O}\)</span> and <span class="math inline">\(\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \psi \in \text{Sq}^{B, G}_{D, H}(g, h, q, q'), \psi' \in \text{Sq}^{D, H}_{F, K}(g', h', q', q'')\)</span> we have that</li>
 </ol>
-<p><span class="math display">\[(\phi' \circ_{\tau}^2 \phi) \circ_{\lambda}^2 (\psi' \circ_{\tau}^2 \psi) = (\phi' \circ_{\lambda}^2 \psi') \circ_{\tau}^2 (\phi \circ_{\lambda}^2 \psi).\]</span></p>
+<p><span class="math display">\[(\phi' \circ_{\tau}^2\phi) \circ_{\lambda}^2(\psi' \circ_{\tau}^2\psi) = (\phi' \circ_{\lambda}^2\psi') \circ_{\tau}^2(\phi \circ_{\lambda}^2\psi).\]</span></p>
 </div>
 <p>Let <span class="math inline">\(\mathcal{C}\text{at}\)</span> denote the category which has as objects (small) categories and morphisms as functors between these.</p>
 <p>To produce the following definition we will need to be explicit about what the fibre products are in <span class="math inline">\(\mathcal{C}\text{at}\)</span>, namely the strict pullbacks. For three (small) categories <span class="math inline">\(C, D, E\)</span> in <span class="math inline">\(\mathcal{C}\text{at}\)</span> and functors <span class="math inline">\(f: C
@@ -643,7 +645,23 @@ p' \in \text{hom}_{\lambda}(C,D)\]</span> <span class="math display">\[ \text{Sq
 </div>
 <p>Whenever, we talk of a double category we will mean in the sense of a class of objects with two hom-sets as above.</p>
 <div id="def-double-functors-1-categorically" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Double functors, 1-categorical version)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 7 (Double functors, 1-categorical version)</strong></span> Let <span class="math inline">\(\mathbb{C}, \mathbb{D}\)</span> be double categories. A double functor <span class="math inline">\(F:\mathbb{C} \rightarrow \mathbb{D}\)</span> is the data of:</p>
+<ol type="1">
+<li><p>For every <span class="math inline">\(A \in \mathcal{O}^C\)</span>, then <span class="math inline">\(F^o(A) \in \mathcal{O}^D\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A, A' \in \mathcal{O}^C\)</span> and <span class="math inline">\(f \in \text{hom}_{\tau}^C(A,A')\)</span>, then <span class="math inline">\(F^{\tau}(f) \in \text{hom}_{\tau}^D(F^o(A),F^o(A'))\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A, B \in \mathcal{O}^D\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}^C(A,B)\)</span>, then <span class="math inline">\(F^{\lambda}(p) \in \text{hom}_{\lambda}^C(F^o(A), F^o(B))\)</span>;</p></li>
+<li><p>For every <span class="math inline">\(A, B, A', B' \in \mathcal{O}^C\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}^C(A,A'), g \in \text{hom}_{\tau}^C(B,B')\)</span> also every <span class="math inline">\(p \in \text{hom}_{\lambda}^C(A,B), p' \in \text{hom}_{\lambda}^C(A',B')\)</span> as well as <span class="math inline">\(\varphi \in \text{Sq}_{A,B,A',B'}(f,g,p,p')\)</span> then <span class="math inline">\(F^{\text{Sq}}(\varphi) \in \text{Sq}_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).\)</span></p></li>
+</ol>
+<p>Satisfying the following relations</p>
+<ol type="1">
+<li><p><span class="math inline">\(F^{\tau}(f' \circ_{\tau}^C f) = F^{\tau}(f') \circ_{\tau}^D F^{\tau}(f)\)</span>;</p></li>
+<li><p><span class="math inline">\(F^{\lambda}(q \circ_{\lambda}^C p) = F^{\lambda}(q) \circ_{\lambda}^D F^{\lambda}(p)\)</span>;</p></li>
+<li><p><span class="math inline">\(F^{\text{Sq}}(\psi {\circ_{\lambda}^2}^C \varphi) = F^{\text{Sq}}(\psi) {\circ_{\lambda}^2}^D F^{\text{Sq}}(\varphi)\)</span>;</p></li>
+<li><p><span class="math inline">\(F^{\text{Sq}}(\varphi' {\circ_{\tau}^2}^C \varphi) = F^{\text{Sq}}(\varphi') {\circ_{\tau}^2}^D F^{\text{Sq}}(\varphi)\)</span>.</p></li>
+</ol>
+</div>
+<div id="def-double-functors" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (Double functor)</strong></span> Let <span class="math inline">\(\mathbb{C}, \mathbb{D}\)</span> be double categories. A double functor <span class="math inline">\(F: \mathbb{C} \rightarrow \mathbb{D}\)</span></p>
 </div>
 
 
