@@ -16,6 +16,7 @@ date: 08-12-2026
 \newcommand{\ob}{\text{ob}}
 \newcommand{\mor}{\text{Mor}}
 \newcommand{\id}{\text{id}}
+\newcommand{\rel}{\mathbb{R}\text{el}}
 :::
 
 
@@ -438,7 +439,7 @@ A double category $\mathbb{C}$ is the data of
 
 Satisfying the following relations:
 
-1. For $A, B, C, D \in \mathcal{O}$ and $f \in \homt(A,B), f' \in \homt(B, C), f'' \in \homt(C,D)$ we have that
+For $A, B, C, D \in \mathcal{O}$ and $f \in \homt(A,B), f' \in \homt(B, C), f'' \in \homt(C,D)$ we have that
 
 $$f \compt 1_A = f = 1_B \compt f$$
 
@@ -446,7 +447,7 @@ and
 
 $$(f'' \compt f') \compt f = f'' \compt (f' \compt f);$$
 
-2. For $A, B, C, D \in \mathcal{O}$ and $p \in \homl(A,B), q \in \homl(B, C), r \in \homl(C,D)$ we have that
+For every $A, B, C, D \in \mathcal{O}$ and $p \in \homl(A,B), q \in \homl(B, C), r \in \homl(C,D)$ we have that
 
 $$p \compl \text{id}_{A} = p = \text{id}_{B} \compl p$$
 
@@ -454,7 +455,7 @@ and
 
 $$(r \compl q) \compl p = r \compl (q \compl p);$$
 
-3. For $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \phi'' \in \text{Sq}^{E, F}_{G, H}(f'',g'',p'', p''')$ we have that
+For every $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \phi'' \in \text{Sq}^{E, F}_{G, H}(f'',g'',p'', p''')$ we have that
 
 $$\upsilon_{p'} \comptt \phi = \phi = \phi \comptt \upsilon_{p}$$
 
@@ -462,11 +463,11 @@ and
 
 $$(\phi'' \comptt \phi') \comptt \phi = \phi'' \comptt (\phi' \comptt \phi);$$
 
-4. For $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \psi \in \text{Sq}^{B,E}_{D,F}(g,h,q,q'), \chi \in \text{Sq}^{E, G}_{F, H}(h,k,r,r')$ we have that
+For every $A, B, C, D, E, F, G, H \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \psi \in \text{Sq}^{B,E}_{D,F}(g,h,q,q'), \chi \in \text{Sq}^{E, G}_{F, H}(h,k,r,r')$ we have that
 
 $$(\chi  \compll \psi) \compll \phi = \chi \compll (\psi \compll \phi);$$
 
-5. For $A, B, C, D, E, F, G, H, K \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \psi \in \text{Sq}^{B, G}_{D, H}(g, h, q, q'), \psi' \in \text{Sq}^{D, H}_{F, K}(g', h', q', q'')$ we have that
+For every $A, B, C, D, E, F, G, H, K \in \mathcal{O}$ and $\phi \in \text{Sq}^{A,B}_{C,D}(f,g,p,p'), \phi' \in \text{Sq}^{C,D}_{E,F}(f',g',p',p''), \psi \in \text{Sq}^{B, G}_{D, H}(g, h, q, q'), \psi' \in \text{Sq}^{D, H}_{F, K}(g', h', q', q'')$ we have that
 
 $$(\phi' \comptt \phi) \compll (\psi' \comptt \psi) = (\phi' \compll \psi') \comptt (\phi \compll \psi).$$
 
@@ -569,7 +570,7 @@ Satisfying the following additional axioms, expressed as commuting diagrams in $
 
 A category object in $\mathcal{C}\text{at}$ is equivalently a double category.
 
-A double category is equivalently a category object in $\mathcal{C}\text{at}$.
+A double category is equivalently a category object internal to $\mathcal{C}\text{at}$.
 
 :::
 
@@ -653,7 +654,16 @@ $$(A,E, q \compl p, C, F, q' \compl p', f, h, \psi \compll \varphi).$$
 
 :::
 
-Whenever, we talk of a double category we will mean in the sense of a class of objects with two hom-sets as above.
+Whenever we talk of a double category we will mean the definition which starts with a class of objects and two hom-sets, as above.
+
+::: {#exm-1-categorical-double-category}
+## Examples of 1-categorical double categories
+
+1. We will now describe $\rel$ the double category of relations and functions. Firstly, $\mathcal{O}$ is class of small sets then for sets $A,B$ $\homt(A,B) = \text{hom}_{Set}(A,B)$ is set of all functions form $A$ to $B$ 
+whereas $\homl(A,B)$ is the set of relations $A$ to $B$ viewed as monomorphisms into $A\times B$. The tight composition is simply composition of functions, while loose composition
+is defined as composition of relations.   
+
+:::
 
 
 ::: {#def-double-functors-1-categorically}
@@ -685,7 +695,9 @@ Satisfying the following relations
 ::: {#def-double-functors}
 ## Double functor
 
-Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ 
+Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ is the data of:
+
+1.   
 
 
 :::
