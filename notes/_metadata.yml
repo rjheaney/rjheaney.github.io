@@ -16,6 +16,8 @@ imagify:
     \usepackage{amssymb}
     \usepackage{quiver}
     \usepackage{mathbbol}
+    \usepackage{boisik}
+    \uespackage{objectz}
     \newcommand{\sq}{\text{Sq}}
     \newcommand{\homt}{\text{hom}_{\tau}}
     \newcommand{\homl}{\text{hom}_{\lambda}}
