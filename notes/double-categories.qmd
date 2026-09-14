@@ -686,7 +686,7 @@ Next we will give a description of a double category inspired by multivalued log
 
 :::
 
-
+<!---
 ::: {#def-double-functors-1-categorically}
 ## Double functors, 1-categorical version
 
@@ -722,10 +722,11 @@ Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: 
 
 
 :::
+-->
 
 # Bilattices
 
-Given two categories $\mathcal{C}$ and $ \mathcal{D}$ which have, respectively, products and coproducts the twisted product produces a pair
+Given two categories $\mathcal{C}$ and $\mathcal{D}$ which have, respectively, products and coproducts the twisted product produces a pair
 of categories with the same class of objects, simply the product of the classes of objects $\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})$.
 The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows 
 is the product $\mathcal{C} \times \mathcal{D}$.
@@ -734,7 +735,7 @@ We will need to define products and coproducts for each category. The first of t
 $(A_1,A_2)\bowtie (B_1,B_2) \triangleq (A_1 \sqcap_{\mathcal{C}} B_1, A_2 \sqcup_{\mathcal{D}} B_2)$. A prior there is no reason why this should
 be a functor, even given functors $\ltimes (B_1, B_2)$ and
  $(A_1,A_2) \rtimes : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}\times\mathcal{D}$ for fixed $(A_1,A_2), (B_1,B_2)$ that coincide
-still does mean that coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see @Levy03 Appendix A, @power1997premonoidal Section 3).
+still does mean that the coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see @Levy03 Appendix A, @power1997premonoidal Section 3).
 We now ask not the interchange law to hold but for the centre of a Binoidal category, defined as the wide subcategory of morphisms which are central. For our specific case we say $f:(A_1,A_2) \not\rightarrow (B_1, B_2)$ is central when for each $g : (C_1,C_2) \not\rightarrow (D_1,D_2)$;
 
 $$(f \bowtie \text{id}_{(C_1,C_2)}) \fcmp (\text{id}_{(B_1,B_2)} \bowtie g) = (\text{id}_{(C_1,C_2)}\bowtie g) \fcmp (f \bowtie \text{id}_{(D_1,D_2)})$$

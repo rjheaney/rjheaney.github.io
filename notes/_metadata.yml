@@ -17,7 +17,7 @@ imagify:
     \usepackage{quiver}
     \usepackage{mathbbol}
     \usepackage{boisik}
-    \uespackage{objectz}
+    \uespackage{oz}
     \newcommand{\sq}{\text{Sq}}
     \newcommand{\homt}{\text{hom}_{\tau}}
     \newcommand{\homl}{\text{hom}_{\lambda}}
