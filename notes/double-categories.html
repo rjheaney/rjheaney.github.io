@@ -712,33 +712,48 @@ p' \in \text{hom}_{\lambda}(C,D)\]</span> <span class="math display">\[ \text{Sq
 <div class="no-row-height column-margin column-container"><div id="ref-Fitting20" class="csl-entry" role="listitem">
 Fitting, Melvin. 2020. <span>“Bilattice <span>Basics</span>.”</span> <em>Journal of Applied Logics</em> 7 (6): 973–1018.
 </div></div></div>
-<div id="def-double-functors-1-categorically" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (Double functors, 1-categorical version)</strong></span> Let <span class="math inline">\(\mathbb{C}, \mathbb{D}\)</span> be double categories. A double functor <span class="math inline">\(F:\mathbb{C} \rightarrow \mathbb{D}\)</span> is the data of:</p>
-<ol type="1">
-<li><p>For every <span class="math inline">\(A \in \mathcal{O}^C\)</span>, then <span class="math inline">\(F^o(A) \in \mathcal{O}^D\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A, A' \in \mathcal{O}^C\)</span> and <span class="math inline">\(f \in \text{hom}_{\tau}^C(A,A')\)</span>, then <span class="math inline">\(F^{\tau}(f) \in \text{hom}_{\tau}^D(F^o(A),F^o(A'))\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A, B \in \mathcal{O}^D\)</span> and <span class="math inline">\(p \in \text{hom}_{\lambda}^C(A,B)\)</span>, then <span class="math inline">\(F^{\lambda}(p) \in \text{hom}_{\lambda}^C(F^o(A), F^o(B))\)</span>;</p></li>
-<li><p>For every <span class="math inline">\(A, B, A', B' \in \mathcal{O}^C\)</span> and every <span class="math inline">\(f \in \text{hom}_{\tau}^C(A,A'), g \in \text{hom}_{\tau}^C(B,B')\)</span> also every <span class="math inline">\(p \in \text{hom}_{\lambda}^C(A,B), p' \in \text{hom}_{\lambda}^C(A',B')\)</span> as well as <span class="math inline">\(\varphi \in \text{Sq}_{A,B,A',B'}(f,g,p,p')\)</span> then <span class="math inline">\(F^{\text{Sq}}(\varphi) \in \text{Sq}_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).\)</span></p></li>
-</ol>
-<p>Satisfying the following relations</p>
-<ol type="1">
-<li><p><span class="math inline">\(F^{\tau}(f' \circ_{\tau}^C f) = F^{\tau}(f') \circ_{\tau}^D F^{\tau}(f)\)</span>;</p></li>
-<li><p><span class="math inline">\(F^{\lambda}(q \circ_{\lambda}^C p) = F^{\lambda}(q) \circ_{\lambda}^D F^{\lambda}(p)\)</span>;</p></li>
-<li><p><span class="math inline">\(F^{\text{Sq}}(\psi {\circ_{\lambda}^2}^C \varphi) = F^{\text{Sq}}(\psi) {\circ_{\lambda}^2}^D F^{\text{Sq}}(\varphi)\)</span>;</p></li>
-<li><p><span class="math inline">\(F^{\text{Sq}}(\varphi' {\circ_{\tau}^2}^C \varphi) = F^{\text{Sq}}(\varphi') {\circ_{\tau}^2}^D F^{\text{Sq}}(\varphi)\)</span>.</p></li>
-</ol>
-</div>
-<div id="def-double-functors" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Double functor)</strong></span> Let <span class="math inline">\(\mathbb{C}, \mathbb{D}\)</span> be double categories. An op-lax double functor <span class="math inline">\(F: \mathbb{C} \rightarrow \mathbb{D}\)</span> is the data of:</p>
-<ol type="1">
-<li></li>
-</ol>
-</div>
+<!---
+::: {#def-double-functors-1-categorically}
+## Double functors, 1-categorical version
+
+Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F:\mathbb{C} \rightarrow \mathbb{D}$ is the data of:
+
+1. For every $A \in \mathcal{O}^C$, then $F^o(A) \in \mathcal{O}^D$;
+
+2. For every $A, A' \in \mathcal{O}^C$ and $f \in \homt^C(A,A')$, then $F^{\tau}(f) \in \homt^D(F^o(A),F^o(A'))$;
+
+3. For every $A, B \in \mathcal{O}^D$ and $p \in \homl^C(A,B)$, then $F^{\lambda}(p) \in \homl^C(F^o(A), F^o(B))$;
+
+4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$ 
+as well as $\varphi \in \sq_{A,B,A',B'}(f,g,p,p')$ then $F^{\sq}(\varphi) \in \sq_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).$
+
+Satisfying the following relations
+
+1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$; 
+
+2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;  
+
+3. $F^{\sq}(\psi {\compll}^C \varphi) = F^{\sq}(\psi) {\compll}^D F^{\sq}(\varphi)$;
+
+4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$. 
+
+:::
+
+::: {#def-double-functors}
+## Double functor
+
+Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ is the data of:
+
+1.   
+
+
+:::
+-->
 </section>
 <section id="bilattices" class="level1 page-columns page-full">
 <h1>Bilattices</h1>
-<p>Given two categories <span class="math inline">\(\mathcal{C}\)</span> and $ $ which have, respectively, products and coproducts the twisted product produces a pair of categories with the same class of objects, simply the product of the classes of objects <span class="math inline">\(\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})\)</span>. The tight category with non-decorated arrows is the product <span class="math inline">\(\mathcal{C} \times \mathcal{D}^{op}\)</span> and the loose category with decorated arrows is the product <span class="math inline">\(\mathcal{C} \times \mathcal{D}\)</span>.</p>
-<p>We will need to define products and coproducts for each category. The first of these, the product in the tight category <span class="math inline">\((A_1,A_2)\bowtie (B_1,B_2) \triangleq (A_1 \sqcap_{\mathcal{C}} B_1, A_2 \sqcup_{\mathcal{D}} B_2)\)</span>. A prior there is no reason why this should be a functor, even given functors <span class="math inline">\(\ltimes (B_1, B_2)\)</span> and <span class="math inline">\((A_1,A_2) \rtimes : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}\times\mathcal{D}\)</span> for fixed <span class="math inline">\((A_1,A_2), (B_1,B_2)\)</span> that coincide still does mean that coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see <span class="citation" data-cites="Levy03">Levy et al. (<a href="#ref-Levy03" role="doc-biblioref">2003</a>)</span> Appendix A, <span class="citation" data-cites="power1997premonoidal">Power and Robinson (<a href="#ref-power1997premonoidal" role="doc-biblioref">1997</a>)</span> Section 3). We now ask not the interchange law to hold but for the centre of a Binoidal category, defined as the wide subcategory of morphisms which are central. For our specific case we say <span class="math inline">\(f:(A_1,A_2) \not\rightarrow (B_1, B_2)\)</span> is central when for each <span class="math inline">\(g : (C_1,C_2) \not\rightarrow (D_1,D_2)\)</span>;</p>
+<p>Given two categories <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{D}\)</span> which have, respectively, products and coproducts the twisted product produces a pair of categories with the same class of objects, simply the product of the classes of objects <span class="math inline">\(\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})\)</span>. The tight category with non-decorated arrows is the product <span class="math inline">\(\mathcal{C} \times \mathcal{D}^{op}\)</span> and the loose category with decorated arrows is the product <span class="math inline">\(\mathcal{C} \times \mathcal{D}\)</span>.</p>
+<p>We will need to define products and coproducts for each category. The first of these, the product in the tight category <span class="math inline">\((A_1,A_2)\bowtie (B_1,B_2) \triangleq (A_1 \sqcap_{\mathcal{C}} B_1, A_2 \sqcup_{\mathcal{D}} B_2)\)</span>. A prior there is no reason why this should be a functor, even given functors <span class="math inline">\(\ltimes (B_1, B_2)\)</span> and <span class="math inline">\((A_1,A_2) \rtimes : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}\times\mathcal{D}\)</span> for fixed <span class="math inline">\((A_1,A_2), (B_1,B_2)\)</span> that coincide still does mean that the coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see <span class="citation" data-cites="Levy03">Levy et al. (<a href="#ref-Levy03" role="doc-biblioref">2003</a>)</span> Appendix A, <span class="citation" data-cites="power1997premonoidal">Power and Robinson (<a href="#ref-power1997premonoidal" role="doc-biblioref">1997</a>)</span> Section 3). We now ask not the interchange law to hold but for the centre of a Binoidal category, defined as the wide subcategory of morphisms which are central. For our specific case we say <span class="math inline">\(f:(A_1,A_2) \not\rightarrow (B_1, B_2)\)</span> is central when for each <span class="math inline">\(g : (C_1,C_2) \not\rightarrow (D_1,D_2)\)</span>;</p>
 <div class="no-row-height column-margin column-container"><div id="ref-Levy03" class="csl-entry" role="listitem">
 Levy, Paul, John Power, and Hayo Thielecke. 2003. <span>“Modelling Environments in Call-by-Value Programming Languages.”</span> <em>Information and Computation</em> 185 (August). <a href="https://doi.org/10.1016/S0890-5401(03)00088-9">https://doi.org/10.1016/S0890-5401(03)00088-9</a>.
 </div><div id="ref-power1997premonoidal" class="csl-entry" role="listitem">
