@@ -7,6 +7,7 @@ bibliography: references.bib
 
 ::: {.hidden}
 
+\DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
 \newcommand{\homl}{\text{hom}_{\lambda}}
 \newcommand{\homt}{\text{hom}_{\tau}}
 \newcommand{\sq}{\text{Sq}}
@@ -726,6 +727,66 @@ Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: 
 
 # Bilattices
 
+:::{#def-bilattice}
+## Bilattice
+
+A Bilattice is a non-empty set $\mathbf{B}$ with *four* distinct constants $\mathbf{t}, \mathbf{f}, \bot, \top$ as well as *four* idempotent, associative and commutative binary operators $\land, \lor, \otimes, \oplus$ which further satisfy, for every $a, b \in \mathbf{B}$, absorbative conditions:
+
+1. $a\land(b\lor a) = a;$
+
+2. $a\lor(b\land a) = a;$
+
+3. $a\otimes(b\oplus a) = a;$
+
+4. $a\oplus(b\otimes a) = a.$
+
+Finally, $\mathbf{t}$ is the identity for $\land$ (respectively, $\mathbf{f}$ for $\lor$, $\top$ for $\otimes$, $\bot$ for $\oplus$).
+:::
+
+:::{#def-bilattice-morphism}
+A set function $\varphi : (\mathbf{B},\land, \lor, \otimes, \oplus, \mathbf{t}, \mathbf{f}, \top, \bot) \rightarrow (\mathbf{B}^{\gimel}, \land^{\gimel}, \lor^{\gimel}, \otimes^{\gimel}, \oplus^{\gimel}, \mathbf{t}^{\gimel}, \mathbf{f}^{\gimel}, \top^{\gimel}, \bot^{\gimel})$ is called a bilattice morphism when it preserves each constant:
+
+1. $\varphi(\mathbf{t}) = \mathbf{t}^{\gimel};$ $\varphi(\mathbf{f}) = \mathbf{f}^{\gimel};$ $\varphi(\top) = \top^{\gimel};$ $\varphi(\bot) = \bot^{\gimel};$
+
+and each operator, for every $a, b \in \mathbf{B}$:
+
+2. $\varphi(a \land b) = \varphi(a) \land^{\gimel} \varphi(b)$;
+
+3. $\varphi(a \lor b) = \varphi(a) \lor^{\gimel} \varphi(b)$;
+
+4. $\varphi(a \otimes b) = \varphi(a) \otimes^{\gimel} \varphi(b)$;
+
+5. $\varphi(a \oplus b) = \varphi(a) \oplus^{\gimel} \varphi(b)$.
+
+:::
+
+:::{#def-interlaced-bilattice}
+## Interlaced Bilattice
+
+A Bilattice $(\mathbf{B}, \land, \lor, \otimes, \oplus, \mathbf{t}, \mathbf{f}, \top, \bot)$ is called interlaced if the following two conditions are satisfied:
+
+1. for every $a,b \in \mathbf{B}$ such that $a \land b = a$, and for all $c \in \mathbf{B}$:
+
+$$ (a\otimes c) \land (b \otimes c) = a \otimes c, \quad \text{and} \quad (a\oplus c)\land (b \oplus c) = a \oplus c;$$
+
+2. for every $d,e \in \mathbf{B}$ such that $d \otimes e = d$, and for all $f \in \mathbf{B}$:
+
+$$ (d \land f)\otimes (e \land f) = d \land f, \quad \text{and} \quad (d\lor f)\otimes (e \lor f) = d \lor f.$$
+
+:::
+
+For simplicity, we will from now on supress the extra data and simply write $\mathbf{B}$ for the bilattice as a whole.
+
+:::{#prp-interlaced-bilattice-morphisms}
+## Bilattice morphisms preserve interlacing
+
+Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice morphism which is also bijective as a set function and further $\mathbf{B}$ is an interlaced bilattice then $\mathbf{B}^{\gimel}$ is also an interlaced bilattice. 
+
+:::
+
+
+
+
 Given two categories $\mathcal{C}$ and $\mathcal{D}$ which have, respectively, products and coproducts the twisted product produces a pair
 of categories with the same class of objects, simply the product of the classes of objects $\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})$.
 The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows 
@@ -735,11 +796,113 @@ We will need to define products and coproducts for each category. The first of t
 $(A_1,A_2)\bowtie (B_1,B_2) \triangleq (A_1 \sqcap_{\mathcal{C}} B_1, A_2 \sqcup_{\mathcal{D}} B_2)$. A prior there is no reason why this should
 be a functor, even given functors $\ltimes (B_1, B_2)$ and
  $(A_1,A_2) \rtimes : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}\times\mathcal{D}$ for fixed $(A_1,A_2), (B_1,B_2)$ that coincide
-still does mean that the coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see @Levy03 Appendix A, @power1997premonoidal Section 3).
+still does mean that the coincidence becomes a functor. What is needed is the interchange law! We call the above situation a Binoidal category (see @Levy03 Appendix A, @power97 Section 3, @roman22 Section 2).
 We now ask not the interchange law to hold but for the centre of a Binoidal category, defined as the wide subcategory of morphisms which are central. For our specific case we say $f:(A_1,A_2) \not\rightarrow (B_1, B_2)$ is central when for each $g : (C_1,C_2) \not\rightarrow (D_1,D_2)$;
 
-$$(f \bowtie \text{id}_{(C_1,C_2)}) \fcmp (\text{id}_{(B_1,B_2)} \bowtie g) = (\text{id}_{(C_1,C_2)}\bowtie g) \fcmp (f \bowtie \text{id}_{(D_1,D_2)})$$
+$$(f \bowtie \text{id}_{(C_1,C_2)}) ; (\text{id}_{(B_1,B_2)} \bowtie g) = (\text{id}_{(C_1,C_2)}\bowtie g) ; (f \bowtie \text{id}_{(D_1,D_2)})$$
+and
+$$(\text{id}_{(C_1,C_2)} \bowtie f) ; (g \bowtie \text{id}_{(B_1, B_2)}) = (g \bowtie \text{id}_{(A_1,A_2)}) ; (\text{id}_{(D_1,D_2)} \bowtie f).$$
 
-$$(\text{id}_{(C_1,C_2)} \bowtie f) \fcmp (g \bowtie \text{id}_{(B_1, B_2)}) = (g \bowtie \text{id}_{(A_1,A_2)}) \fcmp (\text{id}_{(D_1,D_2)} \bowtie f)$$
+Essentially, this unravels to be asking that each component of $f = (f_1, f_2)$, $f_1 : A_1 \rightarrow B_1$, $f_2 : A_2 \rightarrow B_2$ is central. Which is guaranteed by the universal property of the product, and coproduct, respectively.
+
+A Premonoidal category is a Binoidal category with coherence morphisms being central. A useful fact is that the centre of a premonoidal category is monoidal. Therefore, a premonoidal category equivalent to its own centre is immediately monoidal.
+
+<!---
+
+# MSP 101
+
+## Approximation Theory for Distant Bang Calculus - Kostia Chardonnet - 9/15/2026
+
+"More general than the lambda calculus to Bang Calculus"
+
+Evaluation: $\beta$-reduction.
+
+replace argument with a function
+
+non-terminating program: $\Omega = (\lambda x.xx)(\lambda x.xx)$
+
+"A finite portion of the output must be computed by a finite portion of the input."
+
+Programm behaviours:
+
+1. Normalizable
+
+1. Unsolvable
+
+1. Solvable 
+
+
+Program value depends on reduction strategies "call-by-name" (CbN) versus "call-by-value" (CbV)
+
+un-typed proof net (bang)
+
+Bang-Calculus: [Ehrhard and Guerrier '16]
+
+"Should be a regex" (Proof Nets, Relational Semantics,...)
+
+-->
+
+# MSP 201
+
+## Topos Theory
+
+Meeting 05/10/26 
+
+We started with the definition of subobject classifier given in Definition 1.1 of @Leinster10
+
+:::{#def-Subobject-Classifier}
+## Subobject Classifier
+
+Let $\mathcal{E}$ be category with a terminal object, $1$. A subobject classifier in $\mathcal{E}$ is an object $\Omega$ and an arrow $t : 1 \rightarrow \Omega$ out of the terminal object satisfying the 
+following condition: Given any monomorphism $m : A \hookrightarrow X$ there exists a unique morphism $\chi: X \rightarrow \Omega$ such that the following square is a pullback.
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	A && 1 \\
+	&  \\
+	X && \Omega.
+	\arrow["!_A", from=1-1, to=1-3]
+	\arrow["m"', hook, from=1-1, to=3-1]
+	\arrow["t", from=1-3, to=3-3]
+	\arrow["\chi"', from=3-1, to=3-3]
+\end{tikzcd}
+:::
+
+:::
+
+
+Checking our intuition first we began with showing that $\Omega = \{0,1\}$ with $t : 1 = \{\star\} \rightarrow \Omega$ mapping to $1$ is indeed the subobject classifier. The repeated situation that 
+occured again and again is that there are neccessary choices for $\chi$ by the commutativity of square (this assumes we are working in a concrete category which is reasonable for our examples).
+Then the uniqueness occurs when considering the pullback condition. 
+
+We next consider the category $\mathcal{S}\text{et}^{B\mathbb{N}}$ which can be instead thought of as the category of dynamical systems, this means nothing more than a set with 
+a self map called the update function. These dynamical systems can viewed through little pictures, $\mathcal{D}\text{yn}\mathcal{S}\text{ym}$ is equivalently $\Omega(1)$ the 
+category of unary algebras. The morphisms of this category are then graph homomorphism, equivalently unary algebra homomorphisms, furthermore the monomorphisms are simply 
+injective unary algebra homorphisms. This is a clearly a very nice category to work with for intuition. 
+
+We now looked at trying to write down what the subobject classifier is for unary algebras. The first pass intuition was to consider the graph of natural numbers with $0$ as a sink
+and arrows decrementing by 1. Other attempts included the graph of natural numbers with successor. This lead us to think about adding a place of absolute untruth as somewhere 
+inaccessible from anywhere else. We then asked why we couldn't simply have the discrete graph on 2 points. Finally thinking about a game between 2 players one trying to find the 
+correct subobject classifier and the other trying to break with continued counterexamples produced the original first pass but we also realised that we needed to reintroduce the
+place of untruth from before. The final answer is summarised below.
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	\cdots & 2 & 1 & 0 \\
+	&& \bot
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-3, to=1-4]
+	\arrow[from=1-4, to=1-4, loop, in=55, out=125, distance=10mm]
+	\arrow[from=2-3, to=2-3, loop, in=305, out=235, distance=10mm]
+\end{tikzcd}
+:::
+
+Sieves are the oidification of right ideals for monoids. By viewing $\Omega(1)$ as presheaves on the delooping of $\mathbb{N}$ we can just consider right ideals of the natural
+numbers under addition. The formula for the subobject classifier for presheaf categories gives us exactly the same as above with 0 standing for $\mathbb{N}$, 1 for
+$\mathbb{N}\setminus\{0\}$, 2  for $\mathbb{N} \setminus \{0, 1\}$ and so on... until $\bot$ is exactly empty.
+
 
 

@@ -15,9 +15,6 @@ imagify:
     \usepackage{newpxmath}
     \usepackage{amssymb}
     \usepackage{quiver}
-    \usepackage{mathbbol}
-    \usepackage{boisik}
-    \uespackage{oz}
     \newcommand{\sq}{\text{Sq}}
     \newcommand{\homt}{\text{hom}_{\tau}}
     \newcommand{\homl}{\text{hom}_{\lambda}}
