@@ -8,6 +8,7 @@ bibliography: references.bib
 ::: {.hidden}
 
 \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
+\newcommand{\mbbc}{\mathbb{C}}
 \newcommand{\homl}{\text{hom}_{\lambda}}
 \newcommand{\homt}{\text{hom}_{\tau}}
 \newcommand{\sq}{\text{Sq}}
@@ -18,11 +19,14 @@ bibliography: references.bib
 \newcommand{\ob}{\text{ob}}
 \newcommand{\mor}{\text{Mor}}
 \newcommand{\id}{\text{id}}
+\newcommand{\larr}{\not\rightarrow}
+\newcommand{\sqleq}{\sqsubseteq}
 \newcommand{\rel}{\mathbb{R}\text{el}}
 \newcommand{\intb}{\mathbb{I}\text{nt}\mathbb{B}\text{il}}
+\newcommand{\pspreordcat}{ps\mathcal{P}\text{re}\mathcal{O}rd\mathcal{C}at}
 :::
 
-
+<!---
 # Definitions
 
 ::: {#def-category}
@@ -264,7 +268,7 @@ A double category $\mathbb{C}$ consists of the following data:
 7. For every $A, B, A', B' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(A,A'), g \in \text{hom}_{\tau}(B,B')$ and also every $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\tau}(A',B')$, there is a set
 $\sq^{A,B}_{A',B'}(f, g, p, p')$ called witnesses (generically lower greek). For simplicity, we will drop identities as redundant information;
 
-<!---
+
 ::: {.imagify}
 []: % https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWSJdLFswLDIsIlYiXSxbMiwyLCJXIl0sWzEsMSwiXFxEb3duYXJyb3cgXFxwaGkiXSxbMCwxLCJNIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzAsMiwiZiIsMl0sWzIsMywiTiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFsxLDMsImciXV0=
 \begin{tikzcd}
@@ -277,12 +281,12 @@ $\sq^{A,B}_{A',B'}(f, g, p, p')$ called witnesses (generically lower greek). For
 	\arrow["M'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
+
 
 8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$. 
 For simplicity, if $p = \id_A$ for $A \in \mathcal{O}$ then we will write $\upsilon_{id_A}$ as $\upsilon_A$;
 
-<!---
+
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -295,14 +299,14 @@ For simplicity, if $p = \id_A$ for $A \in \mathcal{O}$ then we will write $\upsi
 	\arrow["N"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
+
 
 9. For every $A, B, A', B', A'', B'' \in \mathcal{O}$, and every $f \in \text{hom}_{\tau}(A,A'), f' \in \text{hom}_{\tau}(A',A''), g \in \text{hom}_{\tau}(B,B'), g' \in \text{hom}_{\tau}(B',B'')$
 and also every $p \in \text{hom}_{\lambda}(A,B), p' \in \text{hom}_{\lambda}(A',B'), p''\in \text{hom}_{\lambda}(A'',B'')$
 as well as every $\varphi \in \sq^{A, B}_{A', B'}(f, g, p, p'), \varphi' \in \sq^{A', B'}_{ A'', B''}(f', g', p', p'')$ there is a
 $\varphi' \comptt \varphi \in \sq^{A, B}_{ A'', B''}(f' \compt f, g' \compt g, p, p'')$.
 
-<!---
+
 ::: {.imagify}
 []: %
 \begin{tikzcd}
@@ -337,7 +341,7 @@ $$\leadsto$$
 	\arrow["M''"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
--->
+
 
 10. For every $A, B, C \in \mathcal{O}$ and every $p \in \text{hom}_{\lambda}(A,B), q \in \text{hom}_{\lambda}(B,C)$
 there is a $q \compl p \in \text{hom}_{\lambda}(A,C)$. For simplicity we will write $id_B \compl p$ as $B \compl p$.;
@@ -682,12 +686,8 @@ The identity cells $\upsilon_A$ are witnessed by the tautology $(x,y) \in R \Rig
 Next we will give a description of a double category inspired by multivalued logics. This will use the following [see @Fitting20, Proposition 7.1]
 
 
-
-
-
 :::
 
-<!---
 ::: {#def-double-functors-1-categorically}
 ## Double functors, 1-categorical version
 
@@ -723,7 +723,7 @@ Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: 
 
 
 :::
--->
+
 
 # Bilattices
 
@@ -806,6 +806,210 @@ $$(\text{id}_{(C_1,C_2)} \bowtie f) ; (g \bowtie \text{id}_{(B_1, B_2)}) = (g \b
 Essentially, this unravels to be asking that each component of $f = (f_1, f_2)$, $f_1 : A_1 \rightarrow B_1$, $f_2 : A_2 \rightarrow B_2$ is central. Which is guaranteed by the universal property of the product, and coproduct, respectively.
 
 A Premonoidal category is a Binoidal category with coherence morphisms being central. A useful fact is that the centre of a premonoidal category is monoidal. Therefore, a premonoidal category equivalent to its own centre is immediately monoidal.
+
+-->
+
+# Preorder Categories
+
+## Starting Definitions
+
+::: {#def-Preorder-Categories}
+## Pseudo Category object in the thin 2-category PreOrd
+
+A Preorder Category $\mathbb{C}$ is the data of:
+
+- A class sized preorder $\mathcal{O}$ with relation symbol ($\sqleq$), whose elements are called the objects of $\mathbb{C}$;
+
+- For each pair  of objects $x,y$ there is a set $\homl(x,y)$ whose elements are called loose arrows e.g. $f: x \not\rightarrow y$;
+
+- For each object $x$ a distinguished loose arrow in $\homl(x,x)$ written $\id_x : x \not\rightarrow x$;
+
+- For each triple of objects $x, y, z$ and loose arrows $f: x \larr y$, $g : y \larr z$ there is a loose arrow $g \circ f: x \larr z$;
+
+- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ there is at most one arrow 
+from $f$ to $f'$ written $f' \sqleq f$;
+
+- For each pair of objects $x,y$ and loose arrow $f : x \larr y$ then $f \sqleq f$;
+
+- For each pair of objects $x' \sqleq x$ then $\id_{x'} \sqleq \id_x$;
+
+- For each pair of objects $x, y$ and loose arrow $f: x \larr y$, then 
+
+$$f \circ \id_x \sqleq f \sqleq f \circ \id_x \quad \text{and} \quad \id_y \circ f \sqleq f \sqleq \id_y \circ f;$$ 
+
+- For each quadruple of objects $x, y, z, w$ and loose arrows $f: x \larr y$, $g : y \larr z$, $h : z \larr w$, then
+
+$$(g \circ h) \circ f \sqleq g \circ (h \circ f) \sqleq (g \circ h) \circ f;$$
+
+- For each hextuple of objects  $x'' \sqleq x' \sqleq x$, $y'' \sqleq y' \sqleq y$ and loose arrows $f : x \larr y$, $f' : x' \larr y'$, 
+$f'' : x'' \larr y''$ with $f' \sqleq f$ and $f'' \sqleq f'$ then $f'' \sqleq f$;
+
+- For each hextuple of objects $x' \sqleq x$, $y' \sqleq y$, $z' \sqleq z$ and loose arrows $f: x \larr y$, $g: y \larr z$, $f': x' \larr y'$,
+$g' : y' \larr z'$ such that $f' \sqleq f$ and $g' \sqleq g$ then $g' \circ f' \sqleq g \circ f$.
+
+
+:::
+
+::: {#rem-simplified-notation}
+# Simplified Notation
+For the sake convenience it is useful to introduce the notation:
+
+$$x \simeq x' \quad \iff \quad x' \sqleq x \sqleq x'$$
+
+on objects in a preorder category and 
+
+$$ f \simeq f' \quad \iff \quad f' \sqleq f \sqleq f'$$
+
+on loose arrows, read as $x$ is equivalent to $x'$ and $f$ is equivalent to $f'$.
+
+Then in the definition above we would replace with
+
+$$f \circ \id_x \simeq f \quad \text{and} \quad \id_y \circ f \simeq f$$
+
+as well as
+
+$$(h \circ g) \circ f \simeq h \circ (g \circ f).$$
+
+:::
+
+::: {#def-Preorder-oplax-functors}
+## Preorder oplax functors between preorder categories#
+
+Let $\mathbb{C}$ and $\mathbb{C}^{\gimel}$ be two preorder categories a preorder oplax functor between them, written
+$F :  \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$, is the data of:
+
+- An order preserving function $F^{\text{o}} : \mathcal{O} \rightarrow \mathcal{O}^{\gimel}$;
+
+- For each pair of objects $x, y \in \mathcal{O}$ and loose arrow $f : x \larr y$ there is a loose arrow 
+$F^{\lambda}_{x, y}(f): F^{\text{o}}x \larr F^{\text{o}}y$;
+
+- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ such that $f' \sqleq f$ then 
+
+$$F^{\lambda}_{x',y'}(f') \sqleq^{\gimel} F^{\lambda}_{x,y}(f);$$
+
+- For each object $x \in \mathcal{O}$ then 
+
+$$\id^{\gimel}_x \sqleq^{\gimel} F^{\lambda}_{x,x}(\id_x);$$
+
+- For each triple of objects $x, y, z \in \mathcal{O}$ and loose arrows $f: x \larr y$, $g: y \larr z$ then 
+
+$$F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\lambda}_{x,z}(g \circ f).$$
+
+:::
+
+::: {#rem-preorder-pseudofunctor}
+## Preorder Pseudofunctor
+
+We would have the definition of a preorder psuedofunctor by tweaking the above definition in the following way: (we replace with)
+
+$$F^{\lambda}_{x',y'}(f') \simeq^{\gimel} F^{\lambda}_{x,y}(f),$$
+
+$$\id^{\gimel}_{F^{\text{o}}x} \simeq^{\gimel} F^{\lambda}_{x,x}(\id_x),$$
+
+$$\text{and} \quad F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \simeq^{\gimel} F^{\lambda}_{x,z}(g \circ f).$$
+
+:::
+
+::: {#rem-composition-of-preorder-pseudofunctors}
+## Composition of Preorder Pseudofunctors
+
+Given three preorder categories $\mbbc$, $\mbbc^{\gimel}$, $\mbbc^{\beth}$ and preorder psuedofunctors $F : \mbbc \rightarrow \mbbc^{\gimel}$,
+$G: \mbbc^{\gimel} \rightarrow \mbbc^{\beth}$ then define their composition
+
+- The underlying order preserving function $(G\circ F)^{\text{o}} \triangleq G^{\text{o}}\circ F^{\text{o}} : \mathcal{O} \rightarrow \mathcal{O}^{\beth}$;
+
+- For each pair of objects $x,y \in \mathcal{O}$ and loose arrow $f: x \larr y$ then define
+
+$$(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{o}}y}(F^{\lambda}_{x,y}(f)) : G^{\text{o}}(F^{\text{o}}x) \larr G^{\text{o}}(F^{\text{o}}y).$$
+
+:::
+
+::: {#def-sqleq-transformations}
+## Comparing two preorder pseudofunctors through the order
+
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of preorder pseudofunctors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+$G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to $G$, written $G \sqleq F$, are the following assertions
+
+- For each object $x \in \mathcal{O}$, $G^{\text{o}}x \sqleq^{\gimel} F^{\text{o}}x$;
+
+- For each pair of objects $x, y \in \mathcal{O}$ and $f : x \larr y$ then $G^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\lambda}_{x,y}(f)$. 
+
+:::
+
+::: {#def-loose-transformations}
+## Comparing two preorder pseudofunctors loosely
+
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of preorder pseudofunctors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+$G: \mbbc \rightarrow \mbbc^{\gimel}$ then a loose transformation from $F$ to $G$, written $\alpha : F \larr G$, is the following data
+
+- For each object $x \in \mathcal{O}$ a loose arrow $\alpha_x : F^{\text{o}}x \larr G^{\text{o}}x$;
+
+- For each pair of objects $x' \sqleq x$ in $\mathcal{O}$ then $\alpha_{x'} \sqleq \alpha_x$.
+
+This data is required to satisfy:
+
+- For each pair of objects $x, y$ in $\mathcal{O}$ and loose arrow $f : x \larr y$ 
+
+$$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) = G^{\lambda}_{x,y}(f) \circ^{\gimel} \alpha_x.$$
+
+:::
+
+::: {#def-modifications}
+## Comparing loose transformations 
+
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ and a quadruple of preorder pseudofunctors $H \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$,
+$K \sqleq G : \mbbc \rightarrow \mbbc^{\gimel}$ and loose transformations $\alpha : F \larr G$, $\beta : H \larr K$ then there is modification
+from $\alpha$ to $\beta$, written $\beta \sqleq \alpha$, when for each object $x \in \mathcal{O}$ we have that $\beta_x \sqleq \alpha_x$.
+
+:::
+
+::: {#def-product-preorder-category}
+## Products of Preorder Categories
+
+Given a pair of preorder categories $\mbbc$ and $\mbbc^{\gimel}$ we can form a new preorder category which is their product,
+$\mbbc \times \mbbc^{\gimel}$, consisting of the data:
+
+- The class $\mathcal{O}^{\times} \triangleq \mathcal{O}\times\mathcal{O}^{\gimel}$ with the componentisewise order;
+
+- For each pair, of pairs, of objects $(x_1,x_2)$ and $(y_1,y_2)$ the set 
+
+$$\homl^{\times}((x_1,x_2),(y_1,y_2)) \triangleq \homl(x_1,x_2) \times \homl^{\gimel}(y_1,y_2);$$
+
+- For each object $(x_1,x_2)$ a distinguised loose arrow $\id^{\times}_{(x_1,x_2)} \triangleq (\id_{x_1}, \id^{\gimel}_{x_2})$;
+
+- For each triple $(x_1,x_2), (y_1,y_2), (z_1,z_2)$ and loose arrows $(f_1,f_2) : (x_1,x_2) \larr (y_1,y_2), (g_1,g_2) : (y_1,y_2) \larr (z_1,z_2)$
+there is a loose arrow
+
+$$(g_1,g_2) \circ^{\times} (f_1,f_2) \triangleq (g_1 \circ f_1, g_2 \circ^{\gimel} f_2) : (x_1,x_2) \larr (z_1,z_2);$$
+
+- For each quadruple $(x_1',x_2') \sqleq^{\times} (x_1,x_2), (y_1',y_2') \sqleq^{\times} (y_1,y_2)$ and loose arrows $(f_1,f_2): (x_1,x_2) \larr (y_1,y_2), (f_1', f_2') : (x_1',x_2') \larr (y_1',y_2')$ there is an arrow
+
+$$(f_1', f_2') \sqleq^{\times} (f_1, f_2)  \iff f_1' \sqleq f_1 \quad \land \quad f_2' \sqleq^{\gimel} f_2;$$
+
+:::
+
+::: {#thm-product-preorder-category}
+## The product of preorder categories is a preorder category
+
+
+
+:::
+
+::: {#def-2-category-preorder-categories}
+## The thin 2-category of preorder categories
+
+Let $\pspreordcat$ denote the cartesian (thin) 2-category with: 
+
+- 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
+
+- 1-cells: Preorder pseudofunctors $(F: \mathbb{C} \rightarrow \mathbb{C}^{\gimel}, G : \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth},...)$;
+
+- 2-cells: $\sqleq$-transformations between preorder pseudofunctors ($G \sqleq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$).
+
+:::
+
+
+
 
 <!---
 
