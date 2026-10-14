@@ -173,7 +173,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Double Categories</h1>
-<p class="subtitle lead">Definitions</p>
+<p class="subtitle lead">Lifting theories of computation</p>
 </div>
 
 
@@ -204,7 +204,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 12, 2026</p>
+      <p class="date-modified">October 14, 2026</p>
     </div>
   </div>
     
@@ -1005,7 +1005,8 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <section id="starting-definitions" class="level2">
 <h2 class="anchored" data-anchor-id="starting-definitions">Starting Definitions</h2>
 <div id="def-Preorder-Categories" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Pseudo Category object in the thin 2-category PreOrd)</strong></span> A Preorder Category <span class="math inline">\(\mathbb{C}\)</span> is the data of:</p>
+<p><span class="theorem-title"><strong>Definition 1 (Pseudo Category object in the thin 2-category PreOrd)</strong></span> &nbsp;</p>
+<p>A Preorder Category <span class="math inline">\(\mathbb{C}\)</span> is the data of:</p>
 <ul>
 <li><p>A class sized preorder <span class="math inline">\(\mathcal{O}\)</span> with relation symbol (<span class="math inline">\(\sqsubseteq\)</span>), whose elements are called the objects of <span class="math inline">\(\mathbb{C}\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x,y\)</span> there is a set <span class="math inline">\(\text{hom}_{\lambda}(x,y)\)</span> whose elements are called loose arrows e.g.&nbsp;<span class="math inline">\(f: x \not\rightarrow y\)</span>;</p></li>
@@ -1020,14 +1021,15 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <ul>
 <li>For each quadruple of objects <span class="math inline">\(x, y, z, w\)</span> and loose arrows <span class="math inline">\(f: x \not\rightarrow y\)</span>, <span class="math inline">\(g : y \not\rightarrow z\)</span>, <span class="math inline">\(h : z \not\rightarrow w\)</span>, then</li>
 </ul>
-<p><span class="math display">\[(g \circ h) \circ f \sqsubseteq g \circ (h \circ f) \sqsubseteq(g \circ h) \circ f;\]</span></p>
+<p><span class="math display">\[(h \circ g) \circ f \sqsubseteq h \circ (g \circ f) \sqsubseteq(h \circ g) \circ f;\]</span></p>
 <ul>
 <li><p>For each hextuple of objects <span class="math inline">\(x'' \sqsubseteq x' \sqsubseteq x\)</span>, <span class="math inline">\(y'' \sqsubseteq y' \sqsubseteq y\)</span> and loose arrows <span class="math inline">\(f : x \not\rightarrow y\)</span>, <span class="math inline">\(f' : x' \not\rightarrow y'\)</span>, <span class="math inline">\(f'' : x'' \not\rightarrow y''\)</span> with <span class="math inline">\(f' \sqsubseteq f\)</span> and <span class="math inline">\(f'' \sqsubseteq f'\)</span> then <span class="math inline">\(f'' \sqsubseteq f\)</span>;</p></li>
 <li><p>For each hextuple of objects <span class="math inline">\(x' \sqsubseteq x\)</span>, <span class="math inline">\(y' \sqsubseteq y\)</span>, <span class="math inline">\(z' \sqsubseteq z\)</span> and loose arrows <span class="math inline">\(f: x \not\rightarrow y\)</span>, <span class="math inline">\(g: y \not\rightarrow z\)</span>, <span class="math inline">\(f': x' \not\rightarrow y'\)</span>, <span class="math inline">\(g' : y' \not\rightarrow z'\)</span> such that <span class="math inline">\(f' \sqsubseteq f\)</span> and <span class="math inline">\(g' \sqsubseteq g\)</span> then <span class="math inline">\(g' \circ f' \sqsubseteq g \circ f\)</span>.</p></li>
 </ul>
 </div>
 <div id="rem-simplified-notation" class="proof remark">
-<p><span class="proof-title"><em>Remark 1</em> (Simplified Notation). </span>For the sake convenience it is useful to introduce the notation:</p>
+<p><span class="proof-title"><em>Remark 1</em> (Simplified Notation). </span></p>
+<p>For the sake convenience it is useful to introduce the notation:</p>
 <p><span class="math display">\[x \simeq x' \quad \iff \quad x' \sqsubseteq x \sqsubseteq x'\]</span></p>
 <p>on objects in a preorder category and</p>
 <p><span class="math display">\[ f \simeq f' \quad \iff \quad f' \sqsubseteq f \sqsubseteq f'\]</span></p>
@@ -1038,7 +1040,8 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <p><span class="math display">\[(h \circ g) \circ f \simeq h \circ (g \circ f).\]</span></p>
 </div>
 <div id="def-Preorder-oplax-functors" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Preorder oplax functors between preorder categories)</strong></span> Let <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> be two preorder categories a preorder oplax functor between them, written <span class="math inline">\(F :  \mathbb{C} \rightarrow \mathbb{C}^{\gimel}\)</span>, is the data of:</p>
+<p><span class="theorem-title"><strong>Definition 2 (Preorder oplax functors between preorder categories)</strong></span> &nbsp;</p>
+<p>Let <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> be two preorder categories a preorder oplax functor between them, written <span class="math inline">\(F :  \mathbb{C} \rightarrow \mathbb{C}^{\gimel}\)</span>, is the data of:</p>
 <ul>
 <li><p>An order preserving function <span class="math inline">\(F^{\text{o}} : \mathcal{O} \rightarrow \mathcal{O}^{\gimel}\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x, y \in \mathcal{O}\)</span> and loose arrow <span class="math inline">\(f : x \not\rightarrow y\)</span> there is a loose arrow <span class="math inline">\(F^{\lambda}_{x, y}(f): F^{\text{o}}x \not\rightarrow F^{\text{o}}y\)</span>;</p></li>
@@ -1055,13 +1058,15 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <p><span class="math display">\[F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \sqsubseteq^{\gimel} F^{\lambda}_{x,z}(g \circ f).\]</span></p>
 </div>
 <div id="rem-preorder-pseudofunctor" class="proof remark">
-<p><span class="proof-title"><em>Remark 2</em> (Preorder Pseudofunctor). </span>We would have the definition of a preorder psuedofunctor by tweaking the above definition in the following way: (we replace with)</p>
+<p><span class="proof-title"><em>Remark 2</em> (Preorder Pseudofunctor). </span></p>
+<p>We would have the definition of a preorder psuedofunctor by tweaking the above definition in the following way: (we replace with)</p>
 <p><span class="math display">\[F^{\lambda}_{x',y'}(f') \simeq^{\gimel} F^{\lambda}_{x,y}(f),\]</span></p>
 <p><span class="math display">\[\text{id}^{\gimel}_{F^{\text{o}}x} \simeq^{\gimel} F^{\lambda}_{x,x}(\text{id}_x),\]</span></p>
 <p><span class="math display">\[\text{and} \quad F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \simeq^{\gimel} F^{\lambda}_{x,z}(g \circ f).\]</span></p>
 </div>
 <div id="rem-composition-of-preorder-pseudofunctors" class="proof remark">
-<p><span class="proof-title"><em>Remark 3</em> (Composition of Preorder Pseudofunctors). </span>Given three preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(\mathbb{C}^{\beth}\)</span> and preorder psuedofunctors <span class="math inline">\(F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth}\)</span> then define their composition</p>
+<p><span class="proof-title"><em>Remark 3</em> (Composition of Preorder Pseudofunctors). </span></p>
+<p>Given three preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(\mathbb{C}^{\beth}\)</span> and preorder psuedofunctors <span class="math inline">\(F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth}\)</span> then define their composition</p>
 <ul>
 <li><p>The underlying order preserving function <span class="math inline">\((G\circ F)^{\text{o}} \triangleq G^{\text{o}}\circ F^{\text{o}} : \mathcal{O} \rightarrow \mathcal{O}^{\beth}\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x,y \in \mathcal{O}\)</span> and loose arrow <span class="math inline">\(f: x \not\rightarrow y\)</span> then define</p></li>
@@ -1069,14 +1074,16 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <p><span class="math display">\[(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{o}}y}(F^{\lambda}_{x,y}(f)) : G^{\text{o}}(F^{\text{o}}x) \not\rightarrow G^{\text{o}}(F^{\text{o}}y).\]</span></p>
 </div>
 <div id="def-sqleq-transformations" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (Comparing two preorder pseudofunctors through the order)</strong></span> Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of preorder pseudofunctors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a <span class="math inline">\(\sqsubseteq\)</span>-transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(G \sqsubseteq F\)</span>, are the following assertions</p>
+<p><span class="theorem-title"><strong>Definition 3 (Comparing two preorder pseudofunctors through the order)</strong></span> &nbsp;</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of preorder pseudofunctors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a <span class="math inline">\(\sqsubseteq\)</span>-transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(G \sqsubseteq F\)</span>, are the following assertions</p>
 <ul>
 <li><p>For each object <span class="math inline">\(x \in \mathcal{O}\)</span>, <span class="math inline">\(G^{\text{o}}x \sqsubseteq^{\gimel} F^{\text{o}}x\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x, y \in \mathcal{O}\)</span> and <span class="math inline">\(f : x \not\rightarrow y\)</span> then <span class="math inline">\(G^{\lambda}_{x,y}(f) \sqsubseteq^{\gimel} F^{\lambda}_{x,y}(f)\)</span>.</p></li>
 </ul>
 </div>
 <div id="def-loose-transformations" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Comparing two preorder pseudofunctors loosely)</strong></span> Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of preorder pseudofunctors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a loose transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, is the following data</p>
+<p><span class="theorem-title"><strong>Definition 4 (Comparing two preorder pseudofunctors loosely)</strong></span> &nbsp;</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of preorder pseudofunctors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a loose transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, is the following data</p>
 <ul>
 <li><p>For each object <span class="math inline">\(x \in \mathcal{O}\)</span> a loose arrow <span class="math inline">\(\alpha_x : F^{\text{o}}x \not\rightarrow G^{\text{o}}x\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x' \sqsubseteq x\)</span> in <span class="math inline">\(\mathcal{O}\)</span> then <span class="math inline">\(\alpha_{x'} \sqsubseteq\alpha_x\)</span>.</p></li>
@@ -1088,10 +1095,12 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <p><span class="math display">\[\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) = G^{\lambda}_{x,y}(f) \circ^{\gimel} \alpha_x.\]</span></p>
 </div>
 <div id="def-modifications" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Comparing loose transformations)</strong></span> Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> and a quadruple of preorder pseudofunctors <span class="math inline">\(H \sqsubseteq F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(K \sqsubseteq G : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> and loose transformations <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, <span class="math inline">\(\beta : H \not\rightarrow K\)</span> then there is modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\beta\)</span>, written <span class="math inline">\(\beta \sqsubseteq\alpha\)</span>, when for each object <span class="math inline">\(x \in \mathcal{O}\)</span> we have that <span class="math inline">\(\beta_x \sqsubseteq\alpha_x\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 5 (Comparing loose transformations)</strong></span> &nbsp;</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> and a quadruple of preorder pseudofunctors <span class="math inline">\(H \sqsubseteq F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(K \sqsubseteq G : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> and loose transformations <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, <span class="math inline">\(\beta : H \not\rightarrow K\)</span> then there is modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\beta\)</span>, written <span class="math inline">\(\beta \sqsubseteq\alpha\)</span>, when for each object <span class="math inline">\(x \in \mathcal{O}\)</span> we have that <span class="math inline">\(\beta_x \sqsubseteq\alpha_x\)</span>.</p>
 </div>
 <div id="def-product-preorder-category" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Products of Preorder Categories)</strong></span> Given a pair of preorder categories <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> we can form a new preorder category which is their product, <span class="math inline">\(\mathbb{C}\times \mathbb{C}^{\gimel}\)</span>, consisting of the data:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Products of Preorder Categories)</strong></span> &nbsp;</p>
+<p>Given a pair of preorder categories <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> we can form a new preorder category which is their product, <span class="math inline">\(\mathbb{C}\times \mathbb{C}^{\gimel}\)</span>, consisting of the data:</p>
 <ul>
 <li><p>The class <span class="math inline">\(\mathcal{O}^{\times} \triangleq \mathcal{O}\times\mathcal{O}^{\gimel}\)</span> with the componentisewise order;</p></li>
 <li><p>For each pair, of pairs, of objects <span class="math inline">\((x_1,x_2)\)</span> and <span class="math inline">\((y_1,y_2)\)</span> the set</p></li>
@@ -1105,19 +1114,71 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 <ul>
 <li>For each quadruple <span class="math inline">\((x_1',x_2') \sqsubseteq^{\times} (x_1,x_2), (y_1',y_2') \sqsubseteq^{\times} (y_1,y_2)\)</span> and loose arrows <span class="math inline">\((f_1,f_2): (x_1,x_2) \not\rightarrow(y_1,y_2), (f_1', f_2') : (x_1',x_2') \not\rightarrow(y_1',y_2')\)</span> there is an arrow</li>
 </ul>
-<p><span class="math display">\[(f_1', f_2') \sqsubseteq^{\times} (f_1, f_2)  \iff f_1' \sqsubseteq f_1 \quad \land \quad f_2' \sqsubseteq^{\gimel} f_2;\]</span></p>
+<p><span class="math display">\[(f_1', f_2') \sqsubseteq^{\times} (f_1, f_2)  \iff \quad f_1' \sqsubseteq f_1 \quad \land \quad f_2' \sqsubseteq^{\gimel} f_2.\]</span></p>
 </div>
 <div id="thm-product-preorder-category" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (The product of preorder categories is a preorder category)</strong></span> &nbsp;</p>
+<p>This is a simple checking that the definitions given above are enough to conclude the rest of the assertions.</p>
+<p>For example, given objects <span class="math inline">\((x_1,x_2), (y_1,y_2)\)</span> and a loose arrow <span class="math inline">\((f_1,f_2) : (x_1,x_2) \not\rightarrow(y_1,y_2)\)</span> then we have that <span class="math inline">\((f_1,f_2) \sqsubseteq^{\times} (f_1,f_2)\)</span> as we have that both <span class="math inline">\(f_1 \sqsubseteq f_1\)</span> and <span class="math inline">\(f_2 \sqsubseteq^{\gimel} f_2\)</span> hold.</p>
 </div>
-<div id="def-2-category-preorder-categories" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (The thin 2-category of preorder categories)</strong></span> Let <span class="math inline">\(ps\mathcal{P}\text{re}\mathcal{O}rd\mathcal{C}at\)</span> denote the cartesian (thin) 2-category with:</p>
+<div id="def-monoidal-preorder-category" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (Monoidal Preorder Category)</strong></span> &nbsp;</p>
+<p>A monoidal preorder category is a preorder category <span class="math inline">\(\mathbb{C}\)</span> with a distinguished object <span class="math inline">\(1 \in \mathcal{O}\)</span> with a loose arrow <span class="math inline">\(\nu : 1 \not\rightarrow 1\)</span> and an assignment:</p>
 <ul>
-<li><p>0-cells: Preorder categories <span class="math inline">\((\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)\)</span>;</p></li>
-<li><p>1-cells: Preorder pseudofunctors <span class="math inline">\((F: \mathbb{C} \rightarrow \mathbb{C}^{\gimel}, G : \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth},...)\)</span>;</p></li>
-<li><p>2-cells: <span class="math inline">\(\sqsubseteq\)</span>-transformations between preorder pseudofunctors (<span class="math inline">\(G \sqsubseteq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}\)</span>).</p></li>
+<li><p>For each pair of objects <span class="math inline">\(x_1,x_2\)</span> an object <span class="math inline">\(x_1 \otimes x_2\)</span>;</p></li>
+<li><p>For each quadruple of objects <span class="math inline">\(x_1, x_2, y_1, y_2\)</span> and loose arrows <span class="math inline">\(f_1 : x_1 \not\rightarrow y_1\)</span>, <span class="math inline">\(f_2 : x_2 \not\rightarrow y_2\)</span> a loose arrow <span class="math inline">\(f_1 \otimes f_2 : x_1 \otimes x_2 \not\rightarrow y_1 \otimes y_2\)</span>.</p></li>
+</ul>
+<p>This assignment must satisfy the following properties:</p>
+<ul>
+<li><p>For each quadruple <span class="math inline">\(x_1' \sqsubseteq x_1\)</span>, <span class="math inline">\(x_2' \sqsubseteq x_2\)</span> then <span class="math inline">\(x_1'\otimes x_2' \sqsubseteq x_1 \otimes x_2\)</span>;</p></li>
+<li><p>For each octuple <span class="math inline">\(x_1' \sqsubseteq x_1\)</span>, <span class="math inline">\(x_2' \sqsubseteq x_2\)</span>, <span class="math inline">\(y_1' \sqsubseteq y_1\)</span>, <span class="math inline">\(y_2' \sqsubseteq y_2\)</span> and quadruple of loose arrows <span class="math inline">\(f_1' : x_1' \not\rightarrow y_1'\)</span>, <span class="math inline">\(f_2' : x_2' \not\rightarrow y_2'\)</span>, <span class="math inline">\(f_1 : x_1 \not\rightarrow y_1\)</span>, <span class="math inline">\(f_2 : x_2 \not\rightarrow y_2\)</span> such that <span class="math inline">\(f_1' \simeq f_1\)</span> and <span class="math inline">\(f_2' \simeq f_2\)</span> then</p></li>
+</ul>
+<p><span class="math display">\[f_1' \otimes f_2' \simeq f_1 \otimes f_2;\]</span></p>
+<ul>
+<li><p>For each pair of objects <span class="math inline">\(x_1, x_2\)</span> then <span class="math inline">\(\text{id}_{x_1 \otimes x_2} \simeq \text{id}_{x_1} \otimes \text{id}_{x_2};\)</span></p></li>
+<li><p>For each hextuple <span class="math inline">\(x_1, x_2, y_1, y_2, z_1, z_2\)</span> and quadruple of loose arrows <span class="math inline">\(f_1 : x_1 \not\rightarrow y_1\)</span>, <span class="math inline">\(f_2 : x_2 \not\rightarrow y_2\)</span>, <span class="math inline">\(g_1 : y_1 \not\rightarrow z_1\)</span>, <span class="math inline">\(g_2 : y_2 \not\rightarrow z_2\)</span> then</p></li>
+</ul>
+<p><span class="math display">\[(g_1 \otimes g_2) \circ (f_1 \otimes f_2) \simeq (g_1 \circ f_1) \otimes (g_2 \circ f_2);\]</span></p>
+<ul>
+<li>For each hextuple <span class="math inline">\(x_1, x_2, x_3, y_1, y_2, y_3\)</span> and loose arrows <span class="math inline">\(f_1 : x_1 \not\rightarrow y_1\)</span>, <span class="math inline">\(f_2 : x_2 \not\rightarrow y_2\)</span>, <span class="math inline">\(f_3: x_3 \not\rightarrow y_3\)</span> then</li>
+</ul>
+<p><span class="math display">\[(x_1 \otimes x_2) \otimes x_3 \simeq x_1 \otimes (x_2 \otimes x_3) \text{and} \quad (f_1 \otimes f_2) \otimes f_3 \simeq f_1 \otimes (f_2 \otimes f_3);\]</span></p>
+<p>The assignment interacts with the distinguished object through <span class="math inline">\(\nu \simeq \text{id}_{1}\)</span> and</p>
+<ul>
+<li>For each object <span class="math inline">\(x\)</span>, <span class="math inline">\(1 \otimes x \simeq x\)</span> and <span class="math inline">\(x \otimes 1 \simeq x\)</span>.</li>
 </ul>
 </div>
+<!---
+
+::: {#def-2-category-preorder-categories}
+## The thin 2-category of preorder categories
+
+\bigskip
+
+Let $\pspreordcat$ denote the monoidal (thin) 2-category with: 
+
+- 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
+
+- 1-cells: Preorder pseudofunctors $(F: \mathbb{C} \rightarrow \mathbb{C}^{\gimel}, G : \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth},...)$;
+
+- 2-cells: $\sqleq$-transformations between preorder pseudofunctors ($G \sqleq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$).
+
+and monoidal product the product of preorder categories defined above.
+
+:::
+
+
+::: {#rem-preorders-are-square-less-than-preorder-categories}
+## The 2-category of (small) preorders is a sub-2-category of preorder categories
+
+\bigskip
+
+Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this 
+relationship.
+
+
+:::
+-->
 <!---
 
 # MSP 101
