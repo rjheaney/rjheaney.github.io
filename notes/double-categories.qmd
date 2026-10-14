@@ -1,6 +1,6 @@
 ---
 title: Double Categories
-subtitle: Definitions
+subtitle: Lifting theories of computation
 date: 08-12-2026
 bibliography: references.bib
 ---
@@ -816,6 +816,8 @@ A Premonoidal category is a Binoidal category with coherence morphisms being cen
 ::: {#def-Preorder-Categories}
 ## Pseudo Category object in the thin 2-category PreOrd
 
+\bigskip
+
 A Preorder Category $\mathbb{C}$ is the data of:
 
 - A class sized preorder $\mathcal{O}$ with relation symbol ($\sqleq$), whose elements are called the objects of $\mathbb{C}$;
@@ -839,7 +841,7 @@ $$f \circ \id_x \sqleq f \sqleq f \circ \id_x \quad \text{and} \quad \id_y \circ
 
 - For each quadruple of objects $x, y, z, w$ and loose arrows $f: x \larr y$, $g : y \larr z$, $h : z \larr w$, then
 
-$$(g \circ h) \circ f \sqleq g \circ (h \circ f) \sqleq (g \circ h) \circ f;$$
+$$(h \circ g) \circ f \sqleq h \circ (g \circ f) \sqleq (h \circ g) \circ f;$$
 
 - For each hextuple of objects  $x'' \sqleq x' \sqleq x$, $y'' \sqleq y' \sqleq y$ and loose arrows $f : x \larr y$, $f' : x' \larr y'$, 
 $f'' : x'' \larr y''$ with $f' \sqleq f$ and $f'' \sqleq f'$ then $f'' \sqleq f$;
@@ -852,6 +854,9 @@ $g' : y' \larr z'$ such that $f' \sqleq f$ and $g' \sqleq g$ then $g' \circ f' \
 
 ::: {#rem-simplified-notation}
 # Simplified Notation
+
+\bigskip
+
 For the sake convenience it is useful to introduce the notation:
 
 $$x \simeq x' \quad \iff \quad x' \sqleq x \sqleq x'$$
@@ -874,6 +879,8 @@ $$(h \circ g) \circ f \simeq h \circ (g \circ f).$$
 
 ::: {#def-Preorder-oplax-functors}
 ## Preorder oplax functors between preorder categories#
+
+\bigskip
 
 Let $\mathbb{C}$ and $\mathbb{C}^{\gimel}$ be two preorder categories a preorder oplax functor between them, written
 $F :  \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$, is the data of:
@@ -900,6 +907,8 @@ $$F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\l
 ::: {#rem-preorder-pseudofunctor}
 ## Preorder Pseudofunctor
 
+\bigskip
+
 We would have the definition of a preorder psuedofunctor by tweaking the above definition in the following way: (we replace with)
 
 $$F^{\lambda}_{x',y'}(f') \simeq^{\gimel} F^{\lambda}_{x,y}(f),$$
@@ -912,6 +921,8 @@ $$\text{and} \quad F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \sim
 
 ::: {#rem-composition-of-preorder-pseudofunctors}
 ## Composition of Preorder Pseudofunctors
+
+\bigskip
 
 Given three preorder categories $\mbbc$, $\mbbc^{\gimel}$, $\mbbc^{\beth}$ and preorder psuedofunctors $F : \mbbc \rightarrow \mbbc^{\gimel}$,
 $G: \mbbc^{\gimel} \rightarrow \mbbc^{\beth}$ then define their composition
@@ -927,6 +938,8 @@ $$(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{
 ::: {#def-sqleq-transformations}
 ## Comparing two preorder pseudofunctors through the order
 
+\bigskip
+
 Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of preorder pseudofunctors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to $G$, written $G \sqleq F$, are the following assertions
 
@@ -938,6 +951,8 @@ $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to
 
 ::: {#def-loose-transformations}
 ## Comparing two preorder pseudofunctors loosely
+
+\bigskip
 
 Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of preorder pseudofunctors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a loose transformation from $F$ to $G$, written $\alpha : F \larr G$, is the following data
@@ -957,6 +972,8 @@ $$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) = G^{\lambda}_{x,y}(f) \circ^{\gi
 ::: {#def-modifications}
 ## Comparing loose transformations 
 
+\bigskip
+
 Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ and a quadruple of preorder pseudofunctors $H \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$,
 $K \sqleq G : \mbbc \rightarrow \mbbc^{\gimel}$ and loose transformations $\alpha : F \larr G$, $\beta : H \larr K$ then there is modification
 from $\alpha$ to $\beta$, written $\beta \sqleq \alpha$, when for each object $x \in \mathcal{O}$ we have that $\beta_x \sqleq \alpha_x$.
@@ -965,6 +982,8 @@ from $\alpha$ to $\beta$, written $\beta \sqleq \alpha$, when for each object $x
 
 ::: {#def-product-preorder-category}
 ## Products of Preorder Categories
+
+\bigskip
 
 Given a pair of preorder categories $\mbbc$ and $\mbbc^{\gimel}$ we can form a new preorder category which is their product,
 $\mbbc \times \mbbc^{\gimel}$, consisting of the data:
@@ -984,21 +1003,70 @@ $$(g_1,g_2) \circ^{\times} (f_1,f_2) \triangleq (g_1 \circ f_1, g_2 \circ^{\gime
 
 - For each quadruple $(x_1',x_2') \sqleq^{\times} (x_1,x_2), (y_1',y_2') \sqleq^{\times} (y_1,y_2)$ and loose arrows $(f_1,f_2): (x_1,x_2) \larr (y_1,y_2), (f_1', f_2') : (x_1',x_2') \larr (y_1',y_2')$ there is an arrow
 
-$$(f_1', f_2') \sqleq^{\times} (f_1, f_2)  \iff f_1' \sqleq f_1 \quad \land \quad f_2' \sqleq^{\gimel} f_2;$$
+$$(f_1', f_2') \sqleq^{\times} (f_1, f_2)  \iff \quad f_1' \sqleq f_1 \quad \land \quad f_2' \sqleq^{\gimel} f_2.$$
 
 :::
 
 ::: {#thm-product-preorder-category}
 ## The product of preorder categories is a preorder category
 
+\bigskip
 
+This is a simple checking that the definitions given above are enough to conclude the rest of the assertions.
+
+For example, given objects $(x_1,x_2), (y_1,y_2)$ and a loose arrow $(f_1,f_2) : (x_1,x_2) \larr (y_1,y_2)$ then we have that 
+$(f_1,f_2) \sqleq^{\times} (f_1,f_2)$ as we have that both $f_1 \sqleq f_1$ and $f_2 \sqleq^{\gimel} f_2$ hold. 
 
 :::
+
+::: {#def-monoidal-preorder-category}
+## Monoidal Preorder Category
+
+\bigskip
+
+A monoidal preorder category is a preorder category $\mbbc$ with a distinguished object $1 \in \mathcal{O}$ with a loose arrow $\nu : 1 \larr 1$
+and an assignment:
+
+- For each pair of objects $x_1,x_2$ an object $x_1 \otimes x_2$;
+
+- For each quadruple of objects $x_1, x_2, y_1, y_2$ and loose arrows $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$ a loose arrow
+$f_1 \otimes f_2 : x_1 \otimes x_2 \larr y_1 \otimes y_2$.
+
+This assignment must satisfy the following properties:
+
+- For each quadruple $x_1' \sqleq x_1$, $x_2' \sqleq x_2$ then $x_1'\otimes x_2' \sqleq x_1 \otimes x_2$;
+
+- For each octuple $x_1' \sqleq x_1$, $x_2' \sqleq x_2$, $y_1' \sqleq y_1$, $y_2' \sqleq y_2$ and quadruple of loose arrows
+$f_1' : x_1' \larr y_1'$, $f_2' : x_2' \larr y_2'$, $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$ such that $f_1' \simeq f_1$ and
+$f_2' \simeq f_2$ then 
+
+$$f_1' \otimes f_2' \simeq f_1 \otimes f_2;$$ 
+
+- For each pair of objects $x_1, x_2$  then $\id_{x_1 \otimes x_2} \simeq \id_{x_1} \otimes \id_{x_2};$
+
+- For each hextuple $x_1, x_2, y_1, y_2, z_1, z_2$ and quadruple of loose arrows $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$,
+$g_1 : y_1 \larr z_1$, $g_2 : y_2 \larr z_2$ then 
+
+$$(g_1 \otimes g_2) \circ (f_1 \otimes f_2) \simeq (g_1 \circ f_1) \otimes (g_2 \circ f_2);$$
+
+- For each hextuple $x_1, x_2, x_3, y_1, y_2, y_3$ and loose arrows $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$, $f_3: x_3 \larr y_3$ then
+
+$$(x_1 \otimes x_2) \otimes x_3 \simeq x_1 \otimes (x_2 \otimes x_3) \text{and} \quad (f_1 \otimes f_2) \otimes f_3 \simeq f_1 \otimes (f_2 \otimes f_3);$$
+
+The assignment interacts with the distinguished object through $\nu \simeq \id_{1}$ and
+
+- For each object $x$, $1 \otimes x \simeq x$ and $x \otimes 1 \simeq x$. 
+
+:::
+
+<!---
 
 ::: {#def-2-category-preorder-categories}
 ## The thin 2-category of preorder categories
 
-Let $\pspreordcat$ denote the cartesian (thin) 2-category with: 
+\bigskip
+
+Let $\pspreordcat$ denote the monoidal (thin) 2-category with: 
 
 - 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
 
@@ -1006,7 +1074,22 @@ Let $\pspreordcat$ denote the cartesian (thin) 2-category with:
 
 - 2-cells: $\sqleq$-transformations between preorder pseudofunctors ($G \sqleq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$).
 
+and monoidal product the product of preorder categories defined above.
+
 :::
+
+
+::: {#rem-preorders-are-square-less-than-preorder-categories}
+## The 2-category of (small) preorders is a sub-2-category of preorder categories
+
+\bigskip
+
+Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this 
+relationship.
+
+
+:::
+-->
 
 
 
