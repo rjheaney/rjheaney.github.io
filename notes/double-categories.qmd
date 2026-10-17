@@ -1183,7 +1183,7 @@ $$ \simeq (G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{
 
 $$ = (G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f)) \circ^{\mbbx} (\alpha \otimes \beta)_x$$
 
-$$ = (G_1 \otimes G_2)_x \circ^{\mbbx} (\alpha \otimes \beta)_x$$
+$$ = (G_1 \otimes G_2)^{\lambda}_{x,y}(f) \circ^{\mbbx} (\alpha \otimes \beta)_x$$
 
 
 :::
