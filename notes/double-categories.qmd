@@ -9,6 +9,8 @@ bibliography: references.bib
 
 \DeclareMathSymbol{\fcmp}{\mathrel}{bbold}{\lq\;}
 \newcommand{\mbbc}{\mathbb{C}}
+\newcommand{\mbbx}{\mathbb{X}}
+\newcommand{\mclo}{\mathcal{O}}
 \newcommand{\homl}{\text{hom}_{\lambda}}
 \newcommand{\homt}{\text{hom}_{\tau}}
 \newcommand{\sq}{\text{Sq}}
@@ -965,7 +967,7 @@ This data is required to satisfy:
 
 - For each pair of objects $x, y$ in $\mathcal{O}$ and loose arrow $f : x \larr y$ 
 
-$$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) = G^{\lambda}_{x,y}(f) \circ^{\gimel} \alpha_x.$$
+$$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) \simeq G^{\lambda}_{x,y}(f) \circ^{\gimel} \alpha_x.$$
 
 :::
 
@@ -1019,6 +1021,23 @@ $(f_1,f_2) \sqleq^{\times} (f_1,f_2)$ as we have that both $f_1 \sqleq f_1$ and 
 
 :::
 
+::: {#def-2-category-preorder-categories}
+## The thin 2-category of preorder categories
+
+\bigskip
+
+Let $\pspreordcat$ denote the monoidal (thin) 2-category with: 
+
+- 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
+
+- 1-cells: Preorder pseudofunctors $(F: \mathbb{C} \rightarrow \mathbb{C}^{\gimel}, G : \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth},...)$;
+
+- 2-cells: $\sqleq$-transformations between preorder pseudofunctors ($G \sqleq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$).
+
+and monoidal product the product of preorder categories defined above.
+
+:::
+
 ::: {#def-monoidal-preorder-category}
 ## Monoidal Preorder Category
 
@@ -1051,7 +1070,9 @@ $$(g_1 \otimes g_2) \circ (f_1 \otimes f_2) \simeq (g_1 \circ f_1) \otimes (g_2 
 
 - For each hextuple $x_1, x_2, x_3, y_1, y_2, y_3$ and loose arrows $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$, $f_3: x_3 \larr y_3$ then
 
-$$(x_1 \otimes x_2) \otimes x_3 \simeq x_1 \otimes (x_2 \otimes x_3) \text{and} \quad (f_1 \otimes f_2) \otimes f_3 \simeq f_1 \otimes (f_2 \otimes f_3);$$
+$$(x_1 \otimes x_2) \otimes x_3 \simeq x_1 \otimes (x_2 \otimes x_3)$$
+
+$$ \text{and} \quad (f_1 \otimes f_2) \otimes f_3 \simeq f_1 \otimes (f_2 \otimes f_3);$$
 
 The assignment interacts with the distinguished object through $\nu \simeq \id_{1}$ and
 
@@ -1059,25 +1080,117 @@ The assignment interacts with the distinguished object through $\nu \simeq \id_{
 
 :::
 
-<!---
-
-::: {#def-2-category-preorder-categories}
-## The thin 2-category of preorder categories
+::: {#def-exponentiating-by-small-preorder-categories}
+## Exponential Preorder Category
 
 \bigskip
 
-Let $\pspreordcat$ denote the monoidal (thin) 2-category with: 
+Given $\mbbx$ a (small) preorder category and $\mbbc$ some other preorder category. 
 
-- 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
+- Consider the class
 
-- 1-cells: Preorder pseudofunctors $(F: \mathbb{C} \rightarrow \mathbb{C}^{\gimel}, G : \mathbb{C}^{\gimel} \rightarrow \mathbb{C}^{\beth},...)$;
+$$\mclo^{\text{ps}} \triangleq \pspreordcat(\mbbx, \mbbc)$$
 
-- 2-cells: $\sqleq$-transformations between preorder pseudofunctors ($G \sqleq F : \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$).
+of all preorder pseudofunctors from $\mbbx$ to $\mbbc$ these will be the objects of the proposed exponential $(\mbbc^{\mbbx})$, with the preorder
+exactly given by $\sqleq$-transformations;
 
-and monoidal product the product of preorder categories defined above.
+- For each pair of preorder pseudofunctors $F : \mbbx \rightarrow \mbbc, G : \mbbx \rightarrow \mbbc$ there is a set $\homl^{\text{ps}}(F,G)$
+which are $\alpha : F \larr G$ loose transformations; 
+
+- For each $F : \mbbx \rightarrow \mbbc$ there is $\id_F : F \larr F$ with components for each $x \in \mclo^{\mbbx}$,
+$(\id_F)_x \triangleq \id_{F^\text{o}x}^{\mbbc}$;
+
+- For each triple $F : \mbbx \rightarrow \mbbc, G : \mbbx \rightarrow \mbbc, H : \mbbx \rightarrow \mbbc$ and loose transformations 
+$\alpha : F \larr G, \beta : G \larr H$ then there is a loose transformation with components for each $x \in \mclo^{\mbbx}$, 
+$(\beta \circ \alpha)_x \triangleq \beta_x \circ^{\mbbc} \alpha_x$;
+
+- For each quadruple $F' \sqleq F, G' \sqleq G$ and loose transformations $\alpha: F \larr G, \alpha': F' \larr G'$ then there is at most 
+modification from $\alpha$ to $\alpha'$ written $\alpha' \sqleq \alpha$;
 
 :::
 
+::: {#thm-exponentiating-by-small-preorder-categories-gives-a-preorder-category}
+## Exponentiating-by-small-preorder-categories-gives-a-new-preorder-category
+
+\bigskip
+
+Once again we simply need to check the data defined above is sufficient. 
+
+For example, if we have a pair of preorder pseudofunctors with $G \sqleq F : \mbbx \rightarrow \mbbc$, then for each $x \in \mclo^{\mbbx}$, 
+$G^{\text{o}}x \sqleq^{\mbbc} F^{\text{o}}x$ and so $\id_{G^{\text{o}}x}^{\mbbc} \sqleq^{\mbbc} \id_{F^{\text{o}}x}^{\mbbc}$, which implies 
+$\id_{G} \sqleq \id_F$. 
+
+:::
+
+::: {#def-preorder-psuedo-endofunctors-of-small-preorder-categories-are-monoidal-preorder-categories}
+## Preorder Psuedo Endofunctors form a monoidal Preorder Categories
+
+\bigskip
+
+Let $\mbbx$ be a small Preorder Category. We wish to put a monoidal structure on $\mbbx^{\mbbx}$. To begin define the assignment on objects and loose arrows: 
+
+- For each pair $F_1 : \mbbx \rightarrow \mbbx, F_2 : \mbbx \rightarrow \mbbx$ then define 
+$F_1 \otimes F_2 \triangleq F_2 \circ F_1 : \mbbx \rightarrow \mbbx$;
+
+- For each quadruple $F_1, F_2, G_1, G_2 : \mbbx \rightarrow \mbbx$ and a pair of loose transformatiomns $\alpha : F_1 \larr G_1$, 
+$\beta : F_2 \larr G_2$ then there is a loose transformation $\alpha \otimes \beta : F_1 \otimes F_2 \larr G_1 \otimes G_2$. 
+Which has components, for each $x \in \mclo^{\mbbx}$, defined as
+
+$$(\alpha \otimes \beta)_x \triangleq \beta_{G_1^{\text{o}} x} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x);$$
+
+Also define the unit as $\id_{\mbbx}$ the identity pseudo preorder functor on $\mbbx$ and $\nu : \id_{\mbbx} \larr \id_{\mbbx}$, which for each $x \in \mclo^{\mbbx}$ is defined componentwise $\nu_x = \id_{x}$.
+
+:::
+
+::: {#lem-the-componentwise-definition-in-fact-defines-a-loose-transformation}
+## Verify the assignment on loose transformations does produce a loose transformation
+
+\bigskip
+
+- For each pair of objects $x' \sqleq x$ in $\mclo^{\mbbx}$ we have as $G_1^{\text{o}}x' \sqleq G_1^{\text{o}}x$ and by $\beta$ being a loose transformation
+
+$$\beta_{G_1^{\text{o}}x'} \sqleq \beta_{G_1^{\text{o}}x}.$$
+
+Furthermore, $\alpha_{x'} \sqleq \alpha_x$ as $\alpha$ is a loose transformation, thus
+
+$$(F_2)^{\lambda}_{F_1^{\text{o}}x', G_1^{\text{o}}x'}(\alpha_{x'}) \sqleq (F_2)^{\lambda}_{F_1^{\text{o}}x, G_1^{\text{o}}x}(\alpha_{x}).$$
+
+Finally, gauranteed by $\mbbx$ being a preorder category we have
+
+$$(\alpha \otimes \beta)_{x'} = \beta_{G_1^{\text{o}}x'}\circ^{\mbbx} (F_2)^{\lambda}_{F_1^{\text{o}}x', G_1^{\text{o}}x'}(\alpha_{x'}) \sqleq  \beta_{G_1^{\text{o}}x}\circ^{\mbbx} (F_2)^{\lambda}_{F_1^{\text{o}}x, G_1^{\text{o}}x}(\alpha_{x}) = (\beta \otimes \alpha)_x.$$
+
+- Given a pair of objects $x,y \in \mclo^{\mbbx}$ and loose arrow $f : x \larr y$ then 
+
+$$(\alpha \otimes \beta)_y \circ (F_1 \otimes F_2)^{\lambda}_{x,y}(f)$$
+
+$$= (\beta_{G_1^{\text{o}} y} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 y, G^{\text{o}}_1 y}(\alpha_y)) \circ^{\mbbx} (F_1 \otimes F_2)^{\lambda}_{x,y}(f)$$
+
+$$\simeq \beta_{G_1^{\text{o}} y} \circ^{\mbbx} ((F_2)^{\lambda}_{F^{\text{o}}_1 y, G^{\text{o}}_1 y}(\alpha_y)) \circ^{\mbbx} (F_1 \otimes F_2)^{\lambda}_{x,y}(f))$$
+
+$$= \beta_{G_1^{\text{o}} y} \circ^{\mbbx} ((F_2)^{\lambda}_{F^{\text{o}}_1 y, G^{\text{o}}_1 y}(\alpha_y) \circ^{\mbbx} (F_2)^{\lambda}_{F_1^{\text{o}}x,F_1^{\text{o}}y}((F_1)^{\lambda}_{x,y}(f))) $$
+
+$$ \simeq \beta_{G_1^{\text{o}}y} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 y}(\alpha_y \circ^{\mbbx} (F_1)^{\lambda}_{x,y}(f))$$
+
+$$ \simeq \beta_{G_1^{\text{o}}y} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f) \circ^{\mbbx} \alpha_x)$$
+
+$$ \simeq \beta_{G_1^{\text{o}}y} \circ^{\mbbx} ((F_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f)) \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x))$$
+
+$$ \simeq (\beta_{G_1^{\text{o}}y} \circ^{\mbbx} (F_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f))) \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x)$$
+
+$$ \simeq ((G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f)) \circ^{\mbbx} \beta_{G_1^{\text{o}}x}) \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x)$$
+
+$$ \simeq (G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f)) \circ^{\mbbx}( \beta_{G_1^{\text{o}}x} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x))$$
+
+$$ = (G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(f)) \circ^{\mbbx} (\alpha \otimes \beta)_x$$
+
+$$ = (G_1 \otimes G_2)_x \circ^{\mbbx} (\alpha \otimes \beta)_x$$
+
+
+:::
+
+
+
+<!---
 
 ::: {#rem-preorders-are-square-less-than-preorder-categories}
 ## The 2-category of (small) preorders is a sub-2-category of preorder categories
