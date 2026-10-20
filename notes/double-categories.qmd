@@ -155,11 +155,11 @@ $$(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{
 :::
 
 ::: {#def-sqleq-transformations}
-## Comparing two psuedo preorder functors through the order
+## Comparing two oplax preorder functors through the order
 
 \bigskip
 
-Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of psuedo preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to $G$, written $G \sqleq F$, are the following assertions
 
 - For each object $x \in \mathcal{O}$, $G^{\text{o}}x \sqleq^{\gimel} F^{\text{o}}x$;
@@ -169,11 +169,11 @@ $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to
 :::
 
 ::: {#def-loose-transformations}
-## Comparing two psuedo preorder functors loosely
+## Comparing two oplax preorder functors loosely
 
 \bigskip
 
-Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of psuedo preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a loose transformation from $F$ to $G$, written $\alpha : F \larr G$, is the following data
 
 - For each object $x \in \mathcal{O}$ a loose arrow $\alpha_x : F^{\text{o}}x \larr G^{\text{o}}x$;
@@ -193,11 +193,41 @@ $$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) \simeq G^{\lambda}_{x,y}(f) \circ
 
 \bigskip
 
-Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ and a quadruple of psuedo preorder functors $H \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$,
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ and a quadruple of oplax preorder functors $H \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$,
 $K \sqleq G : \mbbc \rightarrow \mbbc^{\gimel}$ and loose transformations $\alpha : F \larr G$, $\beta : H \larr K$ then there is modification
 from $\alpha$ to $\beta$, written $\beta \sqleq \alpha$, when for each object $x \in \mathcal{O}$ we have that $\beta_x \sqleq \alpha_x$.
 
 :::
+
+::: {#def-equipments}
+## When is a preorder category an Equipment
+
+\bigskip
+
+Let $\mbbc$ be a preorder category, we say
+
+- if for a pair $y \sqleq x$ there is a loose arrow $g^{\flat} : y \larr x$ such that $\id_y \sqleq g^{\flat} \sqleq \id_x$ then $g^{\flat}$ is called
+the pairs' ($y \sqleq x$) conjoint;
+
+- if for a pair $y \sqleq x$ there is a loose arrrow $g^{\sharp} : x \larr y$ such that $\id_y \sqleq g^{\sharp} \sqleq \id_x$ then $g^{\sharp}$ is called the pairs' 
+($y \sqleq x$) companion.
+
+We call $\mbbc$ an eqiupment if every pair $y \sqleq x$ has a companion *and* a conjoint. 
+
+:::
+
+::: {#def-special-sq-leq-transformations}
+## A special (pronounced spee-shal) square less than transformation
+
+\bigskip
+
+Let $\mbbc, \mbbc^{\gimel}$ be two preorder categories and $G \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$ be a $\sqleq$-transformation between oplax preorder functors. We say this transformation is special
+if for each $x \in \mclo$, $G^{\text{o}}x \sqleq F^{\text{o}}x$ has a companion $g^{\sharp}_x : F^{\text{o}}x \larr G^{\text{o}}x$ in $\mbbc^{\gimel}$ which satisfies for each $x,y \in \mclo$ and loose arrow $f : x \larr y$, 
+
+$$G^{\lambda}_{x,y}(f) \circ^{\gimel} g^{\sharp}_x \simeq^{\gimel} g^{\sharp}_y \circ^{\gimel} F^{\lambda}_{x,y}(f).$$ 
+
+:::
+
 
 ::: {#def-product-preorder-category}
 ## Products of Preorder Categories
@@ -297,6 +327,35 @@ The assignment interacts with the distinguished object through $\nu \simeq \id_{
 
 :::
 
+:::{#def-lax-monoidal-pseudo-preorder-functors}
+## lax Monoidal Preorder Functors
+
+\bigskip
+
+Given $(\mbbc, \otimes, 1)$ and $(\mbbc^{\gimel}, \otimes^{\gimel}, 1^{\gimel})$ monoidal preorder categories. A lax monoidal preorder functor $F : (\mbbc, \otimes, 1)  \rightarrow (\mbbc^{\gimel}, \otimes^{\gimel}, 1^{\gimel})$ is
+a pseudo preorder functor $F : \mbbc \rightarrow \mbbc^{\gimel}$ along with the data:
+
+- For each $x_1,x_2 \in \mclo$, $F^{\text{o}}(x_1 \otimes x_2) \sqleq^{\gimel} F^{\text{o}}x_1 \otimes^{\gimel} F^{\text{o}}x_2$;
+
+- For each quadruple $x_1, x_2, y_1, y_2 \in \mclo$ along with loose arrows $f_1 : x_1 \larr y_1, f_2 : x_2 \larr y_2$ then $F^{\lambda}_{x_1 \otimes x_2, y_1 \otimes y_2}(f_1 \otimes f_2) \sqleq^{\gimel} F^{\lambda}_{x_1,y_1}(f_1) \otimes^{\gimel} F^{\lambda}_{x_2,y_2}(f_2)$;
+
+- Furthermore, $F^{\text{o}} 1 \sqleq^{\gimel} 1^{\gimel}$ (and $F^{\lambda}_{1, 1}(\id_1) \sqleq^{\gimel} \id_{1^{\gimel}}$ which is guaranteed by the axioms of pseudo preorder functor).
+
+:::
+
+:::{#def-monoidal-loose-transformation}
+## Monoidal Loose Transformation
+
+Let $F$ and $G : (\mbbc, \otimes, 1) \rightarrow (\mbbc^{\gimel}, \otimes^{\gimel}, 1^{\gimel})$ be two monoidal preorder functors between monoidal preorder categories. A monoidal loose transformation
+$\beta : F \larr G$ is a loose transformation endowed with the properties
+
+- For each $x_1, x_2 \in \mclo$, $\beta_{x_1 \otimes x_2} \sqleq \beta_{x_1} \otimes^{\gimel} \beta_{x_2}$;
+
+- and $\beta_1 \sqleq \id_{1^{\gimel}}$.  
+
+
+:::
+
 ::: {#def-exponentiating-by-small-preorder-categories}
 ## Exponential Preorder Category
 
@@ -322,12 +381,12 @@ $\alpha : F \larr G, \beta : G \larr H$ then there is a loose transformation wit
 $(\beta \circ \alpha)_x \triangleq \beta_x \circ^{\mbbc} \alpha_x$;
 
 - For each quadruple $F' \sqleq F, G' \sqleq G$ and loose transformations $\alpha: F \larr G, \alpha': F' \larr G'$ then there is at most 
-modification from $\alpha$ to $\alpha'$ written $\alpha' \sqleq \alpha$;
+modification from $\alpha$ to $\alpha'$ written $\alpha' \sqleq \alpha$.
 
 :::
 
 ::: {#thm-exponentiating-by-small-preorder-categories-gives-a-preorder-category}
-## Exponentiating-by-small-preorder-categories-gives-a-new-preorder-category
+## Exponentiating by a small preorder category gives a new preorder category
 
 \bigskip
 
@@ -462,7 +521,7 @@ $$\simeq (\delta_{H_1^{\text{o}}x} \circ^{\mbbx} (G_2)^{\lambda}_{G_1^{\text{o}}
 
 $$= (\gamma \otimes \delta)_x \circ^{\mbbx} (\alpha \otimes \beta)_{x} = [(\gamma \otimes \delta) \circ (\alpha \otimes \beta)]_x$$
 
-Which implies $(\gamma \circ \alpha) \otimes (\delta \circ \beta) = (\gamma \otimes \delta) \circ (\alpha \otimes \beta$.
+Which implies $(\gamma \circ \alpha) \otimes (\delta \circ \beta) = (\gamma \otimes \delta) \circ (\alpha \otimes \beta)$.
 
 - Given $F_1, F_2, F_3, G_1, G_2, G_3$ pseudo preorder endofunctors on $\mbbx$, and loose transformations $\alpha : F_1 \larr G_1$, $\beta : F_2 \larr G_2$, $\gamma : F_3 \larr G_3$. Let $x \in \mclo^{\mbbx}$, then
 
