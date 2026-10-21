@@ -200,7 +200,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 19, 2026</p>
+      <p class="date-modified">October 21, 2026</p>
     </div>
   </div>
     
@@ -288,16 +288,16 @@ window.Quarto = {
 <p><span class="math display">\[(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{o}}y}(F^{\lambda}_{x,y}(f)) : G^{\text{o}}(F^{\text{o}}x) \not\rightarrow G^{\text{o}}(F^{\text{o}}y).\]</span></p>
 </div>
 <div id="def-sqleq-transformations" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (Comparing two psuedo preorder functors through the order)</strong></span> &nbsp;</p>
-<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of psuedo preorder functors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a <span class="math inline">\(\sqsubseteq\)</span>-transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(G \sqsubseteq F\)</span>, are the following assertions</p>
+<p><span class="theorem-title"><strong>Definition 3 (Comparing two oplax preorder functors through the order)</strong></span> &nbsp;</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of oplax preorder functors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a <span class="math inline">\(\sqsubseteq\)</span>-transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(G \sqsubseteq F\)</span>, are the following assertions</p>
 <ul>
 <li><p>For each object <span class="math inline">\(x \in \mathcal{O}\)</span>, <span class="math inline">\(G^{\text{o}}x \sqsubseteq^{\gimel} F^{\text{o}}x\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x, y \in \mathcal{O}\)</span> and <span class="math inline">\(f : x \not\rightarrow y\)</span> then <span class="math inline">\(G^{\lambda}_{x,y}(f) \sqsubseteq^{\gimel} F^{\lambda}_{x,y}(f)\)</span>.</p></li>
 </ul>
 </div>
 <div id="def-loose-transformations" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Comparing two psuedo preorder functors loosely)</strong></span> &nbsp;</p>
-<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of psuedo preorder functors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a loose transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, is the following data</p>
+<p><span class="theorem-title"><strong>Definition 4 (Comparing two oplax preorder functors loosely)</strong></span> &nbsp;</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> as well as a pair of oplax preorder functors <span class="math inline">\(F :\mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(G: \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> then a loose transformation from <span class="math inline">\(F\)</span> to <span class="math inline">\(G\)</span>, written <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, is the following data</p>
 <ul>
 <li><p>For each object <span class="math inline">\(x \in \mathcal{O}\)</span> a loose arrow <span class="math inline">\(\alpha_x : F^{\text{o}}x \not\rightarrow G^{\text{o}}x\)</span>;</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x' \sqsubseteq x\)</span> in <span class="math inline">\(\mathcal{O}\)</span> then <span class="math inline">\(\alpha_{x'} \sqsubseteq\alpha_x\)</span>.</p></li>
@@ -310,10 +310,24 @@ window.Quarto = {
 </div>
 <div id="def-modifications" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 5 (Comparing loose transformations)</strong></span> &nbsp;</p>
-<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> and a quadruple of psuedo preorder functors <span class="math inline">\(H \sqsubseteq F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(K \sqsubseteq G : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> and loose transformations <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, <span class="math inline">\(\beta : H \not\rightarrow K\)</span> then there is modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\beta\)</span>, written <span class="math inline">\(\beta \sqsubseteq\alpha\)</span>, when for each object <span class="math inline">\(x \in \mathcal{O}\)</span> we have that <span class="math inline">\(\beta_x \sqsubseteq\alpha_x\)</span>.</p>
+<p>Given preorder categories <span class="math inline">\(\mathbb{C}\)</span>, <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> and a quadruple of oplax preorder functors <span class="math inline">\(H \sqsubseteq F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span>, <span class="math inline">\(K \sqsubseteq G : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> and loose transformations <span class="math inline">\(\alpha : F \not\rightarrow G\)</span>, <span class="math inline">\(\beta : H \not\rightarrow K\)</span> then there is modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\beta\)</span>, written <span class="math inline">\(\beta \sqsubseteq\alpha\)</span>, when for each object <span class="math inline">\(x \in \mathcal{O}\)</span> we have that <span class="math inline">\(\beta_x \sqsubseteq\alpha_x\)</span>.</p>
+</div>
+<div id="def-equipments" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6 (When is a preorder category an Equipment)</strong></span> &nbsp;</p>
+<p>Let <span class="math inline">\(\mathbb{C}\)</span> be a preorder category, we say</p>
+<ul>
+<li><p>if for a pair <span class="math inline">\(y \sqsubseteq x\)</span> there is a loose arrow <span class="math inline">\(g^{\flat} : y \not\rightarrow x\)</span> such that <span class="math inline">\(\text{id}_y \sqsubseteq g^{\flat} \sqsubseteq\text{id}_x\)</span> then <span class="math inline">\(g^{\flat}\)</span> is called the pairs’ (<span class="math inline">\(y \sqsubseteq x\)</span>) conjoint;</p></li>
+<li><p>if for a pair <span class="math inline">\(y \sqsubseteq x\)</span> there is a loose arrrow <span class="math inline">\(g^{\sharp} : x \not\rightarrow y\)</span> such that <span class="math inline">\(\text{id}_y \sqsubseteq g^{\sharp} \sqsubseteq\text{id}_x\)</span> then <span class="math inline">\(g^{\sharp}\)</span> is called the pairs’ (<span class="math inline">\(y \sqsubseteq x\)</span>) companion.</p></li>
+</ul>
+<p>We call <span class="math inline">\(\mathbb{C}\)</span> an eqiupment if every pair <span class="math inline">\(y \sqsubseteq x\)</span> has a companion <em>and</em> a conjoint.</p>
+</div>
+<div id="def-special-sq-leq-transformations" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7 (A special (pronounced spee-shal) square less than transformation)</strong></span> &nbsp;</p>
+<p>Let <span class="math inline">\(\mathbb{C}, \mathbb{C}^{\gimel}\)</span> be two preorder categories and <span class="math inline">\(G \sqsubseteq F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> be a <span class="math inline">\(\sqsubseteq\)</span>-transformation between oplax preorder functors. We say this transformation is special if for each <span class="math inline">\(x \in \mathcal{O}\)</span>, <span class="math inline">\(G^{\text{o}}x \sqsubseteq F^{\text{o}}x\)</span> has a companion <span class="math inline">\(g^{\sharp}_x : F^{\text{o}}x \not\rightarrow G^{\text{o}}x\)</span> in <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> which satisfies for each <span class="math inline">\(x,y \in \mathcal{O}\)</span> and loose arrow <span class="math inline">\(f : x \not\rightarrow y\)</span>,</p>
+<p><span class="math display">\[G^{\lambda}_{x,y}(f) \circ^{\gimel} g^{\sharp}_x \simeq^{\gimel} g^{\sharp}_y \circ^{\gimel} F^{\lambda}_{x,y}(f).\]</span></p>
 </div>
 <div id="def-product-preorder-category" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6 (Products of Preorder Categories)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 8 (Products of Preorder Categories)</strong></span> &nbsp;</p>
 <p>Given a pair of preorder categories <span class="math inline">\(\mathbb{C}\)</span> and <span class="math inline">\(\mathbb{C}^{\gimel}\)</span> we can form a new preorder category which is their product, <span class="math inline">\(\mathbb{C}\times \mathbb{C}^{\gimel}\)</span>, consisting of the data:</p>
 <ul>
 <li><p>The class <span class="math inline">\(\mathcal{O}^{\times} \triangleq \mathcal{O}\times\mathcal{O}^{\gimel}\)</span> with the componentisewise order;</p></li>
@@ -336,7 +350,7 @@ window.Quarto = {
 <p>For example, given objects <span class="math inline">\((x_1,x_2), (y_1,y_2)\)</span> and a loose arrow <span class="math inline">\((f_1,f_2) : (x_1,x_2) \not\rightarrow(y_1,y_2)\)</span> then we have that <span class="math inline">\((f_1,f_2) \sqsubseteq^{\times} (f_1,f_2)\)</span> as we have that both <span class="math inline">\(f_1 \sqsubseteq f_1\)</span> and <span class="math inline">\(f_2 \sqsubseteq^{\gimel} f_2\)</span> hold.</p>
 </div>
 <div id="def-2-category-preorder-categories" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 7 (The thin 2-category of preorder categories)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 9 (The thin 2-category of preorder categories)</strong></span> &nbsp;</p>
 <p>Let <span class="math inline">\(ps\mathcal{P}\text{re}\mathcal{O}rd\mathcal{C}at\)</span> denote the monoidal (thin) 2-category with:</p>
 <ul>
 <li><p>0-cells: Preorder categories <span class="math inline">\((\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)\)</span>;</p></li>
@@ -346,7 +360,7 @@ window.Quarto = {
 <p>and monoidal product the product of preorder categories defined above.</p>
 </div>
 <div id="def-monoidal-preorder-category" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Monoidal Preorder Category)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 10 (Monoidal Preorder Category)</strong></span> &nbsp;</p>
 <p>A monoidal preorder category is a preorder category <span class="math inline">\(\mathbb{C}\)</span> with a distinguished object <span class="math inline">\(1 \in \mathcal{O}\)</span> with a loose arrow <span class="math inline">\(\nu : 1 \not\rightarrow 1\)</span> and an assignment:</p>
 <ul>
 <li><p>For each pair of objects <span class="math inline">\(x_1,x_2\)</span> an object <span class="math inline">\(x_1 \otimes x_2\)</span>;</p></li>
@@ -373,8 +387,24 @@ window.Quarto = {
 <li>For each object <span class="math inline">\(x\)</span>, <span class="math inline">\(1 \otimes x \simeq x\)</span> and <span class="math inline">\(x \otimes 1 \simeq x\)</span>.</li>
 </ul>
 </div>
+<div id="def-lax-monoidal-pseudo-preorder-functors" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11 (lax Monoidal Preorder Functors)</strong></span> &nbsp;</p>
+<p>Given <span class="math inline">\((\mathbb{C}, \otimes, 1)\)</span> and <span class="math inline">\((\mathbb{C}^{\gimel}, \otimes^{\gimel}, 1^{\gimel})\)</span> monoidal preorder categories. A lax monoidal preorder functor <span class="math inline">\(F : (\mathbb{C}, \otimes, 1)  \rightarrow (\mathbb{C}^{\gimel}, \otimes^{\gimel}, 1^{\gimel})\)</span> is a pseudo preorder functor <span class="math inline">\(F : \mathbb{C}\rightarrow \mathbb{C}^{\gimel}\)</span> along with the data:</p>
+<ul>
+<li><p>For each <span class="math inline">\(x_1,x_2 \in \mathcal{O}\)</span>, <span class="math inline">\(F^{\text{o}}(x_1 \otimes x_2) \sqsubseteq^{\gimel} F^{\text{o}}x_1 \otimes^{\gimel} F^{\text{o}}x_2\)</span>;</p></li>
+<li><p>For each quadruple <span class="math inline">\(x_1, x_2, y_1, y_2 \in \mathcal{O}\)</span> along with loose arrows <span class="math inline">\(f_1 : x_1 \not\rightarrow y_1, f_2 : x_2 \not\rightarrow y_2\)</span> then <span class="math inline">\(F^{\lambda}_{x_1 \otimes x_2, y_1 \otimes y_2}(f_1 \otimes f_2) \sqsubseteq^{\gimel} F^{\lambda}_{x_1,y_1}(f_1) \otimes^{\gimel} F^{\lambda}_{x_2,y_2}(f_2)\)</span>;</p></li>
+<li><p>Furthermore, <span class="math inline">\(F^{\text{o}} 1 \sqsubseteq^{\gimel} 1^{\gimel}\)</span> (and <span class="math inline">\(F^{\lambda}_{1, 1}(\text{id}_1) \sqsubseteq^{\gimel} \text{id}_{1^{\gimel}}\)</span> which is guaranteed by the axioms of pseudo preorder functor).</p></li>
+</ul>
+</div>
+<div id="def-monoidal-loose-transformation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12 (Monoidal Loose Transformation)</strong></span> Let <span class="math inline">\(F\)</span> and <span class="math inline">\(G : (\mathbb{C}, \otimes, 1) \rightarrow (\mathbb{C}^{\gimel}, \otimes^{\gimel}, 1^{\gimel})\)</span> be two monoidal preorder functors between monoidal preorder categories. A monoidal loose transformation <span class="math inline">\(\beta : F \not\rightarrow G\)</span> is a loose transformation endowed with the properties</p>
+<ul>
+<li><p>For each <span class="math inline">\(x_1, x_2 \in \mathcal{O}\)</span>, <span class="math inline">\(\beta_{x_1 \otimes x_2} \sqsubseteq\beta_{x_1} \otimes^{\gimel} \beta_{x_2}\)</span>;</p></li>
+<li><p>and <span class="math inline">\(\beta_1 \sqsubseteq\text{id}_{1^{\gimel}}\)</span>.</p></li>
+</ul>
+</div>
 <div id="def-exponentiating-by-small-preorder-categories" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9 (Exponential Preorder Category)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 13 (Exponential Preorder Category)</strong></span> &nbsp;</p>
 <p>Given <span class="math inline">\(\mathbb{X}\)</span> a (small) preorder category and <span class="math inline">\(\mathbb{C}\)</span> some other preorder category.</p>
 <ul>
 <li>Consider the class</li>
@@ -385,16 +415,16 @@ window.Quarto = {
 <li><p>For each pair of psuedo preorder functors <span class="math inline">\(F : \mathbb{X}\rightarrow \mathbb{C}, G : \mathbb{X}\rightarrow \mathbb{C}\)</span> there is a set <span class="math inline">\(\text{hom}_{\lambda}^{\text{ps}}(F,G)\)</span> which are <span class="math inline">\(\alpha : F \not\rightarrow G\)</span> loose transformations;</p></li>
 <li><p>For each <span class="math inline">\(F : \mathbb{X}\rightarrow \mathbb{C}\)</span> there is <span class="math inline">\(\text{id}_F : F \not\rightarrow F\)</span> with components for each <span class="math inline">\(x \in \mathcal{O}^{\mathbb{X}}\)</span>, <span class="math inline">\((\text{id}_F)_x \triangleq \text{id}_{F^\text{o}x}^{\mathbb{C}}\)</span>;</p></li>
 <li><p>For each triple <span class="math inline">\(F : \mathbb{X}\rightarrow \mathbb{C}, G : \mathbb{X}\rightarrow \mathbb{C}, H : \mathbb{X}\rightarrow \mathbb{C}\)</span> and loose transformations <span class="math inline">\(\alpha : F \not\rightarrow G, \beta : G \not\rightarrow H\)</span> then there is a loose transformation with components for each <span class="math inline">\(x \in \mathcal{O}^{\mathbb{X}}\)</span>, <span class="math inline">\((\beta \circ \alpha)_x \triangleq \beta_x \circ^{\mathbb{C}} \alpha_x\)</span>;</p></li>
-<li><p>For each quadruple <span class="math inline">\(F' \sqsubseteq F, G' \sqsubseteq G\)</span> and loose transformations <span class="math inline">\(\alpha: F \not\rightarrow G, \alpha': F' \not\rightarrow G'\)</span> then there is at most modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha'\)</span> written <span class="math inline">\(\alpha' \sqsubseteq\alpha\)</span>;</p></li>
+<li><p>For each quadruple <span class="math inline">\(F' \sqsubseteq F, G' \sqsubseteq G\)</span> and loose transformations <span class="math inline">\(\alpha: F \not\rightarrow G, \alpha': F' \not\rightarrow G'\)</span> then there is at most modification from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha'\)</span> written <span class="math inline">\(\alpha' \sqsubseteq\alpha\)</span>.</p></li>
 </ul>
 </div>
 <div id="thm-exponentiating-by-small-preorder-categories-gives-a-preorder-category" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Exponentiating-by-small-preorder-categories-gives-a-new-preorder-category)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Theorem 2 (Exponentiating by a small preorder category gives a new preorder category)</strong></span> &nbsp;</p>
 <p>Once again we simply need to check the data defined above is sufficient.</p>
 <p>For example, if we have a pair of psuedo preorder functors with <span class="math inline">\(G \sqsubseteq F : \mathbb{X}\rightarrow \mathbb{C}\)</span>, then for each <span class="math inline">\(x \in \mathcal{O}^{\mathbb{X}}\)</span>, <span class="math inline">\(G^{\text{o}}x \sqsubseteq^{\mathbb{C}} F^{\text{o}}x\)</span> and so <span class="math inline">\(\text{id}_{G^{\text{o}}x}^{\mathbb{C}} \sqsubseteq^{\mathbb{C}} \text{id}_{F^{\text{o}}x}^{\mathbb{C}}\)</span>, which implies <span class="math inline">\(\text{id}_{G} \sqsubseteq\text{id}_F\)</span>.</p>
 </div>
 <div id="def-pseudo-preorder-endofunctors-of-small-preorder-categories-are-monoidal-preorder-categories" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10 (pseudo predorder endofunctors form a monoidal Preorder Category)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definition 14 (pseudo predorder endofunctors form a monoidal Preorder Category)</strong></span> &nbsp;</p>
 <p>Let <span class="math inline">\(\mathbb{X}\)</span> be a small Preorder Category. We wish to put a monoidal structure on <span class="math inline">\(\mathbb{X}^{\mathbb{X}}\)</span>. To begin define the assignment on objects and loose arrows:</p>
 <ul>
 <li><p>For each pair <span class="math inline">\(F_1 : \mathbb{X}\rightarrow \mathbb{X}, F_2 : \mathbb{X}\rightarrow \mathbb{X}\)</span> then define <span class="math inline">\(F_1 \otimes F_2 \triangleq F_2 \circ F_1 : \mathbb{X}\rightarrow \mathbb{X}\)</span>;</p></li>
@@ -464,7 +494,7 @@ window.Quarto = {
 <p><span class="math display">\[\simeq \delta_{H_1^{\text{o}}x} \circ^{\mathbb{X}} [(G_2)^{\lambda}_{G_1^{\text{o}}x, H_1^{\text{o}}x}(\gamma_x) \circ^{\mathbb{X}} (\beta_{G_1^{\text{o}}x} \circ^{\mathbb{X}} (F_2)^{\lambda}_{F_1^{\text{o}}x, G_1^{\text{o}}x}(\alpha_x))]\]</span></p>
 <p><span class="math display">\[\simeq (\delta_{H_1^{\text{o}}x} \circ^{\mathbb{X}} (G_2)^{\lambda}_{G_1^{\text{o}}x, H_1^{\text{o}}x}(\gamma_x)) \circ^{\mathbb{X}} (\beta_{G_1^{\text{o}}x} \circ^{\mathbb{X}} (F_2)^{\lambda}_{F_1^{\text{o}}x, G_1^{\text{o}}x}(\alpha_x))\]</span></p>
 <p><span class="math display">\[= (\gamma \otimes \delta)_x \circ^{\mathbb{X}} (\alpha \otimes \beta)_{x} = [(\gamma \otimes \delta) \circ (\alpha \otimes \beta)]_x\]</span></p>
-<p>Which implies <span class="math inline">\((\gamma \circ \alpha) \otimes (\delta \circ \beta) = (\gamma \otimes \delta) \circ (\alpha \otimes \beta\)</span>.</p>
+<p>Which implies <span class="math inline">\((\gamma \circ \alpha) \otimes (\delta \circ \beta) = (\gamma \otimes \delta) \circ (\alpha \otimes \beta)\)</span>.</p>
 <ul>
 <li>Given <span class="math inline">\(F_1, F_2, F_3, G_1, G_2, G_3\)</span> pseudo preorder endofunctors on <span class="math inline">\(\mathbb{X}\)</span>, and loose transformations <span class="math inline">\(\alpha : F_1 \not\rightarrow G_1\)</span>, <span class="math inline">\(\beta : F_2 \not\rightarrow G_2\)</span>, <span class="math inline">\(\gamma : F_3 \not\rightarrow G_3\)</span>. Let <span class="math inline">\(x \in \mathcal{O}^{\mathbb{X}}\)</span>, then</li>
 </ul>
