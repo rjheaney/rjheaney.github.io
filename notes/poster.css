@@ -1,0 +1,75 @@
+/* compact centred title banner */
+#title-block-header,
+#title-block-header .quarto-title-meta {
+  text-align: center;
+}
+
+#title-block-header .quarto-title-banner {
+  padding: 1.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+#title-block-header .subtitle {
+  color: var(--bs-white);
+  opacity: 0.85;
+}
+
+/* author · affiliation on one line */
+#title-block-header .quarto-title-meta-heading,
+#title-block-header .quarto-title-meta > div:not(.quarto-title-meta-author) {
+  display: none;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-author {
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+/* column gutter */
+div.column {
+  padding: 0 1rem;
+}
+
+/* larger callout titles */
+.callout .callout-title-container {
+  font-size: 1.4rem;
+}
+
+/* a1 portrait */
+@page {
+  size: 594mm 841mm;
+  margin: 30mm;
+}
+
+@media print {
+  #quarto-header {
+    display: none;
+  }
+
+  body,
+  #quarto-content {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  /* keep banner colours */
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* scale screen layout up to a1 */
+  main,
+  #title-block-header {
+    zoom: 2.2;
+  }
+
+  .callout {
+    break-inside: avoid;
+  }
+
+  a[href$="poster.pdf"] {
+    display: none;
+  }
+}
