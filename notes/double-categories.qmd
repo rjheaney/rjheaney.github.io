@@ -1,6 +1,7 @@
+
 ---
 title: Double Categories
-subtitle: Lifting theories of computation
+subtitle: Lifting Programs to Specifications
 date: 08-12-2026
 bibliography: references.bib
 ---

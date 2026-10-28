@@ -13,7 +13,11 @@ resources:
 
 ::: {.hidden}
 \newcommand{\larr}{\not\rightarrow}
+\newcommand{\disc}{\text{Disc}}
+\newcommand{\set}{\mathcal{S}\text{et}}
 \newcommand{\rel}{\mathbb{R}\text{el}}
+\newcommand{\prfrel}{\mathbb{P}\mathbb{R}\text{el}}
+\newcommand{\vprof}{\mathcal{V}-\mathbb{P}\text{rof}}
 :::
 
 :::::: {.columns}
@@ -32,8 +36,8 @@ This is a reference for effectful programs as arrows @power97.
 :::: {.callout-note icon=false}
 ## Double categories
 
-::: {#def-double-category}
-A double category has objects, tight arrows $f : V \to V'$, loose arrows
+::: {#def-proto-double-category}
+A proto double category has objects, tight arrows $f : V \to V'$, loose arrows
 $M : V \larr W$ and squares
 
 ::: {.imagify}
@@ -41,37 +45,104 @@ $M : V \larr W$ and squares
 	V && W \\
 	& {\Downarrow \phi} \\
 	V' && W'
-	\arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
 	\arrow["f"', from=1-1, to=3-1]
 	\arrow["g", from=1-3, to=3-3]
-	\arrow["M'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
 \end{tikzcd}
 :::
 
-with loose composition associative and unital up to coherent isomorphism.
+with loose composition associative and unital up to coherent (globular) isomorphisms.
+
 :::
-::::
+
+::: {#def-double-category}
+
+A double category is a proto double category which furthermore has a loose composition of squares
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && W && X \\
+	& {\Downarrow \phi} && {\Downarrow \psi} \\
+	{V'} && {W'} && {X'}
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-1]
+	\arrow["M"{inner sep=.8ex}, "\shortmid"{marking}, from=1-3, to=1-5]
+	\arrow["g"', from=1-3, to=3-3]
+	\arrow["h"', from=1-5, to=3-5]
+	\arrow["{N'}"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow["{M'}"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-3, to=3-5]
+\end{tikzcd}
+:::
+
+as well as tight composition of squares
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	V && W \\
+	& {\Downarrow \phi} \\
+	V' && W'\\
+    & {\Downarrow \phi'}\\
+    V'' && W''. \\
+	\arrow["N"{inner sep=.8ex}, "\shortmid"{marking}, from=1-1, to=1-3]
+	\arrow["f", from=1-1, to=3-1]
+	\arrow["g", from=1-3, to=3-3]
+	\arrow["N'"'{inner sep=.8ex}, "\shortmid"{marking}, from=3-1, to=3-3]
+	\arrow["f'", from=3-1, to=5-1]
+	\arrow["g'", from=3-3, to=5-3]
+	\arrow["N''"'{inner sep=.8ex}, "\shortmid"{marking}, from=5-1, to=5-3]
+\end{tikzcd}
+:::
+
+which satisfy the interchange law. 
+
+:::
+
 
 :::::
 
 ::::: {.column}
 
 :::: {.callout-note icon=false}
-## Example
+## Examples
 
 ::: {#exm-rel}
 $\rel$ has sets, functions and relations $R \subseteq A \times B$. A square
 from $R$ to $R'$ along $f, g$ exists when
 
 $$\forall (x, y) \in R.\ (f(x), g(y)) \in R'.$$
+
 :::
+
+::: {#exm-prfrel}
+
+$\prfrel$ has sets, functions and proof relevant relations $R : A \larr B$ (functor $\text{Disc}(A) \times \text{Disc}(B) \rightarrow \set$). A square from $R$ to $R'$ along $f$ and $g$ is a $\phi =$
+
+$$(\phi_{x,y} : R(x,y) \rightarrow R'(f(x),f(y)))_{(x,y) \in A \times B}.$$
+
+:::
+
+::: {#exm-prof}
+
+For a symmetric monoidal category $\mathcal{V}$, $\vprof$ has $\mathcal{V}$-enriched categories, $\mathcal{V}$-enriched functors and $\mathcal{V}$-Profunctors $M : \mathbb{A}\larr \mathbb{B}$ ($\mathcal{V}$-functor $\mathbb{A} \otimes \mathbb{B}^{op} \rightarrow \mathcal{V}$). A square from $M$ to $M'$ along $F$ and $G$ is a $\mathcal{V}$-natural transformation 
+
+$$\phi : M \Rightarrow M' \circ F \otimes G^{op}.$$
+
+:::
+
+:::
+
+
+
 ::::
 
 :::: {.callout-note icon=false}
 ## Results
 
-- First.
-- Second.
+- Pending
 ::::
 
 :::: {.callout-note icon=false}
