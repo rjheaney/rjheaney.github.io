@@ -74,7 +74,7 @@ div.column {
     zoom: 0.7;
   }
 
-  a[href$="poster.pdf"] {
+  .print-link {
     display: none;
   }
 }

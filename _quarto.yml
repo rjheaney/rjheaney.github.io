@@ -13,7 +13,7 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Notes"
-        href: notes/double-categories.qmd
+        href: notes/index.qmd
 
 format:
   html:

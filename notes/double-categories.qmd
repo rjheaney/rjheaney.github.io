@@ -1,7 +1,7 @@
 
 ---
 title: Double Categories
-subtitle: Lifting Programs to Specifications
+subtitle: Notes on double categories
 date: 08-12-2026
 bibliography: references.bib
 ---
@@ -48,22 +48,22 @@ A Preorder Category $\mathbb{C}$ is the data of:
 
 - For each triple of objects $x, y, z$ and loose arrows $f: x \larr y$, $g : y \larr z$ there is a loose arrow $g \circ f: x \larr z$;
 
-- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ there is at most one arrow 
+- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ there is at most one arrow
 from $f$ to $f'$ written $f' \sqleq f$;
 
 - For each pair of objects $x,y$ and loose arrow $f : x \larr y$ then $f \sqleq f$;
 
 - For each pair of objects $x' \sqleq x$ then $\id_{x'} \sqleq \id_x$;
 
-- For each pair of objects $x, y$ and loose arrow $f: x \larr y$, then 
+- For each pair of objects $x, y$ and loose arrow $f: x \larr y$, then
 
-$$f \circ \id_x \sqleq f \sqleq f \circ \id_x \quad \text{and} \quad \id_y \circ f \sqleq f \sqleq \id_y \circ f;$$ 
+$$f \circ \id_x \sqleq f \sqleq f \circ \id_x \quad \text{and} \quad \id_y \circ f \sqleq f \sqleq \id_y \circ f;$$
 
 - For each quadruple of objects $x, y, z, w$ and loose arrows $f: x \larr y$, $g : y \larr z$, $h : z \larr w$, then
 
 $$(h \circ g) \circ f \sqleq h \circ (g \circ f) \sqleq (h \circ g) \circ f;$$
 
-- For each hextuple of objects  $x'' \sqleq x' \sqleq x$, $y'' \sqleq y' \sqleq y$ and loose arrows $f : x \larr y$, $f' : x' \larr y'$, 
+- For each hextuple of objects  $x'' \sqleq x' \sqleq x$, $y'' \sqleq y' \sqleq y$ and loose arrows $f : x \larr y$, $f' : x' \larr y'$,
 $f'' : x'' \larr y''$ with $f' \sqleq f$ and $f'' \sqleq f'$ then $f'' \sqleq f$;
 
 - For each hextuple of objects $x' \sqleq x$, $y' \sqleq y$, $z' \sqleq z$ and loose arrows $f: x \larr y$, $g: y \larr z$, $f': x' \larr y'$,
@@ -81,7 +81,7 @@ For the sake convenience it is useful to introduce the notation:
 
 $$x \simeq x' \quad \iff \quad x' \sqleq x \sqleq x'$$
 
-on objects in a preorder category and 
+on objects in a preorder category and
 
 $$ f \simeq f' \quad \iff \quad f' \sqleq f \sqleq f'$$
 
@@ -107,18 +107,18 @@ $F :  \mathbb{C} \rightarrow \mathbb{C}^{\gimel}$, is the data of:
 
 - An order preserving function $F^{\text{o}} : \mathcal{O} \rightarrow \mathcal{O}^{\gimel}$;
 
-- For each pair of objects $x, y \in \mathcal{O}$ and loose arrow $f : x \larr y$ there is a loose arrow 
+- For each pair of objects $x, y \in \mathcal{O}$ and loose arrow $f : x \larr y$ there is a loose arrow
 $F^{\lambda}_{x, y}(f): F^{\text{o}}x \larr F^{\text{o}}y$;
 
-- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ such that $f' \sqleq f$ then 
+- For each quadruple of objects $x' \sqleq x$, $y' \sqleq y$ and loose arrows $f: x \larr y$, $f': x' \larr y'$ such that $f' \sqleq f$ then
 
 $$F^{\lambda}_{x',y'}(f') \sqleq^{\gimel} F^{\lambda}_{x,y}(f);$$
 
-- For each object $x \in \mathcal{O}$ then 
+- For each object $x \in \mathcal{O}$ then
 
 $$\id^{\gimel}_x \sqleq^{\gimel} F^{\lambda}_{x,x}(\id_x);$$
 
-- For each triple of objects $x, y, z \in \mathcal{O}$ and loose arrows $f: x \larr y$, $g: y \larr z$ then 
+- For each triple of objects $x, y, z \in \mathcal{O}$ and loose arrows $f: x \larr y$, $g: y \larr z$ then
 
 $$F^{\lambda}_{y,z}(g) \circ^{\gimel} F^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\lambda}_{x,z}(g \circ f).$$
 
@@ -160,12 +160,12 @@ $$(G \circ F)^{\lambda}_{x,y}(f) \triangleq G^{\lambda}_{F^{\text{o}}x,F^{\text{
 
 \bigskip
 
-Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$,
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to $G$, written $G \sqleq F$, are the following assertions
 
 - For each object $x \in \mathcal{O}$, $G^{\text{o}}x \sqleq^{\gimel} F^{\text{o}}x$;
 
-- For each pair of objects $x, y \in \mathcal{O}$ and $f : x \larr y$ then $G^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\lambda}_{x,y}(f)$. 
+- For each pair of objects $x, y \in \mathcal{O}$ and $f : x \larr y$ then $G^{\lambda}_{x,y}(f) \sqleq^{\gimel} F^{\lambda}_{x,y}(f)$.
 
 :::
 
@@ -174,7 +174,7 @@ $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a $\sqleq$-transformation from $F$ to
 
 \bigskip
 
-Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$, 
+Given preorder categories $\mbbc$, $\mbbc^{\gimel}$ as well as a pair of oplax preorder functors $F :\mbbc \rightarrow \mbbc^{\gimel}$,
 $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a loose transformation from $F$ to $G$, written $\alpha : F \larr G$, is the following data
 
 - For each object $x \in \mathcal{O}$ a loose arrow $\alpha_x : F^{\text{o}}x \larr G^{\text{o}}x$;
@@ -183,14 +183,14 @@ $G: \mbbc \rightarrow \mbbc^{\gimel}$ then a loose transformation from $F$ to $G
 
 This data is required to satisfy:
 
-- For each pair of objects $x, y$ in $\mathcal{O}$ and loose arrow $f : x \larr y$ 
+- For each pair of objects $x, y$ in $\mathcal{O}$ and loose arrow $f : x \larr y$
 
 $$\alpha_y \circ^{\gimel} F^{\lambda}_{x,y}(f) \simeq G^{\lambda}_{x,y}(f) \circ^{\gimel} \alpha_x.$$
 
 :::
 
 ::: {#def-modifications}
-## Comparing loose transformations 
+## Comparing loose transformations
 
 \bigskip
 
@@ -210,10 +210,10 @@ Let $\mbbc$ be a preorder category, we say
 - if for a pair $y \sqleq x$ there is a loose arrow $g^{\flat} : y \larr x$ such that $\id_y \sqleq g^{\flat} \sqleq \id_x$ then $g^{\flat}$ is called
 the pairs' ($y \sqleq x$) conjoint;
 
-- if for a pair $y \sqleq x$ there is a loose arrrow $g^{\sharp} : x \larr y$ such that $\id_y \sqleq g^{\sharp} \sqleq \id_x$ then $g^{\sharp}$ is called the pairs' 
+- if for a pair $y \sqleq x$ there is a loose arrrow $g^{\sharp} : x \larr y$ such that $\id_y \sqleq g^{\sharp} \sqleq \id_x$ then $g^{\sharp}$ is called the pairs'
 ($y \sqleq x$) companion.
 
-We call $\mbbc$ an eqiupment if every pair $y \sqleq x$ has a companion *and* a conjoint. 
+We call $\mbbc$ an eqiupment if every pair $y \sqleq x$ has a companion *and* a conjoint.
 
 :::
 
@@ -223,9 +223,9 @@ We call $\mbbc$ an eqiupment if every pair $y \sqleq x$ has a companion *and* a 
 \bigskip
 
 Let $\mbbc, \mbbc^{\gimel}$ be two preorder categories and $G \sqleq F : \mbbc \rightarrow \mbbc^{\gimel}$ be a $\sqleq$-transformation between oplax preorder functors. We say this transformation is special
-if for each $x \in \mclo$, $G^{\text{o}}x \sqleq F^{\text{o}}x$ has a companion $g^{\sharp}_x : F^{\text{o}}x \larr G^{\text{o}}x$ in $\mbbc^{\gimel}$ which satisfies for each $x,y \in \mclo$ and loose arrow $f : x \larr y$, 
+if for each $x \in \mclo$, $G^{\text{o}}x \sqleq F^{\text{o}}x$ has a companion $g^{\sharp}_x : F^{\text{o}}x \larr G^{\text{o}}x$ in $\mbbc^{\gimel}$ which satisfies for each $x,y \in \mclo$ and loose arrow $f : x \larr y$,
 
-$$G^{\lambda}_{x,y}(f) \circ^{\gimel} g^{\sharp}_x \simeq^{\gimel} g^{\sharp}_y \circ^{\gimel} F^{\lambda}_{x,y}(f).$$ 
+$$G^{\lambda}_{x,y}(f) \circ^{\gimel} g^{\sharp}_x \simeq^{\gimel} g^{\sharp}_y \circ^{\gimel} F^{\lambda}_{x,y}(f).$$
 
 :::
 
@@ -240,7 +240,7 @@ $\mbbc \times \mbbc^{\gimel}$, consisting of the data:
 
 - The class $\mathcal{O}^{\times} \triangleq \mathcal{O}\times\mathcal{O}^{\gimel}$ with the componentisewise order;
 
-- For each pair, of pairs, of objects $(x_1,x_2)$ and $(y_1,y_2)$ the set 
+- For each pair, of pairs, of objects $(x_1,x_2)$ and $(y_1,y_2)$ the set
 
 $$\homl^{\times}((x_1,x_2),(y_1,y_2)) \triangleq \homl(x_1,x_2) \times \homl^{\gimel}(y_1,y_2);$$
 
@@ -264,8 +264,8 @@ $$(f_1', f_2') \sqleq^{\times} (f_1, f_2)  \iff \quad f_1' \sqleq f_1 \quad \lan
 
 This is a simple checking that the definitions given above are enough to conclude the rest of the assertions.
 
-For example, given objects $(x_1,x_2), (y_1,y_2)$ and a loose arrow $(f_1,f_2) : (x_1,x_2) \larr (y_1,y_2)$ then we have that 
-$(f_1,f_2) \sqleq^{\times} (f_1,f_2)$ as we have that both $f_1 \sqleq f_1$ and $f_2 \sqleq^{\gimel} f_2$ hold. 
+For example, given objects $(x_1,x_2), (y_1,y_2)$ and a loose arrow $(f_1,f_2) : (x_1,x_2) \larr (y_1,y_2)$ then we have that
+$(f_1,f_2) \sqleq^{\times} (f_1,f_2)$ as we have that both $f_1 \sqleq f_1$ and $f_2 \sqleq^{\gimel} f_2$ hold.
 
 :::
 
@@ -274,7 +274,7 @@ $(f_1,f_2) \sqleq^{\times} (f_1,f_2)$ as we have that both $f_1 \sqleq f_1$ and 
 
 \bigskip
 
-Let $\pspreordcat$ denote the monoidal (thin) 2-category with: 
+Let $\pspreordcat$ denote the monoidal (thin) 2-category with:
 
 - 0-cells: Preorder categories $(\mathbb{C}, \mathbb{C}^{\gimel}, \mathbb{C}^{\beth}, \mathbb{D},...)$;
 
@@ -305,14 +305,14 @@ This assignment must satisfy the following properties:
 
 - For each octuple $x_1' \sqleq x_1$, $x_2' \sqleq x_2$, $y_1' \sqleq y_1$, $y_2' \sqleq y_2$ and quadruple of loose arrows
 $f_1' : x_1' \larr y_1'$, $f_2' : x_2' \larr y_2'$, $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$ such that $f_1' \simeq f_1$ and
-$f_2' \simeq f_2$ then 
+$f_2' \simeq f_2$ then
 
-$$f_1' \otimes f_2' \simeq f_1 \otimes f_2;$$ 
+$$f_1' \otimes f_2' \simeq f_1 \otimes f_2;$$
 
 - For each pair of objects $x_1, x_2$  then $\id_{x_1 \otimes x_2} \simeq \id_{x_1} \otimes \id_{x_2};$
 
 - For each hextuple $x_1, x_2, y_1, y_2, z_1, z_2$ and quadruple of loose arrows $f_1 : x_1 \larr y_1$, $f_2 : x_2 \larr y_2$,
-$g_1 : y_1 \larr z_1$, $g_2 : y_2 \larr z_2$ then 
+$g_1 : y_1 \larr z_1$, $g_2 : y_2 \larr z_2$ then
 
 $$(g_1 \otimes g_2) \circ (f_1 \otimes f_2) \simeq (g_1 \circ f_1) \otimes (g_2 \circ f_2);$$
 
@@ -324,7 +324,7 @@ $$ \text{and} \quad (f_1 \otimes f_2) \otimes f_3 \simeq f_1 \otimes (f_2 \otime
 
 The assignment interacts with the distinguished object through $\nu \simeq \id_{1}$ and
 
-- For each object $x$, $1 \otimes x \simeq x$ and $x \otimes 1 \simeq x$. 
+- For each object $x$, $1 \otimes x \simeq x$ and $x \otimes 1 \simeq x$.
 
 :::
 
@@ -352,7 +352,7 @@ $\beta : F \larr G$ is a loose transformation endowed with the properties
 
 - For each $x_1, x_2 \in \mclo$, $\beta_{x_1 \otimes x_2} \sqleq \beta_{x_1} \otimes^{\gimel} \beta_{x_2}$;
 
-- and $\beta_1 \sqleq \id_{1^{\gimel}}$.  
+- and $\beta_1 \sqleq \id_{1^{\gimel}}$.
 
 
 :::
@@ -362,7 +362,7 @@ $\beta : F \larr G$ is a loose transformation endowed with the properties
 
 \bigskip
 
-Given $\mbbx$ a (small) preorder category and $\mbbc$ some other preorder category. 
+Given $\mbbx$ a (small) preorder category and $\mbbc$ some other preorder category.
 
 - Consider the class
 
@@ -372,16 +372,16 @@ of all psuedo preorder functors from $\mbbx$ to $\mbbc$ these will be the object
 exactly given by $\sqleq$-transformations;
 
 - For each pair of psuedo preorder functors $F : \mbbx \rightarrow \mbbc, G : \mbbx \rightarrow \mbbc$ there is a set $\homl^{\text{ps}}(F,G)$
-which are $\alpha : F \larr G$ loose transformations; 
+which are $\alpha : F \larr G$ loose transformations;
 
 - For each $F : \mbbx \rightarrow \mbbc$ there is $\id_F : F \larr F$ with components for each $x \in \mclo^{\mbbx}$,
 $(\id_F)_x \triangleq \id_{F^\text{o}x}^{\mbbc}$;
 
-- For each triple $F : \mbbx \rightarrow \mbbc, G : \mbbx \rightarrow \mbbc, H : \mbbx \rightarrow \mbbc$ and loose transformations 
-$\alpha : F \larr G, \beta : G \larr H$ then there is a loose transformation with components for each $x \in \mclo^{\mbbx}$, 
+- For each triple $F : \mbbx \rightarrow \mbbc, G : \mbbx \rightarrow \mbbc, H : \mbbx \rightarrow \mbbc$ and loose transformations
+$\alpha : F \larr G, \beta : G \larr H$ then there is a loose transformation with components for each $x \in \mclo^{\mbbx}$,
 $(\beta \circ \alpha)_x \triangleq \beta_x \circ^{\mbbc} \alpha_x$;
 
-- For each quadruple $F' \sqleq F, G' \sqleq G$ and loose transformations $\alpha: F \larr G, \alpha': F' \larr G'$ then there is at most 
+- For each quadruple $F' \sqleq F, G' \sqleq G$ and loose transformations $\alpha: F \larr G, \alpha': F' \larr G'$ then there is at most
 modification from $\alpha$ to $\alpha'$ written $\alpha' \sqleq \alpha$.
 
 :::
@@ -391,11 +391,11 @@ modification from $\alpha$ to $\alpha'$ written $\alpha' \sqleq \alpha$.
 
 \bigskip
 
-Once again we simply need to check the data defined above is sufficient. 
+Once again we simply need to check the data defined above is sufficient.
 
-For example, if we have a pair of psuedo preorder functors with $G \sqleq F : \mbbx \rightarrow \mbbc$, then for each $x \in \mclo^{\mbbx}$, 
-$G^{\text{o}}x \sqleq^{\mbbc} F^{\text{o}}x$ and so $\id_{G^{\text{o}}x}^{\mbbc} \sqleq^{\mbbc} \id_{F^{\text{o}}x}^{\mbbc}$, which implies 
-$\id_{G} \sqleq \id_F$. 
+For example, if we have a pair of psuedo preorder functors with $G \sqleq F : \mbbx \rightarrow \mbbc$, then for each $x \in \mclo^{\mbbx}$,
+$G^{\text{o}}x \sqleq^{\mbbc} F^{\text{o}}x$ and so $\id_{G^{\text{o}}x}^{\mbbc} \sqleq^{\mbbc} \id_{F^{\text{o}}x}^{\mbbc}$, which implies
+$\id_{G} \sqleq \id_F$.
 
 :::
 
@@ -404,13 +404,13 @@ $\id_{G} \sqleq \id_F$.
 
 \bigskip
 
-Let $\mbbx$ be a small Preorder Category. We wish to put a monoidal structure on $\mbbx^{\mbbx}$. To begin define the assignment on objects and loose arrows: 
+Let $\mbbx$ be a small Preorder Category. We wish to put a monoidal structure on $\mbbx^{\mbbx}$. To begin define the assignment on objects and loose arrows:
 
-- For each pair $F_1 : \mbbx \rightarrow \mbbx, F_2 : \mbbx \rightarrow \mbbx$ then define 
+- For each pair $F_1 : \mbbx \rightarrow \mbbx, F_2 : \mbbx \rightarrow \mbbx$ then define
 $F_1 \otimes F_2 \triangleq F_2 \circ F_1 : \mbbx \rightarrow \mbbx$;
 
-- For each quadruple $F_1, F_2, G_1, G_2 : \mbbx \rightarrow \mbbx$ and a pair of loose transformatiomns $\alpha : F_1 \larr G_1$, 
-$\beta : F_2 \larr G_2$ then there is a loose transformation $\alpha \otimes \beta : F_1 \otimes F_2 \larr G_1 \otimes G_2$. 
+- For each quadruple $F_1, F_2, G_1, G_2 : \mbbx \rightarrow \mbbx$ and a pair of loose transformatiomns $\alpha : F_1 \larr G_1$,
+$\beta : F_2 \larr G_2$ then there is a loose transformation $\alpha \otimes \beta : F_1 \otimes F_2 \larr G_1 \otimes G_2$.
 Which has components, for each $x \in \mclo^{\mbbx}$, defined as
 
 $$(\alpha \otimes \beta)_x \triangleq \beta_{G_1^{\text{o}} x} \circ^{\mbbx} (F_2)^{\lambda}_{F^{\text{o}}_1 x, G^{\text{o}}_1 x}(\alpha_x);$$
@@ -436,7 +436,7 @@ Finally, gauranteed by $\mbbx$ being a preorder category we have
 
 $$(\alpha \otimes \beta)_{x'} = \beta_{G_1^{\text{o}}x'}\circ^{\mbbx} (F_2)^{\lambda}_{F_1^{\text{o}}x', G_1^{\text{o}}x'}(\alpha_{x'}) \sqleq  \beta_{G_1^{\text{o}}x}\circ^{\mbbx} (F_2)^{\lambda}_{F_1^{\text{o}}x, G_1^{\text{o}}x}(\alpha_{x}) = (\beta \otimes \alpha)_x.$$
 
-- Given a pair of objects $x,y \in \mclo^{\mbbx}$ and loose arrow $f : x \larr y$ then 
+- Given a pair of objects $x,y \in \mclo^{\mbbx}$ and loose arrow $f : x \larr y$ then
 
 $$(\alpha \otimes \beta)_y \circ (F_1 \otimes F_2)^{\lambda}_{x,y}(f)$$
 
@@ -463,7 +463,7 @@ $$ = (G_2)^{\lambda}_{G^{\text{o}}_1 x, G^{\text{o}}_1 y}((G_1)^{\lambda}_{x,y}(
 $$ = (G_1 \otimes G_2)^{\lambda}_{x,y}(f) \circ^{\mbbx} (\alpha \otimes \beta)_x;$$
 
 :::
- 
+
 
 ::: {#lem-Verifying-the-assignment-satisfies-the-definition-of-monoidal-preorder-category}
 ## Verifying the assignment satisfies the definition of monoidal preorder category
@@ -573,7 +573,7 @@ Which implies $(\alpha \otimes \beta) \otimes \gamma \simeq \alpha \otimes (\bet
 
 \bigskip
 
-Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this 
+Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this
 relationship.
 
 
@@ -598,7 +598,7 @@ Programm behaviours:
 
 1. Unsolvable
 
-1. Solvable 
+1. Solvable
 
 
 Program value depends on reduction strategies "call-by-name" (CbN) versus "call-by-value" (CbV)
@@ -615,14 +615,14 @@ Bang-Calculus: [Ehrhard and Guerrier '16]
 
 ## Topos Theory
 
-Meeting 05/10/26 
+Meeting 05/10/26
 
 We started with the definition of subobject classifier given in Definition 1.1 of @Leinster10
 
 :::{#def-Subobject-Classifier}
 ## Subobject Classifier
 
-Let $\mathcal{E}$ be category with a terminal object, $1$. A subobject classifier in $\mathcal{E}$ is an object $\Omega$ and an arrow $t : 1 \rightarrow \Omega$ out of the terminal object satisfying the 
+Let $\mathcal{E}$ be category with a terminal object, $1$. A subobject classifier in $\mathcal{E}$ is an object $\Omega$ and an arrow $t : 1 \rightarrow \Omega$ out of the terminal object satisfying the
 following condition: Given any monomorphism $m : A \hookrightarrow X$ there exists a unique morphism $\chi: X \rightarrow \Omega$ such that the following square is a pullback.
 
 ::: {.imagify}
@@ -641,18 +641,18 @@ following condition: Given any monomorphism $m : A \hookrightarrow X$ there exis
 :::
 
 
-Checking our intuition first we began with showing that $\Omega = \{0,1\}$ with $t : 1 = \{\star\} \rightarrow \Omega$ mapping to $1$ is indeed the subobject classifier. The repeated situation that 
+Checking our intuition first we began with showing that $\Omega = \{0,1\}$ with $t : 1 = \{\star\} \rightarrow \Omega$ mapping to $1$ is indeed the subobject classifier. The repeated situation that
 occured again and again is that there are neccessary choices for $\chi$ by the commutativity of square (this assumes we are working in a concrete category which is reasonable for our examples).
-Then the uniqueness occurs when considering the pullback condition. 
+Then the uniqueness occurs when considering the pullback condition.
 
-We next consider the category $\mathcal{S}\text{et}^{B\mathbb{N}}$ which can be instead thought of as the category of dynamical systems, this means nothing more than a set with 
-a self map called the update function. These dynamical systems can viewed through little pictures, $\mathcal{D}\text{yn}\mathcal{S}\text{ym}$ is equivalently $\Omega(1)$ the 
-category of unary algebras. The morphisms of this category are then graph homomorphism, equivalently unary algebra homomorphisms, furthermore the monomorphisms are simply 
-injective unary algebra homorphisms. This is a clearly a very nice category to work with for intuition. 
+We next consider the category $\mathcal{S}\text{et}^{B\mathbb{N}}$ which can be instead thought of as the category of dynamical systems, this means nothing more than a set with
+a self map called the update function. These dynamical systems can viewed through little pictures, $\mathcal{D}\text{yn}\mathcal{S}\text{ym}$ is equivalently $\Omega(1)$ the
+category of unary algebras. The morphisms of this category are then graph homomorphism, equivalently unary algebra homomorphisms, furthermore the monomorphisms are simply
+injective unary algebra homorphisms. This is a clearly a very nice category to work with for intuition.
 
 We now looked at trying to write down what the subobject classifier is for unary algebras. The first pass intuition was to consider the graph of natural numbers with $0$ as a sink
-and arrows decrementing by 1. Other attempts included the graph of natural numbers with successor. This lead us to think about adding a place of absolute untruth as somewhere 
-inaccessible from anywhere else. We then asked why we couldn't simply have the discrete graph on 2 points. Finally thinking about a game between 2 players one trying to find the 
+and arrows decrementing by 1. Other attempts included the graph of natural numbers with successor. This lead us to think about adding a place of absolute untruth as somewhere
+inaccessible from anywhere else. We then asked why we couldn't simply have the discrete graph on 2 points. Finally thinking about a game between 2 players one trying to find the
 correct subobject classifier and the other trying to break with continued counterexamples produced the original first pass but we also realised that we needed to reintroduce the
 place of untruth from before. The final answer is summarised below.
 
@@ -934,7 +934,7 @@ $\sq^{A,B}_{A',B'}(f, g, p, p')$ called witnesses (generically lower greek). For
 :::
 
 
-8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$. 
+8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$.
 For simplicity, if $p = \id_A$ for $A \in \mathcal{O}$ then we will write $\upsilon_{id_A}$ as $\upsilon_A$;
 
 
@@ -1132,9 +1132,9 @@ $$(\phi' \comptt \phi) \compll (\psi' \comptt \psi) = (\phi' \compll \psi') \com
 :::
 
 
-Let $\mathcal{C}\text{at}$ denote the category which has as objects (small) categories and morphisms as functors between these. 
+Let $\mathcal{C}\text{at}$ denote the category which has as objects (small) categories and morphisms as functors between these.
 
-To produce the following definition we will need to be explicit about what the fibre products are in $\mathcal{C}\text{at}$, namely the strict pullbacks. For three (small) categories $C, D, E$ in $\mathcal{C}\text{at}$ and functors $f: C 
+To produce the following definition we will need to be explicit about what the fibre products are in $\mathcal{C}\text{at}$, namely the strict pullbacks. For three (small) categories $C, D, E$ in $\mathcal{C}\text{at}$ and functors $f: C
 \rightarrow E$, $g: D \rightarrow E$. The strict pullback is denoted $C \times_E D$ and it is small category with an object set consisting
 
 $$\text{ob}(C\times_E D) = \{(c,d) \in \text{ob}(C)\times\text{ob}(D) \ :|: \ f^o(c) = g^o(d) \}$$
@@ -1285,7 +1285,7 @@ $$\mor(C_1) \triangleq \{(A,B,p,C,D,q,f,g,\varphi) \ :|: \ \varphi \in \sq_{A,B,
 
 $$\text{id}^{C_1}_{(A,B,p)} \triangleq (A,B,p,A,B,p,1_A,1_B, \upsilon_p)$$
 
-$$\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq$$ 
+$$\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq$$
 $$ (A,B,p,E,F,r,f'\compt f, g'\compt g, \varphi'\comptt \varphi)$$
 
 Define functors
@@ -1318,16 +1318,16 @@ Whenever we talk of a double category we will mean the definition which starts w
 ## The double category Rel
 
 We will now describe $\rel$ the double category of relations and functions. Firstly, $\mathcal{O}$ is class of small sets then for sets $A,B$ we define
-$\homt(A,B) \triangleq \text{hom}_{Set}(A,B)$ is set of all functions from $A$ to $B$ 
+$\homt(A,B) \triangleq \text{hom}_{Set}(A,B)$ is set of all functions from $A$ to $B$
 whereas $\homl(A,B)$ is the set of relations $A$ to $B$ viewed as monomorphisms into $A\times B$. The tight composition is simply composition of functions, while loose composition
 is defined as composition of relations. The squares are unique if they exist, and are witnessed to exist by the truth of the following logical formula
 
-$$\forall (x,y) \in R \quad : \quad (f(x),g(y)) \in R'. $$   
+$$\forall (x,y) \in R \quad : \quad (f(x),g(y)) \in R'. $$
 
 Where $A, B, A', B'$ are sets, $f : A \rightarrow A', g: B \rightarrow B'$ are functions and $R: A \not\rightarrow B, R' : A' \not\rightarrow B'$ are relations. Tight composition
-of cells is the composition of functions while loose composition of cells is the composition of relations which are easily proven to exist by checking the truthfulness of the witness. 
+of cells is the composition of functions while loose composition of cells is the composition of relations which are easily proven to exist by checking the truthfulness of the witness.
 The identity functions are the tight identities, $1_A : A \rightarrow A$ is $x \mapsto x$ and the loose identities is the diagonal relation, $\text{id}_A = \Delta_A \subset A\times A$.
-The identity cells $\upsilon_A$ are witnessed by the tautology $(x,y) \in R \Rightarrow (x,y) \in R$. 
+The identity cells $\upsilon_A$ are witnessed by the tautology $(x,y) \in R \Rightarrow (x,y) \in R$.
 
 :::
 
@@ -1350,18 +1350,18 @@ Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F:\mathbb{C
 
 3. For every $A, B \in \mathcal{O}^D$ and $p \in \homl^C(A,B)$, then $F^{\lambda}(p) \in \homl^C(F^o(A), F^o(B))$;
 
-4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$ 
+4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$
 as well as $\varphi \in \sq_{A,B,A',B'}(f,g,p,p')$ then $F^{\sq}(\varphi) \in \sq_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).$
 
 Satisfying the following relations
 
-1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$; 
+1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$;
 
-2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;  
+2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;
 
 3. $F^{\sq}(\psi {\compll}^C \varphi) = F^{\sq}(\psi) {\compll}^D F^{\sq}(\varphi)$;
 
-4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$. 
+4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$.
 
 :::
 
@@ -1370,7 +1370,7 @@ Satisfying the following relations
 
 Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ is the data of:
 
-1.   
+1.
 
 
 :::
@@ -1431,7 +1431,7 @@ For simplicity, we will from now on supress the extra data and simply write $\ma
 :::{#prp-interlaced-bilattice-morphisms}
 ## Bilattice morphisms preserve interlacing
 
-Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice morphism which is also bijective as a set function and further $\mathbf{B}$ is an interlaced bilattice then $\mathbf{B}^{\gimel}$ is also an interlaced bilattice. 
+Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice morphism which is also bijective as a set function and further $\mathbf{B}$ is an interlaced bilattice then $\mathbf{B}^{\gimel}$ is also an interlaced bilattice.
 
 :::
 
@@ -1440,7 +1440,7 @@ Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice mo
 
 Given two categories $\mathcal{C}$ and $\mathcal{D}$ which have, respectively, products and coproducts the twisted product produces a pair
 of categories with the same class of objects, simply the product of the classes of objects $\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})$.
-The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows 
+The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows
 is the product $\mathcal{C} \times \mathcal{D}$.
 
 We will need to define products and coproducts for each category. The first of these, the product in the tight category
