@@ -1,14 +1,13 @@
 ---
 title: Double Categories
 subtitle: Lifting Programs to Specifications
+date: 2026-10-28
 bibliography: references.bib
 page-layout: full
 title-block-banner: true
 toc: false
 citation-location: document
 css: poster.css
-resources:
-  - poster.pdf
 ---
 
 ::: {.hidden}
@@ -151,4 +150,4 @@ $$\phi : M \Rightarrow M' \circ F \otimes G^{op}.$$
 
 ::::::
 
-[PDF](poster.pdf)
+[PDF](#){.print-link onclick="window.print(); return false;"}

@@ -1,0 +1,8 @@
+---
+title: Notes
+listing:
+  contents: "*.qmd"
+  type: table
+  sort: "date desc"
+  fields: [date, title, subtitle]
+---
