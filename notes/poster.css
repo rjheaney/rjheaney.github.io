@@ -69,6 +69,11 @@ div.column {
     break-inside: avoid;
   }
 
+  /* smaller tikz diagrams */
+  .imagify img {
+    zoom: 0.7;
+  }
+
   a[href$="poster.pdf"] {
     display: none;
   }
