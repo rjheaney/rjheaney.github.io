@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rjheaney.github.io/index.html</loc>
-    <lastmod>2026-10-29T12:49:12.010Z</lastmod>
+    <loc>https://rjheaney.github.io/notes/double-categories.html</loc>
+    <lastmod>2026-10-29T16:43:11.919Z</lastmod>
   </url>
   <url>
-    <loc>https://rjheaney.github.io/notes/double-categories.html</loc>
-    <lastmod>2026-10-29T12:49:12.011Z</lastmod>
+    <loc>https://rjheaney.github.io/notes/index.html</loc>
+    <lastmod>2026-10-29T16:43:11.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rjheaney.github.io/index.html</loc>
+    <lastmod>2026-10-29T16:43:11.918Z</lastmod>
   </url>
   <url>
     <loc>https://rjheaney.github.io/notes/poster.html</loc>
-    <lastmod>2026-10-29T12:49:12.011Z</lastmod>
+    <lastmod>2026-10-29T16:43:11.919Z</lastmod>
   </url>
 </urlset>

@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ce8c7fadf008f0db21df6a77c8bff52.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e0e808c33a869ce856260457173ecade.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-4ce8c7fadf008f0db21df6a77c8bff52.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b35145adcda6c6be400e51fe893480ee.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-ecd799ecd38bea1fd219bd8f7f6107f1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b35145adcda6c6be400e51fe893480ee.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,7 +137,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../notes/double-categories.html" aria-current="page"> 
+    <a class="nav-link" href="../notes/index.html"> 
 <span class="menu-text">Notes</span></a>
   </li>  
 </ul>
@@ -169,7 +169,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Double Categories</h1>
-<p class="subtitle lead">Lifting Programs to Specifications</p>
+<p class="subtitle lead">Notes on double categories</p>
 </div>
 
 
@@ -526,7 +526,7 @@ window.Quarto = {
 
 \bigskip
 
-Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this 
+Any Preorder may be viewed as a preorder category where the sets of loose arrows are empty, there is a 2-functor that establishes this
 relationship.
 
 
@@ -551,7 +551,7 @@ Programm behaviours:
 
 1. Unsolvable
 
-1. Solvable 
+1. Solvable
 
 
 Program value depends on reduction strategies "call-by-name" (CbN) versus "call-by-value" (CbV)
@@ -568,14 +568,14 @@ Bang-Calculus: [Ehrhard and Guerrier '16]
 
 ## Topos Theory
 
-Meeting 05/10/26 
+Meeting 05/10/26
 
 We started with the definition of subobject classifier given in Definition 1.1 of @Leinster10
 
 :::{#def-Subobject-Classifier}
 ## Subobject Classifier
 
-Let $\mathcal{E}$ be category with a terminal object, $1$. A subobject classifier in $\mathcal{E}$ is an object $\Omega$ and an arrow $t : 1 \rightarrow \Omega$ out of the terminal object satisfying the 
+Let $\mathcal{E}$ be category with a terminal object, $1$. A subobject classifier in $\mathcal{E}$ is an object $\Omega$ and an arrow $t : 1 \rightarrow \Omega$ out of the terminal object satisfying the
 following condition: Given any monomorphism $m : A \hookrightarrow X$ there exists a unique morphism $\chi: X \rightarrow \Omega$ such that the following square is a pullback.
 
 ::: {.imagify}
@@ -594,18 +594,18 @@ following condition: Given any monomorphism $m : A \hookrightarrow X$ there exis
 :::
 
 
-Checking our intuition first we began with showing that $\Omega = \{0,1\}$ with $t : 1 = \{\star\} \rightarrow \Omega$ mapping to $1$ is indeed the subobject classifier. The repeated situation that 
+Checking our intuition first we began with showing that $\Omega = \{0,1\}$ with $t : 1 = \{\star\} \rightarrow \Omega$ mapping to $1$ is indeed the subobject classifier. The repeated situation that
 occured again and again is that there are neccessary choices for $\chi$ by the commutativity of square (this assumes we are working in a concrete category which is reasonable for our examples).
-Then the uniqueness occurs when considering the pullback condition. 
+Then the uniqueness occurs when considering the pullback condition.
 
-We next consider the category $\mathcal{S}\text{et}^{B\mathbb{N}}$ which can be instead thought of as the category of dynamical systems, this means nothing more than a set with 
-a self map called the update function. These dynamical systems can viewed through little pictures, $\mathcal{D}\text{yn}\mathcal{S}\text{ym}$ is equivalently $\Omega(1)$ the 
-category of unary algebras. The morphisms of this category are then graph homomorphism, equivalently unary algebra homomorphisms, furthermore the monomorphisms are simply 
-injective unary algebra homorphisms. This is a clearly a very nice category to work with for intuition. 
+We next consider the category $\mathcal{S}\text{et}^{B\mathbb{N}}$ which can be instead thought of as the category of dynamical systems, this means nothing more than a set with
+a self map called the update function. These dynamical systems can viewed through little pictures, $\mathcal{D}\text{yn}\mathcal{S}\text{ym}$ is equivalently $\Omega(1)$ the
+category of unary algebras. The morphisms of this category are then graph homomorphism, equivalently unary algebra homomorphisms, furthermore the monomorphisms are simply
+injective unary algebra homorphisms. This is a clearly a very nice category to work with for intuition.
 
 We now looked at trying to write down what the subobject classifier is for unary algebras. The first pass intuition was to consider the graph of natural numbers with $0$ as a sink
-and arrows decrementing by 1. Other attempts included the graph of natural numbers with successor. This lead us to think about adding a place of absolute untruth as somewhere 
-inaccessible from anywhere else. We then asked why we couldn't simply have the discrete graph on 2 points. Finally thinking about a game between 2 players one trying to find the 
+and arrows decrementing by 1. Other attempts included the graph of natural numbers with successor. This lead us to think about adding a place of absolute untruth as somewhere
+inaccessible from anywhere else. We then asked why we couldn't simply have the discrete graph on 2 points. Finally thinking about a game between 2 players one trying to find the
 correct subobject classifier and the other trying to break with continued counterexamples produced the original first pass but we also realised that we needed to reintroduce the
 place of untruth from before. The final answer is summarised below.
 
@@ -885,7 +885,7 @@ $\sq^{A,B}_{A',B'}(f, g, p, p')$ called witnesses (generically lower greek). For
 :::
 
 
-8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$. 
+8. For every $A, B \in \mathcal{O}$, and every $p \in \text{hom}_{\lambda}(A,B)$ there is a distinguished witness $\upsilon_p \in \sq_{A, B}^{A,B}(p, p)$.
 For simplicity, if $p = \id_A$ for $A \in \mathcal{O}$ then we will write $\upsilon_{id_A}$ as $\upsilon_A$;
 
 
@@ -1083,9 +1083,9 @@ $$(\phi' \comptt \phi) \compll (\psi' \comptt \psi) = (\phi' \compll \psi') \com
 :::
 
 
-Let $\mathcal{C}\text{at}$ denote the category which has as objects (small) categories and morphisms as functors between these. 
+Let $\mathcal{C}\text{at}$ denote the category which has as objects (small) categories and morphisms as functors between these.
 
-To produce the following definition we will need to be explicit about what the fibre products are in $\mathcal{C}\text{at}$, namely the strict pullbacks. For three (small) categories $C, D, E$ in $\mathcal{C}\text{at}$ and functors $f: C 
+To produce the following definition we will need to be explicit about what the fibre products are in $\mathcal{C}\text{at}$, namely the strict pullbacks. For three (small) categories $C, D, E$ in $\mathcal{C}\text{at}$ and functors $f: C
 \rightarrow E$, $g: D \rightarrow E$. The strict pullback is denoted $C \times_E D$ and it is small category with an object set consisting
 
 $$\text{ob}(C\times_E D) = \{(c,d) \in \text{ob}(C)\times\text{ob}(D) \ :|: \ f^o(c) = g^o(d) \}$$
@@ -1236,7 +1236,7 @@ $$\mor(C_1) \triangleq \{(A,B,p,C,D,q,f,g,\varphi) \ :|: \ \varphi \in \sq_{A,B,
 
 $$\text{id}^{C_1}_{(A,B,p)} \triangleq (A,B,p,A,B,p,1_A,1_B, \upsilon_p)$$
 
-$$\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq$$ 
+$$\circ^{C_1}(((A,B,p,C,D,q,f,g,\varphi),((C,D,q,E,F,r,f',g',\varphi')) \triangleq$$
 $$ (A,B,p,E,F,r,f'\compt f, g'\compt g, \varphi'\comptt \varphi)$$
 
 Define functors
@@ -1269,16 +1269,16 @@ Whenever we talk of a double category we will mean the definition which starts w
 ## The double category Rel
 
 We will now describe $\rel$ the double category of relations and functions. Firstly, $\mathcal{O}$ is class of small sets then for sets $A,B$ we define
-$\homt(A,B) \triangleq \text{hom}_{Set}(A,B)$ is set of all functions from $A$ to $B$ 
+$\homt(A,B) \triangleq \text{hom}_{Set}(A,B)$ is set of all functions from $A$ to $B$
 whereas $\homl(A,B)$ is the set of relations $A$ to $B$ viewed as monomorphisms into $A\times B$. The tight composition is simply composition of functions, while loose composition
 is defined as composition of relations. The squares are unique if they exist, and are witnessed to exist by the truth of the following logical formula
 
-$$\forall (x,y) \in R \quad : \quad (f(x),g(y)) \in R'. $$   
+$$\forall (x,y) \in R \quad : \quad (f(x),g(y)) \in R'. $$
 
 Where $A, B, A', B'$ are sets, $f : A \rightarrow A', g: B \rightarrow B'$ are functions and $R: A \not\rightarrow B, R' : A' \not\rightarrow B'$ are relations. Tight composition
-of cells is the composition of functions while loose composition of cells is the composition of relations which are easily proven to exist by checking the truthfulness of the witness. 
+of cells is the composition of functions while loose composition of cells is the composition of relations which are easily proven to exist by checking the truthfulness of the witness.
 The identity functions are the tight identities, $1_A : A \rightarrow A$ is $x \mapsto x$ and the loose identities is the diagonal relation, $\text{id}_A = \Delta_A \subset A\times A$.
-The identity cells $\upsilon_A$ are witnessed by the tautology $(x,y) \in R \Rightarrow (x,y) \in R$. 
+The identity cells $\upsilon_A$ are witnessed by the tautology $(x,y) \in R \Rightarrow (x,y) \in R$.
 
 :::
 
@@ -1301,18 +1301,18 @@ Let $\mathbb{C}, \mathbb{D}$ be double categories. A double functor $F:\mathbb{C
 
 3. For every $A, B \in \mathcal{O}^D$ and $p \in \homl^C(A,B)$, then $F^{\lambda}(p) \in \homl^C(F^o(A), F^o(B))$;
 
-4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$ 
+4. For every $A, B, A', B' \in \mathcal{O}^C$ and every $f \in \homt^C(A,A'), g \in \homt^C(B,B')$ also every $p \in \homl^C(A,B), p' \in \homl^C(A',B')$
 as well as $\varphi \in \sq_{A,B,A',B'}(f,g,p,p')$ then $F^{\sq}(\varphi) \in \sq_{F^o(A),F^o(B), F^o(A'), F^o(B')}(F^{\tau}(f),F^{\tau}(g),F^{\lambda}(p),F^{\lambda}(p')).$
 
 Satisfying the following relations
 
-1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$; 
+1. $F^{\tau}(f' \compt^C f) = F^{\tau}(f') \compt^D F^{\tau}(f)$;
 
-2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;  
+2. $F^{\lambda}(q \compl^C p) = F^{\lambda}(q) \compl^D F^{\lambda}(p)$;
 
 3. $F^{\sq}(\psi {\compll}^C \varphi) = F^{\sq}(\psi) {\compll}^D F^{\sq}(\varphi)$;
 
-4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$. 
+4. $F^{\sq}(\varphi' {\comptt}^C \varphi) = F^{\sq}(\varphi') {\comptt}^D F^{\sq}(\varphi)$.
 
 :::
 
@@ -1321,7 +1321,7 @@ Satisfying the following relations
 
 Let $\mathbb{C}, \mathbb{D}$ be double categories. An op-lax double functor $F: \mathbb{C} \rightarrow \mathbb{D}$ is the data of:
 
-1.   
+1.
 
 
 :::
@@ -1382,7 +1382,7 @@ For simplicity, we will from now on supress the extra data and simply write $\ma
 :::{#prp-interlaced-bilattice-morphisms}
 ## Bilattice morphisms preserve interlacing
 
-Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice morphism which is also bijective as a set function and further $\mathbf{B}$ is an interlaced bilattice then $\mathbf{B}^{\gimel}$ is also an interlaced bilattice. 
+Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice morphism which is also bijective as a set function and further $\mathbf{B}$ is an interlaced bilattice then $\mathbf{B}^{\gimel}$ is also an interlaced bilattice.
 
 :::
 
@@ -1391,7 +1391,7 @@ Whenever $\varphi: \mathbf{B} \rightarrow \mathbf{B}^{\gimel}$ is a bilattice mo
 
 Given two categories $\mathcal{C}$ and $\mathcal{D}$ which have, respectively, products and coproducts the twisted product produces a pair
 of categories with the same class of objects, simply the product of the classes of objects $\text{ob}(\mathcal{C})\times \text{ob}(\mathcal{D})$.
-The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows 
+The tight category with non-decorated arrows is the product $\mathcal{C} \times \mathcal{D}^{op}$ and the loose category with decorated arrows
 is the product $\mathcal{C} \times \mathcal{D}$.
 
 We will need to define products and coproducts for each category. The first of these, the product in the tight category
