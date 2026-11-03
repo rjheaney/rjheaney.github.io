@@ -1,5 +1,5 @@
 ---
-title: "Jack Heaney (Xe/They)"
+title: "Jack Heaney (She/They)"
 about:
   template: jolla
   image: profile.png
