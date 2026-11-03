@@ -2,7 +2,7 @@
 title: "Jack Heaney (She/They)"
 about:
   template: jolla
-  image: profile.png
+  image: profile.jpeg
   links:
     - icon: github
       text: Github
