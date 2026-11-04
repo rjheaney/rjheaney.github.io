@@ -248,6 +248,7 @@ Its traversals, all related to it by [traverse]{.loose}:
 - **Topology.** Manifolds, [diffeomorphisms]{.tight} and
   [cobordisms]{.loose}.
 - **Spans.** Sets, [functions]{.tight} and {spans}{.loose}
+- **Quintets.** Objects of a 2-category, [morphisms of a 2-category]{.tight} and [morphisms of a 2-category]{.loose}
 :::::
 
 ::::: {.callout-warning .cols-2 icon=false}
