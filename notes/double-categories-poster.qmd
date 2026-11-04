@@ -161,11 +161,6 @@ $(\tight{g} \circ \tight{f})(x) = \tight{g}(\tight{f}(x))$
 $x \mathrel{(\loose{R} ; \loose{S})} z \iff \exists y.\ x \mathrel{\loose{R}} y \wedge y \mathrel{\loose{S}} z$
 :::
 
-::: {.example}
-`sort . nub`{.tight}: dedupe, then sort. `xs` [has elements]{.loose} `s`
-then `s` [has size]{.loose} `n`: `xs` [has]{.loose} `n` [distinct elements]{.loose}.
-:::
-
 Rows first or columns first gives **the same big square** (the
 *interchange law*): the whole program meets the whole spec.
 
@@ -177,56 +172,75 @@ double category is an *equipment* [@shulman08].
 :::::
 
 ::::: {.callout-note icon=false}
-## 4 · Theorems for free TODO
+## 4 · Trees and List Search
 
-For a relation $\loose{r} : a \larr b$, the relation
-$\loose{\mathsf{List}\ r} : \mathsf{List}\ a \larr \mathsf{List}\ b$
-relates two lists of the same length whose elements are related
-pairwise.
+Binary search trees are optimised for search. There are many ways to represent a binary tree as a list, by tree traversal. This is gives another example of a square by having two different search algorithms one on trees and one on lists. The traversal is a true relation! 
+
+Fixing a choice of key, a. 
+
 
 ::: {.imagify}
 \begin{tikzcd}[column sep=8em, row sep=5em, sq={1-1}{2-2}]
-  \mathsf{List}\ a \arrow[r, loose, "\mathsf{List}\ r"] \arrow[d, tight, "\mathsf{reverse}"'] &
-  \mathsf{List}\ b \arrow[d, tight, "\mathsf{reverse}"] \\
-  \mathsf{List}\ a \arrow[r, loose, "\mathsf{List}\ r"'] & \mathsf{List}\ b
-  \arrow[from=1-1, to=2-2, phantom, "\forall r"]
+  \mathsf{Tree}\ A \arrow[r, loose, "traversal"] \arrow[d, tight, "ListFind(a)"'] &
+  \mathsf{List}\ A \arrow[d, tight, "TreeFind(a)"] \\
+  \mathsf{Bool} \arrow[r, loose, "equal"'] & \mathsf{Bool}
+  \arrow[from=1-1, to=2-2, phantom, "\Downarrow \phi"]
 \end{tikzcd}
 :::
 
-`reverse :: List a -> List a`{.haskell} works for *every* type `a`, so
-it can't look at the elements, only rearrange them. So it maps related
-lists to related lists: the square always exists.
+Both programs fail or succeed together however, depending on the model of computation, you may wish to ask how times a recursive call has been made. In this example then a square is not only describing that the programs compute the same way but carry extra data about those computations.
+
 
 ::: {.example}
-Take $\loose{r}$ to be the graph of a function `h`{.tight}, and out falls, for
-free: `map h . reverse = reverse . map h`{.haskell}
+Tree :
+
+::: {.imagify}
+\begin{tikzcd}
+	& {} &&& \\
+	& {(1)} \\
+	{(2)} &&& {(3)} \\
+	&& {(4)} && {(5)}
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-2, to=3-1]
+	\arrow[from=2-2, to=3-4]
+	\arrow[from=3-4, to=4-3]
+	\arrow[from=3-4, to=4-5]
+\end{tikzcd}
+:::
+
+
+List obtained from in order traversal i.e. left-root-right traversal:
+
+$$
+[2, 1, 4, 3, 5]
+$$
 :::
 
 ::: {.experts}
-Reynolds' relational parametricity interprets types as
-relations and polymorphic terms as families of squares in $\rel$
-[@reynolds83; @wadler89].
+
 :::
 :::::
 
 ::::: {.callout-note icon=false}
 ## 5 · Where they show up
 
-- **Effects.** [Pure functions]{.tight} and [effectful programs]{.loose}
+- **Effects.** types, [terms]{.tight} and [effectful programs]{.loose}
   (state, exceptions, I/O).
-- **Equivalence and refinement.** [Logical relations and
-  simulations]{.loose}; proving two implementations agree means
-  building squares.
+- **Gradual Typing.** Types, [terms]{.tight}  and [type precision, $A \sqsubseteq B$]{.loose} 
 - **Open systems.** Circuits, Petri nets, reaction networks:
   [maps of interfaces]{.tight} and [systems with boundaries]{.loose}.
-- **Algebra.** Rings, [homomorphisms]{.tight} and [bimodules]{.loose}.
+- **Concurrency.** Machines, [homormorphisms]{.tight}, [bisimulation]{.loose}. 
+- **Proof Relevant Relations.** Sets, [functions]{.tight} and [proof relevant relations]{.loose}
+- **Distributors.** Groupoids, [functors]{.tight} and [distributors]{.loose}
 - **Category theory.** Categories, [functors]{.tight} and [profunctors]{.loose}.
 - **Topology.** Manifolds, [diffeomorphisms]{.tight} and [cobordisms]{.loose}.
 
 ::: {.experts}
 Double categories go back to Ehresmann [@ehresmann63]. Effectful
 programs form premonoidal categories and promonads [@power97;
-@roman22]; open systems form double categories of structured cospans
+@roman22, @jacobs2009categorical]; a more elementary definition is given by proof-irrelevant double categories or preorder categories [@new2020call]; distributors form a static model for linear logic [@clairambault2025thin
+]; for those who are coalgebra minded [@hermida1998structural];
+open systems form double categories of structured cospans
 [@baez20].
 :::
 :::::
@@ -236,21 +250,17 @@ programs form premonoidal categories and promonads [@power97;
 :::::::::
 
 ::::: {.callout-warning .cols-2 icon=false}
-## 6 · Ask me! TODO
+## 6 · Ask me! 
 
 - When does an [effectful program]{.tight} have a canonical
   **lifting** to [relational specs]{.loose}?
-- What if squares are just "$\le$"? **Thin** double categories for
-  refinement and approximation.
-- **Bilattices** order specs by truth *and* by information. Do they form
-  a double category of four-valued specs?
-- Something about systems? TODO
-- Add some more things here? TODO
+- What is your favourite example of concurrency?
+- When you consider the tight arrows as simply preorders how does this effect 
+the pseudo nature of the loose arrows?
+- How do distributors compose?
+- What is an effectful program and how are they related to promonads?
 
 ::: {.experts}
-Thin double categories are *preorder categories*;
-interlaced bilattices are not really double categories? TODO
-[@Fitting20].
 :::
 :::::
 
