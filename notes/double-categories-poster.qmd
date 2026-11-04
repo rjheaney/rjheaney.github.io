@@ -238,7 +238,7 @@ $$
 ::: {.experts}
 Double categories go back to Ehresmann [@ehresmann63]. Effectful
 programs form premonoidal categories and promonads [@power97;
-@roman22, @jacobs2009categorical]; a more elementary definition is given by proof-irrelevant double categories or preorder categories [@new2020call]; distributors form a static model for linear logic [@clairambault2025thin
+@roman22; @jacobs2009categorical]; a more elementary definition is given by proof-irrelevant double categories or preorder categories [@new2020call]; distributors form a static model for linear logic [@clairambault2025thin
 ]; for those who are coalgebra minded [@hermida1998structural];
 open systems form double categories of structured cospans
 [@baez20].
@@ -254,10 +254,7 @@ open systems form double categories of structured cospans
 
 - When does an [effectful program]{.tight} have a canonical
   **lifting** to [relational specs]{.loose}?
-- What is your favourite example of concurrency?
-- When you consider the tight arrows as simply preorders how does this effect 
-the pseudo nature of the loose arrows?
-- How do distributors compose?
+- What are companion and conjoints in interesting double categories?
 - What is an effectful program and how are they related to promonads?
 
 ::: {.experts}
