@@ -247,6 +247,7 @@ Its traversals, all related to it by [traverse]{.loose}:
   [profunctors]{.loose} [@ehresmann63; @grandis99].
 - **Topology.** Manifolds, [diffeomorphisms]{.tight} and
   [cobordisms]{.loose}.
+- **Spans.** Sets, [functions]{.tight} and {spans}{.loose}
 :::::
 
 ::::: {.callout-warning .cols-2 icon=false}
@@ -256,6 +257,8 @@ Its traversals, all related to it by [traverse]{.loose}:
   **lifting** to [relational specs]{.loose}?
 - What are companions and conjoints in interesting double categories?
 - What is an effectful program, and how does it relate to promonads?
+- What happens when the tight category is preorder? 
+
 :::::
 
 ::::: {.grid .align-items-center .mt-4 .border-top .border-bottom .border-3 .border-primary}
