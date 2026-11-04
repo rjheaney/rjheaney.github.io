@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jack Heaney">
+<meta name="dcterms.date" content="2026-10-28">
+<meta name="description" content="Jack Heaney · University of Strathclyde · CIS PGR Conference 2026">
+
+<title>Double Categories – jackswebsite</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-20a346acd6389d9348a62cbf19117c14.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-96c48f89b7d1eec3e47a1bed45865944.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-20a346acd6389d9348a62cbf19117c14.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+      }
+</style>
+<script>MathJax = { output: { font: 'mathjax-pagella' } };</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">jackswebsite</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes/index.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page">
+      <h1 class="title">Double Categories</h1>
+            <p class="subtitle lead">Where programs meet their specifications</p>
+                  <div>
+        <div class="description">
+          Jack Heaney · University of Strathclyde · CIS PGR Conference 2026
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  <div class="quarto-title-meta-author column-page">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Jack Heaney </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              University of Strathclyde, Glasgow, UK
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta column-page">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 28, 2026</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">November 4, 2026</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content" tabindex="-1">
+
+
+
+
+
+<!-- poster colours for mathjax, keep in sync with theme/poster-brand.yml and theme/postertheme.sty -->
+<div class="hidden">
+<p><span class="math display">\[
+\definecolor{ink}{RGB}{26,26,26}
+\definecolor{tight}{RGB}{0,120,174}
+\definecolor{loose}{RGB}{224,112,26}
+\definecolor{accent}{RGB}{224,112,26}
+\definecolor{muted}{RGB}{91,93,97}
+\newcommand{\tight}[1]{{\color{tight}{#1}}}
+\newcommand{\loose}[1]{{\color{loose}{#1}}}
+\newcommand{\larr}{\mathrel{\color{loose}{\rightsquigarrow}}}
+\newcommand{\tarr}{\mathrel{\color{tight}{\to}}}
+\newcommand{\set}{\mathcal{S}\mathrm{et}}
+\newcommand{\rel}{\mathbb{R}\mathrm{el}}
+\]</span></p>
+</div>
+<div class="text-center fs-2 my-3 text-primary">
+<p>Programs compose. Specifications compose.<br> <strong>Double categories let them compose <span class="loose"><em>together</em></span>.</strong></p>
+</div>
+<div class="grid">
+<div class="g-col-6">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>1 · Two kinds of arrows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An ordinary category has one kind of arrow. A <strong>double category</strong> has two:</p>
+<ul>
+<li><span class="tight"><strong>tight arrows</strong></span> are <em>programs</em>: things you <strong>run</strong>;</li>
+<li><span class="loose"><strong>loose arrows</strong></span> are <em>specifications</em>: things you <strong>check</strong>;</li>
+<li><strong>squares</strong> are evidence that the programs <em>respect</em> the specs.</li>
+</ul>
+<div class="imagify big">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27163.066849pt%27%20height%3D%27128.09341pt%27%20viewBox%3D%27-72.000004%20-72.000009%20108.711233%2085.395606%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3ANewPXMI_gnu%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAOEAAoAAAAABBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEYAAABghXd0XmNtYXAAAAE8AAAAJwAAADAAEq5OZ2x5ZgAAAWQAAADIAAAA0G5my4xoZWFkAAACLAAAACkAAAA2YZFC0WhoZWEAAAJYAAAAHwAAACQFigF%2BaG10eAAAAngAAAAIAAAACATbABtsb2NhAAACgAAAAAYAAAAGAGgAAG1heHAAAAKIAAAAFgAAACAABQBCbmFtZQAAAqAAAADRAAABVjKDuXJwb3N0AAADdAAAABAAAAAgAAMAAXjaY2BmymWcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxYAcpxWXpDGz%2FgYDZ9N8NBgZmU0YNoDAjQsX%2F%2FwwMAFitEcEAAHjaY2BgYGJgYGABYhEGZgYuMM3DAAIyDBDAyMB47Q8YA9kAJuEEDAB42mNgYpD%2B%2F4HJgvEJgy6DAwMDIxs7mzyjmLgdo7mxuCgfI7uaOhCaAhl6jOZmYCgmDoTsYBXMpmYgaXWgJnY2UTaQNiYLS19GZlYOaTEVXnY2iRA1RXZmRmaDJndjDUZGIyVj70RnAQ4mZmY2WUte7k2MzCzc%2FAY2WsqiUowy6hY5jMuz4yVMVAxZGGX4gGZ4MLPocvPqy5rGMjPa60emOJv4sjCbiEvbGTPr5pr%2BuySr6qynbsnC4mzpEmSsbMrIEgMAsdgfF3jaY2BkYGAA4vpHe5jj%2BW2%2BMjCzMGCC%2Fx%2BYqhifABkcDEwgPgDQEAcjAAAAeNpjYGRgYDb9d4OBgamKQZpBk8mCASiCApgAU5kDDQACegAAAmEAGwAAAAAAaAAAeNpjYGRgYGBicARiEGBkQAMABw0ASAAAeNp1j8FqwkAURU9oFBrptoirge6DkvyDdaG4EneSkCFm4QhJjHXjJ%2FgV%2FdDe6CDtog%2Fmce6dy4UHRFwJ6Cfg7b77CRlJPXggHnseij88R0yIeSEIX%2BVM%2BPQc8k7ueSD%2B8jwU3zxHpHyv7Hm9XWbtfle600MsetzYuqmOzszi6S93bp2ts9YWJr%2BYoquarjyYJE7jhBWWM2u2LMlo2bOjxHH687N4uhu5NQ0VR2nDTHdM%2F8nO5bp7vm%2B2FMrnXLQLOjU02iUH6UQtqV7yA1HvN7EAAAB42mNgZkAGjAxoAAAAjgAF%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Azplsy%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAMwAAoAAAAAA5QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAE0AAABgqq5h52NtYXAAAAFEAAAAMwAAADyenmPTZ2x5ZgAAAXgAAACAAAAAgIyMBwFoZWFkAAAB%2BAAAACkAAAA2YcRDJ2hoZWEAAAIkAAAAIAAAACQF%2BP7PaG10eAAAAkQAAAAMAAAADAZzAE9sb2NhAAACUAAAAAgAAAAIAB4AQG1heHAAAAJYAAAAFwAAACAABQASbmFtZQAAAnAAAACyAAABGlGqS45wb3N0AAADJAAAAAwAAAAgAAMAAHjaY2BmUmOcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxIIAAA4MCjJ1SXJbOwKZ4%2BYEB87I%2FQEXMy5h%2FAYUZEar%2F%2F2dgAAAb8RCUAAAAeNpjYGBgYmBgYAZiESDJCKZZGDSANBuQZmRgUrz8wOD%2FfwYGCH1PT%2F4SWBUQAAC%2BLQptAAABABn%2FMAI4AvoADQAAJQkBNxcRMxEXNxEzETcCOP7x%2FvAgZTxPTzxlNP78AQQeUgL6%2FNRDQQMu%2FQZSAAABADYAMAFBAfsAEAAAAQ4BBwMOAQcuATQ3Ez4CFgFBAhILsAYZDAkIBHcIIDktAbsVKhL%2B6QoYAQEOEAsBWRotASMAeNpjYGRgYADiyqcP0%2BP5bb4yMLMwYIL%2FBkxrmX4BGRwMTCA%2BAN8ABzMAAAB42mNgZGBgXvaHjYGBaS2DJIMEkwUDUAQFMAMATKsCywKtAAACUAAZAXYANgAAAAAAHgBAeNpjYGRgYGBmEGQA0QxQEgkAAAJhABgAeNpNi8EKgzAQREdqhNpze%2BgpXyBKPPdqv8BjQTFYQaMYEfXQb%2B9oc%2BiG3byZnQUQ4gMPe3kQx9zLJwvHAhemfhxQXR2HuPOd4PlnOiFSxz754VjghqfjgP7L8Z5%2BD4td7Ta0ds31aJveyCSKD51po8di0pUsV1nNjZ3rTqoojRQGLLBY2Ru5PTiHxkhq0MNAIkGE%2BG%2BfcW%2BOTIGJf8VMSV%2BSZl5ZzhodteJlylZfzSspsQAAeNpjYGbACwAAfQAE%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3ANewPXMI%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAXYAAoAAAAABsQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEcAAABghdV0eWNtYXAAAAE8AAAANQAAAEgAGfoRZ2x5ZgAAAXQAAAMHAAADeIeh1JNoZWFkAAAEfAAAACsAAAA2YSZC0WhoZWEAAASoAAAAIAAAACQFqwE%2BaG10eAAABMgAAAAYAAAAGAy5%2F0Vsb2NhAAAE4AAAAA4AAAAOAuoB3m1heHAAAATwAAAAGAAAACAACgBKbmFtZQAABQgAAADBAAABMvoXc51wb3N0AAAFzAAAAAwAAAAgAAMAAHjaY2BmkmOcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxYAcpxWXpDGz%2FgYB55r97DAzMMxmVgMKMCBX%2F%2FzMwAABO3hI6AHjaY2BgYGJgYGABYhEGZgYuMM3DAAImDBDAzMB4xQSITYFsRiDtCsYQ8WAgDgHpBwCZRAcfAAAAeNpdkk1vG0UYx%2Bc%2Fsy9xHHu3Xu%2BL7Thr7ya7qe3YYW3vxKS146Su0pIERX2hMS9pAamqkIJQDkhQVagIccsHyIEb5As0EofeEJceOHDsDQnUXmg%2FQInNONyYOTzPjB5pfv%2BfhtDx3%2BMzekp%2FJyXiEyIHntrmcTv01TRMy4V5ftEFR9OYg4skpaeXH%2FWWasV%2FHmhJVmzHX3Sy%2BTCHR409lvXzvwQ%2FM8aKjDl%2FPsnlFE2a9K4s%2BxW6f%2FZNOUMZQgSj50QsRgrjN%2FQS%2FZWUSY20CFlQVKUBT528Z%2FQQN8CtJo8sWxE06hxsS41Vn1m21ezCaGlgotIafbh57cd6Q3bzdE9hmOdse%2Bf48j2GgRNVWm9nKkP88F4rn2iVdj42Hu4247sPXn65VaGMFeR0ikpL5QKowLy6ttPNFtKqoXk3vsPoN1AJn%2BCnQ8ijFxgSApIQro4EL5%2BY8j01aFAuEHgQBgJGMRUXqhDWQxRzI%2Bb%2FCyAE2vRo1g2C6nzta1bfvU%2Fx%2FcJF%2FY5Ew4h1v70iVYrZ5JYsY6HDtnaO1w8YhgV%2B8alZEnTs%2BsrgSRIfvnMIJK6OUnZqlk7kFllpA0%2Bd%2BL8Mg4399aw1NXpRMtnEMcbD0V84oa%2FJijhoOCdtRnEPgslXlfOdhu%2BFPTqHZizU9%2BD3mAglZkSEyMJJcTq%2FfMUx9XlPV6Vp9TOjUtB1x3evlbP6zEx6xrnQKWbecqZvyEGkTVm6WZUrpr4Y0j9uSiHY40MmUzVXHj77tLfYDRaqCb8uX0jh%2FZU3xx077exWW7rpSqXpqSnCxs8F7wivyDLpks0JM7UEoAbFFnYtU3isI5xw8qAtEFVPFB7zyBZ2hXbWChoQQ4r4L1FstHzRW3YXGCWangTsbys2aNTts6P7t%2B4B7UJ%2FxaL5iru6jtubG55nWMnFmnla8t8NljIRsP34jrnXGQAf8T5O6xKcmcHn2UQ%2BlV%2BMOO9%2FQLHG1%2BpWKWNojhNiY%2FWg34b4RFlJPjvJ1WcvJU2turrcien8AfaufwXcJeRfAa2YIAB42mNgZGBgAOKVTm2s8fw2XxmYWRjQwf%2Bof0%2BZtjK9BzI5GJhAIgDNQQgNAHjaY2BkYGCe%2Be8eAwPT4%2F9R%2F8uYtjIARVAAGwCtuwbrAZoAAALj%2F%2B0CcgAbAqsACQEd%2F1oCAP%2FaAAAAAAA%2BAJYA8AFIAbwAAHjaY2BkYGBgY%2FBkYGYAAUYGNAAACFgAVXjaXY0xC4JQFIU%2FSYsMIhoaann0A8TQsV0aCqdoaDF8lEMKKoZL9NO76lvqwjt853DufYDLG4tuLKa9dmMzETeww4yF4bHkG8Mua7aMsOyuuWRv2GbOybDDiqvhseSlYZeQz0m%2F4ssxqR8DHM66rLIiVzvPN0mkc10mtU7VrVVpk1XN%2FakCL%2FQC%2BUHzIubCkYSax09y4CyupCKjIEexw8P%2F60Ti8r7XXdCk0rvRiqY0slmJ3nmKD2Q7lBd8AZx7LPsAAAB42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Azplsy%3Bfont-size%3A5.479452px%7D%0D%0Atext.f1%20%7Bfont-family%3Azplsy%3Bfont-size%3A7.27273px%7D%0D%0Atext.f2%20%7Bfont-family%3Azplsy%3Bfont-size%3A9.96264px%7D%0D%0Atext.f5%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A7.245559px%7D%0D%0Atext.f8%20%7Bfont-family%3ANewPXMI_gnu%3Bfont-size%3A9.92542px%7D%0D%0Atext.f9%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A9.92542px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%20-17.64439%20-30.13013%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23e6f0de%27%20stroke%3D%27%23e6f0de%27%3E%0D%0A%3Cpath%20d%3D%27M-44.52722%2031.843V-33.34802H45.03223V31.843ZM45.03223-33.34802%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-36.848894%20-66.301128%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-3.745953%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%27-7.450386%27%20y%3D%27-95.077602%27%3E%F0%9D%90%B4%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-3.242828%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%2781.774469%27%20y%3D%27-95.077602%27%3E%F0%9D%90%B5%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-5.322282%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%27-7.450386%27%20y%3D%27-30.13013%27%3E%F0%9D%90%B4%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27-.157739%27%20y%3D%27-33.746558%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-4.819157%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%2781.774469%27%20y%3D%27-30.13013%27%3E%F0%9D%90%B5%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2788.060879%27%20y%3D%27-33.746558%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-35.87724%2031.843H-32.2772L-30.8897%2032.983L-28.11467%2030.703L-25.33965%2032.983L-22.56462%2030.703L-19.7896%2032.983L-17.01457%2030.703L-14.23955%2032.983L-11.46452%2030.703L-8.6895%2032.983L-5.91447%2030.703L-3.13945%2032.983L-.36443%2030.703L2.4106%2032.983L5.18562%2030.703L7.96065%2032.983L10.73567%2030.703L13.5107%2032.983L16.28572%2030.703L19.06075%2032.983L21.83577%2030.703L24.6108%2032.983L27.38582%2030.703L30.16084%2032.983L31.54836%2031.843H36.28725%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2836.58725%2031.843%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2015.598506%204.314212%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%27-17.498932%27%20y%3D%27-30.13013%27%20fill%3D%27%23e0701a%27%3E%F0%9D%91%85%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-44.52722%2024.85153V-24.14847%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-44.52722%20-24.44847%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-34.447524%20-31.808528%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%27-16.189845%27%20y%3D%27-30.13013%27%20fill%3D%27%230078ae%27%3E%F0%9D%91%93%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M45.03223%2024.85153V-24.14847%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2045.03223%20-24.44847%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2065.387776%20-30.906978%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%27-17.135301%27%20y%3D%27-30.13013%27%20fill%3D%27%230078ae%27%3E%F0%9D%91%94%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-34.295-33.34802H-30.69496L-29.30745-32.20802L-26.53242-34.48802L-23.7574-32.20802L-20.98238-34.48802L-18.20735-32.20802L-15.43233-34.48802L-12.6573-32.20802L-9.88228-34.48802L-7.10725-32.20802L-4.33223-34.48802L-1.5572-32.20802L1.21782-34.48802L3.99284-32.20802L6.76787-34.48802L9.5429-32.20802L12.31792-34.48802L15.09294-32.20802L17.86797-34.48802L20.64299-32.20802L23.41801-34.48802L26.19304-32.20802L28.96806-34.48802L30.35558-33.34802H34.705%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2835.005%20-33.34802%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2014.344776%20-71.517748%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%27-17.498932%27%20y%3D%27-30.13013%27%20fill%3D%27%23e0701a%27%3E%F0%9D%91%85%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-12.429842%27%20y%3D%27-32.770117%27%20fill%3D%27%23e0701a%27%3E%EE%80%B0%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%209.870586%20-33.351618%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%27-17.64439%27%20y%3D%27-30.13013%27%3E%E2%87%93%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f8%27%20x%3D%27-8.819774%27%20y%3D%27-30.13013%27%3E%F0%9D%9B%BC%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=7em, row sep=5em, sq={1-1}{2-2}]
+  A \arrow[r, loose, &quot;R&quot;] \arrow[d, tight, &quot;f&quot;'] &amp; B \arrow[d, tight, &quot;g&quot;] \\
+  A' \arrow[r, loose, &quot;R'&quot;'] &amp; B'
+  \arrow[from=1-1, to=2-2, phantom, &quot;\Downarrow\alpha&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<div class="bg-strip text-center p-2 rounded">
+<p>if <span class="math inline">\(x \mathrel{\loose{R}} y\)</span> then <span class="math inline">\(\tight{f}(x) \mathrel{\loose{R'}} \tight{g}(y)\)</span></p>
+</div>
+<div class="example">
+<p>Take two <em>different</em> sorting algorithms, and the spec <span class="loose">perm</span>, relating two lists that are rearrangements of each other.</p>
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27278.693873pt%27%20height%3D%27128.554909pt%27%20viewBox%3D%27-72.000004%20-72.000006%20185.795915%2085.703273%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3Antxsym%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAALYAAoAAAAAA0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEsAAABgZn9l12NtYXAAAAFAAAAAKgAAADQADOErZ2x5ZgAAAWwAAAA4AAAAOLK%2BLkZoZWFkAAABpAAAACkAAAA2YfBDyGhoZWEAAAHQAAAAIAAAACQGeAIEaG10eAAAAfAAAAAIAAAACAWFACtsb2NhAAAB%2BAAAAAYAAAAGABwAAG1heHAAAAIAAAAAFwAAACAABAAMbmFtZQAAAhgAAACwAAABIC6H8Axwb3N0AAACyAAAABAAAAAgAAMAAXjaY2BmOsQ4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjQAABJHZKcVk6A9uDGw9uMBf9e8bAwFzEKAUUZkSo%2BP%2BfgQEAdcwSFAB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BQ9u%2FP8PIeU1wfIMAHI6CBQAAAABACv%2F%2BQLZAtIACgAAAQADIyYnNxYXEgEC2f7Ti1M3bBxfSa0BIAK2%2FtL%2BcYtsHV5iAWQBIQAAeNpjYGRgYABiy8vO3PH8Nl8ZmFkYMMH%2Fn0w3mS4BGRwMTCA%2BALIFBrQAAAB42mNgZGBgLvr3jIGB6ReDNoMi000GoAgKYAIAdc0EgQKLAAAC%2BgArAAAAAAAcAAB42mNgZGBgYGLgZgDRDFASCQAAAbAAEQB42lWLMQuDMBCFn1SFpp07lA75BUGJdO7m0tldMYiDEYyILv3tfZoM7R05vrz7DoDABxH2ipAcc68YKX%2BeE1zYnlP2LbDAHQ%2BcEMVnJgLPwDGueAVOaL8Dp8ybwAIF7Ly6bfCzMpPrRytzlfmgNNZM9Wxa2WyyXXq3dIPUqlAaM1Y4bBhgf7iCwUTuMTKXyKGQ%2FRklDXtYNVODllbDjSQtvHOcHT0JzduCT38BKtcrjXjaY2BmQAaMDGgAAACOAAU%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss8%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAfsAAoAAAAACaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh051rWNtYXAAAAE8AAAARwAAAFwBdAGeZ2x5ZgAAAYQAAATGAAAGCLzhyA5oZWFkAAAGTAAAACkAAAA2YiNDCGhoZWEAAAZ4AAAAIAAAACQHwAJAaG10eAAABpgAAABAAAAAQB91A3Fsb2NhAAAG2AAAACIAAAAiDgYMYG1heHAAAAb8AAAAGAAAACAAFABNbmFtZQAABxQAAADJAAABMqR9pXNwb3N0AAAH4AAAAAwAAAAgAAMAAHjaY2Bm%2FM44gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpQMZihlmfdvHwMDyzxGJ1Q1%2F%2F8zMAAAO7IP63jaY2BgYGJgYGAGYhEgyQimWRg8gDQfAwdQjo0hmCGRIZUhnSGTofT%2Ff6A4gp%2Fz%2F%2F%2F%2Fdf8X%2Fp%2F3f%2B7%2FOf9ngXUjAQBq5xMGAHjaXVRLbBNHGJ5%2FZrOLHWPHduyN7bU39tq7iYMdx5vdteNgAyUhEBwnAfzIw00JaSgSVR9qe6BCFSJKChLHcuyp6oWqVaX2yKWtIi5IfaiqUFRx6KmnSlVBXOL%2BtoMK1YxmZ3dm%2F%2B%2F7v%2F9BgGRaf1KZ7pEMIQknCGnQrAhYRTBUDfediW9W1i%2FimeIEXwTE5xN%2F3Lpava65i9dTs4ss6ssVM2diCQngo%2Fdyaxm32sjPLtKBXk8uXZgb9Iz90LjOsZS4kk0ALWfNsL%2FfZQ%2FK8VNy%2BRobCK5EFTqVCifsbq%2FdEZZds4QQSqzWP3AffiUhkiQkqhjODiOzBKZldAgJWhF0pCMYMYHHEQHdKlK4Xx3ZUE5MAnfeUX8brPjkfIBPLmTmNmgjUozLOQ5yI9GA3qtF%2BoFVk69EekJsOG9A1Dsr%2BqA5%2F4l%2BiLO7EhGFsUgCecRbT%2BB75OEjEioVRcCsaYl8W7CuPJE2MSHGC%2FDd%2Fldc7WSsfoSfX928Sem1NW0hLHmO9VXiQ2e9j2dW6YB8OgNsZ2Njh0W11GpwaoxaR9FdwkikNUpd8AsZJQWCCoCm8ILo96GfvNZ2ztJN0Y%2FDCTFVU00L8U1LNZCDKRahEyS1I4Lf9OIFTRXQAI%2FssiZ1jRckjpPg4tmRfA%2BjR1yvhiaT6jhHtx9uMwgNC27gAgpdK6fzR5c9X4ORVAoUzGSssM4dcfWlvesTh52MNreacJsDdmh4bGqN0kEqq25KbYf8kblCpVLoLwRtWmQilMrhKYv57fC5Pg7pQnvZfzDk7KE8MEkSokNDqOscev0N%2FQw9FwjRFbduKYZ%2Br1q1bW7C7vuX8RRIFdd7dBfvdG7gKb7g9wsomAN%2BJol2ZrjNUVA1J4i%2Bl7a6z2wnK%2BoTAYHZG8zJeWYKWfhvszi9dGaC9ywcX0FnhwKxnhhjK8azF7cPZ%2Bcpyw2ETMrWSoQcYMPviO39PzYCIhLsvQjw7cuW0VxP1w4lcusJJZhXvZhZzyuwSzYNsXYgMW6E7mxiqrDt1zd3anTpgyVKax%2FWH1%2FC3Lp56fJtxm6tXliYr9br9a7NWitPHfAT6SNy1yavah1mxXbVthHwm4%2BPUKxs6qDvnA9Vko1q%2BlK8vFyHc8XEhAcOjyiHiyt%2FbG5REONP6Z2xaAjYrbXpJgXZ%2F8AZGrQDNNtYiVYeHsGPiBUmpOegPg9KwtCZMd7WBd0Q%2FSY8aowtS5V1St89nypL1aqpl1YoLJYGSrvPVBHY9sU3blJVntr%2F4tPYDIOl8vRrFKSu3jVc1hGnF59t9l13LFifvsqqFbl5DLagdu4RPGwmDRQUdf0bPobfSBYV6McK0LqdTfS3O0eaaZ26wSGa3c6mdlpHt6%2FBjl%2BaOFVaDToHa2POuC3O0VLlRLBXAm40LOseaW7cmTgz0heLczCZThQk2bUVKvhVBmFXWQwDtXG9I%2FGg0xe0JeNnQ17BRsHhm%2FF6md0%2BHA0IgjcQNpFjf%2BspXKGnDyKPbc2NuW%2FoPt2n%2BHgscguuiItvJmC5Wbl7lw4MpgzJEYALJrDjN24c%2FysxDlTp5CL2yD3Y7eZiOwK8arh1N%2B%2FHJmC5ddirZt6KWvkGla3RedoYjfsBrJNQ2%2F9SiULmKAz%2FC4l5Bb0AAHjaY2BkYGAA4kWZnw%2FG89t8ZWBmYcAE%2F%2FWZeZjuABkcDEwgPgDZUAaNAAAAeNpjYGRgYJn3bx8DA3MCgwiDIDMPA1AEBQgAAFVTAwgCIAAAAlwAMAIKADcB4wAkAiAAHgEDAE4BAwBWA2AAVQIyAFUCIAAfAjIAVwIyACUBdABXAaEAHwGJABQCMgBVAAAAAABQAJQAyAFAAVIBXgGcAcAB6gIgAlQCbAK%2BAuIDBAAAeNpjYGRgYBBg8GFgZgABRgY0AAAJsQBieNpli79rwkAYhp9g%2FNEUaqcOTkd3g5IMGdyFopPg4BbNIQFzlpwEXEr%2F9L6x16kf3HfP%2B%2FB%2BQMIXEf1EjB%2B7n5iJ0i8PeWYaeCQ%2FC5yI3hkQxU8yL6wCx7zyEXjIG4fAI%2FnPwAk535vtrnS%2BsKf5pfG%2B2NvW11dnluniT62ts215s5U53k3V1b47NyZL8zRjw5YdJQ5PgeXEnAuNUp%2F3Mq2o5qqGYUnK4l9rLeMezZKb%2FkrNI3ftik63XvustiHTfa6X%2FQCTDy0TAAAAeNpjYGbACwAAfQAE%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss10%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAASUAAoAAAAABUwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh0F1kWNtYXAAAAE8AAAAQwAAAFQA1QGjZ2x5ZgAAAYAAAAGyAAAB6NtABiFoZWFkAAADNAAAACgAAAA2YYlDuGhoZWEAAANcAAAAIAAAACQHJQG4aG10eAAAA3wAAAAcAAAAHAzcAXVsb2NhAAADmAAAABAAAAAQAUgBlm1heHAAAAOoAAAAGAAAACAACgA1bmFtZQAAA8AAAADIAAABO3g6QmJwb3N0AAAEiAAAAAwAAAAgAAMAAHjaY2BmvMY4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpT0YShhmffvCAMDyzxGG1Q1%2F%2F8zMAAALuMPwnjaY2BgYGJgYGAGYhEgyQimWRgcgDQPAwdQjoXBh8GPIZEhk6Hk%2F3%2BgKIxX%2FP%2F%2F%2F63%2Ft%2Fxf9H%2F2%2F0lgfXAAANEKEG8AeNodz81u00AQB%2FCZseNtk7DtyqRO08bIdhwTEYLTrb2gRknVNpEqEimipQcitcCZC71wQIAUrr30CfjohTfJKyAeA8EJtWZrzX8Oo9FIvwGElwCY0QIKAC0UUoSY3bya4QEtrt8TILwGoHO9LwF4gRGJQEjbEZLOP%2F0bTW8bf19cz2lxwy%2FoIxCk2R%2B8wp9Qhej2IuEYdVD1USUdDJos6qN00WGJzyxdLkrVJ7yaxG%2F43jYa39%2BhDJ9Orca4e3hKU3fHu5eY%2BLjpVeNS6K2ieRLu72P7Sc9QBxUHz6bfdpcLxdWW5xtG3ddUmADAD%2FoCBjAAqbUqSOTXyWRpNsPFh5neItS18S3%2BAgkQWiwXRkqr1gaYqk4%2B6qRKl7O15rAOsmaOdfLo264%2FXBk8r5b5swFvsMCkXbf1yLnro%2FmwttG1o2FUbo%2FXeeAXaOdBmNRN%2F%2FMoqhYRXT4shUTLxp34vmsyLvhWc7whrCJxe299BalYbjc2lyy7ZsS51c7%2B4jEdQkVbOWqKEvqhRFZkJRCWkyo8tsdKBnjyYnR5Sel2a7NcQzqKUfTm814GR4Tef5NjUwMAAHjaY2BkYGAA4R2VE%2BL5bb4yMLMwYIL%2FX5iKmI4DGRwMTCA%2BALyoBqR42mNgZGBgmffvCAMD01UGYQZxpiIGoAgKYAcAaTAD4wIAAAACKwBgAtUAYgHtADYA9QBNAYgAHQFyABMAAAAAABAAKABoAHoA0AD0eNpjYGRgYGBnMGFgYgABRgY0AAAGTwBAeNptjDGLwkAQRl8wiuaauyssxGIbS4Mh6a%2B0USwE%2B2gWCZgVspLD5nr%2FtZ%2B6cI0DO%2Fvm8c0ACX9EPCpi%2BOyPihlpenGfD74CD%2BSngRMmzOgRxSOZT34Cx3yzCdxnTBl4IP8bOKHgtlpvS%2BezhT3MT40X7Gzr67MzWfrvltbZtrzYyuyvpupq3x0bk6dFmrNizVbnHZ6MBZYDc040ml9mJ9eKa85KGbn0bW4p557Zkov%2BStk9V%2FWKTtte%2Fai8IdeFQi%2B%2FAxDtLjl42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Aec-lmss8%3Bfont-size%3A7.27273px%7D%0D%0Atext.f1%20%7Bfont-family%3Aec-lmss10%3Bfont-size%3A9.96264px%7D%0D%0Atext.f3%20%7Bfont-family%3Antxsym%3Bfont-size%3A10.451471px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%2024.822276%20-30.829488%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23e6f0de%27%20stroke%3D%27%23e6f0de%27%3E%0D%0A%3Cpath%20d%3D%27M-51.31471%2031.6965V-33.22101H51.31471V31.6965ZM51.31471-33.22101%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-97.54479%20-66.876099%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.562619%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2746.057357%27%20y%3D%27-95.504468%27%3EList%3Ctspan%20x%3D%2763.741049%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.562619%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27148.303359%27%20y%3D%27-95.504468%27%3EList%3Ctspan%20x%3D%27165.987051%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.562619%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2746.057357%27%20y%3D%27-30.829488%27%3EList%3Ctspan%20x%3D%2763.741049%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.562619%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27148.303359%27%20y%3D%27-30.829488%27%3EList%3Ctspan%20x%3D%27165.987051%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-29.8%2031.6965H-26.19997L-24.81245%2032.8365L-22.03743%2030.5565L-19.2624%2032.8365L-16.48738%2030.5565L-13.71236%2032.8365L-10.93733%2030.5565L-8.16231%2032.8365L-5.38728%2030.5565L-2.61226%2032.8365L.16277%2030.5565L2.93779%2032.8365L5.71281%2030.5565L8.48784%2032.8365L11.26286%2030.5565L14.03789%2032.8365L16.81291%2030.5565L19.58794%2032.8365L22.36296%2030.5565L23.75047%2031.6965H29.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2829.5%2031.6965%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-33.15335%204.815761%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2724.822276%27%20y%3D%27-30.829488%27%20fill%3D%27%23e0701a%27%3Ep%3Ctspan%20x%3D%2729.026934%27%3Eerm%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-51.31471%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-51.31471%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-119.75574%20-33.479779%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2724.822276%27%20y%3D%27-30.829488%27%20fill%3D%27%230078ae%27%3EinsertionSo%3Ctspan%20x%3D%2760.12096%27%3Ert%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M51.31471%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2051.31471%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2029.04434%20-32.770069%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2724.822276%27%20y%3D%27-30.829488%27%20fill%3D%27%230078ae%27%3EmergeSo%3Ctspan%20x%3D%2752.272293%27%3Ert%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-29.8-33.22101H-26.19997L-24.81245-32.08101L-22.03743-34.36101L-19.2624-32.08101L-16.48738-34.36101L-13.71236-32.08101L-10.93733-34.36101L-8.16231-32.08101L-5.38728-34.36101L-2.61226-32.08101L.16277-34.36101L2.93779-32.08101L5.71281-34.36101L8.48784-32.08101L11.26286-34.36101L14.03789-32.08101L16.81291-34.36101L19.58794-32.08101L22.36296-34.36101L23.75047-33.22101H29.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2829.5%20-33.22101%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-33.43222%20-71.880479%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2724.822276%27%20y%3D%27-30.829488%27%20fill%3D%27%23e0701a%27%3Eequal%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-30.35152%20-34.745099%29%27%20stroke%3D%27none%27%20fill%3D%27black%27%3E%0D%0A%3Ctext%20class%3D%27f3%27%20x%3D%2724.822276%27%20y%3D%27-30.829488%27%20fill%3D%27%235d9732%27%3E%EE%83%98%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=6em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, &quot;\mathsf{perm}&quot;] \arrow[d, tight, &quot;\mathsf{insertionSort}&quot;'] &amp;
+  \mathsf{List\ Nat} \arrow[d, tight, &quot;\mathsf{mergeSort}&quot;] \\
+  \mathsf{List\ Nat} \arrow[r, loose, &quot;\mathsf{equal}&quot;'] &amp; \mathsf{List\ Nat}
+  \arrow[from=1-1, to=2-2, phantom, &quot;\yes&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<p><code class="tight">insertionSort</code> on <code>[3,1,2]</code> and <code class="tight">mergeSort</code> on <code>[2,3,1]</code> both give <code>[1,2,3]</code>. That holds for <em>every</em> pair of permutations, so the square exists. The algorithms agree however the input may be arranged.</p>
+</div>
+<div class="experts">
+<p>A double category is a pseudo category object in <span class="math inline">\(\mathbf{Cat}\)</span>; loose composition is associative and unital only up to coherent isomorphism <span class="citation" data-cites="grandis99">(<a href="#ref-grandis99" role="doc-biblioref">Grandis and Paré 1999</a>)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>2 · You’ve met one: <span class="math inline">\(\rel\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Objects are types, <span class="tight">tight arrows</span> are functions, <span class="loose">loose arrows</span> are relations. A square means the functions <strong>preserve</strong> the relation.</p>
+<div class="example">
+<p>The relation <span class="math inline">\(\loose{\mathsf{els}} : \mathsf{List\ Nat} \larr \mathsf{Set\ Nat}\)</span> relates a list to the set of its elements.</p>
+<div class="grid">
+<div class="g-col-6">
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27220.143661pt%27%20height%3D%27127.077758pt%27%20viewBox%3D%27-72.000004%20-72.00001%20146.762441%2084.718506%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3Antxsym%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAALYAAoAAAAAA0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEsAAABgZn9l12NtYXAAAAFAAAAAKgAAADQADOErZ2x5ZgAAAWwAAAA4AAAAOLK%2BLkZoZWFkAAABpAAAACkAAAA2YfBDyGhoZWEAAAHQAAAAIAAAACQGeAIEaG10eAAAAfAAAAAIAAAACAWFACtsb2NhAAAB%2BAAAAAYAAAAGABwAAG1heHAAAAIAAAAAFwAAACAABAAMbmFtZQAAAhgAAACwAAABIC6H8Axwb3N0AAACyAAAABAAAAAgAAMAAXjaY2BmOsQ4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjQAABJHZKcVk6A9uDGw9uMBf9e8bAwFzEKAUUZkSo%2BP%2BfgQEAdcwSFAB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BQ9u%2FP8PIeU1wfIMAHI6CBQAAAABACv%2F%2BQLZAtIACgAAAQADIyYnNxYXEgEC2f7Ti1M3bBxfSa0BIAK2%2FtL%2BcYtsHV5iAWQBIQAAeNpjYGRgYABiy8vO3PH8Nl8ZmFkYMMH%2Fn0w3mS4BGRwMTCA%2BALIFBrQAAAB42mNgZGBgLvr3jIGB6ReDNoMi000GoAgKYAIAdc0EgQKLAAAC%2BgArAAAAAAAcAAB42mNgZGBgYGLgZgDRDFASCQAAAbAAEQB42lWLMQuDMBCFn1SFpp07lA75BUGJdO7m0tldMYiDEYyILv3tfZoM7R05vrz7DoDABxH2ipAcc68YKX%2BeE1zYnlP2LbDAHQ%2BcEMVnJgLPwDGueAVOaL8Dp8ybwAIF7Ly6bfCzMpPrRytzlfmgNNZM9Wxa2WyyXXq3dIPUqlAaM1Y4bBhgf7iCwUTuMTKXyKGQ%2FRklDXtYNVODllbDjSQtvHOcHT0JzduCT38BKtcrjXjaY2BmQAaMDGgAAACOAAU%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3ANewPXMI%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAANkAAoAAAAAA9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEcAAABghdV0KGNtYXAAAAE8AAAAJwAAADAAEqkgZ2x5ZgAAAWQAAAC4AAAAuCPDB8BoZWFkAAACHAAAACkAAAA2YQdC32hoZWEAAAJIAAAAIAAAACQFlADxaG10eAAAAmgAAAAIAAAACAOaAAlsb2NhAAACcAAAAAYAAAAGAFwAAG1heHAAAAJ4AAAAFwAAACAABAA7bmFtZQAAApAAAADBAAABMvoXc51wb3N0AAADVAAAABAAAAAgAAMAAXjaY2BmPMs4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjwA5SisvSGdj%2BAwHzzH%2F3GBiYZzIqAYUZESr%2B%2F2dgAACOExLoAHjaY2BgYGJgYGABYhEGZgYuMM3DAAIyDBDAyMB4JRWMgWwAHn8C2gAAAQAJ%2F%2FMB8AHvADkAACUHBgcGLwEHDgEjIic%2FAxcWFxY%2FAScuAQcmByc3Njc2Fh8BNz4BFzIXDwEmIyYGDwEXHgEXFjI3AcwyNCQ2FAtOGTcaExkEBgMUCwQZKkEpCw0jGhosEjwQKi0vCAclMEQeDRIQDggaFjIjJBIEDwcPMDdRLS4BAoFGdyUpDBclHQMcCQEBZz9ASkUBAjMKVRUBAUFLMThGPwELVwQYASoxM2cYMA8fLgAAeNpjYGRgYADijkd3XOP5bb4yMLMwYIL%2Fnxk%2FML4HMjgYmEB8AOjaCBEAAAB42mNgZGBgnvnvHgMDEwMDJ4MA4wcGoAgKYAIAXmIDiQGaAAACAAAJAAAAAABcAAB42mNgZGBgYGKwYgDRDFASCQAABkcAQAB42l2NMQuCUBSFP0mLDCIaGmp59APE0LFdGgqnaGgxfJRDCiqGS%2FTTu%2Bpb6sI7fOdw7n2AyxuLbiymvXZjMxE3sMOMheGx5BvDLmu2jLDsrrlkb9hmzsmww4qr4bHkpWGXkM9Jv%2BLLMakfAxzOuqyyIlc7zzdJpHNdJrVO1a1VaZNVzf2pAi%2F0AvlB8yLmwpGEmsdPcuAsrqQioyBHscPD%2F%2BtE4vK%2B113QpNK70YqmNLJZid55ig9kO5QXfAGceyz7AAAAeNpjYGZABowMaAAAAI4ABQ%3D%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss8%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAVgAAoAAAAABiwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh151ZGNtYXAAAAE8AAAASQAAAFwBcgHDZ2x5ZgAAAYgAAAJaAAACtNf71zNoZWFkAAAD5AAAACkAAAA2YTdDt2hoZWEAAAQQAAAAIAAAACQGtAEMaG10eAAABDAAAAAoAAAAKBDcAetsb2NhAAAEWAAAABYAAAAWA34C4G1heHAAAARwAAAAGAAAACAADQA0bmFtZQAABIgAAADJAAABMqR9pXNwb3N0AAAFVAAAAAwAAAAgAAMAAHjaY2BmXM84gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpRMZihhmfdvHwMDyzxGJ1Q1%2F%2F8zMAAAI10PsnjaY2BgYGJgYGAGYhEgyQimWRg8gDQfAwdQjo0hmSGVIZMhhyGfoeT%2Ff6A4jJ%2FHUPT%2F%2F%2F95%2F%2Bf%2Bn%2FV%2Fxv%2Fp%2F6eCdSMBAHReEykAAAB42k2Rz08TQRTH580s3RRwgba725ZtS9vdFqkU6dLdaNUCaik%2FbAuEbqm2YgCLTfRk9KAeJBCLnjzxF3jj4EX%2FAUm4kRgTY4wx%2FAkmJhgv1tdCojOTl5l5L9%2F5fN8QIFrzGPbhM3ETognAxyF6BcyEJOMuLIDsB9kwYT9YNuvPKTx7eOFq7ExkMrE4BZDL3J7VXF5gO3eqrzlRnvFI7F46s0JBJ5Sop7oiUVA5iDoJw5Rt%2Fx7wQzQOfMjGw4c%2FbznrWqh0zlao1LYofbISnfcpjvHevDo45zzKVqg7MH0eWGN9vcGC0eGK9%2FooNS8THJTkML6jbwgjPCF6uE83w0l9r1i012pw8GgDs0CKGPfoAda0KzCLB7xfwvAdPhEnIcFwnzECkShaFrFENPzAw7dlJnCObCoBywuZ9ykKg55QR4ixW8nfcDhb6FhJnzAEmseUoNcudPtfF%2F2tDRr0Q8KghDZqiM9e3K01LFp%2BXKbUelo6WkO%2FW2sbrxh7WVmaLxRLpRJpM1sYVuEjahJAxTYUasJq5j4r5gPVcdgGa%2FErHFaHkvg4MvyEHfhCEkjgsvE2bG4UCWQpDYYZZ62jYeKUjZO%2FjfAtMLm9oCEpF6fSFa8wYI0Kql3laDo%2F6e1SgBvxBXSHkhsTtJlYb0jl4FJcSymBnu3%2BlBRh4Ou5IfuA2rmumOoVRK99SJ3rd%2FJ2Ct1i1ulknZ1ngx6ed3p8BjK6mr%2BgTqdPuxQHsw%2F%2FKqmLuhgWbZIsmVCXFx5ocLOa392l7oHhpNLtgSUD2MTm5sQPbQxomPwFAwB8gAAAeNpjYGRgYADiRVEc%2FvH8Nl8ZmFkYMMH%2Fz0wKTMeBDA4GJhAfAKauBeMAAAB42mNgZGBgmfdvHwMDkxGDCIMgEwMDUAQFcAEAT70CxgIgAAAB4wAlAeMAJAEDAE4BAwBWAjIAVQIgAB8BdABXAaEAHwGJABQAAAAAACwAYAByAH4AogDMAOQBNgFaAAB42mNgZGBg4GIwZmBiAAFGBjQAAAaHAEJ42mWLv2vCQBiGn2D80RRqpw5OR3eDkgwZ3IWik%2BDgFs0hAXOWnARcSv%2F0vrHXqR%2Fcd8%2F78H5AwhcR%2FUSMH7ufmInSLw95Zhp4JD8LnIjeGRDFTzIvrALHvPIReMgbh8Aj%2Bc%2FACTnfm%2B2udL6wp%2Fml8b7Y29bXV2eW6eJPra2zbXmzlTneTdXVvjs3JkvzNGPDlh0lDk%2BB5cScC41Sn%2FcyrajmqoZhScriX2st4x7Nkpv%2BSs0jd%2B2KTrde%2B6y2IdN9rpf9AJMPLRMAAAB42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss10%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAWEAAoAAAAABngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh0F1mmNtYXAAAAE8AAAARwAAAGQBQgIVZ2x5ZgAAAYQAAAKNAAAC%2BDtJhhhoZWFkAAAEFAAAACkAAAA2YYlDwmhoZWEAAARAAAAAIAAAACQHJQG6aG10eAAABGAAAAAkAAAAJBDcAcZsb2NhAAAEhAAAABQAAAAUAtIDYG1heHAAAASYAAAAGAAAACAADAA1bmFtZQAABLAAAADIAAABO3g6QmJwb3N0AAAFeAAAAAwAAAAgAAMAAHjaY2BmvM84gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpT0YShhmffvCAMDyzxGG1Q1%2F%2F8zMAAAMigPy3jaY2BgYGJgYGAGYhEgyQimWRgCgLQAEILEfRj8GIIZEhlSGTIZSv7%2FRxMp%2Fv%2F%2F%2F9b%2FW%2F5v%2BL%2F4%2F4L%2Fc%2F9PAZuBAgAC%2FBVLAHjaRVLPTxNBFH5vdrsLpWy7LO22pd26u90uBQptl%2B1qihToL9EWG4poaALiQS5cIDFoEE3wogkX%2FgJ%2FcMF%2Fw5j0X1ATE4%2BejZ4M1FnQOO9NMjPvzbzvfd8Awn0A7JEueADSKFqigb3zzQ5WSPdsnwDCAwCyS%2BMDAKrOmKIuWpIsWmT3%2Be9ay5344%2BjskHTPhSPyjOZnet%2Fpe18hC2AIyHMp01HQmUVnEs1LT7m7fEjm6ZpmKCj%2Fc3rx6VZ%2Br%2BIvP1FrS4jRwFCmlLmRKDK4v%2B2sjfljy6X6EpIRPjQ2XrmpDekf7h2wmEi37SuEtGw1JwyJ%2Fn5FnZ%2B%2F%2FZiJRJcjo0gWp7QxjxTwiooh1YEOAoXeTzzBTxAG0%2B3KFlxcLip7EvUUb86iRfHwtsZz1BS0nFmCJ83strAwjcy7PbSMWy0u2cgtrpOWUlQTNotXU2o4O2CoAWRXjXIZJ67NME4lKONG6%2B1cv8cbSKsaw8Q1t36y9wvf42cIQZyypNJaoYIjUy4oIxRFIUS5oIh4eoKn5x%2FZldnh1TyXaOfWDwh5dDfWUuODRV89nakPfmtuIA6bZTmO5NXWw5cMKpPZzXj1OmK16NZq0o5PyWtggAewqHqObltvms2%2BTge7Bx0aRYhTPnbwC1gUDcdfsOGqJodKWPivW8GhJl8Kx6cuiPkr2w7mtKq%2FdCfsE5ZLQpLXWTKnpKfkYQ3ZTHQkJ5lV0zfRiAi65iHFccOOs9qLmhn2IipCdcAgpJ8ZzI4qLC%2BIQj7VGBE5LxGkhYgfidc3kYz1cVKUyV5glSh3K2QRgpf%2Fi%2Bom0oZsK2gFdZGTCw6uSA3H0nF1rXZ8TArT6ZgviqSdRXHm8HCmB22C6h%2FVQILAAAAAeNpjYGRgYABik83ZYvH8Nl8ZmFkYMMH%2FF0xFTHeBDA4GJhAfAK53BlUAAAB42mNgZGBgmffvCAMD01UGYQZxpiIGoAgK4AQAaTID5QIAAAACKwBgAtUAYgI5AC0B7QA2AccAJAD1AE0BiAAdAXIAEwAAAAAAEAAoAHoAugDwAQIBWAF8eNpjYGRgYOBkMGFgYgABRgY0AAAGhQBCeNptjDGLwkAQRl8wiuaauyssxGIbS4Mh6a%2B0USwE%2B2gWCZgVspLD5nr%2FtZ%2B6cI0DO%2Fvm8c0ACX9EPCpi%2BOyPihlpenGfD74CD%2BSngRMmzOgRxSOZT34Cx3yzCdxnTBl4IP8bOKHgtlpvS%2BezhT3MT40X7Gzr67MzWfrvltbZtrzYyuyvpupq3x0bk6dFmrNizVbnHZ6MBZYDc040ml9mJ9eKa85KGbn0bW4p557Zkov%2BStk9V%2FWKTtte%2Fai8IdeFQi%2B%2FAxDtLjl42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Aec-lmss8%3Bfont-size%3A7.27273px%7D%0D%0Atext.f1%20%7Bfont-family%3Aec-lmss10%3Bfont-size%3A9.96264px%7D%0D%0Atext.f3%20%7Bfont-family%3Antxsym%3Bfont-size%3A10.451471px%7D%0D%0Atext.f6%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A7.245559px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%20-.718938%20-30.40016%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23e6f0de%27%20stroke%3D%27%23e6f0de%27%3E%0D%0A%3Cpath%20d%3D%27M-45.49522%2031.6965V-33.22101H46.31471V31.6965ZM46.31471-33.22101%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-66.088306%20-66.445161%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.56262%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2720.516143%27%20y%3D%27-95.075139%27%3EList%3Ctspan%20x%3D%2738.199835%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-15.746191%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27111.983079%27%20y%3D%27-95.075139%27%3ESet%3Ctspan%20x%3D%27128.033881%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.56262%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2720.516143%27%20y%3D%27-30.40016%27%3EList%3Ctspan%20x%3D%2738.199835%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-15.746191%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27111.983079%27%20y%3D%27-30.40016%27%3ESet%3Ctspan%20x%3D%27128.033881%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-23.98051%2031.6965H-20.38048L-18.99297%2032.8365L-16.21794%2030.5565L-13.44292%2032.8365L-10.6679%2030.5565L-7.89287%2032.8365L-5.11784%2030.5565L-2.34282%2032.8365L.4322%2030.5565L3.20723%2032.8365L5.98225%2030.5565L8.75728%2032.8365L11.5323%2030.5565L14.30733%2032.8365L17.08235%2030.5565L19.85738%2032.8365L21.24489%2031.6965H25.01949%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2825.31949%2031.6965%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-2.607116%203.827329%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-.718938%27%20y%3D%27-30.40016%27%20fill%3D%27%23e0701a%27%3Eels%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-45.49522%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-45.49522%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-68.481746%20-32.218701%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-.718938%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3Econs%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f6%27%20x%3D%2716.265561%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3E%F0%9D%91%A5%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M46.31471%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2046.31471%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2049.681334%20-32.874801%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-.718938%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3Einsert%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f6%27%20x%3D%2719.649433%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3E%F0%9D%91%A5%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-23.98051-33.22101H-20.38048L-18.99297-32.08101L-16.21794-34.36101L-13.44292-32.08101L-10.6679-34.36101L-7.89287-32.08101L-5.11784-34.36101L-2.34282-32.08101L.4322-34.36101L3.20723-32.08101L5.98225-34.36101L8.75728-32.08101L11.5323-34.36101L14.30733-32.08101L17.08235-34.36101L19.85738-32.08101L21.24489-33.22101H25.01949%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2825.31949%20-33.22101%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-2.607116%20-71.449521%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-.718938%27%20y%3D%27-30.40016%27%20fill%3D%27%23e0701a%27%3Eels%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-4.178176%20-34.314161%29%27%20stroke%3D%27none%27%20fill%3D%27black%27%3E%0D%0A%3Ctext%20class%3D%27f3%27%20x%3D%27-.718938%27%20y%3D%27-30.40016%27%20fill%3D%27%235d9732%27%3E%EE%83%98%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=5em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, &quot;\mathsf{els}&quot;] \arrow[d, tight, &quot;\mathsf{cons}\ x&quot;'] &amp;
+  \mathsf{Set\ Nat} \arrow[d, tight, &quot;\mathsf{insert}\ x&quot;] \\
+  \mathsf{List\ Nat} \arrow[r, loose, &quot;\mathsf{els}&quot;'] &amp; \mathsf{Set\ Nat}
+  \arrow[from=1-1, to=2-2, phantom, &quot;\yes&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<p>If <span class="loose">els</span> relates <code>xs</code> to <code>s</code>, it relates <code class="tight">cons x xs</code> to <code class="tight">insert x s</code>, hence <span class="tight">cons</span> implements <span class="tight">insert</span>.</p>
+</div>
+<div class="g-col-6">
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27205.153465pt%27%20height%3D%27129.198904pt%27%20viewBox%3D%27-72.000004%20-72.000007%20136.768976%2086.132603%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3Aec-lmss8%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAbQAAoAAAAACBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh1x1k2NtYXAAAAE8AAAAUgAAAGwCAwJPZ2x5ZgAAAZAAAAO0AAAEfOjAiA5oZWFkAAAFRAAAACkAAAA2YTdC82hoZWEAAAVwAAAAIAAAACQGwwEPaG10eAAABZAAAAA0AAAANBf%2BApNsb2NhAAAFxAAAABwAAAAcB7YIjm1heHAAAAXgAAAAGAAAACAAEQBNbmFtZQAABfgAAADJAAABMqR9pXNwb3N0AAAGxAAAAAwAAAAgAAMAAHjaY2BmvME4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpRMZKhimfdvHwMDyzxGJ1Q1%2F%2F8zMAAAMrIP33jaY2BgYGJgYGAGYhEgyQimWRgigLQQgwBQhIkhkSGVIZMhhyGPoZChlKHq%2F3%2BgHEgsHSpWDBL7v%2BD%2F3P9z%2Fs%2F6P%2FP%2F9P%2FT%2Fk8Cm4QGAOOPGEMAAHjaZVRNbONEFJ4349hNW5ymqe0mcZwmTuz8NEkbx3ZTtw1btkuX%2FiRb7aYb%2BkPZqir0gEAgLkgcVlu1iDu9wQnBYVcgpHJcCYEUcVkJgRBaVYgbVyQEaC8JL%2BlyAOZZI1kzeu973%2Fe9IZS43T%2FgIfxIoiRHSEK3RTCL4Do1cFy7CLoIgrkAlgaKYCcFHkMDy12g8LCZP9AX54C7OXz7DXBTc40wn7sxtX5AW9pCKj7DwUw%2BEbaGTG0MWDP3nOaLsmzVhkRoRZFgt%2FGBNcANBtKazpiWJpSkun%2FCN4hDIioh6QQWLDuuwgtFwPpuWVa0HjAhyQvwdedzbvNq8vYk39g5vEfpO3vmjZg6%2BuxIPZVZDf2yvEPH49engJ0eHJyyhFnYiSxNU3ee4GJE65ZoAH4gJeKRFULA1HlBkSXskzd7zbmWo8gYIiQN03BcrO%2B4ho0YHGUBWUBOjD4JshPCC6YhYAIe0ZUdGqh4KsepcGc1X%2FUxOhl4KTqXMyocPXl0wiCaFYLAhXW6t1aszm%2BNfgF2TvcoOLmkt89NBkaKof3ZZ0RGd4934X0O2EB2emmP0gkaN4KU%2Bgdkbd2r170xL%2BI3tdloYQZPWVIehE%2BsChS93tb5NiP6KA9MVYVEJkOA3MIef6Zt5BXVDTolMEwRFEkPWkHsSQMBLlpM5EaXvTK0moGVxW2ElAknfUnGtu0ntN35KlShbK%2BGGq0jg%2Bf0Y2RRIMTCFK5uW%2FebTf%2FhIbTffgVPgTRxv4%2F12OUNPMWff3DA9yT0PxyS8x8UG9e%2B%2FBcGeLTS8CEAXJSku1V4DN%2BRERIjxPfUr08tYlvMrvTyoj6K7MDj1vSWWt%2Bn9M2bhTW12XSs2jaFjdp4rf3EUICd3Hn1HjXiS50HHyWXGby4du1lCirp9xHv%2Fg7vwU%2BkjG4cQ4V7Vdxe2t5kFJnZ9wWG4siXpuiPhtL%2F4FRWZ5%2Bv7UTEic1pMeVPcbRWX4wMqcCVYnFrVF2viOkX8iPJFAdzxbSnxgPHUU82GMQCa0oMqJ8byqciohTx51Kr0ZDgpzAsLYdCbHAwmwgLQigccxDjWPcvOKLXe9qmRcCxDaIetiVZki7xaGIXjpSN19KwtVs%2FO6PjEwVbHQ7DLQfYlbt3r%2FyWrgDV%2B9rgG3AB7Utteozyho3%2B4GU0uRu04KI59XrCrbZo3C01aKuUkgHcq7DZ%2BUxPwNQ8ZHt8YaJzzDFESBZsEHQ7IeEwwXnnCMJvncFx59d3PyxACxbznU8BKf4bztzGqXjaY2BkYGAA4owbXSvj%2BW2%2BMjCzMGCC%2F%2FpMCkzHgQwOBiYQHwDMYgY%2FAAAAeNpjYGRgYJn3bx8DA5MRgwiDIBM%2FA1AEBfACAFDdAtgCIAAAAgoANwHjACQCIAAeAjIAVQEDAE4BAwBWAjIAVQIyACUBoQAfAYkAFAIyAFUB2QAfAAAAAABEAHgA8AEWASgBNAFYAYwB3gICAiQCPnjaY2BkYGDgZfBhYGYAAUYGNAAACWAAX3jaZYu%2Fa8JAGIafYPzRFGqnDk5Hd4OSDBnchaKT4OAWzSEBc5acBFxK%2F%2FS%2BsdepH9x3z%2FvwfkDCFxH9RIwfu5%2BYidIvD3lmGngkPwuciN4ZEMVPMi%2BsAse88hF4yBuHwCP5z8AJOd%2Bb7a50vrCn%2BaXxvtjb1tdXZ5bp4k%2BtrbNtebOVOd5N1dW%2BOzcmS%2FM0Y8OWHSUOT4HlxJwLjVKf9zKtqOaqhmFJyuJfay3jHs2Sm%2F5KzSN37YpOt177rLYh032ul%2F0Akw8tEwAAAHjaY2BmwAsAAH0ABA%3D%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Apzdr%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAOEAAoAAAAAA%2BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEsAAABgZStkhGNtYXAAAAFAAAAAKgAAADQADOCKZ2x5ZgAAAWwAAADVAAAA3DKuOWBoZWFkAAACRAAAACsAAAA2YWBDWWhoZWEAAAJwAAAAHgAAACQFkwG5aG10eAAAApAAAAAIAAAACANm%2F%2F9sb2NhAAACmAAAAAYAAAAGAG4AAG1heHAAAAKgAAAAFwAAACAABABJbmFtZQAAArgAAAC6AAABHdbtBeNwb3N0AAADdAAAABAAAAAgAAMAAXjaY2Bm3Mw4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjQAABJHZKcVk6A9sD8wfmzO7%2F8xgYmN0ZJgGFGREq%2Fv9nYAAAP2UQbAB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BQ%2FM%2F%2F%2BHkPKnwPIMAGUFB3MAAHjaDcg9TgMxEEBhz3g9M%2FbidZbgXQhCjkJEBJGSBm1S5K8iEhUldFyAniaioeIMtDRwAG7CdZbVk77iKWjb9hfv8UvtlYKExJEp1gXwaK47C7ikyQy2MLldNF1z3GC9qLfQJN1RJehm0icBiOFtfW2z3LkMKmc4rm6WL1eSCmdKBrY9uch%2FZkPBvs9FvBDdWfM%2BFMojZ1ayoPU4TOH18FhZwyLa8zHw%2BdP%2B4XtnBP2Zp8HARttUf4fnvjsFBgga7Ufv6HPMQIGJWUpCnJZLpdQ%2FntwaaAAAAHjaY2BkYGAA4k%2FBjG7x%2FDZfGZhZGNDB%2F%2F%2F%2FtzN5MS0FMjkYmEAiANEhB%2BYAeNpjYGRgYHb%2Fn8fAwOT5HwiYvBiAIiiACQCaTAZPAAABHQAAAkn%2F%2FwAAAAAAbgAAeNpjYGRgYGBi8GAA0QxQEgkAAAelAE4AeNo9jEEKwjAURF9Ri1YXrhR0kxMUpfUGiiu37lsTShCjNKWgC8%2FuTwn%2BkOH9mUyAjC8JYRKmg4YZy5lGnjBnETkVfx05Y8OWEcl4Js6SQ%2BTQPEWesOISORX%2FFjmj5H60rqmrzr8%2Bur2a1tunU%2Ft8F9azcaatOqNV%2FVa6t75vHqrIy7zgiMXRUFPR4XnxQdNyxYh6SZ%2BSK%2Fbk7P7pWVI3vAgtI56SH96iml46XrThIXshvVJu8QMEqimTAAB42mNgZkAGjAxoAAAAjgAF%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss10%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAWEAAoAAAAABngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh0F1mmNtYXAAAAE8AAAARwAAAGQBQgIVZ2x5ZgAAAYQAAAKNAAAC%2BDtJhhhoZWFkAAAEFAAAACkAAAA2YYlDwmhoZWEAAARAAAAAIAAAACQHJQG6aG10eAAABGAAAAAkAAAAJBDcAcZsb2NhAAAEhAAAABQAAAAUAtIDYG1heHAAAASYAAAAGAAAACAADAA1bmFtZQAABLAAAADIAAABO3g6QmJwb3N0AAAFeAAAAAwAAAAgAAMAAHjaY2BmvM84gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpT0YShhmffvCAMDyzxGG1Q1%2F%2F8zMAAAMigPy3jaY2BgYGJgYGAGYhEgyQimWRgCgLQAEILEfRj8GIIZEhlSGTIZSv7%2FRxMp%2Fv%2F%2F%2F9b%2FW%2F5v%2BL%2F4%2F4L%2Fc%2F9PAZuBAgAC%2FBVLAHjaRVLPTxNBFH5vdrsLpWy7LO22pd26u90uBQptl%2B1qihToL9EWG4poaALiQS5cIDFoEE3wogkX%2FgJ%2FcMF%2Fw5j0X1ATE4%2BejZ4M1FnQOO9NMjPvzbzvfd8Awn0A7JEueADSKFqigb3zzQ5WSPdsnwDCAwCyS%2BMDAKrOmKIuWpIsWmT3%2Be9ay5344%2BjskHTPhSPyjOZnet%2Fpe18hC2AIyHMp01HQmUVnEs1LT7m7fEjm6ZpmKCj%2Fc3rx6VZ%2Br%2BIvP1FrS4jRwFCmlLmRKDK4v%2B2sjfljy6X6EpIRPjQ2XrmpDekf7h2wmEi37SuEtGw1JwyJ%2Fn5FnZ%2B%2F%2FZiJRJcjo0gWp7QxjxTwiooh1YEOAoXeTzzBTxAG0%2B3KFlxcLip7EvUUb86iRfHwtsZz1BS0nFmCJ83strAwjcy7PbSMWy0u2cgtrpOWUlQTNotXU2o4O2CoAWRXjXIZJ67NME4lKONG6%2B1cv8cbSKsaw8Q1t36y9wvf42cIQZyypNJaoYIjUy4oIxRFIUS5oIh4eoKn5x%2FZldnh1TyXaOfWDwh5dDfWUuODRV89nakPfmtuIA6bZTmO5NXWw5cMKpPZzXj1OmK16NZq0o5PyWtggAewqHqObltvms2%2BTge7Bx0aRYhTPnbwC1gUDcdfsOGqJodKWPivW8GhJl8Kx6cuiPkr2w7mtKq%2FdCfsE5ZLQpLXWTKnpKfkYQ3ZTHQkJ5lV0zfRiAi65iHFccOOs9qLmhn2IipCdcAgpJ8ZzI4qLC%2BIQj7VGBE5LxGkhYgfidc3kYz1cVKUyV5glSh3K2QRgpf%2Fi%2Bom0oZsK2gFdZGTCw6uSA3H0nF1rXZ8TArT6ZgviqSdRXHm8HCmB22C6h%2FVQILAAAAAeNpjYGRgYABik83ZYvH8Nl8ZmFkYMMH%2FF0xFTHeBDA4GJhAfAK53BlUAAAB42mNgZGBgmffvCAMD01UGYQZxpiIGoAgK4AQAaTID5QIAAAACKwBgAtUAYgI5AC0B7QA2AccAJAD1AE0BiAAdAXIAEwAAAAAAEAAoAHoAugDwAQIBWAF8eNpjYGRgYOBkMGFgYgABRgY0AAAGhQBCeNptjDGLwkAQRl8wiuaauyssxGIbS4Mh6a%2B0USwE%2B2gWCZgVspLD5nr%2FtZ%2B6cI0DO%2Fvm8c0ACX9EPCpi%2BOyPihlpenGfD74CD%2BSngRMmzOgRxSOZT34Cx3yzCdxnTBl4IP8bOKHgtlpvS%2BezhT3MT40X7Gzr67MzWfrvltbZtrzYyuyvpupq3x0bk6dFmrNizVbnHZ6MBZYDc040ml9mJ9eKa85KGbn0bW4p557Zkov%2BStk9V%2FWKTtte%2Fai8IdeFQi%2B%2FAxDtLjl42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Aec-lmss8%3Bfont-size%3A7.27273px%7D%0D%0Atext.f1%20%7Bfont-family%3Aec-lmss10%3Bfont-size%3A9.96264px%7D%0D%0Atext.f2%20%7Bfont-family%3Apzdr%3Bfont-size%3A9.96264px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%20-1.791363%20-30.40016%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23fce1df%27%20stroke%3D%27%23fce1df%27%3E%0D%0A%3Cpath%20d%3D%27M-45.49522%2031.6965V-33.22101H46.31471V31.6965ZM46.31471-33.22101%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-65.011859%20-66.445161%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-16.56262%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2719.443718%27%20y%3D%27-95.075139%27%3EList%3Ctspan%20x%3D%2737.12741%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-15.746191%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27110.910654%27%20y%3D%27-95.075139%27%3ESet%3Ctspan%20x%3D%27126.961456%27%3ENat%3C%2Ftspan%3E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.720787%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2719.443718%27%20y%3D%27-30.40016%27%3ENat%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.720786%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27110.910654%27%20y%3D%27-30.40016%27%3ENat%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-23.98051%2031.6965H-20.38048L-18.99297%2032.8365L-16.21794%2030.5565L-13.44292%2032.8365L-10.6679%2030.5565L-7.89287%2032.8365L-5.11784%2030.5565L-2.34282%2032.8365L.4322%2030.5565L3.20723%2032.8365L5.98225%2030.5565L8.75728%2032.8365L11.5323%2030.5565L14.30733%2032.8365L17.08235%2030.5565L19.85738%2032.8365L21.24489%2031.6965H25.01949%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2825.31949%2031.6965%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-1.530669%203.827329%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-1.791363%27%20y%3D%27-30.40016%27%20fill%3D%27%23e0701a%27%3Eels%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-45.49522%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-45.49522%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-66.328859%20-32.339131%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-1.791363%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3Elength%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M46.31471%2024.8V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2046.31471%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2050.757781%20-32.909471%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-1.791363%27%20y%3D%27-30.40016%27%20fill%3D%27%230078ae%27%3Esize%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-32.8555-33.22101H-29.25546L-27.86795-32.08101L-25.09293-34.36101L-22.3179-32.08101L-19.54288-34.36101L-16.76785-32.08101L-13.99283-34.36101L-11.2178-32.08101L-8.44278-34.36101L-5.66776-32.08101L-2.89273-34.36101L-.1177-32.08101L2.65732-34.36101L5.43234-32.08101L8.20737-34.36101L10.98239-32.08101L13.75742-34.36101L16.53244-32.08101L19.30746-34.36101L22.08249-32.08101L24.85751-34.36101L27.63254-32.08101L29.02005-33.22101H33.07498%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2833.37498%20-33.22101%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-6.309039%20-71.449541%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27-1.791363%27%20y%3D%27-30.40016%27%20fill%3D%27%23e0701a%27%3Eequal%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-1.721739%20-33.474151%29%27%20stroke%3D%27none%27%20fill%3D%27black%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%27-1.791363%27%20y%3D%27-30.40016%27%20fill%3D%27%23ee3224%27%3E%EE%80%B7%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=5em, row sep=5em, nsq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, &quot;\mathsf{els}&quot;] \arrow[d, tight, &quot;\mathsf{length}&quot;'] &amp;
+  \mathsf{Set\ Nat} \arrow[d, tight, &quot;\mathsf{size}&quot;] \\
+  \mathsf{Nat} \arrow[r, loose, &quot;\mathsf{equal}&quot;'] &amp; \mathsf{Nat}
+  \arrow[from=1-1, to=2-2, phantom, &quot;\no&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<p><strong>Non-example.</strong> <span class="loose">els</span> relates <code>[1,1]</code> to <code>{1}</code>, but <code class="tight">length</code> gives 2 and <code class="tight">size</code> gives 1. No square!</p>
+</div>
+</div>
+</div>
+<div class="bg-strip text-center p-2 rounded">
+<p>A square says <em>this implementation respects that abstraction</em>.</p>
+</div>
+<div class="experts">
+<p>This is data refinement; <span class="math inline">\(\rel\)</span> is an equipment, where each function also gives a loose arrow, its graph <span class="citation" data-cites="shulman08">(<a href="#ref-shulman08" role="doc-biblioref">Shulman 2008</a>)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>3 · Squares are tiles
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Squares glue like floor tiles, in two directions.</p>
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27244.82669pt%27%20height%3D%27176.748179pt%27%20viewBox%3D%27-72.000004%20-72.000007%20163.217793%20117.83212%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3ANewPXMI_gnu%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAVIAAoAAAAABjQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEYAAABghXd0L2NtYXAAAAE8AAAAKAAAADAAEq5RZ2x5ZgAAAWQAAAKAAAAC5IwrgwZoZWFkAAAD5AAAACsAAAA2YYtCq2hoZWEAAAQQAAAAIAAAACQFaQGAaG10eAAABDAAAAAUAAAAFAs7AENsb2NhAAAERAAAAAwAAAAMAYQCOG1heHAAAARQAAAAGAAAACAACABCbmFtZQAABGgAAADRAAABVjKDuXJwb3N0AAAFPAAAAAwAAAAgAAMAAHjaY2BmsmOcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxYAcpxWXpDGz%2FgYDZ9N8NBgZmU0YNoDAjQsX%2F%2FwwMAEeaEZIAAHjaY2BgYGJgYGABYhEGZgYuMM3DAAIyDBDAyMB47Q8Q%2FwexASbwBA942i2Sy09TQRTG58xMZ%2FqgvZBy7%2B3rltrX5dUHvb3TFkkv2JKiBXlqQoQABgIKPsLCBQYSXRDjikS3bnXvyq3%2FgTGuXRgXLlm7AKetOZuZnEd%2B3%2FkOwih6fYmr8Bvl0DRCwDgbAk2vQ8XS1QDwrCnDlo88VEQ3NF0G71YQW3TSpmziTGWdNlytLQBxuaNa2s9ZaC17gxMgxdctaxiglLTaO41%2BNyaEGTW%2F7zMQ6lOKU6MpNQIxs3oEnw63QuX0BIVYQM6YIzTn8xcMe5OAU1jfbZQXKCnr0bpFck%2Fsq%2B9GppE3a5Q2as0VK2UD3UD4%2Bu%2FVT%2FiFvyAD1aSeACgQB10KYF1MU1SCPR3C0ni5x97Jqh16Ow%2BpZKemDnLGozlobWHydmfWVj3DJo9rY31R7s0cjhd3W5mReGg8rhpehW4sL0PLieic0bUXeHXxOOTBK%2B2Hpxjy7957Fe%2FFBSQOtnVtvRDEL7MWxv2Jrcnz6X37AaYn7ZlZr7s%2FCPsSFgWu%2FuBx6UW558R%2FNG7Wu8svQNZMMgVMW%2F41aZNM6T0xWdMBUdLwGJ2YyB1sepPBeKJvcDqtAVa8uhPLDHBXyCm1NDaASZqZM6NpQeXo5GDUBV8bzWbh%2BEQclwOesDjNn72ypmKCRlRgzJwEKgKTU2%2FOXWKhZC%2FWI%2BE%2BPw8ijBLXl%2FADf0NpZHVoFQksb6QODuTBFBJHL8lL4R1krunSg%2B66A6DLO%2BlCy24nfPvZ%2FXmAs6eQukuoGLxZMDMe6stVYzcxFUYjbt8pFfeWAPJOe0TxxSB7tG4sUdheff4xyvRmrhJ2q%2BBWg8yASEKMhq0h%2B3H9Xmbow25lj9BbIWMe%2FQPseHbmeNpjYGRgYABi05UWzPH8Nl8ZmFkY0MH%2FX%2F%2FuMVUxXQAyORiYQCIAwqkH7wB42mNgZGBgNv13g4GBqer%2FLwYNJgsGoAgKYAUAf3gE7QJ6AAACYQAbAg3%2F%2BgJUAA4B%2FgAgAAAAAABoAMYBHAFyeNpjYGRgYGBlcGRgYgABRgY0AAAHXgBLeNp1j8FqwkAURU9oFBrptoirge6DkvyDdaG4EneSkCFm4QhJjHXjJ%2FgV%2FdDe6CDtog%2Fmce6dy4UHRFwJ6Cfg7b77CRlJPXggHnseij88R0yIeSEIX%2BVM%2BPQc8k7ueSD%2B8jwU3zxHpHyv7Hm9XWbtfle600MsetzYuqmOzszi6S93bp2ts9YWJr%2BYoquarjyYJE7jhBWWM2u2LMlo2bOjxHH687N4uhu5NQ0VR2nDTHdM%2F8nO5bp7vm%2B2FMrnXLQLOjU02iUH6UQtqV7yA1HvN7EAAAB42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Azplsy%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAALUAAoAAAAAAzwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEoAAABgqN0SFWNtYXAAAAFAAAAAKgAAADQADCB1Z2x5ZgAAAWwAAAA0AAAANJwEx81oZWFkAAABoAAAACcAAAA2YcNC2mhoZWEAAAHIAAAAIAAAACQFv%2F75aG10eAAAAegAAAAIAAAACATFAENsb2NhAAAB8AAAAAYAAAAGABoAAG1heHAAAAH4AAAAFwAAACAABAANbmFtZQAAAhAAAACyAAABGlGqS45wb3N0AAACxAAAABAAAAAgAAMAAXjaY2BmSmKcwMDKwMA0i%2BnsPxGGfhDN%2BIbxDYMxIycDELAxQEADAypIKS5LZ2BTUFJQYl72B6iIeRnzL6AwI0LF%2F%2F8MDAAWGA%2BgAAB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BQpK%2F%2F9DyPv3wfIMAFLMBp4AAAABAEMATQHVAd0ACwAAAQ4BBy4BJz4BNx4BAdUCcVZWcQICcVZWcQEWV3ACAnBXVHECAnF42mNgZGBgAOL5Uzsvx%2FPbfGVgZmHABpjWMt4FUhwMTCAeAMa9BdAAeNpjYGRgYF72h42BgWktgzODM%2BNVBqAICmACAF%2BKA7sCrQAAAhgAQwAAAAAAGgAAeNpjYGRgYGBi4GEA0QxQEgkAAAHJABIAeNpNi8EKgzAQREdqhNpze%2BgpXyBKPPdqv8BjQTFYQaMYEfXQb%2B9oc%2BiG3byZnQUQ4gMPe3kQx9zLJwvHAhemfhxQXR2HuPOd4PlnOiFSxz754VjghqfjgP7L8Z5%2BD4td7Ta0ds31aJveyCSKD51po8di0pUsV1nNjZ3rTqoojRQGLLBY2Ru5PTiHxkhq0MNAIkGE%2BG%2BfcW%2BOTIGJf8VMSV%2BSZl5ZzhodteJlylZfzSspsQAAeNpjYGZABowMaAAAAI4ABQ%3D%3D%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Azplsy%3Bfont-size%3A9.96264px%7D%0D%0Atext.f2%20%7Bfont-family%3ANewPXMI_gnu%3Bfont-size%3A9.92542px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%209.608895%20-13.083946%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23e6f0de%27%20stroke%3D%27%23e6f0de%27%3E%0D%0A%3Cpath%20d%3D%27M-74.60995%2053.0755V-52.44049H74.60995V53.0755ZM74.60995-52.44049%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-91.559858%20-68.283491%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605221%20-.000002%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2716.886581%27%20y%3D%27-118.205731%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.60522%20-.000002%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2791.217794%27%20y%3D%27-118.205731%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605219%20-.000002%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27165.549006%27%20y%3D%27-118.205731%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605221%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2716.886581%27%20y%3D%27-65.644838%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.60522%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2791.217794%27%20y%3D%27-65.644838%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605219%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27165.549006%27%20y%3D%27-65.644838%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605221%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2716.886581%27%20y%3D%27-13.083946%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.60522%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2791.217794%27%20y%3D%27-13.083946%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-2.605219%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%27165.549006%27%20y%3D%27-13.083946%27%3E%E2%80%A2%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-67.10498%2053.0755H-63.50494L-62.11743%2054.2155L-59.3424%2051.9355L-56.56738%2054.2155L-53.79236%2051.9355L-51.01733%2054.2155L-48.24231%2051.9355L-45.46729%2054.2155L-42.69226%2051.9355L-39.91724%2054.2155L-37.14221%2051.9355L-34.36719%2054.2155L-31.59216%2051.9355L-28.81714%2054.2155L-26.04211%2051.9355L-23.26709%2054.2155L-20.49207%2051.9355L-17.71704%2054.2155L-14.94202%2051.9355L-13.5545%2053.0755H-8.10498%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.80498%2053.0755%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-74.60995%2046.179V7.179%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-74.60995%206.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M7.50497%2053.0755H11.10501L12.49252%2054.2155L15.26755%2051.9355L18.04257%2054.2155L20.8176%2051.9355L23.59262%2054.2155L26.36765%2051.9355L29.14267%2054.2155L31.9177%2051.9355L34.69272%2054.2155L37.46774%2051.9355L40.24277%2054.2155L43.01779%2051.9355L45.79282%2054.2155L48.56784%2051.9355L51.34286%2054.2155L54.11789%2051.9355L56.89291%2054.2155L59.66794%2051.9355L61.05545%2053.0755H66.50497%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2866.80498%2053.0755%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M0%2046.179V7.179%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%200%206.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M74.60995%2046.179V7.179%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2074.60995%206.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-67.10498%20.3175H-63.50494L-62.11743%201.4575L-59.3424-.8225L-56.56738%201.4575L-53.79236-.8225L-51.01733%201.4575L-48.24231-.8225L-45.46729%201.4575L-42.69226-.8225L-39.91724%201.4575L-37.14221-.8225L-34.36719%201.4575L-31.59216-.8225L-28.81714%201.4575L-26.04211-.8225L-23.26709%201.4575L-20.49207-.8225L-17.71704%201.4575L-14.94202-.8225L-13.5545%20.3175H-8.10498%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.80498%20.3175%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-74.60995-6.579V-45.579%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-74.60995%20-45.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M7.50497%20.3175H11.10501L12.49252%201.4575L15.26755-.8225L18.04257%201.4575L20.8176-.8225L23.59262%201.4575L26.36765-.8225L29.14267%201.4575L31.9177-.8225L34.69272%201.4575L37.46774-.8225L40.24277%201.4575L43.01779-.8225L45.79282%201.4575L48.56784-.8225L51.34286%201.4575L54.11789-.8225L56.89291%201.4575L59.66794-.8225L61.05545%20.3175H66.50497%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2866.80498%20.3175%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M0-6.579V-45.579%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%200%20-45.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M74.60995-6.579V-45.579%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2074.60995%20-45.879%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-67.10498-52.44049H-63.50494L-62.11743-51.30049L-59.3424-53.58049L-56.56738-51.30049L-53.79236-53.58049L-51.01733-51.30049L-48.24231-53.58049L-45.46729-51.30049L-42.69226-53.58049L-39.91724-51.30049L-37.14221-53.58049L-34.36719-51.30049L-31.59216-53.58049L-28.81714-51.30049L-26.04211-53.58049L-23.26709-51.30049L-20.49207-53.58049L-17.71704-51.30049L-14.94202-53.58049L-13.5545-52.44049H-8.10498%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%28-7.80498%20-52.44049%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M7.50497-52.44049H11.10501L12.49252-51.30049L15.26755-53.58049L18.04257-51.30049L20.8176-53.58049L23.59262-51.30049L26.36765-53.58049L29.14267-51.30049L31.9177-53.58049L34.69272-51.30049L37.46774-53.58049L40.24277-51.30049L43.01779-53.58049L45.79282-51.30049L48.56784-53.58049L51.34286-51.30049L54.11789-53.58049L56.89291-51.30049L59.66794-53.58049L61.05545-52.44049H66.50497%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2866.80498%20-52.44049%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-50.224898%2011.228889%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%279.907771%27%20y%3D%27-13.083946%27%3E%F0%9D%9B%BC%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2024.895052%2011.573899%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%279.708523%27%20y%3D%27-13.083946%27%3E%F0%9D%9B%BD%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-50.159898%20-40.244111%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%279.907771%27%20y%3D%27-13.083946%27%3E%F0%9D%9B%BE%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2024.870052%20-42.656611%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%279.907771%27%20y%3D%27-13.083946%27%3E%F0%9D%9B%BF%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=6em, row sep=4em, sq={1-1}{3-3}]
+  \bullet \arrow[r, loose] \arrow[d, tight] &amp;
+  \bullet \arrow[r, loose] \arrow[d, tight] &amp;
+  \bullet \arrow[d, tight] \\
+  \bullet \arrow[r, loose] \arrow[d, tight] &amp;
+  \bullet \arrow[r, loose] \arrow[d, tight] &amp;
+  \bullet \arrow[d, tight] \\
+  \bullet \arrow[r, loose] &amp;
+  \bullet \arrow[r, loose] &amp;
+  \bullet
+  \arrow[from=1-1, to=2-2, phantom, &quot;\alpha&quot;]
+  \arrow[from=1-2, to=2-3, phantom, &quot;\beta&quot;]
+  \arrow[from=2-1, to=3-2, phantom, &quot;\gamma&quot;]
+  \arrow[from=2-2, to=3-3, phantom, &quot;\delta&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<p><strong>Top to bottom, programs compose:</strong> run one, then the next.</p>
+<div class="bg-strip text-center p-2 rounded">
+<p><span class="math inline">\((\tight{g} \circ \tight{f})(x) = \tight{g}(\tight{f}(x))\)</span></p>
+</div>
+<p><strong>Left to right, specs compose:</strong> chain relations through a middle point.</p>
+<div class="bg-strip text-center p-2 rounded">
+<p><span class="math inline">\(x \mathrel{(\loose{R} ; \loose{S})} z \iff \exists y.\ x \mathrel{\loose{R}} y \wedge y \mathrel{\loose{S}} z\)</span></p>
+</div>
+<div class="example">
+<p><code class="tight">sort . nub</code>: dedupe, then sort. <code>xs</code> <span class="loose">has elements</span> <code>s</code> then <code>s</code> <span class="loose">has size</span> <code>n</code>: <code>xs</code> <span class="loose">has</span> <code>n</code> <span class="loose">distinct elements</span>.</p>
+</div>
+<p>Rows first or columns first gives <strong>the same big square</strong> (the <em>interchange law</em>): the whole program meets the whole spec.</p>
+<div class="experts">
+<p>Squares with identity tight sides form a bicategory of loose arrows; when every function also has a loose companion, the double category is an <em>equipment</em> <span class="citation" data-cites="shulman08">(<a href="#ref-shulman08" role="doc-biblioref">Shulman 2008</a>)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>4 · Theorems for free TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a relation <span class="math inline">\(\loose{r} : a \larr b\)</span>, the relation <span class="math inline">\(\loose{\mathsf{List}\ r} : \mathsf{List}\ a \larr \mathsf{List}\ b\)</span> relates two lists of the same length whose elements are related pairwise.</p>
+<div class="imagify">
+<p><img src="data:image/svg+xml,%3C%3Fxml%20version%3D%271.0%27%20encoding%3D%27UTF-8%27%3F%3E%0D%0A%3Csvg%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%20width%3D%27249.219078pt%27%20height%3D%27127.861046pt%27%20viewBox%3D%27-72.000004%20-72.000006%20166.146052%2085.240697%27%3E%0D%0A%3Cstyle%20type%3D%27text%2Fcss%27%3E%0D%0A%3C%21%5BCDATA%5B%40font-face%7Bfont-family%3Aec-lmss8%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAATUAAoAAAAABWgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh0d1dGNtYXAAAAE8AAAAQgAAAFQA%2BQGtZ2x5ZgAAAYAAAAHhAAACBPz1bLZoZWFkAAADZAAAACkAAAA2YTlDt2hoZWEAAAOQAAAAIAAAACQG0QEoaG10eAAAA7AAAAAgAAAAIA3qAW5sb2NhAAAD0AAAABIAAAASAigBlm1heHAAAAPkAAAAGAAAACAACwA0bmFtZQAAA%2FwAAADJAAABMqR9pXNwb3N0AAAEyAAAAAwAAAAgAAMAAHjaY2Bm3Ms4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpT0YShjmfdvHwMDyzxGJ1Q1%2F%2F8zMAAAJeQPq3jaY2BgYGJgYGAGYhEgyQimWRgcgDQPAwdQjoXBhyGVIZOhhKHs%2F3%2BgKIRXBOL93%2Fp%2F7v9Z%2Fyf9nwjWBwcA2vgQnQAAeNodkEFPE2EQhuf9tu5HW9xSlt2l7Zal3V0qIKt06W4EtNSIgkGqGFsT02pSSQlGj168GCJJ%2FQX8Am8evHjSmyZ7MSZejPHkhbuJiZxs%2FcrM5J1MZg7vMwTqELEii%2BgM0SzSftplxX5tD00W%2FXvJiJEz%2BIvP%2BE4amURuYQpGOQgNmXsoXUFY1o0plDzwoszxqf8u1rxWvH9evt3qvmLsxaPSnbw5vjZWd85tqb82WmzS2rwIqbe725MKpYVWdn2RhZdJBKNtoe%2FZG5KIE%2Fl22g%2Ftiv%2B20Yh3u4ie74ktqCmkg2%2BUFF0B18SVJkygc%2F2p1Khb7TUconn3J7625ypM3FuDP3iNH1QWzidkLgujpVAQ6FUEoScNxyAUaQS6IYDsGS5zsT4t9HRz%2BUa1lVWmm4uKE3dirFq%2Fmk2aiF3IW%2F64ub2kuDfnx4pODKueu2JaqcPcij4jIZ%2B6ZeTB4rHkvJNVtGx8ztnKqTzOMKptqKqUSMwWMpyrmXwgPE4MTrDPNsV%2FyVXgIUwL7oqv%2BZqtybqhh9g3dp65eNCuHx2xyemFijmawb0AUu3goPbbXQKzh79JCTlGRGdFl2zJH1IM4VQcf3j4sbGTcUeQHDGeIOpfQvRl9bGVKOSWkaT%2Fu4Ra0QAAAHjaY2BkYGAA4sQ7z1bH89t8ZWBmYcAE%2Fz8zKTEdBzI4GJhAfADnkAdgAAAAeNpjYGRgYJn3bx8DA1MAAz%2BDIJMSA1AEBXAAAFS8Av8CIAAAAlAAYwHjACQBAwBOAXQAVwGhAB8BiQAUAfYADwAAAAAAEABEAFYAbgDAAOQBAgAAeNpjYGRgYOBgMGZgYgABRgY0AAAGUQBAeNpli79rwkAYhp9g%2FNEUaqcOTkd3g5IMGdyFopPg4BbNIQFzlpwEXEr%2F9L6x16kf3HfP%2B%2FB%2BQMIXEf1EjB%2B7n5iJ0i8PeWYaeCQ%2FC5yI3hkQxU8yL6wCx7zyEXjIG4fAI%2FnPwAk535vtrnS%2BsKf5pfG%2B2NvW11dnluniT62ts215s5U53k3V1b47NyZL8zRjw5YdJQ5PgeXEnAuNUp%2F3Mq2o5qqGYUnK4l9rLeMezZKb%2FkrNI3ftik63XvustiHTfa6X%2FQCTDy0TAAAAeNpjYGbACwAAfQAE%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Azplsy%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAALcAAoAAAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEoAAABgqvqUI2NtYXAAAAFAAAAAKgAAADQADCJTZ2x5ZgAAAWwAAAA4AAAAOIVX38loZWFkAAABpAAAACkAAAA2YcRDuWhoZWEAAAHQAAAAIAAAACQGIP7QaG10eAAAAfAAAAAIAAAACAUlABtsb2NhAAAB%2BAAAAAYAAAAGABwAAG1heHAAAAIAAAAAFgAAACAABQAMbmFtZQAAAhgAAACyAAABGlGqS45wb3N0AAACzAAAABAAAAAgAAMAAXjaY2BmmsQ4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjQAEOMEZKcVk6A5sSgxID87I%2FQEXMy5h%2FAYUZEUr%2F%2F2dgAAAQzA9QAAB42mNgYGBiYGBgBmIRIMkIplkYFIA0CxAC%2BUoM%2F%2F9DyHuMYHkGAEk2BX8AAAACABv%2F8QJeAssABwAKAAAJASMBMxMzEwMjFwJe%2Ft8Q%2Fu5Acd9zh7laAsr9JwLZ%2Ft4BI%2F6m8QAAeNpjYGRgYADi41oBJ%2BP5bb4yMLMwYIL%2FH5nWMp0GMjgYmEB8AMz5BykAAAB42mNgZGBgXvaHjYGBaS2DNIMUUxwDUAQFMAEAT9QC9AKtAAACeAAbAAAAAAAcAAB42mNgZGBgYGLgBmIQYGRAAwABxwASAAB42k2LwQqDMBBER2qE2nN76ClfIEo892q%2FwGNBMVhBoxgR9dBv72hz6IbdvJmdBRDiAw97eRDH3MsnC8cCF6Z%2BHFBdHYe4853g%2BWc6IVLHPvnhWOCGp%2BOA%2Fsvxnn4Pi13tNrR2zfVom97IJIoPnWmjx2LSlSxXWc2NnetOqiiNFAYssFjZG7k9OIfGSGrQw0AiQYT4b59xb45MgYl%2FxUxJX5JmXlnOGh214mXKVl%2FNKymxAAB42mNgZkAGjAxoAAAAjgAF%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3ANewPXMI%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAARkAAoAAAAABQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEcAAABghdV0DWNtYXAAAAE8AAAAMAAAADwAFlHBZ2x5ZgAAAWwAAAGlAAAB1Lo2STBoZWFkAAADFAAAACkAAAA2YNJD4WhoZWEAAANAAAAAIAAAACQFWgDCaG10eAAAA2AAAAAQAAAAEAbJAEVsb2NhAAADcAAAAAoAAAAKAUIAqG1heHAAAAN8AAAAGAAAACAABwA4bmFtZQAAA5QAAADBAAABMvoXc51wb3N0AAAEWAAAAAwAAAAgAAMAAHjaY2Bm3MQ4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjwA5SisvSGdj%2BAwHzzH%2F3GBiYZzIqAYUZESr%2B%2F2dgAACERBLNAHjaY2BgYGJgYGABYhEGZgYuMM3DAAIaDBDAxMB4xQ%2BI%2FYFsRiAdD8YMDMwAUYoFJXjaJZBfT9NQGMbP07keaLt2dF1PZ9extbRnhVHi1p6qQwosKGLUsMQ%2FMTF4pfgFNEZv8M5bPwF%2BDvxOXBnvwDNM3pvnzS95fnmIQm5d%2F8E5LklMBCGxiSjheQUT1ESGYgelPMHGLitZjTqTsahQyySlSkDmGwDn1YHNoPbWZ4Nuseogjez7Wwlv8WCgn6CpB8yc93kz3rT9ELb%2FYsOLXuUZYq%2F7ffq82wkwCqtfD%2BOCOVjWW9rVN62z4hiY6ksIR7OfeYr5fvKOEKKQRPpeKJekR7YI%2Be8ZZeAtUQgaLWRZbWE8GbMeaE5vAKq2XeYuRC%2Fw5ig8DEbbOFUQjevFYdJ4ne0lm7yjLxuPh96%2Bvzo0G3h0fMcLcPbht%2FB8rPeUSjc7cOu2Y1x9nD5oMcvIyydAfLs%2F374b7wGnk89Sj4D413%2FxQ%2B7JZYgSmsh6CyrlcjdRJjy0wKXIxG2rlnwIJpiKL5bVHuSDtOFHoea7KzbQVI1d2r23a3mK5qdlmammgU8OMNt4u%2FO1rtGX75%2BepC7qQ6c9XEN%2FLTw7PnoGLE3%2FAc4ARjYAAAB42mNgZGBgAOKQRb%2Fz4%2FltvjIwszBggv9fGXczvQcyOBiYQHwA3h0HtAAAAHjaY2BkYGCe%2Be8eAwPjLQYWBlbG3QxAERTAAgBuSwQfAZoAAAHHAAQB2gAmAY4AGwAAAAAAWACoAOoAAHjaY2BkYGBgYTBnYGIAAUYGNAAABkkAQHjaXY0xC4JQFIU%2FSYsMIhoaann0A8TQsV0aCqdoaDF8lEMKKoZL9NO76lvqwjt853DufYDLG4tuLKa9dmMzETeww4yF4bHkG8Mua7aMsOyuuWRv2GbOybDDiqvhseSlYZeQz0m%2F4ssxqR8DHM66rLIiVzvPN0mkc10mtU7VrVVpk1XN%2FakCL%2FQC%2BUHzIubCkYSax09y4CyupCKjIEexw8P%2F60Ti8r7XXdCk0rvRiqY0slmJ3nmKD2Q7lBd8AZx7LPsAAAB42mNgZsALAAB9AAQ%3D%29%20format%28%27woff%27%29%3B%7D%0D%0A%40font-face%7Bfont-family%3Aec-lmss10%3Bsrc%3Aurl%28data%3Aapplication%2Fx-font-woff%3Bbase64%2Cd09GRgABAAAAAAPwAAoAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAAA9AAAAEgAAABgh0F1WWNtYXAAAAE8AAAANgAAAEQAfQEqZ2x5ZgAAAXQAAAEhAAABOPmYubNoZWFkAAACmAAAACkAAAA2YRdDuGhoZWEAAALEAAAAIAAAACQGsgEMaG10eAAAAuQAAAAUAAAAFAgaAN1sb2NhAAAC%2BAAAAAwAAAAMAIgAvm1heHAAAAMEAAAAGAAAACAACAA1bmFtZQAAAxwAAADIAAABO3g6QmJwb3N0AAAD5AAAAAwAAAAgAAMAAHjaY2BmnMc4gYGVgYFpFtPZfyIM%2FSCa8Q3jGwZjRk4GIGBjgANGBiSQUlyWDpT0YShhmffvCAMDyzxGG1Q1%2F%2F8zMAAAGosPinjaY2BgYGJgYGAGYhEgyQimWRgMgDQHEILkfBgyGUr%2B%2F4eyiv%2F%2F%2F7%2F1%2F8z%2FE8BqwQAA7ksLoQAAeNodj89OwkAQh2eG0kWsSzYVyt8mtpTaiAisdA%2BS1BghMYGLoAd70UfwbLzgE%2FAEevRNeAefQ49aN83vu0xmJvl%2BgPAIgBntoAgQoZAiwOzvKcVr2v2%2BEBAsAeCT3qEADED6Qip%2FIj%2BWy1Ka4u411VuETvaNz%2FgFEiAwGcdwgKFy0aklGKtBPmpipeOMaw4bIOsxk%2BmLHP078maV5K5u8duEd5lv0KUbnTmHHhqnzdbIDmeh1V80uO8V6eIkmHQM720e1suILp%2FtB0R7hYPhsWswLvi4t2gJs0zcvmpUkMpWv9sumXazMMxd7ewH13QDVe3KUasooQtNZFVWfWE6scK1vVDSx%2FuH%2BXZL8XnUtppIqyGK6WYzzWBFePQPjegw2wAAAHjaY2BkYGAA4oudcn7x%2FDZfGZhZGDDB%2Fy9MDEzHgQwOBiYQHwC5bwY3AAAAeNpjYGRgYJn37wgDA5M2gzCDOON%2FBqAICmAFAGL3A8MCAAAAAisAYAD1AE0BiAAdAXIAEwAAAAAAEAAiAHgAnHjaY2BkYGBgZTBhYGIAAUYGNAAABhkAPnjabYwxi8JAEEZfMIrmmrsrLMRiG0uDIemvtFEsBPtoFgmYFbKSw%2BZ6%2F7WfunCNAzv75vHNAAl%2FRDwqYvjsj4oZaXpxnw%2B%2BAg%2Fkp4ETJszoEcUjmU9%2BAsd8swncZ0wZeCD%2FGzih4LZab0vns4U9zE%2BNF%2Bxs6%2BuzM1n675bW2ba82Mrsr6bqat8dG5OnRZqzYs1W5x2ejAWWA3NONJpfZifXimvOShm59G1uKeee2ZKL%2FkrZPVf1ik7bXv2ovCHXhUIvvwMQ7S45eNpjYGbACwAAfQAE%29%20format%28%27woff%27%29%3B%7D%0D%0Atext.f0%20%7Bfont-family%3Aec-lmss8%3Bfont-size%3A7.27273px%7D%0D%0Atext.f1%20%7Bfont-family%3Aec-lmss10%3Bfont-size%3A9.96264px%7D%0D%0Atext.f2%20%7Bfont-family%3Azplsy%3Bfont-size%3A9.96264px%7D%0D%0Atext.f5%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A7.245559px%7D%0D%0Atext.f9%20%7Bfont-family%3ANewPXMI%3Bfont-size%3A9.92542px%7D%0D%0A%5D%5D%3E%0D%0A%3C%2Fstyle%3E%0D%0A%3Cg%20id%3D%27page1%27%3E%0D%0A%3Cg%20stroke-miterlimit%3D%2710%27%20transform%3D%27matrix%28.996264%200%200%20-.996264%2011.04563%20-30.236452%29%27%20fill%3D%27%23000%27%20stroke%3D%27%23000%27%20stroke-width%3D%270.4%27%3E%0D%0A%3Cg%20fill%3D%27%23e6f0de%27%20stroke%3D%27%23e6f0de%27%3E%0D%0A%3Cpath%20d%3D%27M-56.17998%2031.79149V-33.5115H56.23497V31.79149ZM56.23497-33.5115%27%20stroke%3D%27none%27%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-83.502001%20-66.571339%29%27%20stroke%3D%27%23000%27%20stroke-miterlimit%3D%2710%27%3E%0D%0A%3Cg%20transform%3D%27translate%28-11.501848%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2727.219947%27%20y%3D%27-95.295474%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%2745.302123%27%20y%3D%27-95.295474%27%3E%F0%9D%91%8E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-11.447062%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27139.214913%27%20y%3D%27-95.295474%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%27156.998213%27%20y%3D%27-95.295474%27%3E%F0%9D%91%8F%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-11.501848%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%2727.219947%27%20y%3D%27-30.236452%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%2745.302123%27%20y%3D%27-30.236452%27%3E%F0%9D%91%8E%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27translate%28-11.447062%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f1%27%20x%3D%27139.214913%27%20y%3D%27-30.236452%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%27156.998213%27%20y%3D%27-30.236452%27%3E%F0%9D%91%8F%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-39.74501%2031.79149H-36.14497L-34.75746%2032.93149L-31.98244%2030.65149L-29.20741%2032.93149L-26.43239%2030.65149L-23.65736%2032.93149L-20.88234%2030.65149L-18.10732%2032.93149L-15.33229%2030.65149L-12.55727%2032.93149L-9.78224%2030.65149L-7.00722%2032.93149L-4.2322%2030.65149L-1.45717%2032.93149L1.31786%2030.65149L4.09288%2032.93149L6.8679%2030.65149L9.64293%2032.93149L12.41795%2030.65149L15.19298%2032.93149L17.968%2030.65149L20.74303%2032.93149L23.51805%2030.65149L26.29308%2032.93149L29.0681%2030.65149L31.84312%2032.93149L34.61815%2030.65149L36.00566%2031.79149H39.25499%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2839.555%2031.79149%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-19.916331%204.155971%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2711.04563%27%20y%3D%27-30.236452%27%20fill%3D%27%23e0701a%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%2725.482375%27%20y%3D%27-30.236452%27%20fill%3D%27%23e0701a%27%3E%F0%9D%91%9F%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M-56.17998%2024.8V-24.49048%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%20-56.17998%20-24.79048%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-92.099121%20-32.104599%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2711.04563%27%20y%3D%27-30.236452%27%20fill%3D%27%230078ae%27%3Ereverse%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%230078ae%27%20stroke%3D%27%230078ae%27%3E%0D%0A%3Cpath%20d%3D%27M56.23497%2024.80002V-24.2%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27matrix%280%20-1%201%200%2056.23497%20-24.5%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%2047.792909%20-31.959349%29%27%20stroke%3D%27none%27%20fill%3D%27%230078ae%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2711.04563%27%20y%3D%27-30.236452%27%20fill%3D%27%230078ae%27%3Ereverse%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.6%27%20fill%3D%27%23e0701a%27%20stroke%3D%27%23e0701a%27%3E%0D%0A%3Cpath%20d%3D%27M-39.74501-33.5115H-36.14497L-34.75746-32.3715L-31.98244-34.6515L-29.20741-32.3715L-26.43239-34.6515L-23.65736-32.3715L-20.88234-34.6515L-18.10732-32.3715L-15.33229-34.6515L-12.55727-32.3715L-9.78224-34.6515L-7.00722-32.3715L-4.2322-34.6515L-1.45717-32.3715L1.31786-34.6515L4.09288-32.3715L6.8679-34.6515L9.64293-32.3715L12.41795-34.6515L15.19298-32.3715L17.968-34.6515L20.74303-32.3715L23.51805-34.6515L26.29308-32.3715L29.0681-34.6515L31.84312-32.3715L34.61815-34.6515L36.00566-33.5115H39.25499%27%20fill%3D%27none%27%2F%3E%0D%0A%3Cg%20transform%3D%27translate%2839.555%20-33.5115%29%27%20stroke-dasharray%3D%27none%27%20stroke-dashoffset%3D%270.0%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%3E%0D%0A%20%3Cpath%20d%3D%27M-3.12003%203.60002C-2.55%201.43997-1.27979%20.42%200%200C-1.27979-.42-2.55-1.43997-3.12003-3.60002%27%20fill%3D%27none%27%2F%3E%0D%0A%20%3C%2Fg%3E%0D%0A%3Cg%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-19.916331%20-71.575699%29%27%20stroke%3D%27none%27%20fill%3D%27%23e0701a%27%3E%0D%0A%3Ctext%20class%3D%27f0%27%20x%3D%2711.04563%27%20y%3D%27-30.236452%27%20fill%3D%27%23e0701a%27%3EList%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f5%27%20x%3D%2725.482375%27%20y%3D%27-30.236452%27%20fill%3D%27%23e0701a%27%3E%F0%9D%91%9F%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cg%20stroke-width%3D%270.59%27%20transform%3D%27matrix%281.00375%200%200%20-1.00375%20-17.965511%20-33.867339%29%27%20stroke%3D%27none%27%20fill%3D%27%23000%27%3E%0D%0A%3Ctext%20class%3D%27f2%27%20x%3D%2711.04563%27%20y%3D%27-30.236452%27%3E%E2%88%80%3C%2Ftext%3E%0D%0A%3Ctext%20class%3D%27f9%27%20x%3D%2717.391833%27%20y%3D%27-30.236452%27%3E%F0%9D%91%9F%3C%2Ftext%3E%0D%0A%3C%2Fg%3E%0D%0A%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fg%3E%0D%0A%3C%2Fsvg%3E" title="\begin{tikzcd}[column sep=8em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List}\ a \arrow[r, loose, &quot;\mathsf{List}\ r&quot;] \arrow[d, tight, &quot;\mathsf{reverse}&quot;'] &amp;
+  \mathsf{List}\ b \arrow[d, tight, &quot;\mathsf{reverse}&quot;] \\
+  \mathsf{List}\ a \arrow[r, loose, &quot;\mathsf{List}\ r&quot;'] &amp; \mathsf{List}\ b
+  \arrow[from=1-1, to=2-2, phantom, &quot;\forall r&quot;]
+\end{tikzcd}" class="img-fluid" style="display:block; margin: .5em auto;"></p>
+</div>
+<p><code class="sourceCode haskell"><span class="fu">reverse</span><span class="ot"> ::</span> <span class="dt">List</span> a <span class="ot">-&gt;</span> <span class="dt">List</span> a</code> works for <em>every</em> type <code>a</code>, so it can’t look at the elements, only rearrange them. So it maps related lists to related lists: the square always exists.</p>
+<div class="example">
+<p>Take <span class="math inline">\(\loose{r}\)</span> to be the graph of a function <code class="tight">h</code>, and out falls, for free: <code class="sourceCode haskell"><span class="fu">map</span> h <span class="op">.</span> <span class="fu">reverse</span> <span class="ot">=</span> <span class="fu">reverse</span> <span class="op">.</span> <span class="fu">map</span> h</code></p>
+</div>
+<div class="experts">
+<p>Reynolds’ relational parametricity interprets types as relations and polymorphic terms as families of squares in <span class="math inline">\(\rel\)</span> <span class="citation" data-cites="reynolds83 wadler89">(<a href="#ref-reynolds83" role="doc-biblioref">Reynolds 1983</a>; <a href="#ref-wadler89" role="doc-biblioref">Wadler 1989</a>)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>5 · Where they show up
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Effects.</strong> <span class="tight">Pure functions</span> and <span class="loose">effectful programs</span> (state, exceptions, I/O).</li>
+<li><strong>Equivalence and refinement.</strong> <span class="loose">Logical relations and simulations</span>; proving two implementations agree means building squares.</li>
+<li><strong>Open systems.</strong> Circuits, Petri nets, reaction networks: <span class="tight">maps of interfaces</span> and <span class="loose">systems with boundaries</span>.</li>
+<li><strong>Algebra.</strong> Rings, <span class="tight">homomorphisms</span> and <span class="loose">bimodules</span>.</li>
+<li><strong>Category theory.</strong> Categories, <span class="tight">functors</span> and <span class="loose">profunctors</span>.</li>
+<li><strong>Topology.</strong> Manifolds, <span class="tight">diffeomorphisms</span> and <span class="loose">cobordisms</span>.</li>
+</ul>
+<div class="experts">
+<p>Double categories go back to Ehresmann <span class="citation" data-cites="ehresmann63">(<a href="#ref-ehresmann63" role="doc-biblioref">Ehresmann 1963</a>)</span>. Effectful programs form premonoidal categories and promonads <span class="citation" data-cites="power97 roman22">(<a href="#ref-power97" role="doc-biblioref">Power and Robinson 1997</a>; <a href="#ref-roman22" role="doc-biblioref">Román 2022</a>)</span>; open systems form double categories of structured cospans <span class="citation" data-cites="baez20">(<a href="#ref-baez20" role="doc-biblioref">Baez and Courser 2020</a>)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cols-2 callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>6 · Ask me! TODO
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>When does an <span class="tight">effectful program</span> have a canonical <strong>lifting</strong> to <span class="loose">relational specs</span>?</li>
+<li>What if squares are just “<span class="math inline">\(\le\)</span>”? <strong>Thin</strong> double categories for refinement and approximation.</li>
+<li><strong>Bilattices</strong> order specs by truth <em>and</em> by information. Do they form a double category of four-valued specs?</li>
+<li>Something about systems? TODO</li>
+<li>Add some more things here? TODO</li>
+</ul>
+<div class="experts">
+<p>Thin double categories are <em>preorder categories</em>; interlaced bilattices are not really double categories? TODO <span class="citation" data-cites="Fitting20">(<a href="#ref-Fitting20" role="doc-biblioref">Fitting 2020</a>)</span>.</p>
+</div>
+</div>
+</div>
+<div class="grid align-items-center mt-4 border-top border-bottom border-3 border-primary">
+<div class="g-col-9 fs-4 text-center">
+<p>A double category is a category of <span class="tight">programs</span> and a category of <span class="loose">specifications</span>, glued together by squares that say <em>“this program meets this spec”</em>.</p>
+</div>
+<div class="g-col-3 text-center">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#1A1A1A","colorLight":"#ffffff","height":"130","text":"https://rjheaney.github.io/notes/double-categories.html","width":"130"});
+  script.remove();
+})();
+</script>
+    
+<p><span class="small text-muted">More about double categories</span></p>
+</div>
+</div>
+<div class="small text-muted mt-3 refs">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-baez20" class="csl-entry" role="listitem">
+Baez, John C., and Kenny Courser. 2020. <span>“Structured Cospans.”</span> <em>Theory and Applications of Categories</em> 35 (48): 1771–822.
+</div>
+<div id="ref-ehresmann63" class="csl-entry" role="listitem">
+Ehresmann, Charles. 1963. <span>“Cat<span>é</span>gories Structur<span>é</span>es.”</span> <em>Annales Scientifiques de l’<span>É</span>cole Normale Sup<span>é</span>rieure</em> 80 (4): 349–426.
+</div>
+<div id="ref-Fitting20" class="csl-entry" role="listitem">
+Fitting, Melvin. 2020. <span>“Bilattice <span>Basics</span>.”</span> <em>Journal of Applied Logics</em> 7 (6): 973–1018.
+</div>
+<div id="ref-grandis99" class="csl-entry" role="listitem">
+Grandis, Marco, and Robert Paré. 1999. <span>“Limits in Double Categories.”</span> <em>Cahiers de Topologie Et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques</em> 40 (3): 162–220.
+</div>
+<div id="ref-power97" class="csl-entry" role="listitem">
+Power, John, and Edmund Robinson. 1997. <span>“Premonoidal Categories and Notions of Computation.”</span> <em>Mathematical Structures in Computer Science</em> 7 (5): 453–68.
+</div>
+<div id="ref-reynolds83" class="csl-entry" role="listitem">
+Reynolds, John C. 1983. <span>“Types, Abstraction and Parametric Polymorphism.”</span> <em>Information Processing 83</em>, 513–23.
+</div>
+<div id="ref-roman22" class="csl-entry" role="listitem">
+Román, Mario. 2022. <span>“Promonads and String Diagrams for Effectful Categories.”</span> <em>arXiv Preprint arXiv:2205.07664</em>.
+</div>
+<div id="ref-shulman08" class="csl-entry" role="listitem">
+Shulman, Michael. 2008. <span>“Framed Bicategories and Monoidal Fibrations.”</span> <em>Theory and Applications of Categories</em> 20 (18): 650–738.
+</div>
+<div id="ref-wadler89" class="csl-entry" role="listitem">
+Wadler, Philip. 1989. <span>“Theorems for Free!”</span> <em>Functional Programming Languages and Computer Architecture (FPCA ’89)</em>, 347–59. <a href="https://doi.org/10.1145/99370.99404">https://doi.org/10.1145/99370.99404</a>.
+</div>
+</div>
+</div>
+<p><a href="#" class="print-link" onclick="window.print(); return false;">PDF</a></p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("^(?:http:|https:)\/\/www\.rjheaney\.github\.io\/custom");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+            // default icon
+            link.classList.add("external");
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
