@@ -17,7 +17,11 @@ website:
 
 format:
   html:
+    link-external-icon: true
+    link-external-newwindow: true
+    link-external-filter: '^(?:http:|https:)\/\/www\.rjheaney\.github\.io\/custom'
     theme:
+
       - litera
       - brand
     css: styles.css
