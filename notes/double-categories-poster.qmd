@@ -270,9 +270,9 @@ program meets this spec"*.
 :::
 
 ::: {.g-col-3 .text-center}
-{{< qrcode https://rjheaney.github.io/notes/double-categories.html width=130 height=130 colorDark="#1A1A1A" colorLight="#ffffff" >}}
+{{< qrcode https://rjheaney.github.io/ width=130 height=130 colorDark="#1A1A1A" colorLight="#ffffff" >}}
 
-[More about double categories]{.small .text-muted}
+[More on my website!](../index.qmd){.small .text-muted}
 :::
 
 :::::
