@@ -4,6 +4,7 @@ subtitle: Where programs meet their specifications
 description: Jack Heaney · University of Strathclyde · CIS PGR Conference 2026
 date: 2026-10-28
 bibliography: references.bib
+csl: ../theme/ieee.csl
 page-layout: full
 title-block-banner: true
 title-block-banner-color: white
@@ -174,74 +175,51 @@ double category is an *equipment* [@shulman08].
 ::::: {.callout-note icon=false}
 ## 4 · Trees and List Search
 
-Binary search trees are optimised for search. There are many ways to represent a binary tree as a list, by tree traversal. This is gives another example of a square by having two different search algorithms one on trees and one on lists. The traversal is a true relation! 
-
-Fixing a choice of key, a. 
+A binary tree can be flattened to a list in many ways. The spec
+[traverse]{.loose} relates a tree to *any* of its traversals (in-order,
+pre-order, …), so it is a genuine relation, not a function. Fix a key
+`a`: searching the tree and searching the list give the same answer.
 
 
 ::: {.imagify}
 \begin{tikzcd}[column sep=8em, row sep=5em, sq={1-1}{2-2}]
-  \mathsf{Tree}\ A \arrow[r, loose, "traversal"] \arrow[d, tight, "ListFind(a)"'] &
-  \mathsf{List}\ A \arrow[d, tight, "TreeFind(a)"] \\
-  \mathsf{Bool} \arrow[r, loose, "equal"'] & \mathsf{Bool}
+  \mathsf{Tree}\ A \arrow[r, loose, "\mathsf{traverse}"] \arrow[d, tight, "\mathsf{treeFind}\ a"'] &
+  \mathsf{List}\ A \arrow[d, tight, "\mathsf{listFind}\ a"] \\
+  \mathsf{Bool} \arrow[r, loose, "\mathsf{equal}"'] & \mathsf{Bool}
   \arrow[from=1-1, to=2-2, phantom, "\Downarrow \phi"]
 \end{tikzcd}
 :::
 
-Both programs fail or succeed together however, depending on the model of computation, you may wish to ask how times a recursive call has been made. In this example then a square is not only describing that the programs compute the same way but carry extra data about those computations.
+Both searches succeed or fail together. Depending on the model of
+computation, a square can also carry extra data, such as how many
+comparisons each search makes: it records *how* the programs agree,
+not just *that* they do.
 
 
 ::: {.example}
-Tree :
-
 ::: {.imagify}
 \begin{tikzcd}
-	& {} &&& \\
-	& {(1)} \\
-	{(2)} &&& {(3)} \\
-	&& {(4)} && {(5)}
+	& {} && \\
+	& {\boxed{1}} \\
+	{\boxed{2}} && {\boxed{3}} \\
+	& {\boxed{4}} && {\boxed{5}}
 	\arrow[from=1-2, to=2-2]
 	\arrow[from=2-2, to=3-1]
-	\arrow[from=2-2, to=3-4]
-	\arrow[from=3-4, to=4-3]
-	\arrow[from=3-4, to=4-5]
+	\arrow[from=2-2, to=3-3]
+	\arrow[from=3-3, to=4-2]
+	\arrow[from=3-3, to=4-4]
 \end{tikzcd}
 :::
 
 
-List obtained from in order traversal i.e. left-root-right traversal:
+Its traversals, all related to it by [traverse]{.loose}:
 
-$$
-[2, 1, 4, 3, 5]
-$$
+::: {.cols-2}
+- pre-order (root, left, right): `[1,2,3,4,5]`
+- in-order (left, root, right): `[2,1,4,3,5]`
+- post-order (left, right, root): `[2,4,5,3,1]`
+- level-order (top to bottom): `[1,2,3,4,5]`
 :::
-
-::: {.experts}
-
-:::
-:::::
-
-::::: {.callout-note icon=false}
-## 5 · Where they show up
-
-- **Effects.** types, [terms]{.tight} and [effectful programs]{.loose}
-  (state, exceptions, I/O).
-- **Gradual Typing.** Types, [terms]{.tight}  and [type precision, $A \sqsubseteq B$]{.loose} 
-- **Open systems.** Circuits, Petri nets, reaction networks:
-  [maps of interfaces]{.tight} and [systems with boundaries]{.loose}.
-- **Concurrency.** Machines, [homormorphisms]{.tight}, [bisimulation]{.loose}. 
-- **Proof Relevant Relations.** Sets, [functions]{.tight} and [proof relevant relations]{.loose}
-- **Distributors.** Groupoids, [functors]{.tight} and [distributors]{.loose}
-- **Category theory.** Categories, [functors]{.tight} and [profunctors]{.loose}.
-- **Topology.** Manifolds, [diffeomorphisms]{.tight} and [cobordisms]{.loose}.
-
-::: {.experts}
-Double categories go back to Ehresmann [@ehresmann63]. Effectful
-programs form premonoidal categories and promonads [@power97;
-@roman22; @jacobs2009categorical]; a more elementary definition is given by proof-irrelevant double categories or preorder categories [@new2020call]; distributors form a static model for linear logic [@clairambault2025thin
-]; for those who are coalgebra minded [@hermida1998structural];
-open systems form double categories of structured cospans
-[@baez20].
 :::
 :::::
 
@@ -249,16 +227,35 @@ open systems form double categories of structured cospans
 
 :::::::::
 
+::::: {.callout-note .cols-2 icon=false}
+## 5 · Where they show up
+
+- **Effects.** Types, [terms]{.tight} and [effectful programs]{.loose}
+  (state, exceptions, I/O) [@power97; @roman22; @jacobs2009categorical].
+- **Gradual typing.** Types, [terms]{.tight} and [type precision
+  $A \sqsubseteq B$]{.loose} [@new2020call].
+- **Open systems.** Circuits, Petri nets, reaction networks:
+  [maps of interfaces]{.tight} and [systems with boundaries]{.loose}
+  [@baez20].
+- **Concurrency.** Machines, [homomorphisms]{.tight} and
+  [bisimulations]{.loose} [@hermida1998structural].
+- **Proof-relevant relations.** Sets, [functions]{.tight} and
+  [proof-relevant relations]{.loose}.
+- **Linear logic.** Groupoids, [functors]{.tight} and
+  [distributors]{.loose} [@clairambault2025thin].
+- **Category theory.** Categories, [functors]{.tight} and
+  [profunctors]{.loose} [@ehresmann63; @grandis99].
+- **Topology.** Manifolds, [diffeomorphisms]{.tight} and
+  [cobordisms]{.loose}.
+:::::
+
 ::::: {.callout-warning .cols-2 icon=false}
-## 6 · Ask me! 
+## 6 · Ask me!
 
 - When does an [effectful program]{.tight} have a canonical
   **lifting** to [relational specs]{.loose}?
-- What are companion and conjoints in interesting double categories?
-- What is an effectful program and how are they related to promonads?
-
-::: {.experts}
-:::
+- What are companions and conjoints in interesting double categories?
+- What is an effectful program, and how does it relate to promonads?
 :::::
 
 ::::: {.grid .align-items-center .mt-4 .border-top .border-bottom .border-3 .border-primary}
