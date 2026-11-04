@@ -48,6 +48,7 @@ $font-size-root: 20px;
   height: 13rem;
 }
 .refs {
+  font-size: 0.7rem;
   column-count: 3;
   column-gap: 2rem;
 }
@@ -102,7 +103,7 @@ $font-size-root: 20px;
   text-wrap: pretty;
   hyphens: manual;
 }
-.callout-body code,
+.callout-body code:not(.sourceCode),
 mjx-container {
   white-space: nowrap;
 }

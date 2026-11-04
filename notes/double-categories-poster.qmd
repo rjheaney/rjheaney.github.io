@@ -1,8 +1,8 @@
 ---
 title: Double Categories
 subtitle: Where programs meet their specifications
-description: Jack Heaney · University of Strathclyde · CIS PGR Conference 2026
-date: 2026-10-28
+description: Jack Heaney · University of Strathclyde · CIS PGR Conference, 19 November 2026
+date: 2026-11-19
 bibliography: references.bib
 csl: ../theme/ieee.csl
 page-layout: full
@@ -62,7 +62,7 @@ relating two lists that are rearrangements of each other.
 
 `insertionSort`{.tight} on `[3,1,2]` and `mergeSort`{.tight} on
 `[2,3,1]` both give `[1,2,3]`. That holds for *every* pair of
-permutations, so the square exists. The algorithms agree however
+permutations, so the square exists. The algorithms agree, however
 the input may be arranged.
 :::::
 
@@ -173,7 +173,7 @@ double category is an *equipment* [@shulman08].
 :::::
 
 ::::: {.callout-note icon=false}
-## 4 · Trees and List Search
+## 4 · Searching Trees and Lists
 
 A binary tree can be flattened to a list in many ways. The spec
 [traverse]{.loose} relates a tree to *any* of its traversals (in-order,
@@ -247,8 +247,9 @@ Its traversals, all related to it by [traverse]{.loose}:
   [profunctors]{.loose} [@ehresmann63; @grandis99].
 - **Topology.** Manifolds, [diffeomorphisms]{.tight} and
   [cobordisms]{.loose}.
-- **Spans.** Sets, [functions]{.tight} and {spans}{.loose}
-- **Quintets.** Objects of a 2-category, [morphisms of a 2-category]{.tight} and [morphisms of a 2-category]{.loose}
+- **Spans.** Sets, [functions]{.tight} and [spans]{.loose} [@grandis99].
+- **Quintets.** In any 2-category, the 1-cells are both [tight]{.tight}
+  and [loose]{.loose}, and squares are 2-cells [@ehresmann63].
 :::::
 
 ::::: {.callout-warning .cols-2 icon=false}
@@ -258,7 +259,7 @@ Its traversals, all related to it by [traverse]{.loose}:
   **lifting** to [relational specs]{.loose}?
 - What are companions and conjoints in interesting double categories?
 - What is an effectful program, and how does it relate to promonads?
-- What happens when the tight category is preorder? 
+- What happens when the tight category is a preorder?
 
 :::::
 
