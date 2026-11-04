@@ -1,0 +1,27 @@
+# poster theme (from strathclyde)
+color:
+  palette:
+    banner: "#002B5C"
+    tight: "#0078AE"
+    loose: "#E0701A"
+    strip: "#FFF1DE"
+    square: "#E6F0DE"
+    nosquare: "#FCE1DF"
+    pass: "#5D9732"
+    fail: "#EE3224"
+    muted: "#5B5D61"
+    rule: "#A7A9AC"
+    ink: "#1A1A1A"
+  foreground: ink
+  background: "#FFFFFF"
+  primary: banner
+  warning: loose
+  link: tight
+typography:
+  fonts:
+    - family: Gentium Book Plus
+      source: google
+  base:
+    family: Gentium Book Plus
+  headings:
+    family: Gentium Book Plus

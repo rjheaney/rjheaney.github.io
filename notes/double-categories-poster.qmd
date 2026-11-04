@@ -1,0 +1,278 @@
+---
+title: Double Categories
+subtitle: Where programs meet their specifications
+description: Jack Heaney · University of Strathclyde · CIS PGR Conference 2026
+date: 2026-10-28
+bibliography: references.bib
+page-layout: full
+title-block-banner: true
+title-block-banner-color: white
+toc: false
+citation-location: document
+brand: ../theme/poster-brand.yml
+format:
+  html:
+    theme: [litera, ../theme/poster.scss, brand]
+---
+
+{{< include ../theme/_macros.qmd >}}
+
+::: {.text-center .fs-2 .my-3 .text-primary}
+Programs compose. Specifications compose.<br>
+**Double categories let them compose [*together*]{.loose}.**
+:::
+
+::::::::: {.grid}
+
+:::::: {.g-col-6}
+::::: {.callout-note icon=false}
+## 1 · Two kinds of arrows
+
+An ordinary category has one kind of arrow. A **double category** has two:
+
+- [**tight arrows**]{.tight} are *programs*: things you **run**;
+- [**loose arrows**]{.loose} are *specifications*: things you **check**;
+- **squares** are evidence that the programs *respect* the specs.
+
+::: {.imagify .big}
+\begin{tikzcd}[column sep=7em, row sep=5em, sq={1-1}{2-2}]
+  A \arrow[r, loose, "R"] \arrow[d, tight, "f"'] & B \arrow[d, tight, "g"] \\
+  A' \arrow[r, loose, "R'"'] & B'
+  \arrow[from=1-1, to=2-2, phantom, "\Downarrow\alpha"]
+\end{tikzcd}
+:::
+
+::: {.bg-strip .text-center .p-2 .rounded}
+if $x \mathrel{\loose{R}} y$ then $\tight{f}(x) \mathrel{\loose{R'}} \tight{g}(y)$
+:::
+
+::::: {.example}
+Take two *different* sorting algorithms, and the spec [perm]{.loose},
+relating two lists that are rearrangements of each other.
+
+::: {.imagify}
+\begin{tikzcd}[column sep=6em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, "\mathsf{perm}"] \arrow[d, tight, "\mathsf{insertionSort}"'] &
+  \mathsf{List\ Nat} \arrow[d, tight, "\mathsf{mergeSort}"] \\
+  \mathsf{List\ Nat} \arrow[r, loose, "\mathsf{equal}"'] & \mathsf{List\ Nat}
+  \arrow[from=1-1, to=2-2, phantom, "\yes"]
+\end{tikzcd}
+:::
+
+`insertionSort`{.tight} on `[3,1,2]` and `mergeSort`{.tight} on
+`[2,3,1]` both give `[1,2,3]`. That holds for *every* pair of
+permutations, so the square exists. The algorithms agree however
+the input may be arranged.
+:::::
+
+::: {.experts}
+A double category is a pseudo category object in
+$\mathbf{Cat}$; loose composition is associative and unital only up to
+coherent isomorphism [@grandis99].
+:::
+:::::
+
+::::: {.callout-note icon=false}
+## 2 · You've met one: $\rel$
+
+Objects are types, [tight arrows]{.tight} are functions, [loose
+arrows]{.loose} are relations. A square means the functions
+**preserve** the relation.
+
+::::: {.example}
+The relation $\loose{\mathsf{els}} : \mathsf{List\ Nat} \larr \mathsf{Set\ Nat}$
+relates a list to the set of its elements.
+
+:::: {.grid}
+::: {.g-col-6}
+::: {.imagify}
+\begin{tikzcd}[column sep=5em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, "\mathsf{els}"] \arrow[d, tight, "\mathsf{cons}\ x"'] &
+  \mathsf{Set\ Nat} \arrow[d, tight, "\mathsf{insert}\ x"] \\
+  \mathsf{List\ Nat} \arrow[r, loose, "\mathsf{els}"'] & \mathsf{Set\ Nat}
+  \arrow[from=1-1, to=2-2, phantom, "\yes"]
+\end{tikzcd}
+:::
+
+If [els]{.loose} relates `xs` to `s`, it relates `cons x xs`{.tight}
+to `insert x s`{.tight}, hence [cons]{.tight} implements [insert]{.tight}.
+:::
+
+::: {.g-col-6}
+::: {.imagify}
+\begin{tikzcd}[column sep=5em, row sep=5em, nsq={1-1}{2-2}]
+  \mathsf{List\ Nat} \arrow[r, loose, "\mathsf{els}"] \arrow[d, tight, "\mathsf{length}"'] &
+  \mathsf{Set\ Nat} \arrow[d, tight, "\mathsf{size}"] \\
+  \mathsf{Nat} \arrow[r, loose, "\mathsf{equal}"'] & \mathsf{Nat}
+  \arrow[from=1-1, to=2-2, phantom, "\no"]
+\end{tikzcd}
+:::
+
+**Non-example.** [els]{.loose} relates `[1,1]` to `{1}`, but
+`length`{.tight} gives 2 and `size`{.tight} gives 1. No square!
+:::
+::::
+:::::
+
+::: {.bg-strip .text-center .p-2 .rounded}
+A square says *this implementation respects that abstraction*.
+:::
+
+::: {.experts}
+This is data refinement; $\rel$ is an equipment, where
+each function also gives a loose arrow, its graph [@shulman08].
+:::
+:::::
+::::::
+
+:::::: {.g-col-6}
+::::: {.callout-note icon=false}
+## 3 · Squares are tiles
+
+Squares glue like floor tiles, in two directions.
+
+::: {.imagify}
+\begin{tikzcd}[column sep=6em, row sep=4em, sq={1-1}{3-3}]
+  \bullet \arrow[r, loose] \arrow[d, tight] &
+  \bullet \arrow[r, loose] \arrow[d, tight] &
+  \bullet \arrow[d, tight] \\
+  \bullet \arrow[r, loose] \arrow[d, tight] &
+  \bullet \arrow[r, loose] \arrow[d, tight] &
+  \bullet \arrow[d, tight] \\
+  \bullet \arrow[r, loose] &
+  \bullet \arrow[r, loose] &
+  \bullet
+  \arrow[from=1-1, to=2-2, phantom, "\alpha"]
+  \arrow[from=1-2, to=2-3, phantom, "\beta"]
+  \arrow[from=2-1, to=3-2, phantom, "\gamma"]
+  \arrow[from=2-2, to=3-3, phantom, "\delta"]
+\end{tikzcd}
+:::
+
+**Top to bottom, programs compose:** run one, then the next.
+
+::: {.bg-strip .text-center .p-2 .rounded}
+$(\tight{g} \circ \tight{f})(x) = \tight{g}(\tight{f}(x))$
+:::
+
+**Left to right, specs compose:** chain relations through a middle point.
+
+::: {.bg-strip .text-center .p-2 .rounded}
+$x \mathrel{(\loose{R} ; \loose{S})} z \iff \exists y.\ x \mathrel{\loose{R}} y \wedge y \mathrel{\loose{S}} z$
+:::
+
+::: {.example}
+`sort . nub`{.tight}: dedupe, then sort. `xs` [has elements]{.loose} `s`
+then `s` [has size]{.loose} `n`: `xs` [has]{.loose} `n` [distinct elements]{.loose}.
+:::
+
+Rows first or columns first gives **the same big square** (the
+*interchange law*): the whole program meets the whole spec.
+
+::: {.experts}
+Squares with identity tight sides form a bicategory of
+loose arrows; when every function also has a loose companion, the
+double category is an *equipment* [@shulman08].
+:::
+:::::
+
+::::: {.callout-note icon=false}
+## 4 · Theorems for free TODO
+
+For a relation $\loose{r} : a \larr b$, the relation
+$\loose{\mathsf{List}\ r} : \mathsf{List}\ a \larr \mathsf{List}\ b$
+relates two lists of the same length whose elements are related
+pairwise.
+
+::: {.imagify}
+\begin{tikzcd}[column sep=8em, row sep=5em, sq={1-1}{2-2}]
+  \mathsf{List}\ a \arrow[r, loose, "\mathsf{List}\ r"] \arrow[d, tight, "\mathsf{reverse}"'] &
+  \mathsf{List}\ b \arrow[d, tight, "\mathsf{reverse}"] \\
+  \mathsf{List}\ a \arrow[r, loose, "\mathsf{List}\ r"'] & \mathsf{List}\ b
+  \arrow[from=1-1, to=2-2, phantom, "\forall r"]
+\end{tikzcd}
+:::
+
+`reverse :: List a -> List a`{.haskell} works for *every* type `a`, so
+it can't look at the elements, only rearrange them. So it maps related
+lists to related lists: the square always exists.
+
+::: {.example}
+Take $\loose{r}$ to be the graph of a function `h`{.tight}, and out falls, for
+free: `map h . reverse = reverse . map h`{.haskell}
+:::
+
+::: {.experts}
+Reynolds' relational parametricity interprets types as
+relations and polymorphic terms as families of squares in $\rel$
+[@reynolds83; @wadler89].
+:::
+:::::
+
+::::: {.callout-note icon=false}
+## 5 · Where they show up
+
+- **Effects.** [Pure functions]{.tight} and [effectful programs]{.loose}
+  (state, exceptions, I/O).
+- **Equivalence and refinement.** [Logical relations and
+  simulations]{.loose}; proving two implementations agree means
+  building squares.
+- **Open systems.** Circuits, Petri nets, reaction networks:
+  [maps of interfaces]{.tight} and [systems with boundaries]{.loose}.
+- **Algebra.** Rings, [homomorphisms]{.tight} and [bimodules]{.loose}.
+- **Category theory.** Categories, [functors]{.tight} and [profunctors]{.loose}.
+- **Topology.** Manifolds, [diffeomorphisms]{.tight} and [cobordisms]{.loose}.
+
+::: {.experts}
+Double categories go back to Ehresmann [@ehresmann63]. Effectful
+programs form premonoidal categories and promonads [@power97;
+@roman22]; open systems form double categories of structured cospans
+[@baez20].
+:::
+:::::
+
+::::::
+
+:::::::::
+
+::::: {.callout-warning .cols-2 icon=false}
+## 6 · Ask me! TODO
+
+- When does an [effectful program]{.tight} have a canonical
+  **lifting** to [relational specs]{.loose}?
+- What if squares are just "$\le$"? **Thin** double categories for
+  refinement and approximation.
+- **Bilattices** order specs by truth *and* by information. Do they form
+  a double category of four-valued specs?
+- Something about systems? TODO
+- Add some more things here? TODO
+
+::: {.experts}
+Thin double categories are *preorder categories*;
+interlaced bilattices are not really double categories? TODO
+[@Fitting20].
+:::
+:::::
+
+::::: {.grid .align-items-center .mt-4 .border-top .border-bottom .border-3 .border-primary}
+
+::: {.g-col-9 .fs-4 .text-center}
+A double category is a category of [programs]{.tight} and a category of
+[specifications]{.loose}, glued together by squares that say *"this
+program meets this spec"*.
+:::
+
+::: {.g-col-3 .text-center}
+{{< qrcode https://rjheaney.github.io/notes/double-categories.html width=130 height=130 colorDark="#1A1A1A" colorLight="#ffffff" >}}
+
+[More about double categories]{.small .text-muted}
+:::
+
+:::::
+
+::: {.small .text-muted .mt-3 .refs}
+::: {#refs}
+:::
+:::
+
+[PDF](#){.print-link onclick="window.print(); return false;"}

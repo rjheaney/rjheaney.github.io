@@ -1,0 +1,46 @@
+% poster colours (from strathclyde)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{postertheme}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{pifont}
+\usetikzlibrary{backgrounds}
+
+\definecolor{ink}{HTML}{1A1A1A}
+\definecolor{banner}{HTML}{002B5C}
+\definecolor{tight}{HTML}{0078AE}
+\definecolor{loose}{HTML}{E0701A}
+\definecolor{strip}{HTML}{FFF1DE}
+\definecolor{square}{HTML}{E6F0DE}
+\definecolor{nosquare}{HTML}{FCE1DF}
+\definecolor{pass}{HTML}{5D9732}
+\definecolor{fail}{HTML}{EE3224}
+\definecolor{accent}{HTML}{E0701A}
+\definecolor{muted}{HTML}{5B5D61}
+\definecolor{rule}{HTML}{A7A9AC}
+
+% semantic maths
+\newcommand{\tight}[1]{{\color{tight}#1}}
+\newcommand{\loose}[1]{{\color{loose}#1}}
+
+% arrow styles for tikzcd
+\tikzset{
+  tight/.style={color=tight, line width=0.6pt},
+  loose/.style={color=loose, line width=0.6pt, /tikz/commutative diagrams/squiggly},
+}
+
+% shade a square (sq) or non-square (nsq) between two nodes
+\tikzset{
+  sq/.style 2 args={execute at end picture={
+          \begin{scope}[on background layer]
+            \fill[square] (\tikzcdmatrixname-#1.center) rectangle (\tikzcdmatrixname-#2.center);
+          \end{scope}}},
+  nsq/.style 2 args={execute at end picture={
+          \begin{scope}[on background layer]
+            \fill[nosquare] (\tikzcdmatrixname-#1.center) rectangle (\tikzcdmatrixname-#2.center);
+          \end{scope}}},
+}
+
+% verdict marks
+\newcommand{\yes}{\textcolor{pass}{\checkmark}}
+\newcommand{\no}{\textcolor{fail}{\text{\ding{55}}}}
