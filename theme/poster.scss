@@ -1,0 +1,137 @@
+/*-- scss:defaults --*/
+// banner and loose
+$callout-color-note: #002b5c;
+$callout-color-warning: #e0701a;
+$font-size-root: 20px;
+
+/*-- scss:rules --*/
+.tight {
+  color: var(--brand-tight);
+}
+.loose {
+  color: var(--brand-loose);
+}
+.bg-strip {
+  background: var(--brand-strip);
+}
+
+// title block: white subtitle, no meta labels
+#title-block-header .subtitle {
+  color: #fff;
+  opacity: 1;
+}
+.quarto-title-meta,
+.quarto-title-meta-author {
+  display: none !important;
+}
+
+// larger callouts
+.callout .callout-title-container {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.callout.callout-style-default > div.callout-header {
+  opacity: 1;
+}
+.callout.callout-style-default .callout-body {
+  font-size: 1.1rem;
+}
+
+.imagify {
+  text-align: center;
+}
+.callout .imagify img {
+  height: 10rem;
+  width: auto;
+}
+.callout .imagify.big img {
+  height: 13rem;
+}
+.refs {
+  column-count: 3;
+  column-gap: 2rem;
+}
+.cols-2 ul {
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+// examples box
+.example {
+  background: #f1f6fa;
+  border-left: 4px solid var(--brand-tight);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9em;
+}
+.callout-body code.tight {
+  color: var(--brand-tight);
+}
+
+// qr quiet zone
+.qrcode img {
+  background: #fff;
+  padding: 12px;
+  margin: auto;
+}
+
+// panels fill their height
+.callout.h-100 {
+  display: flex;
+  flex-direction: column;
+}
+.callout.h-100 > .callout-body-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+// expert note at the bottom
+.experts {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid $gray-300;
+  font-size: 0.85rem;
+  color: $gray-700;
+}
+
+// no awkward breaks
+.callout-body,
+.lead,
+.fs-4 {
+  text-wrap: pretty;
+  hyphens: manual;
+}
+.callout-body code,
+mjx-container {
+  white-space: nowrap;
+}
+
+// a1 portrait
+@page {
+  size: 594mm 841mm;
+  margin: 25mm;
+}
+
+@media print {
+  #quarto-header,
+  .print-link {
+    display: none;
+  }
+  body,
+  #quarto-content {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+  * {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  main,
+  #title-block-header {
+    zoom: 1.28;
+  }
+  .callout {
+    break-inside: avoid;
+  }
+}

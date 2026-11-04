@@ -1,0 +1,17 @@
+<!-- poster colours for mathjax, keep in sync with theme/poster-brand.yml and theme/postertheme.sty -->
+
+::: {.hidden}
+$$
+\definecolor{ink}{RGB}{26,26,26}
+\definecolor{tight}{RGB}{0,120,174}
+\definecolor{loose}{RGB}{224,112,26}
+\definecolor{accent}{RGB}{224,112,26}
+\definecolor{muted}{RGB}{91,93,97}
+\newcommand{\tight}[1]{{\color{tight}{#1}}}
+\newcommand{\loose}[1]{{\color{loose}{#1}}}
+\newcommand{\larr}{\mathrel{\color{loose}{\rightsquigarrow}}}
+\newcommand{\tarr}{\mathrel{\color{tight}{\to}}}
+\newcommand{\set}{\mathcal{S}\mathrm{et}}
+\newcommand{\rel}{\mathbb{R}\mathrm{el}}
+$$
+:::
