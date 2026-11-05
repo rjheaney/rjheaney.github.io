@@ -14,6 +14,7 @@ brand: ../theme/poster-brand.yml
 format:
   html:
     theme: [litera, ../theme/poster.scss, brand]
+    link-external-icon: false
 ---
 
 {{< include ../theme/_macros.qmd >}}
