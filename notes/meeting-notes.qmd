@@ -1,0 +1,39 @@
+---
+title: Meeting with Bob and Vikraman
+subtitle: Meeting of 5th November  
+date: 11-05-2026
+bibliography: references.bib
+---
+
+Functors are Types refinement systems  [@mellies2015functors]
+
+PAM
++
+N Zilberger
+
+
+Coherent Spaces (preorder with graph inclusion and horizontal morphisms are continuous functions)
+
+Universal spaces (largest space) 
+
+Domains and lambda-calculi (reference for domain theory, look for universal domains) [@amadio1998domains]
+
+Universal Types and what they are good for [@longley2003universal]
+
+Goal : People have thought about program refinement and data refinement there should be a way to bring these together
+
+Haskel comparison of integers 
+
+and
+
+Ocaml comparison of integers
+
+Calculus for Preorder category (as a type system)
+
+What would you add as other judgements to simply typed lambda calculus to allow data refinement
+
+Add subset types (an arbitrary predicate tells you what the refinement is)
+
+Relation Hoare logic (POPL 2004) [@benton2004simple]
+
+Relations on pairs of states

@@ -1,0 +1,47 @@
+---
+title: Internal Categories
+subtitle: Jacobs, Categorical Logic and Type Theory
+date: 11-16-2026
+bibliography: references.bib
+---
+
+::: {.hidden}
+
+
+:::
+
+## Section 3.1: Logics
+
+"Usually, a statement in a logic is written as
+
+$$\varphi_1,\dots, \varphi_n \vdash \psi$$
+
+where $\varphi_1,\dots, \varphi_n$ and $\psi$ are propositions. Such a sequent expresses that $\psi$ follows (as conclusion) from the 
+assumptions $\varphi_1,\dots, \varphi_n$. These propositions $\varphi_1,\dots, \varphi_n, \psi$ may contain (free) varaibles of certain types.
+The context in which these variables are declared is left implicit $\dots$ . Contexts are very important in a categorical description of logic
+$\dots$ therefore we prefer to use statements fo the form
+
+$$\Gamma \ | \ \varphi_1,\dots, \varphi_n \vdash \psi$$
+
+in which the context $\Gamma$ containing all the free variables of $\varphi_1,\dots, \varphi_n$ and $\psi$ is written explicitly." - p.171
+
+"Let $(\Sigma, \Box)$ be a specification for some system of logic, where $\Sigma$ is a many-typed signature and $\Box$ is something extra,
+determined by the specific logic; it may consist of collections of additional atomic symbols and/or axioms $\dots$ . Given $\Sigma$ and $\Box$ 
+we can start forming sequents. The categorical way to understand these sequents is as follows.
+
+$$\overbrace{x_1: \sigma_1, \dots, x_n : \sigma_n}^{\text{index object in the base category}} \ | \ \underbrace{\varphi_1,\dots, \varphi_m \vdash \psi}_{\text{inequality} \ \leq \ \text{in the fibre over the index}} $$
+
+" - p.173
+
+## Section 4.1: Signatures, connectives and quantifiers
+
+"In equational logic one only has equations
+
+$$M =_{\sigma} M' $$
+
+for terms $M$ and $M'$ of the same type $\sigma$, as (atomic) propositions." - p.221
+
+
+
+## Section 7.1: Internal Category Theory 
+
