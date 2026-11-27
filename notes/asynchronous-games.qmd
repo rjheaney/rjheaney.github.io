@@ -1,0 +1,237 @@
+---
+title: Asynchronous Games
+subtitle: Definitions
+date: 11-26-2026
+bibliography: references.bib
+---
+
+::: {.hidden}
+
+\newcommand{\sq}{\text{Sq}}
+\newcommand{\pbc}{\mathcal{C_1}\times_{\mathcal{C_0}}\mathcal{C_1}}
+\newcommand{\sw}{\text{swap}}
+:::
+
+
+# Definitions 
+
+
+::: {#def-internal-graph}
+## An internal graph in a category
+
+\bigskip
+
+Given a category $\mathbb{C}$, a [Graph Internal]{.underline} to $\mathbb{C}$ is a diagram
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\mathcal{C}_1} & {\mathcal{C}_0}
+	\arrow["{\text{tgt}}"', from=1-1, to=1-2]
+	\arrow["{\text{src}}", shift left=3, from=1-1, to=1-2]
+\end{tikzcd}
+:::
+
+:::
+
+::: {#def-internal-asynchronous-graph}
+## An internal pre-asynchronous graph in a category
+
+\bigskip
+
+Given a category $\mathbb{C}$ with pullbacks, a [pre-Asynchronous Graph Internal]{.underline} to $\mathbb{C}$ is a diagram
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\text{Sq}} & {\mathcal{C}_1\times_{\mathcal{C}_0}\mathcal{C}_1} & {\mathcal{C}_1} & {\mathcal{C}_0}
+	\arrow["{\text{swap}}", from=1-1, to=1-1, loop, in=145, out=215, distance=10mm]
+	\arrow["{\mathfrak{r}}"', from=1-1, to=1-2]
+	\arrow["{\ell}", shift left=3, from=1-1, to=1-2]
+	\arrow["{\pi_2}"', from=1-2, to=1-3]
+	\arrow["{\pi_1}", shift left=3, from=1-2, to=1-3]
+	\arrow["{\text{tgt}}"', from=1-3, to=1-4]
+	\arrow["{\text{src}}", shift left=3, from=1-3, to=1-4]
+\end{tikzcd}
+:::
+
+satisfying the following equations written as commuting diagrams (using $\mathcal{C}_2 = \pbc$)
+ 
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\text{Sq}} & {\mathcal{C}_2} & {\mathcal{C}_1} \\
+	{\mathcal{C}_2} & {\mathcal{C}_1} & {\mathcal{C}_0}
+	\arrow["\ell", from=1-1, to=1-2]
+	\arrow["{\mathfrak{r}}"', from=1-1, to=2-1]
+	\arrow["{\pi_1}", from=1-2, to=1-3]
+	\arrow["{\text{src}}", from=1-3, to=2-3]
+	\arrow["{\pi_1}"', from=2-1, to=2-2]
+	\arrow["{\text{src}}"', from=2-2, to=2-3]
+\end{tikzcd}
+:::
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\text{Sq}} & {\mathcal{C}_2} & {\mathcal{C}_1} \\
+	{\mathcal{C}_2} & {\mathcal{C}_1} & {\mathcal{C}_0}
+	\arrow["\ell", from=1-1, to=1-2]
+	\arrow["{\mathfrak{r}}"', from=1-1, to=2-1]
+	\arrow["{\pi_2}", from=1-2, to=1-3]
+	\arrow["{\text{tgt}}", from=1-3, to=2-3]
+	\arrow["{\pi_2}"', from=2-1, to=2-2]
+	\arrow["{\text{tgt}}"', from=2-2, to=2-3]
+\end{tikzcd}
+:::
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\mathcal{C}_2} & {\text{Sq}} & {\mathcal{C}_2} \\
+	& {\text{Sq}}
+	\arrow["\ell"', from=1-2, to=1-1]
+	\arrow["{\mathfrak{r}}", from=1-2, to=1-3]
+	\arrow["{\text{swap}}"', from=1-2, to=2-2]
+	\arrow["{\mathfrak{r}}", curve={height=-6pt}, from=2-2, to=1-1]
+	\arrow["\ell"', curve={height=6pt}, from=2-2, to=1-3]
+\end{tikzcd}
+:::
+
+An Asynchronous graph internal to a category $\mathbb{C}$ is then defined as an octuple 
+$A = (\sq, \mathcal{C}_1, \mathcal{C}_0, \sw, \ell, \mathfrak{r}, \text{src}, \text{tgt})$ with the additional property that $\ell$ is a 
+monomorphism in $\mathbb{C}$.
+
+
+::: 
+
+
+::: {#thm-equivalent-defintions}
+
+## Equivalent defintions of an Asynchronous Graph Internal to a Category
+
+\bigskip
+
+Let $A = (\sq, \mathcal{C}_1, \mathcal{C}_0, \sw, \ell, \mathfrak{r}, \text{src}, \text{tgt})$ be a pre-asynchronous graph internal to
+$\mathbb{C}$. Suppose further that $\mathbb{C}$ has finite products then, the following are equivalent
+
+ 1. $A$ is an Asynchronous graph internal to $\mathbb{C}$;
+
+ 2. $\mathfrak{r}$ is a monomorphism; 
+
+ 3. $\langle \ell, \mathfrak{r}\rangle$ are jointly monic.
+
+
+:::
+
+::: {#prf-equivalent-definitions}
+
+\bigskip
+
+Exploit the triangle equatiosn to prove that $\sw$ is an involution of $\sq$ and then prove that $(1.)$ is equivalent to $(2.)$. It is then 
+enough to show $(1.)$ implies $(3.)$.
+
+
+:::
+
+
+
+
+
+::: {#def-internal-graph-homomorphism}
+## Internal graph homomorphism
+An internal graph homomorphism is written internally to a category $\mathbb{C}$ like below: 
+
+
+::: {.imagify}
+[]: %
+\begin{tikzcd}
+	{\bigg(\mathcal{C}_1} & {\mathcal{C}_0\bigg)} && {\bigg(\mathcal{C}'_1} & {\mathcal{C}'_0\bigg)}
+	\arrow["{\text{tgt}}"', from=1-1, to=1-2]
+	\arrow["{\text{src}}", shift left=3, from=1-1, to=1-2]
+	\arrow["{\qquad\quad graph}"', from=1-2, to=1-4]
+	\arrow["{\text{tgt}'}"', from=1-4, to=1-5]
+	\arrow["{\text{src}'}", shift left=3, from=1-4, to=1-5]
+\end{tikzcd}
+:::
+
+This means a pair of morphisms in $\mathbb{C}$, $f_0 : \mathcal{C}_0 \rightarrow \mathcal{C}'_0$ and 
+$f_1 : \mathcal{C}_1 \rightarrow \mathcal{C}_1'$. The requirement on these morphisms is described by commutativity of both, the following, 
+inside and outside squares to commute
+
+::: {.imagify}
+\begin{tikzcd}
+	{\mathcal{C}_1} & {\mathcal{C}_0} \\
+	{\mathcal{C}_1'} & {\mathcal{C}_0'}
+	\arrow["{\text{tgt}}"', from=1-1, to=1-2]
+	\arrow["{\text{src}}", shift left=3, from=1-1, to=1-2]
+	\arrow["{f_1}"', from=1-1, to=2-1]
+	\arrow["{f_0}", from=1-2, to=2-2]
+	\arrow["{\text{src}'}"', from=2-1, to=2-2]
+	\arrow["{\text{tgt}'}", shift left=3, from=2-1, to=2-2]
+\end{tikzcd}
+
+:::
+
+
+:::
+
+
+::: {#def-asynchronous-graph-homomorphism}
+## Internal asynchronous graph homomorphism
+An internal asynchronous graph homomorphism is written internally to category $\mathbb{C}$ (with pullbacks) like below:
+
+::: {.imagify}
+\begin{tikzcd}
+	{\bigg(} & {\text{Sq}} & {\mathcal{C}_2} & {\mathcal{C}_1} & {\mathcal{C}_0\bigg)} \\
+	\\
+	{\bigg(} & {\text{Sq}'} & {\mathcal{C}_2'} & {\mathcal{C}_1'} & {\mathcal{C}_0'\bigg)}
+	\arrow["{\text{swap}}"{description}, from=1-2, to=1-2, loop, in=145, out=215, distance=10mm]
+	\arrow["{\mathfrak{r}}"', from=1-2, to=1-3]
+	\arrow["\ell", shift left=3, from=1-2, to=1-3]
+	\arrow["{\pi_2}"', from=1-3, to=1-4]
+	\arrow["{\pi_1}", shift left=3, from=1-3, to=1-4]
+	\arrow["asynch"', from=1-3, to=3-3]
+	\arrow["{\text{tgt}}"', from=1-4, to=1-5]
+	\arrow["{\text{src}}", shift left=3, from=1-4, to=1-5]
+	\arrow["{\text{swap}'}"{description}, from=3-2, to=3-2, loop, in=145, out=215, distance=10mm]
+	\arrow["{\mathfrak{r}'}"', from=3-2, to=3-3]
+	\arrow["{\ell'}", shift left=3, from=3-2, to=3-3]
+	\arrow["{\pi_2}"', from=3-3, to=3-4]
+	\arrow["{\pi_1}", shift left=3, from=3-3, to=3-4]
+	\arrow["{\text{tgt}'}"', from=3-4, to=3-5]
+	\arrow["{\text{src}'}", shift left=3, from=3-4, to=3-5]
+\end{tikzcd}
+:::
+
+Similar to the internal graph homomorphism we have a pair of morphisms in $\mathbb{C}$, $f_0, f_1$ which extend to
+$f_2 \triangleq f_1 \times_{f_0} f_1 : \mathcal{C}_2 \rightarrow \mathcal{C}_2'$. The morphisms $f_0$ and $f_1$ must satisfy the same 
+commutative diagrams as for internal graph homomorphims. Furthermore, there is another morphism $f_{\text{sq}} : \sq \rightarrow \sq'$ 
+which has a requirement on it to force the commutativity of, both of, the following (outter and innner) diagram(s):
+
+
+::: {.imagify}
+\begin{tikzcd}
+	{\text{Sq}} & {\mathcal{C}_2} \\
+	{\text{Sq}'} & {\mathcal{C}'_2}
+	\arrow["{\mathfrak{r}}"', from=1-1, to=1-2]
+	\arrow["\ell", shift left=3, from=1-1, to=1-2]
+	\arrow["{f_{\text{sq}}}"', from=1-1, to=2-1]
+	\arrow["{f_2}", from=1-2, to=2-2]
+	\arrow["{\ell'}"', from=2-1, to=2-2]
+	\arrow["{\mathfrak{r}'}", shift left=3, from=2-1, to=2-2]
+\end{tikzcd}
+
+:::
+
+
+
+
+:::
+
+<!---
+
+Call $\text{top} = \pi_1 \circ \ell$ and $\text{bot} = \pi_2 \circ \mathfrak{r}$
+
+-->
